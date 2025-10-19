@@ -1,19 +1,15 @@
-// controllers/onlineUniversityController.js
-import onlineUniversity from '../model/onlineUniversity.js'
+
+import onlineUniversity from '../model/onlineUniversity.js';
 
 // Controller to insert many universities
 export const insertManyUniversities = async (req, res) => {
   try {
-    // Expecting an array of university objects in req.body
-    const universities = req.body; // Example: [{universityName, location, ...}, {...}, ...]
 
+    const universities = req.body;
     if (!Array.isArray(universities) || universities.length === 0) {
       return res.status(400).json({ message: "Please provide an array of universities." });
     }
-
-    // Insert many
     const insertedUniversities = await onlineUniversity.insertMany(universities);
-
     res.status(201).json({
       success: true,
       message: "Universities inserted successfully",
