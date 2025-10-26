@@ -125,11 +125,13 @@ const DynamicWorldPortal = () => {
     ],
     []
   );
+  const boards = useMemo(() => ["Board"], []);
 
   const studyAbroad = useMemo(
     () => ["Home", "Immigration", "Visa Services", "Attestation & Apostile"],
     []
   );
+  const bussinessOp = useMemo(() => ["Bussiness opportunity"]);
 
   const sidebarData = useMemo(
     () => [
@@ -152,6 +154,12 @@ const DynamicWorldPortal = () => {
         items: distanceUniversity,
       },
       {
+        title: "Boards",
+        type: "Boards",
+        url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761469887/director_dzinrx.png",
+        items: boards,
+      },
+      {
         title: "Vocational Courses",
         type: "Vocational Courses",
         url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760779898/vocationalCourses_zeervr.png",
@@ -160,13 +168,13 @@ const DynamicWorldPortal = () => {
       {
         title: "Regular Admission",
         type: "Regular Admission",
-        url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760779898/regularAdmission_ahdiqj.png",
+        url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761470147/paper_uaztxt.png",
         items: regularFullTimeEducation,
       },
       {
         title: "College Admission",
         type: "College Admission",
-        url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760779898/collegeAdmission_qjpy1h.png",
+        url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761470047/education_an7uhw.png",
         items: collegeAdmission,
       },
       {
@@ -180,6 +188,12 @@ const DynamicWorldPortal = () => {
         type: "Study Abroad Countries",
         url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760779898/studyAbroadCountries_wswi8l.png",
         items: countriesList,
+      },
+      {
+        title: "Bussiness Opportunity",
+        type: "Bussiness Opportunity",
+        url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761470515/integrity_h0ae1y.png",
+        items: bussinessOp,
       },
     ],
     [

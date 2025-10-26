@@ -43,6 +43,7 @@ import Upgrad from "../pages/Upgrad";
 import OnlineEducationUniversities from '../pages/OnlineEducationUniversities'
 import DistanceEducationUniversities from '../pages/DistanceEducationUniversities'
 import RegularEducationUniversities from '../pages/RegularEducationUniversities'
+import BussinessOpportunity from "../pages/BussinessOpportunity";
 const Router_Router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
@@ -133,6 +134,10 @@ const Router_Router = createBrowserRouter(
       <Route
         path="/services/visa-services"
         element={<StudyAbroadVisaServies />}
+      />
+       <Route
+        path="/services/bussiness-opportunity"
+        element={<BussinessOpportunity />}
       />
     </Route>
   )

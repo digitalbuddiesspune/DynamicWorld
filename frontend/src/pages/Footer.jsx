@@ -30,7 +30,7 @@ const Footer = () => {
                   <li className="hover:scale-105 transition duration-500 ease-in-out">
                     <a
                       className="hover:text-green-400 transition-colors text-sm"
-                      href="https://wa.me/917887881060"
+                      href="https://wa.me/919820401375"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -226,9 +226,9 @@ const Footer = () => {
                   </span>
                   <a
                     className="hover:text-blue-400 transition-colors text-sm"
-                    href="tel:+919876543210"
+                    href="tel:+919820401375"
                   >
-                    +91 788 788 1060
+                    +91 9820401375
                   </a>
                 </li>
                 <li className="flex items-start gap-3 group">
@@ -247,7 +247,7 @@ const Footer = () => {
                   </span>
                   <a
                     className="hover:text-blue-400 transition-colors text-sm"
-                    href="https://wa.me/917887881060"
+                    href="https://wa.me/919820401375"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -268,11 +268,11 @@ const Footer = () => {
                   </span>
                   <a
                     className="hover:text-blue-400 transition-colors text-sm break-all"
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=support@dynamicworld.in"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=Dynamicworld.edu@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    support@dynamicworld.in
+                     Dynamicworld.edu@gmail.com
                   </a>
                 </li>
               </ul>
@@ -298,11 +298,11 @@ const Footer = () => {
                     />
                   </svg>
                   <span>
-                    <strong className="text-[#EDEEEB]">Monday-Fri :</strong>{" "}
-                    9:00 AM - 6:00 PM
+                    <strong className="text-[#EDEEEB]">Monday-Sunday :</strong>{" "}
+                    10:00 AM - 7:00 PM
                   </span>
                 </li>
-                <li className="flex items-center gap-2 text-sm">
+                {/* <li className="flex items-center gap-2 text-sm">
                   <svg
                     className="w-4 h-4 text-blue-400"
                     fill="currentColor"
@@ -318,8 +318,8 @@ const Footer = () => {
                     <strong className="text-[#EDEEEB]">Saturday :</strong> 10:00
                     AM - 4:00 PM
                   </span>
-                </li>
-                <li className="flex items-center gap-2 text-sm">
+                </li> */}
+                {/* <li className="flex items-center gap-2 text-sm">
                   <svg
                     className="w-4 h-4 text-red-400"
                     fill="currentColor"
@@ -334,10 +334,10 @@ const Footer = () => {
                   <span>
                     <strong className="text-[#EDEEEB]">Sunday:</strong> Closed
                   </span>
-                </li>
+                </li> */}
               </ul>
               <a
-                href="https://wa.me/917887881060"
+                href="https://wa.me/919820401375"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#3e96f4] hover:to-purple-500 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105 text-sm"

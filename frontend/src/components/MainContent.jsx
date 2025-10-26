@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { CourseComponentsForCollege } from "../pages/CollegeAdmission";
 import Country from "../pages/Country";
 import DynamicWorldInfo from "../pages/DynamicWorldInfo";
+
 import {
   CourseComponentsForRegular,
   normalizeKeyForRegular,
@@ -11,6 +12,7 @@ import { CourseComponents } from "../pages/VocationalCourses"; // e.g. { DVOC: l
 import RegularAdmissionSkeleton from "./RegularAdmissionSkeleton";
 import UniversitySkeleton from "./UniversitySkeleton";
 import VocationalSkeleton from "./VocationalSkeleton";
+import BussinessOpportunity from "../pages/BussinessOpportunity";
 // import CareerBrochurePage from "./CareerCounselling01";
 const CareerBrochurePage = lazy(() => import("./CareerCounselling01"));
 const normalizeKey = (s = "") => s.trim().toUpperCase();
@@ -45,7 +47,6 @@ const MainContent = ({
   }
 
   if (selected.type === "Career Guidance") {
-    console.log(selected.item);
     return (
       <Suspense fallback={<VocationalSkeleton />}>
         <CareerBrochurePage />
@@ -107,6 +108,14 @@ const MainContent = ({
       </Suspense>
     ) : (
       <div className="p-6">Course not found.</div>
+    );
+  }
+
+  if (selected.type === "Bussiness Opportunity") {
+    return (
+      <Suspense fallback={<RegularAdmissionSkeleton />}>
+        <BussinessOpportunity />
+      </Suspense>
     );
   }
   // =========== Country Details ===========

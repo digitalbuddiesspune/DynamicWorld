@@ -33,6 +33,7 @@ const Navbar = () => {
     "Immigration",
     "Visa Services",
     "Attestation & Apostille",
+    "Bussiness opportunity"
   ];
 
   const servicesRef = useRef(null);

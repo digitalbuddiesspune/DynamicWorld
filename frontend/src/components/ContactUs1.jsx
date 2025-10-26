@@ -53,7 +53,7 @@ const ContactUs1 = () => {
                     Helpline
                   </p>
                   <h3 className="mt-1 text-lg font-semibold text-[#31393C]">
-                    (+91) 788 788 1060
+                    (+91) 9820401375
                   </h3>
                   <p className="mt-1 text-sm text-gray-600">
                     Talk to our counsellor for quick assistance.
@@ -61,13 +61,13 @@ const ContactUs1 = () => {
 
                   <div className="mt-4 flex flex-wrap gap-3">
                     <a
-                      href="tel:+917887881060"
+                      href="tel:+919820401375"
                       className="inline-flex items-center justify-center rounded-lg bg-[#3E96F4] px-4 py-2.5 text-xs lg:text-sm font-medium text-white transition-all hover:bg-[#2f79c4] hover:-translate-y-0.5"
                     >
                       Call Now
                     </a>
                     <a
-                      href="https://wa.me/917887881060"
+                      href="https://wa.me/919820401375"
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center justify-center rounded-lg bg-gray-100 px-4 py-2.5 text-xs lg:text-sm font-medium text-[#31393C] ring-1 ring-gray-200 transition-all hover:bg-gray-200 hover:-translate-y-0.5"
@@ -157,7 +157,7 @@ const ContactUs1 = () => {
                     Support Mail
                   </p>
                   <h3 className="mt-1 text-lg font-semibold text-[#31393C]">
-                    support@dynamicworld.in
+                    Dynamicworld.edu@gmail.com
                   </h3>
                   <p className="mt-1 text-sm text-gray-600">
                     Drop us a line and we’ll get back to you.
@@ -165,7 +165,7 @@ const ContactUs1 = () => {
 
                   <div className="mt-4 flex flex-wrap gap-3">
                     <a
-                      href="mailto:support@dynamicworld.in"
+                      href="https://mail.google.com/mail/u/0/?fs=1&to=Dynamicworld.edu@gmail.com&tf=cm"
                       className="inline-flex items-center justify-center rounded-lg bg-[#3E96F4] px-4 py-2.5 text-xs lg:text-sm font-medium text-white transition-all hover:bg-[#2f79c4] hover:-translate-y-0.5"
                     >
                       Email Us

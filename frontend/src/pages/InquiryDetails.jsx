@@ -32,7 +32,7 @@ const InquiryDetails = () => {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 mt-5 sm:mt-6 justify-center items-center">
               {/* Quick Call Button */}
               <a
-                href="tel:+917887881060"
+                href="tel:+919820401375"
                 className="group flex items-center justify-center gap-2 px-5 sm:px-7 py-2.5 sm:py-3 rounded-xl bg-white text-[#3E96F4] font-semibold text-sm sm:text-base shadow-md ring-1 ring-gray-200 hover:ring-[#3E96F4]/40 hover:shadow-lg hover:scale-[1.03] transition-all duration-300"
               >
                 <span className="inline-flex items-center justify-center bg-[#3E96F4]/10 p-1.5 rounded-full">
@@ -46,7 +46,7 @@ const InquiryDetails = () => {
 
               {/* WhatsApp Button */}
               <a
-                href={`https://wa.me/917887881060?text=${encodeURIComponent(
+                href={`https://wa.me/919820401375?text=${encodeURIComponent(
                   "Hi, I’m interested in online admissions. Please guide me."
                 )}`}
                 target="_blank"
@@ -65,7 +65,7 @@ const InquiryDetails = () => {
 
             <div className="mt-5 sm:mt-6">
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold tracking-wide">
-                +91 788 788 1060
+                +91 9820401375
               </h3>
               <p className="text-xs sm:text-sm text-blue-200 mt-1">
                 Mon–Sat, 9:00 AM–7:00 PM

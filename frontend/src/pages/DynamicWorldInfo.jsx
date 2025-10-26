@@ -56,8 +56,8 @@ export const dynamicWorldData = [
       city: "Pune",
       address:
         "Building No 506, 5th Floor, Sterling Centre, Opposite Arora Tower, Camp, Pune, Maharashtra",
-      phone: "+91 7887881060",
-      email: "support@dynamicworld.in",
+      phone: "+91 9820401375",
+      email: "Dynamicworld.edu@gmail.com",
     },
     branchOffices: [
       {
@@ -66,16 +66,17 @@ export const dynamicWorldData = [
         address:
           "Shop No 4, Neelkanth Apartment, Opp. Ganpatrao, Near Hirasen Women College Corner, Shahupuri (W), Mumbai 400078",
       },
-  
+
       {
         city: "Indore",
         state: "Madhya Pradesh",
         address:
           "Office No 617, Gham Plaza, AB Road, Near Industry House, Old Palasia, Indore 452006",
       },
-   
+
       {
         city: "Surat",
+        state: "Gujarat",
         address:
           "231, Second Floor, Green Elina Complex, Anand Mahal Road, Adajan, Surat, Gujarat 395009",
       },
@@ -87,14 +88,39 @@ export const dynamicWorldData = [
       instagram: "https://www.instagram.com/dynamicworld.in/",
       linkedin: "https://in.linkedin.com/company/dynamic-world",
     },
-    reviewPlatforms: {
-      justDial: {
+    reviewPlatforms: [
+      {
+        platformName: "Just Dial",
         url: "https://www.justdial.com/Pune/Dynamic-World-Oppoto-Arora-Tower-Camp/020PXX20-XX20-210804145556-K7R4_BZDET",
         summary:
           "Rated positively for counseling quality and support. Listed as an Education Consultant in Pune.",
       },
-      googleReviews: "No verified Google Maps listing found during search.",
-    },
+      {
+        platformName: "Google Review Of Pune Office",
+        url: "https://www.google.com/maps/place/Dynamic+World/@18.5180841,73.8766824,725m/data=!3m1!1e3!4m8!3m7!1s0x3bc2c1c9bbb1f6c5:0xbadcb0aacf08a6b8!8m2!3d18.518079!4d73.8792573!9m1!1b1!16s%2Fg%2F11rj8b3btk?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+        summary:
+          "Rated positively for counseling quality and support. Listed as an Education Consultant in Pune.",
+      },
+      {
+        platformName: "Google Review Of Mumbai Office",
+        url: "https://www.google.com/maps/place/Dynamic+World/@19.0844916,72.8326851,11563m/data=!3m2!1e3!5s0x3be7c62d26003237:0x7f3ce0ef67080f95!4m12!1m2!2m1!1sDynamic+World+mumbai!3m8!1s0x3be7b86844b7d671:0xc7ad9b179d1fdab9!8m2!3d19.0844916!4d72.9047829!9m1!1b1!15sChREeW5hbWljIFdvcmxkIG11bWJhaVoWIhRkeW5hbWljIHdvcmxkIG11bWJhaZIBFmVkdWNhdGlvbmFsX2NvbnN1bHRhbnSqAV8KDS9nLzExZHhkZnJ2NDYQASoRIg1keW5hbWljIHdvcmxkKAAyHxABIhstxyh5JL1z86bkaSNvCdqubygWuOIFlgMDESoyGBACIhRkeW5hbWljIHdvcmxkIG11bWJhaeABAA!16s%2Fg%2F11dxdfrv46?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+        summary:
+          "Rated positively for counseling quality and support. Listed as an Education Consultant in Pune.",
+      },
+      {
+        platformName: "Google Review Of Indore Office",
+        url: "https://www.google.com/maps/place/Dynamic+World+Education/@22.7288189,75.8853701,705m/data=!3m1!1e3!4m8!3m7!1s0x3962fdd039c282b1:0xa7774a39b49e2107!8m2!3d22.728814!4d75.887945!9m1!1b1!16s%2Fg%2F11v419ck5h?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D",
+        summary:
+          "Rated positively for counseling quality and support. Listed as an Education Consultant in Pune.",
+      },
+    ],
+    // reviewPlatforms: {
+    //   justDial: {
+    //     url: "https://www.justdial.com/Pune/Dynamic-World-Oppoto-Arora-Tower-Camp/020PXX20-XX20-210804145556-K7R4_BZDET",
+    //     summary:
+    //       "Rated positively for counseling quality and support. Listed as an Education Consultant in Pune.",
+    //   },
+    // },
     foundedYear: 2005,
     industry: "Education and Career Counseling",
   },
@@ -175,7 +201,7 @@ const DynamicWorldInfo = () => {
               </LinkButton>
               {data?.headOffice?.email && (
                 <LinkButton
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=support@dynamicworld.in"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=Dynamicworld.edu@gmail.com"
                   variant="outline"
                 >
                   ✉️ Email
@@ -264,8 +290,8 @@ const DynamicWorldInfo = () => {
             {data.branchOffices.map((office, i) => (
               <li key={i} className="leading-relaxed">
                 <span className="font-medium text-gray-900">{office.city}</span>
-                {/* {office.state ? <span>, {office.state}</span> : null} */}
-                {office.address ? <span> — {office.address}</span> : null}
+                {office.state ? <span>, {office.state}</span> : null}
+                {/* {office.address ? <span> — {office.address}</span> : null} */}
               </li>
             ))}
           </ul>
@@ -298,16 +324,14 @@ const DynamicWorldInfo = () => {
 
       {/* REVIEWS */}
       <SectionCard title="Reviews" subtitle="What learners are saying">
-        <div className="space-y-3">
-          <p className="text-sm sm:text-base text-gray-700">
-            {data.reviewPlatforms.justDial.summary}
-          </p>
-          <LinkButton href={data.reviewPlatforms.justDial.url} variant="soft">
-            View on JustDial
-          </LinkButton>
-          <p className="text-sm text-gray-500">
-            Google Reviews: {data.reviewPlatforms.googleReviews}
-          </p>
+        <div className="space-y-3 flex flex-wrap gap-2 lg:gap-5 ">
+          {data.reviewPlatforms.map((item) => (
+            <div className="" key={item.platformName}>
+              <LinkButton href={item.url} variant="soft">
+                {item.platformName}
+              </LinkButton>
+            </div>
+          ))}
         </div>
       </SectionCard>
 

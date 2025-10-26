@@ -29,7 +29,7 @@ const ImmigrationEurope = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#007bff] text-white px-4 sm:px-6 lg:px-8 py-6 font-[Poppins,sans-serif]">
+    <div className="min-h-screen bg-[#3E96F4] text-white px-4 sm:px-6 lg:px-8 py-6 font-[Poppins,sans-serif]">
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
         <img
