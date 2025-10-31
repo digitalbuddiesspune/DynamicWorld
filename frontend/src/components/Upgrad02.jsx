@@ -2,7 +2,7 @@ import React from "react";
 
 const Upgrad02 = () => {
   return (
-    <section className="bg-gradient-to-b from-sky-500 via-sky-600 to-sky-700 ">
+    <section className="bg-white">
       <div className="mx-auto max-w-7xl px-2 md:px-6 lg:px-8 py-10 lg:py-10">
         {/* Card */}
         <div className="rounded-2xl bg-white shadow-sm ring-1 ring-black/5 p-4 lg:p-8 space-y-10">

@@ -4,25 +4,25 @@ const AUTOPLAY_MS = 30000;
 
 // ======= Desktop Banners =======
 const studyAbroadLarge01 =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760251136/LaptopMbbsAbroadDesktop_rbeewp.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761805555/Blue_And_White_Creative_Study_Abroad_In_Korea_Instagram_Post_1920_x_600_px_j3obas.png";
 const vocationalLarge =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760251137/Vocatoinal_1920x600_fbneci.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761715673/Black_Professional_School_Admission_Banner_1920_x_600_px_fulwxy.svg";
 const careerLarge =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760251134/Career_1920_x_600_xuw8tc.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761715481/Blue_Professional_Business_Visa_Service_Promotion_Web_Banner_1920_x_600_px_sgebxp.svg";
 const universitiesLarge =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760251139/BannerUniversity_1920x600_jafrg9.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761627956/Blue_Simple_Education_Coaching_Banner_Landscape_1920_x_600_px_himbva.svg";
 
 // ======= Mobile Banners =======
 const studyAbroadMobile =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760251168/MobileAbroadNew_nskr9n.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761897001/Black_Professional_School_Admission_Banner_1920_x_600_px_1080_x_1080_px_sj7q9g.svg";
 const vocationalMobie =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760251168/VocationalMobile_v4hsap.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761897001/Blue_Simple_Education_Coaching_Banner_Landscape_1920_x_600_px_1080_x_1080_px_klkjkw.svg";
 const universitiesMobile =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760251166/BannerUniversityMobile_onhtml.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761897010/Blue_Professional_Business_Visa_Service_Promotion_Web_Banner_1920_x_600_px_1080_x_1080_px_albamu.svg";
 const careerMobile =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760251166/BannerCarrerMobile_dxorj4.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761897003/Purple_and_Yellow_Shapes_Middle_School_Back_to_School_Banner_1920_x_600_px_1080_x_1080_px_puml4q.svg";
 const career =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760251168/CareerMobile_wpeo8s.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761898214/Blue_And_White_Creative_Study_Abroad_In_Korea_Instagram_Post_1920_x_600_px_1080_x_1080_px_2_azrwlc.png";
 
 const MobileScreenBanners = [
   studyAbroadMobile,

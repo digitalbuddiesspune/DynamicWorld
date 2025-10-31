@@ -76,3 +76,30 @@ export const getSelectedUniversityFieldsDistanceV2 = async (req, res) => {
     });
   }
 };
+export const getSingleDistanceUniversity = async (req, res) => {
+  const { slug } = req.params;
+  console.log(slug);
+  try {
+    const data  = await distanceUniversityV2.findOne({ slug });
+    console.log("Hey..............")
+    console.log(data)
+    if (!data) {
+      return res.status(404).json({
+        success: false,
+        message: "University not found...",
+      });
+    }
+    res.status(200).json({
+      success: true,
+      data,
+      message: "Data Fetched Successfully!",
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: "Something went wrong",
+      error: error.message,
+    });
+  }
+};

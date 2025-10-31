@@ -8,16 +8,19 @@ const AboutUs03 = () => {
           Beginning of a Transformative Era.
         </h1>
         <p className="text-gray-700 leading-relaxed mb-6 text-start text-sm">
-          Established in 2005, our core activity lies in assisting students to make the right
-          choice with regard to pursuing Distance Education, Online Education, Regular Education & 
-          Overseas Education. We assist and provide support services to the students right from the 
-          beginning, from form filling to getting the degree certificate. We assist the candidate in 
-          getting the education loan at 0% interest. We provide multiple options that suit everyone’s 
-          profile & budget.
+          Established in 2005, our core activity lies in assisting students to
+          make the right choice with regard to pursuing Distance Education,
+          Online Education, Regular Education & Overseas Education. We assist
+          and provide support services to the students right from the beginning,
+          from form filling to getting the degree certificate. We assist the
+          candidate in getting the education loan at 0% interest. We provide
+          multiple options that suit everyone’s profile & budget.
         </p>
 
         {/* Career Options */}
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">Career Options</h2>
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">
+          Career Options
+        </h2>
 
         {/* WhatsApp Contact */}
         <div className="flex justify-center items-center gap-3">

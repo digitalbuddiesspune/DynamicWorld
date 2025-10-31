@@ -79,3 +79,29 @@ export const getSelectedUniversityFieldsV2 = async (req, res) => {
     });
   }
 };
+
+export const getSingleUniversity = async (req, res) => {
+  const { slug } = req.params;
+  console.log(slug);
+  try {
+    const data = await onlineUniversityV2.findOne({ slug });
+    if (!data) {
+      return res.status(404).json({
+        success: false,
+        message: "University not found",
+      });
+    }
+    res.status(200).json({
+      success: true,
+      data,
+      message: "Data Fetched Successfully!",
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: "Something went wrong",
+      error: error.message,
+    });
+  }
+};

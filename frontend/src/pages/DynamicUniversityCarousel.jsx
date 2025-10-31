@@ -25,61 +25,60 @@ const PrevArrow = (props) => <ArrowBase {...props} dir="prev" />;
 const NextArrow = (props) => <ArrowBase {...props} dir="next" />;
 
 export default function DynamicUniversityCarousel() {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 8000,
-    autoplay: true,
-    autoplaySpeed: 0, // continuous scroll
-    cssEase: "linear",
-    slidesToShow: 6, // default for large desktop
-    slidesToScroll: 1,
-    swipeToSlide: true,
-    pauseOnHover: true,
-    pauseOnFocus: true,
-    accessibility: true,
-    arrows: true,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
+ const settings = {
+  // ✅ Mobile-first baseline
+  mobileFirst: true,
+  dots: false,
+  infinite: true,
+  speed: 8000,
+  autoplay: true,
+  autoplaySpeed: 0, // continuous scroll
+  cssEase: "linear",
 
-    responsive: [
-      {
-        breakpoint: 1600, // 🖥️ large desktop / wide screen
-        settings: {
-          slidesToShow: 5,
-          arrows: true,
-        },
+  // 👉 Default for small screens
+  slidesToShow: 2.5,       // ← your 2.5 on mobile
+  slidesToScroll: 1,
+  swipeToSlide: true,
+  pauseOnHover: true,
+  pauseOnFocus: true,
+  accessibility: true,
+  arrows: false,           // hide arrows on mobile
+
+  // Custom arrows (we'll enable them at md+)
+  prevArrow: <PrevArrow />,
+  nextArrow: <NextArrow />,
+
+  // ✅ Now scale up with MIN-width breakpoints
+  responsive: [
+    {
+      breakpoint: 480,     // ≥480px
+      settings: {
+        slidesToShow: 3,   // small phones in landscape / small tablets
       },
-      {
-        breakpoint: 1280, // 💻 laptop
-        settings: {
-          slidesToShow: 4,
-          arrows: true,
-        },
+    },
+    {
+      breakpoint: 768,     // ≥768px (md)
+      settings: {
+        slidesToShow: 4,
+        arrows: true,      // show arrows from md+
       },
-      {
-        breakpoint: 1024, // 📱 tablet (landscape)
-        settings: {
-          slidesToShow: 5,
-          arrows: false,
-        },
+    },
+    {
+      breakpoint: 1024,    // ≥1024px (lg)
+      settings: {
+        slidesToShow: 5,
+        arrows: true,
       },
-      {
-        breakpoint: 768, // 📲 medium display phone (tablet portrait / large phone)
-        settings: {
-          slidesToShow: 3.2, // partial slide visible for better UX
-          arrows: false,
-        },
+    },
+    {
+      breakpoint: 1280,    // ≥1280px (xl)
+      settings: {
+        slidesToShow: 6,
+        arrows: true,
       },
-      {
-        breakpoint: 480, // 📱 small display phone
-        settings: {
-          slidesToShow: 2.2, // one main slide + a peek of next
-          arrows: false,
-        },
-      },
-    ],
-  };
+    },
+  ],
+};
 
   return (
     <section
@@ -105,7 +104,7 @@ export default function DynamicUniversityCarousel() {
         <div className="">
           <Slider {...settings}>
             {UniversityLogos.map((logo, idx) => (
-              <div className="flex">
+              <div className="flex" key={idx}>
                 <img
                   loading="lazy"
                   src={logo.image}

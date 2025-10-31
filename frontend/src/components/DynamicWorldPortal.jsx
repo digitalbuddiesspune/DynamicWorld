@@ -13,6 +13,9 @@ const DynamicWorldPortal = () => {
   const [universityData, setUniversityData] = useState(null);
   const [countryData, setCountryData] = useState(null);
   const [countriesList, setCountriesList] = useState([]);
+  const [regularList, setRegularList] = useState([]);
+  const [regularData, setRegularData] = useState(null);
+
   const api = import.meta.env.VITE_BACKEND_API || "https://dummyapi.io";
 
   // Track/cancel in-flight request when user clicks quickly
@@ -65,11 +68,26 @@ const DynamicWorldPortal = () => {
       setCountriesList([]);
     }
   }, [api]);
+  const handleApi04 = useCallback(async () => {
+    try {
+      const { data } = await axios.get(`${api}/regular-list`);
+      const universities = data?.data;
+      setRegularList(dedupe(universities.map((c) => tidy(c.name))));
+    } catch (error) {
+      console.error("Error fetching countries:", error);
+      setRegularList([]);
+    }
+  }, [api]);
 
   useEffect(() => {
     (async () => {
       try {
-        await Promise.all([handleApi01(), handleApi02(), handleApi03()]);
+        await Promise.all([
+          handleApi01(),
+          handleApi02(),
+          handleApi03(),
+          handleApi04(),
+        ]);
       } catch (e) {
         console.error("Error bootstrapping data:", e);
       } finally {
@@ -83,32 +101,10 @@ const DynamicWorldPortal = () => {
         reqAbortRef.current.abort();
       }
     };
-  }, [handleApi01, handleApi02, handleApi03]);
+  }, [handleApi01, handleApi02, handleApi03, handleApi04]);
 
   const vocationCourses = useMemo(
     () => ["DVOC", "BVOC", "MVOC", "DIPLOMA", "SKILL COURSE", "UPGRAD"],
-    []
-  );
-
-  const regularFullTimeEducation = useMemo(
-    () => [
-      "Pillai College of Engineering",
-      "Parul University",
-      "Chhatrapati Shivaji Maharaj University",
-      "TransStadia Institute",
-      "Dr A P J Abdul Kalam University",
-      "Pune Institute Of Management Studies",
-      "AI Universal University",
-      "Arham International Institute of Information Security",
-      "Oriental University",
-      "Navsahyadri Group of Institutes",
-      "Yenepoya University",
-      "ISMS Group of Institutions",
-      "Vishweshraiya Group of Institutions",
-      "S-VYASA University",
-      "SAGE University",
-      "GH Raisoni Skill Tech University",
-    ],
     []
   );
 
@@ -125,10 +121,10 @@ const DynamicWorldPortal = () => {
     ],
     []
   );
-  const boards = useMemo(() => ["Board"], []);
+  const boards = useMemo(() => ["Boards"], []);
 
   const studyAbroad = useMemo(
-    () => ["Home", "Immigration", "Visa Services", "Attestation & Apostile"],
+    () => ["Attestation & Apostile"],
     []
   );
   const bussinessOp = useMemo(() => ["Bussiness opportunity"]);
@@ -144,13 +140,13 @@ const DynamicWorldPortal = () => {
       {
         title: "Online Universities",
         type: "Online University",
-        url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760779898/laptop_joyihw.png",
+        url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761723100/online-learning_lws70x.png",
         items: onlineUniversity,
       },
       {
         title: "Distance University",
         type: "Distance University",
-        url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760779898/distanceUniversities_t3ewbc.png",
+        url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761722971/webinar_ft8hqx.png",
         items: distanceUniversity,
       },
       {
@@ -169,7 +165,7 @@ const DynamicWorldPortal = () => {
         title: "Regular Admission",
         type: "Regular Admission",
         url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761470147/paper_uaztxt.png",
-        items: regularFullTimeEducation,
+        items: regularList,
       },
       {
         title: "College Admission",
@@ -183,12 +179,7 @@ const DynamicWorldPortal = () => {
         url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760779899/studyAbroad_cbkald.png",
         items: studyAbroad,
       },
-      {
-        title: "Study Abroad Countries",
-        type: "Study Abroad Countries",
-        url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760779898/studyAbroadCountries_wswi8l.png",
-        items: countriesList,
-      },
+      
       {
         title: "Bussiness Opportunity",
         type: "Bussiness Opportunity",
@@ -200,7 +191,7 @@ const DynamicWorldPortal = () => {
       onlineUniversity,
       distanceUniversity,
       vocationCourses,
-      regularFullTimeEducation,
+      regularList,
       collegeAdmission,
       studyAbroad,
       countriesList,
@@ -273,7 +264,26 @@ const DynamicWorldPortal = () => {
           }
           break;
         }
-
+        case "Regular Admission": {
+          try {
+            setIsLoading(true);
+            const controller = new AbortController();
+            reqAbortRef.current = controller;
+            const { data } = await axios.get(`${api}/regular`, {
+              params: { universityName: tidy(item) },
+              signal: controller.signal,
+            });
+            setRegularData(data?.data ?? null);
+          } catch (e) {
+            if (e?.name !== "CanceledError" && e?.code !== "ERR_CANCELED") {
+              setError("Failed to fetch university data.");
+              setRegularData(null);
+            }
+          } finally {
+            setIsLoading(false);
+          }
+          break;
+        }
         case "Study Abroad Countries": {
           try {
             setIsLoading(true);
@@ -309,7 +319,7 @@ const DynamicWorldPortal = () => {
 
   return (
     <div className="flex flex-col lg:flex-row space-y-5 parent">
-      <div className=" lg:sticky lg:top-0  lg:h-[calc(100vh-4.5rem)] lg:overflow-y-auto">
+      <div className=" lg:sticky lg:top-0  lg:h-[calc(100vh-4.5rem)] lg:overflow-y-auto pt-2 ">
         <Sidebar
           sidebarData={sidebarData}
           expandedItems={expandedItems}
@@ -334,6 +344,7 @@ const DynamicWorldPortal = () => {
           isLoading={isLoading}
           error={error}
           countryData={countryData}
+          regular={regularData}
         />
       </div>
     </div>

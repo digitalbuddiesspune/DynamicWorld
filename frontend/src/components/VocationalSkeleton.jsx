@@ -1,60 +1,71 @@
 import React from "react";
 
+const Skeleton = ({ className = "" }) => (
+  <div className={`animate-pulse bg-slate-100 rounded-md ${className}`} />
+);
+
 const VocationalSkeleton = () => {
   return (
-    <div className="min-h-screen w-full bg-white animate-pulse">
-      {/* Header Section */}
-      <div className="bg-[#3E96F4] text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-6">
-          {/* Chip */}
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 h-5 w-28"></div>
-
-          {/* Title + Subtitle */}
-          <div className="mt-3 space-y-2">
-            <div className="h-6 w-64 bg-white/30 rounded"></div>
-            <div className="h-4 w-80 bg-white/20 rounded"></div>
-          </div>
+    <div className="bg-white text-[#31393C]">
+      {/* Header Skeleton */}
+      <header className="bg-[#3E96F4] text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8">
+          <Skeleton className="h-9 sm:h-5 w-32 max-w-2xl" />
+          <Skeleton className="mt-3 h-10 w-2/3 max-w-md" />
+          <Skeleton className="mt-3 h-7 w-2/3 max-w-md" />
         </div>
-      </div>
+      </header>
 
-      {/* Body Section */}
-      <div className="max-w-7xl mx-auto mt-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border border-gray-200 shadow-sm bg-white rounded-2xl overflow-hidden">
-          {/* Left Skeleton */}
-          <div className="px-4 lg:px-8 py-6 space-y-4">
-            <div className="space-y-3">
-              <div className="h-3.5 w-full bg-gray-200 rounded"></div>
-              <div className="h-3.5 w-5/6 bg-gray-200 rounded"></div>
-              <div className="h-3.5 w-4/5 bg-gray-200 rounded"></div>
-              <div className="h-3.5 w-3/4 bg-gray-200 rounded"></div>
+      <main>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-10 space-y-8">
+          {/* Paragraph 1 */}
+          <Skeleton className="h-28 w-full" />
+
+          {/* Paragraph 2 */}
+          <Skeleton className="h-24 w-11/12" />
+
+          {/* Divider */}
+          <hr className="my-10 border-gray-200" />
+
+          {/* CTA Section */}
+          <section className="flex items-center gap-4">
+            <div className="hidden lg:block">
+              <Skeleton className="h-5 w-40" />
+              <Skeleton className="mt-2 h-4 w-56" />
             </div>
-
-            {/* Bullet List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-4">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <span className="h-2.5 w-2.5 rounded-full bg-gray-300"></span>
-                  <div className="h-3 w-32 bg-gray-200 rounded"></div>
-                </div>
-              ))}
+            <div className="ml-auto">
+              <Skeleton className="h-11 w-44 rounded-xl" />
             </div>
-
-            {/* CTA Button Placeholder */}
-            <div className="mt-6 h-10 w-40 bg-gray-300 rounded-full"></div>
-          </div>
-
-          {/* Right Skeleton (DynamicForm) */}
-          <div className="p-5 bg-gray-50 border-l border-gray-200 space-y-4">
-            <div className="h-5 w-56 bg-gray-300 rounded"></div>
-            <div className="space-y-3 mt-4">
-              {[...Array(5)].map((_, i) => (
-                <div key={i} className="h-10 bg-gray-200 rounded-md"></div>
-              ))}
-              <div className="h-12 w-full bg-gray-300 rounded-lg mt-4"></div>
-            </div>
-          </div>
+          </section>
         </div>
-      </div>
+
+        {/* Contact Form Skeleton */}
+        <section className="border-t border-gray-200">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Skeleton className="h-4 w-24" />
+                <Skeleton className="h-11 w-full" />
+              </div>
+              <div className="space-y-2">
+                <Skeleton className="h-4 w-28" />
+                <Skeleton className="h-11 w-full" />
+              </div>
+              <div className="space-y-2 md:col-span-2">
+                <Skeleton className="h-4 w-20" />
+                <Skeleton className="h-11 w-full" />
+              </div>
+              <div className="space-y-2 md:col-span-2">
+                <Skeleton className="h-4 w-28" />
+                <Skeleton className="h-28 w-full" />
+              </div>
+              <div className="md:col-span-2 flex justify-end">
+                <Skeleton className="h-11 w-40 rounded-xl" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   );
 };

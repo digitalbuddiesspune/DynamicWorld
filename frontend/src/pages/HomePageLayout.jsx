@@ -3,7 +3,6 @@ import "slick-carousel/slick/slick.css";
 import ConfusedAboutCollege02 from "../components/ConfusedAboutCollege02";
 import DynamicWorldPortal from "../components/DynamicWorldPortal";
 import AboutInfo from "./AboutInfo";
-import ContactForm from "./ContectForm";
 import DynamicUniversityCarousel from "./DynamicUniversityCarousel";
 import ExpertGuidance from "./ExpertGuidance";
 import FAQAccordion from "./FrequentlyAskedQuestion";
@@ -20,7 +19,6 @@ const HomePageLayout = () => {
       <DynamicUniversityCarousel />
       <AboutInfo />
       <ExpertGuidance />
-      {/* <ContactForm /> */}
       <AllTestimonials />
       <FAQAccordion />
       <ConfusedAboutCollege02 />

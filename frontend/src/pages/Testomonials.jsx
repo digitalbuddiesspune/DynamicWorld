@@ -21,7 +21,7 @@ const testimonials = [
   },
   {
     id: 4,
-    name: "Luve",
+    name: "Luv",
     role: "Data Science Student",
     videoUrl: "https://youtube.com/shorts/N_EmQaU1FBc?si=Th2BxG9lpD8fXfFZ",
   },

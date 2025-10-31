@@ -18,22 +18,24 @@ const Navbar = () => {
   const services = [
     "Online Education",
     "Distance Education",
-    "Regular Full-time Education",
     "DVoc",
     "BVoc",
     "MVoc",
     "Diploma & PG",
     "Certificate & Skill Courses",
+    "Regular Full-time Education",
     "Upgrad",
-    "MBBS India",
-    "MBBS Abroad",
+    "MBBS In India",
+    "MBBS In Abroad",
     "BE-BTech Admission",
-    "MBA Admission",
-    "Study Abroad",
-    "Immigration",
-    "Visa Services",
+    "Management",
+    "Pharmacy",
+    "LAW",
+    "Teaching",
+    "PHD",
+    "Boards",
     "Attestation & Apostille",
-    "Bussiness opportunity"
+    "Bussiness opportunity",
   ];
 
   const servicesRef = useRef(null);
@@ -244,7 +246,6 @@ const Navbar = () => {
             </button>
           </div>
 
-         
           <div className="">
             <MenuLinkMobile
               setMobileOpenFuc={setMobileOpen}

@@ -66,28 +66,28 @@ export const BussinessPartner01 = () => {
   ];
 
   return (
-    <div className="min-h-screen font-sans bg-[#EDEEEB]">
-      <div className="max-w-7xl mx-auto p-4 sm:p-6 md:p-8 text-sm lg:text-base">
+    <div className="">
+      <div className="text-sm lg:text-base">
         {/* === SECTION 1 === */}
-        <div className="rounded-2xl overflow-hidden shadow-2xl mb-8 bg-white">
+        <div className="overflow-hidden mb-8">
           <div className="relative p-6 sm:p-10 md:p-14 lg:p-16">
-            {/* bg image + soft overlay */}
+           
             <div
-              className="absolute inset-0 bg-cover bg-center opacity-10"
+              className="absolute inset-0 bg-cover bg-center opacity"
               style={{
                 backgroundImage:
-                  "url('https://placehold.co/1200x400/CCC7BF/FFFFFF?text=Image+Placeholder')",
+                  "url('https://plus.unsplash.com/premium_photo-1661772661721-b16346fe5b0f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870')",
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/80 via-white/60 to-transparent" />
+            <div className="absolute inset-0 " />
 
             <div className="relative max-w-4xl">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-3 text-[#31393C]">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-3 text-white">
                 Become Our{" "}
                 <span className="text-[#3E96F4]">Business Partner</span>
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium mb-5 text-[#31393C]">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium mb-5 text-white">
                 Or Just Refer & Earn And Start Earning In Lakhs
               </p>
 
@@ -163,7 +163,7 @@ export const BussinessPartner01 = () => {
 
 export const BussinessPartner02 = () => {
   return (
-    <div className="min-h-screen font-sans bg-[#EDEEEB]">
+    <div className="">
       <div className="max-w-7xl mx-auto p-4 md:p-8">
         <div className="bg-white p-6 md:p-10 rounded-2xl shadow-xl">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-6 text-[#3E96F4]">

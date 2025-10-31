@@ -21,6 +21,7 @@ import Career from "../pages/Career";
 import ContactUs from "../pages/ContactUs";
 import CookiePolicy from "../pages/CookiePolicy";
 import Diploma from "../pages/Diploma";
+import DistanceEducationUniversities from "../pages/DistanceEducationUniversities";
 import DVOC from "../pages/DVOC";
 import Engineering from "../pages/Engineering";
 import ExecutiveMBAOneYear from "../pages/ExecutiveMBAOneYear";
@@ -40,10 +41,20 @@ import StudyAbroadVisaServies from "../pages/StudyAbroadVisaServices";
 import TermsAndConditions from "../pages/TermsAndConditions";
 import AllTestimonials from "../pages/Testomonials";
 import Upgrad from "../pages/Upgrad";
-import OnlineEducationUniversities from '../pages/OnlineEducationUniversities'
-import DistanceEducationUniversities from '../pages/DistanceEducationUniversities'
-import RegularEducationUniversities from '../pages/RegularEducationUniversities'
+// import RegularEducationUniversities from '../pages/RegularEducationUniversities'
+import Boards from "../pages/Boards";
 import BussinessOpportunity from "../pages/BussinessOpportunity";
+import UniversityDetailsStacked from "../pages/DistanceUniversityDetails";
+import OnlineUniverSity from "../pages/OnlineUniverSity";
+import UniversitiyDetails from "../pages/UniversitiyDetails";
+import DistanceUniversityDetails from "../pages/DistanceUniversityDetails";
+import RegularUniversityList from "../pages/RegularUniversityList";
+import RegularUniversityDetails from "../pages/RegularUniversityDetails";
+import Management from "../pages/Management";
+import Pharmacy from "../pages/Pharmacy";
+import Law from "../pages/Law";
+import Teaching from "../pages/Teaching";
+import Phd from "../pages/Phd";
 const Router_Router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
@@ -97,9 +108,10 @@ const Router_Router = createBrowserRouter(
       <Route path="blog/career-tree" element={<CareerTree />} />
       <Route path="blog/bvoc-universities" element={<TopUniForBvoc />} />
       <Route path="/career" element={<Career />} />
+      <Route path="/services/online-education" element={<OnlineUniverSity />} />
       <Route
-        path="/services/online-education"
-        element={<OnlineEducationUniversities/>}
+        path="/services/online-education/:slug"
+        element={<UniversitiyDetails />}
       />
       <Route
         path="/services/distance-education"
@@ -107,8 +119,26 @@ const Router_Router = createBrowserRouter(
       />
       <Route
         path="/services/regular-full-time-education"
-        element={<RegularEducationUniversities />}
+        element={<RegularUniversityList />}
       />
+      <Route
+        path="/services/regular-full-time-education/:slug"
+        element={<RegularUniversityDetails />}
+      />
+      <Route
+        path="/services/distance-education/:slug"
+        element={<DistanceUniversityDetails />}
+      />
+      <Route path="/services/management" element={<Management />} />
+      <Route path="/services/pharmacy" element={<Pharmacy />} />
+      <Route path="/services/law" element={<Law/>} />
+      <Route path="/services/teaching" element={<Teaching/>} />
+      <Route path="/services/phd" element={<Phd/>} />
+
+
+
+
+      
 
       <Route path="/services/bvoc" element={<BVOC />} />
       <Route path="/services/dvoc" element={<DVOC />} />
@@ -119,8 +149,8 @@ const Router_Router = createBrowserRouter(
         element={<SkillCourses />}
       />
       <Route path="/services/upgrad" element={<Upgrad />} />
-      <Route path="/services/mbbs-india" element={<MbbsInIndia />} />
-      <Route path="/services/mbbs-abroad" element={<MbbsInAbroad />} />
+      <Route path="/services/mbbs-in-india" element={<MbbsInIndia />} />
+      <Route path="/services/mbbs-in-abroad" element={<MbbsInAbroad />} />
       <Route path="/services/be-btech-admission" element={<Engineering />} />
       <Route path="/services/study-abroad" element={<StudyAbroad />} />
       <Route
@@ -135,10 +165,11 @@ const Router_Router = createBrowserRouter(
         path="/services/visa-services"
         element={<StudyAbroadVisaServies />}
       />
-       <Route
+      <Route
         path="/services/bussiness-opportunity"
         element={<BussinessOpportunity />}
       />
+      <Route path="/services/boards" element={<Boards />} />
     </Route>
   )
 );

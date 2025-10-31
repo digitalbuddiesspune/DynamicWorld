@@ -3,16 +3,14 @@ import { CourseComponentsForCollege } from "../pages/CollegeAdmission";
 import Country from "../pages/Country";
 import DynamicWorldInfo from "../pages/DynamicWorldInfo";
 
-import {
-  CourseComponentsForRegular,
-  normalizeKeyForRegular,
-} from "../pages/RegularAdmmision";
+import BussinessOpportunity from "../pages/BussinessOpportunity";
+import RegularEducationUniversities from "../pages/RegularEducationDynamicUniversities";
 import { CourseComponentsStudyAbroad } from "../pages/StudyAbroadSection";
 import { CourseComponents } from "../pages/VocationalCourses"; // e.g. { DVOC: lazy(...), ... }
 import RegularAdmissionSkeleton from "./RegularAdmissionSkeleton";
 import UniversitySkeleton from "./UniversitySkeleton";
 import VocationalSkeleton from "./VocationalSkeleton";
-import BussinessOpportunity from "../pages/BussinessOpportunity";
+import Boards from "../pages/Boards";
 // import CareerBrochurePage from "./CareerCounselling01";
 const CareerBrochurePage = lazy(() => import("./CareerCounselling01"));
 const normalizeKey = (s = "") => s.trim().toUpperCase();
@@ -23,6 +21,7 @@ const MainContent = ({
   isLoading,
   error,
   countryData,
+  regular,
 }) => {
   const NAAC_BADGES = {
     "B++":
@@ -53,6 +52,13 @@ const MainContent = ({
       </Suspense>
     );
   }
+  if (selected.type === "Boards") {
+    return (
+      <Suspense fallback={<RegularAdmissionSkeleton />}>
+        <Boards />
+      </Suspense>
+    );
+  }
 
   // =========== Vocational Courses ===========
   if (selected.type === "Vocational Courses") {
@@ -68,17 +74,8 @@ const MainContent = ({
     );
   }
 
-  // =========== Regular Courses ===========
-  if (selected.type === "Regular Admission") {
-    const key = normalizeKeyForRegular(selected.item);
-    const Comp = CourseComponentsForRegular[key];
-    return Comp ? (
-      <Suspense fallback={<RegularAdmissionSkeleton />}>
-        <Comp />
-      </Suspense>
-    ) : (
-      <div className="p-6">Course not found.</div>
-    );
+  if (selected.type === "Regular Admission" && regular) {
+    return <RegularEducationUniversities university={regular} />;
   }
 
   if (selected.type === "College Admission") {
@@ -294,11 +291,13 @@ const MainContent = ({
                   .map((c, idx) => {
                     const fees =
                       typeof c.fees === "number"
-                        ? new Intl.NumberFormat("en-IN", {
-                            style: "currency",
-                            currency: "INR",
-                            maximumFractionDigits: 0,
-                          }).format(c.fees)
+                        ? c.fees === 0
+                          ? "—" // underscore display for 0
+                          : new Intl.NumberFormat("en-IN", {
+                              style: "currency",
+                              currency: "INR",
+                              maximumFractionDigits: 0,
+                            }).format(c.fees)
                         : c.fees ?? "—";
 
                     return (
@@ -322,7 +321,7 @@ const MainContent = ({
                           {c.mode || "—"}
                         </td>
                         <td className="px-3 sm:px-4 py-3 text-gray-900 font-medium">
-                          {fees}
+                          {fees || "—"}
                         </td>
                       </tr>
                     );
