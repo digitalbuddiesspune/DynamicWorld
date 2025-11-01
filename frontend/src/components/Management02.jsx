@@ -84,8 +84,8 @@ const Management02 = () => {
   ];
 
   return (
-    <div className="lg:m-5 max-w-7xl">
-      <div className="px-2 lg:px-8 py-5 bg-gray-100 lg:rounded-2xl ">
+    <div className="max-w-7xl mx-auto ">
+      <div className="px-2 lg:px-8  ">
         <p className="text-sm my-2">
           Business Management courses focus on developing essential skills to
           manage and run a business effectively. They cover a wide range of
@@ -126,7 +126,9 @@ const Management02 = () => {
                     <td className="px-2 py-2 lg:px-6 lg:py-4 text-xs lg:text-sm font-medium">
                       {item.puneCollege}
                     </td>
-                    <td className="px-2 py-2 lg:px-6 lg:py-4 text-xs lg:text-sm">{item.mumbai}</td>
+                    <td className="px-2 py-2 lg:px-6 lg:py-4 text-xs lg:text-sm">
+                      {item.mumbai}
+                    </td>
                   </tr>
                 ))}
               </tbody>

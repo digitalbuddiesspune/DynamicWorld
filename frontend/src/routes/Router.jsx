@@ -151,7 +151,7 @@ const Router_Router = createBrowserRouter(
       <Route path="/services/upgrad" element={<Upgrad />} />
       <Route path="/services/mbbs-in-india" element={<MbbsInIndia />} />
       <Route path="/services/mbbs-in-abroad" element={<MbbsInAbroad />} />
-      <Route path="/services/be-btech-admission" element={<Engineering />} />
+      <Route path="/services/engineering" element={<Engineering />} />
       <Route path="/services/study-abroad" element={<StudyAbroad />} />
       <Route
         path="/services/immigration"

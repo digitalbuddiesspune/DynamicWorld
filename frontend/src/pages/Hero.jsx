@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 
-const AUTOPLAY_MS = 30000;
+const AUTOPLAY_MS = 10000; // ⏱️ 10 seconds
 
 // ======= Desktop Banners =======
 const studyAbroadLarge01 =
@@ -15,8 +15,7 @@ const universitiesLarge =
 // ======= Mobile Banners =======
 const studyAbroadMobile =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761897001/Black_Professional_School_Admission_Banner_1920_x_600_px_1080_x_1080_px_sj7q9g.svg";
-const vocationalMobie =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761897001/Blue_Simple_Education_Coaching_Banner_Landscape_1920_x_600_px_1080_x_1080_px_klkjkw.svg";
+
 const universitiesMobile =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761897010/Blue_Professional_Business_Visa_Service_Promotion_Web_Banner_1920_x_600_px_1080_x_1080_px_albamu.svg";
 const careerMobile =
@@ -26,7 +25,6 @@ const career =
 
 const MobileScreenBanners = [
   studyAbroadMobile,
-  vocationalMobie,
   careerMobile,
   career,
   universitiesMobile,
@@ -49,6 +47,12 @@ export default function Hero() {
       ? false
       : window.matchMedia("(min-width: 1024px)").matches
   );
+
+  // --- Touch swipe state ---
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+  const touchActive = useRef(false);
+  const SWIPE_THRESHOLD = 40; // px
 
   // ======= Handle screen resize =======
   useEffect(() => {
@@ -80,7 +84,7 @@ export default function Hero() {
 
   const scheduleNext = useCallback(() => {
     clearTimer();
-    if (isHovering) return;
+    if (isHovering || touchActive.current) return; // pause while touching/hovering
     timeoutRef.current = setTimeout(() => {
       setCurrent((prev) => (prev + 1) % banners.length);
     }, AUTOPLAY_MS);
@@ -113,7 +117,7 @@ export default function Hero() {
     return clearTimer;
   }, [current, banners, scheduleNext]);
 
-  // ======= Keyboard navigation =======
+  // ======= Keyboard navigation (desktop) =======
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "ArrowRight") nextBanner();
@@ -128,6 +132,38 @@ export default function Hero() {
     if (current >= banners.length) setCurrent(0);
   }, [banners.length, current]);
 
+  // ======= Touch handlers (mobile swipe) =======
+  const onTouchStart = (e) => {
+    if (!e.touches || e.touches.length === 0) return;
+    touchActive.current = true;
+    clearTimer();
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const onTouchMove = (e) => {
+    // allow normal vertical scrolling; we only act if horizontal is stronger
+    if (!e.touches || e.touches.length === 0) return;
+    const dx = e.touches[0].clientX - touchStartX.current;
+    const dy = e.touches[0].clientY - touchStartY.current;
+    // If horizontal intent is strong and threshold passed, trigger once and ignore until touchend
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_THRESHOLD) {
+      if (dx < 0) {
+        nextBanner(); // swipe left → next
+      } else {
+        prevBanner(); // swipe right → prev
+      }
+      // Prevent multiple rapid triggers within the same gesture
+      touchStartX.current = e.touches[0].clientX;
+      touchStartY.current = e.touches[0].clientY;
+    }
+  };
+
+  const onTouchEnd = () => {
+    touchActive.current = false;
+    scheduleNext();
+  };
+
   return (
     <section
       className="relative w-full overflow-hidden h-[60vh] lg:h-[70vh]"
@@ -139,6 +175,9 @@ export default function Hero() {
         setIsHovering(false);
         scheduleNext();
       }}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
     >
       {/* ======= Slides ======= */}
       <div className="absolute inset-0">
@@ -172,17 +211,15 @@ export default function Hero() {
         ❯
       </button>
 
-      {/* ======= Dots ======= */}
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2">
+      {/* (Optional) Dots — tap to jump */}
+      <div className="absolute bottom-4 left-0 right-0 flex items-center justify-center gap-2">
         {banners.map((_, i) => (
           <button
             key={i}
-            aria-label={`Go to banner ${i + 1}`}
             onClick={() => gotoIndex(i)}
-            className={`h-2.5 w-2.5 rounded-full ring-1 ring-white/60 transition-all ${
-              i === current
-                ? "bg-[#3E96F4] scale-100"
-                : "bg-white/70 hover:bg-white scale-90"
+            aria-label={`Go to slide ${i + 1}`}
+            className={`h-2.5 w-2.5 rounded-full transition ${
+              i === current ? "bg-white" : "bg-white/50 hover:bg-white/70"
             }`}
           />
         ))}

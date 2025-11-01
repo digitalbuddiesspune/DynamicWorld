@@ -101,8 +101,8 @@ const Teaching02 = () => {
   ];
 
   return (
-    <div className="lg:m-5">
-      <div className="px-2 py-5 lg:px-8 bg-gray-100 rounded-2xl">
+    <div className="mx-auto max-w-7xl">
+      <div className="px-2 py-5 lg:px-8 rounded-2xl">
         <section>
           <div className="bg-[#3E96F4] text-white text-center py-3 rounded-2xl">
             <h3 className="text-base lg:text-xl font-semibold">
@@ -145,7 +145,7 @@ const Teaching02 = () => {
               Top Teaching Colleges in Pune
             </h3>
           </div>
-          <div className="overflow-x-auto rounded-2xl shadow-md border border-[#EDEEEB] bg-white">
+          <div className="overflow-x-auto rounded-2xl shadow border border-[#EDEEEB] bg-white">
             <table className="min-w-full border-collapse">
               <thead className="bg-[#3E96F4] text-white">
                 <tr>

@@ -39,7 +39,7 @@ const Engineering02 = () => {
     handleApi();
   }, []);
   return (
-    <div className="max-w-7xl lg:m-5  ">
+    <div className="max-w-7xl  mx-auto ">
       {/* <MBBSHeader heading={heading} tags={tags} /> */}
       <EngineeringTable
         tags={

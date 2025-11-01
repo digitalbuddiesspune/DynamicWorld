@@ -53,7 +53,7 @@ export default function OnlineUniverSity() {
             .toLowerCase()
             .replace(/[^a-z0-9]+/g, "-")
             .replace(/(^-|-$)/g, ""),
-        name: u.name || u.universityName || "Unnamed University",
+        name:  u.universityName || "Unnamed University",
         location: u.location?.city
           ? `${u.location.city}, ${u.location.state ?? ""}`.trim()
           : u.location || u.city || "",
@@ -116,13 +116,13 @@ export default function OnlineUniverSity() {
         ) : null}
 
         {isLoading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-4">
             {Array.from({ length: 12 }).map((_, i) => (
               <SkeletonCard key={i} />
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
             {filtered.map((u) => (
               <NavLink
                 key={u.id}
@@ -130,7 +130,7 @@ export default function OnlineUniverSity() {
                 state={{ universityName: u.name }} // fallback for detail API
                 className="rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-md transition group"
               >
-                <div className="aspect-[4/3] w-full bg-slate-100 overflow-hidden">
+                <div className="aspect-[4/3] w-full  overflow-hidden">
                   <img
                     src={u.image || fallbackImg}
                     alt={u.name}
@@ -139,8 +139,8 @@ export default function OnlineUniverSity() {
                     onError={(e) => (e.currentTarget.src = fallbackImg)}
                   />
                 </div>
-                <div className="p-4">
-                  <h2 className="text-[15px] font-semibold">{u.name}</h2>
+                <div className="p-4 bg-slate-100">
+                  <h2 className="text-xs lg:text-[15px] font-semibold line-clamp-1">{u.name}</h2>
                   {u.location ? (
                     <p className="text-xs text-slate-500 mt-0.5">
                       {u.location}

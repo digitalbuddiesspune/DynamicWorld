@@ -2,7 +2,7 @@ const Boards = () => {
   return (
     <section className="min-h-screen w-full  text-[#31393C]">
       {/* Header */}
-      <header className="bg-[#3E96F4] text-white py-6 rounded-b-2xl shadow-md">
+      <header className="bg-[#3E96F4] text-white py-6  shadow-md">
         <h1 className="text-3xl md:text-4xl font-bold text-center tracking-wide">
           Educational Boards Overview
         </h1>

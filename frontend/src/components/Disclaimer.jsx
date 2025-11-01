@@ -29,7 +29,7 @@ const Disclaimer = () => {
                 To ensure you have the most up-to-date information, we strongly
                 encourage you to contact our helpline at{" "}
                 <span className="font-bold text-gray-900">
-                  +91 788 788 1060
+                  +91 9820401375
                 </span>{" "}
                 before making any educational choices or purchases.
               </p>

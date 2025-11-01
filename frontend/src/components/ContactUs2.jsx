@@ -12,7 +12,8 @@ const officesFirst = [
     city: "Canada",
     phone: "(+91) 9820402089",
     tel: "+919820402089",
-    address: "Canada, Toronto, ON",
+    address:
+      "Office No. 210, Maple Tower  25 King Street West, Financial District  Toronto, Ontario, Canada",
   },
 ];
 
@@ -35,7 +36,8 @@ const officesSecond = [
     city: "Uttar Pradesh",
     phone: "(+91) 9820402089",
     tel: "+919820402089",
-    address: "Sector-59, Noida 201301, Uttar Pradesh",
+    address:
+      "Office No. 305, Skyview Tower, Sector-59, Near Metro Station, Noida 201301, Uttar Pradesh",
   },
 ];
 
@@ -92,7 +94,7 @@ const Card = ({ city, phone, tel, address }) => (
           </span>
         </div>
 
-        <p className="mt-2 text-sm text-gray-700">{address}</p>
+        <p className="mt-2 text-sm text-gray-700 line-clamp-3">{address}</p>
 
         <div className="mt-4 flex flex-wrap gap-3">
           <a

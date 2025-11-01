@@ -97,8 +97,8 @@ const Pharmacy02 = () => {
   ];
 
   return (
-    <div className="lg:m-5 max-w-7xl">
-      <div className="bg-gray-100 py-5 px-5 lg:px-8 rounded-2xl">
+    <div className="mx-auto max-w-7xl">
+      <div className=" py-5 px-5 lg:px-8 rounded-2xl">
         <section className="mb-5">
           <p className="text-gray-700 text-sm">
             To pursue a Pharmacy course, students need to have completed Class
@@ -118,7 +118,7 @@ const Pharmacy02 = () => {
               Top Pharmacy Colleges In Mumbai
             </h3>
           </div>
-          <table className="min-w-full bg-white border border-gray-300 rounded-xl shadow-md overflow-hidden">
+          <table className="min-w-full bg-white border border-gray-300 rounded-xl  overflow-hidden">
             <thead className="bg-[#3E96F4] text-white  border-gray-300">
               <tr>
                 <th className="px-2 py-4 lg:px-6 lg:py-4 text-xs lg:text-sm text-center lg:text-leftfont-semibold uppercase tracking-wide">
@@ -129,7 +129,7 @@ const Pharmacy02 = () => {
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="bg-gray-50">
               {mumbaiColleges.map((college, index) => (
                 <tr key={index}>
                   <td className="px-2 py-4 lg:px-6 lg:py-4 text-xs lg:text-sm  lg:text-left">
@@ -162,7 +162,7 @@ const Pharmacy02 = () => {
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="bg-gray-50">
               {puneColleges.map((college, index) => (
                 <tr
                   key={index}

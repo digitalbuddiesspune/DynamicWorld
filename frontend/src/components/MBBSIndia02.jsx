@@ -1,11 +1,6 @@
-import React from "react";
-import UniversityStrip from "./UniversitityStrip";
-import { useState } from "react";
-import { useEffect } from "react";
 import axios from "axios";
-import { use } from "react";
+import { useEffect, useState } from "react";
 import MBBBTable from "./MBBBTable";
-import MBBSHeader from "./MBBSHeader";
 const MBBSIndia02 = () => {
   const mongoUrl = import.meta.env.VITE_BACKEND_API;
   const [deemedClg, setDeemedClg] = useState([]);
@@ -61,8 +56,8 @@ const MBBSIndia02 = () => {
     handleApi();
   }, []);
   return (
-    <div className="max-w-7xl lg:m-5 p-2 lg:p-0">
-      {/* <MBBSHeader heading={heading} tags={tags} /> */}
+    <div className="max-w-7xl mx-auto">
+  
       <MBBBTable
         heading={"TOP MBBS Colleges in India"}
         tags={

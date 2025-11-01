@@ -39,16 +39,20 @@ const MainSkeleton = () => (
 /* ---------------- Component ---------------- */
 const DynamicCountries = () => {
   const API = import.meta.env.VITE_BACKEND_API;
-  const [isListLoading, setIsListLoading] = useState(true);
-  const [isDetailLoading, setIsDetailLoading] = useState(false);
-  const [error, setError] = useState(null);
 
+  // List states
+  const [isListLoading, setIsListLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [countries, setCountries] = useState([]); // strings for sidebar
   const [rawCountries, setRawCountries] = useState([]); // raw objects
+
+  // Detail states
+  const [isDetailLoading, setIsDetailLoading] = useState(false);
   const [selectedName, setSelectedName] = useState(null);
   const [selectedCountry, setSelectedCountry] = useState(null);
 
   const mainSectionRef = useRef(null);
+  const lastFetchedRef = useRef(null); // prevents duplicate fetches for same name
 
   const scrollToMain = useCallback(() => {
     const target = mainSectionRef.current || document.getElementById("main-section");
@@ -68,6 +72,7 @@ const DynamicCountries = () => {
     item?.title ||
     "";
 
+  // Fetch list (countries)
   const fetchCountryList = useCallback(async () => {
     if (!API) {
       setIsListLoading(false);
@@ -89,7 +94,9 @@ const DynamicCountries = () => {
       setRawCountries(list);
       const displayList = list.map(getDisplayName).filter(Boolean).sort();
       setCountries(displayList);
-      if (!selectedName && displayList.length) setSelectedName(displayList[0]);
+
+      // pick default only once
+      setSelectedName((prev) => (prev ?? (displayList[0] || null)));
     } catch (err) {
       setError(err?.message || "Failed to load countries.");
       setCountries([]);
@@ -97,55 +104,72 @@ const DynamicCountries = () => {
     } finally {
       setIsListLoading(false);
     }
-  }, [API, selectedName]);
-
-  const fetchCountryDetail = useCallback(
-    async (name) => {
-      if (!name || !API) return;
-      setIsDetailLoading(true);
-      setSelectedCountry(null);
-      try {
-        let detail = null;
-        try {
-          const { data } = await axios.get(`${API}/country`, {
-            params: { countryName: name },
-          });
-          detail = data?.data || data;
-        } catch {
-          const slug = name.toLowerCase().replace(/\s+/g, "-");
-          const { data } = await axios.get(`${API}/country/${slug}`);
-          detail = data?.data || data;
-        }
-
-        if (!detail && rawCountries?.length) {
-          detail = rawCountries.find(
-            (c) => getDisplayName(c).toLowerCase() === name.toLowerCase()
-          );
-        }
-
-        setSelectedCountry(detail || { countryName: name, description: "" });
-      } catch (err) {
-        setSelectedCountry({
-          countryName: name,
-          description: "",
-          _error: err?.message,
-        });
-      } finally {
-        setIsDetailLoading(false);
-      }
-    },
-    [API, rawCountries]
-  );
+  }, [API]);
 
   useEffect(() => {
     fetchCountryList();
   }, [fetchCountryList]);
 
+  // Fetch detail (NO useCallback) — depends only on selectedName + API
   useEffect(() => {
-    if (selectedName) fetchCountryDetail(selectedName);
-  }, [selectedName, fetchCountryDetail]);
+    if (!selectedName || !API) return;
 
-  // Smooth-scroll when the *detail* is ready to view
+    // Avoid duplicate refetches for the same name (helps in StrictMode too)
+    if (lastFetchedRef.current === selectedName && selectedCountry) return;
+    lastFetchedRef.current = selectedName;
+
+    let cancelled = false;
+
+    (async () => {
+      setIsDetailLoading(true);
+      setSelectedCountry(null);
+      try {
+        let detail = null;
+
+        // 1) Try by query param
+        try {
+          const { data } = await axios.get(`${API}/country`, {
+            params: { countryName: selectedName },
+          });
+          detail = data?.data || data;
+        } catch {
+          // 2) Fallback by slug
+          const slug = selectedName.toLowerCase().replace(/\s+/g, "-");
+          const { data } = await axios.get(`${API}/country/${slug}`);
+          detail = data?.data || data;
+        }
+
+        // 3) Final fallback from the currently loaded list snapshot
+        if (!detail && rawCountries?.length) {
+          detail = rawCountries.find(
+            (c) => getDisplayName(c).toLowerCase() === selectedName.toLowerCase()
+          );
+        }
+
+        if (!cancelled) {
+          setSelectedCountry(detail || { countryName: selectedName, description: "" });
+        }
+      } catch (err) {
+        if (!cancelled) {
+          setSelectedCountry({
+            countryName: selectedName,
+            description: "",
+            _error: err?.message,
+          });
+        }
+      } finally {
+        if (!cancelled) setIsDetailLoading(false);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+    // IMPORTANT: do NOT include rawCountries in deps to avoid refetch-induced flicker
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedName, API]);
+
+  // Smooth scroll once detail is ready
   useEffect(() => {
     if (!isDetailLoading && selectedCountry) {
       scrollToMain();
@@ -164,7 +188,6 @@ const DynamicCountries = () => {
         </div>
       </header>
 
-      {/* Content container */}
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
         {/* Error banner (list fetch) */}
         {error && !countries.length && (

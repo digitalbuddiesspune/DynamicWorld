@@ -8,7 +8,7 @@ const UniversityStrip = () => {
 
   return (
     <div className="bg-[#3E96F4] text-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
         {/* centered heading with thin dividers */}
         <div className="w-full md:w-auto flex items-center justify-center md:justify-start gap-3">
           <span className="hidden md:block h-px w-6 bg-white/70" />

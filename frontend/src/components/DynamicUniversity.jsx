@@ -15,7 +15,7 @@ const DynamicUniversity = ({ university }) => {
   return (
     <>
       {university.map((uni, index) => (
-        <section key={index} className="p-4 sm:p-6 max-w-6xl mx-auto space-y-6">
+        <section key={index} className="p-4 sm:p-6 max-w-7xl mx-auto space-y-6">
           {/* Header Card */}
           <div className="bg-white rounded-2xl shadow-sm ring-1 ring-gray-200 overflow-hidden">
             <div className="bg-[#3E96F4] text-white p-4 sm:p-6">
@@ -104,8 +104,8 @@ const DynamicUniversity = ({ university }) => {
 
           {/* Courses */}
           <div className="bg-white rounded-2xl shadow-sm ring-1 ring-gray-200 overflow-hidden">
-            <div className="px-4 sm:px-6 py-4">
-              <h2 className="text-lg sm:text-xl font-semibold text-[#31393C]">
+            <div className="px-4 sm:px-6 py-4 bg-[#3E96F4]">
+              <h2 className="text-lg sm:text-xl font-semibold text-white/80 text-center">
                 Courses Offered
               </h2>
             </div>
@@ -116,9 +116,9 @@ const DynamicUniversity = ({ university }) => {
               </div>
             ) : (
               <div className="overflow-x-auto">
-                <table className="min-w-full border-collapse text-sm">
+                <table className="min-w-full border-collapse text-sm divide-y ">
                   <thead className="bg-[#EDEEEB] sticky top-0">
-                    <tr className="text-[#31393C]">
+                    <tr className="text-black">
                       <th className="px-3 sm:px-4 py-3 text-left font-semibold border-b border-gray-200">
                         Program
                       </th>
@@ -134,9 +134,9 @@ const DynamicUniversity = ({ university }) => {
                       <th className="px-3 sm:px-4 py-3  lg:block text-left font-semibold border-b border-gray-200">
                         Mode
                       </th>
-                      <th className="px-3 sm:px-4 py-3 text-left font-semibold border-b border-gray-200">
+                      {/* <th className="px-3 sm:px-4 py-3 text-left font-semibold border-b border-gray-200">
                         Fees
-                      </th>
+                      </th> */}
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100 text-black">
@@ -160,7 +160,7 @@ const DynamicUniversity = ({ university }) => {
                         <td className="px-3 sm:px-4  py-2.5 border-b border-gray-100">
                           {course?.mode || "—"}
                         </td>
-                        <td className="px-3 sm:px-4 py-2.5 border-b border-gray-100">
+                        {/* <td className="px-3 sm:px-4 py-2.5 border-b border-gray-100">
                           {typeof course?.fees === "number"
                             ? course.fees > 0
                               ? `₹${new Intl.NumberFormat("en-IN").format(
@@ -171,7 +171,7 @@ const DynamicUniversity = ({ university }) => {
                               course.fees.trim()
                             ? course.fees
                             : "—"}
-                        </td>
+                        </td> */}
                       </tr>
                     ))}
                   </tbody>

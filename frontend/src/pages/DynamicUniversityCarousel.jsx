@@ -36,7 +36,7 @@ export default function DynamicUniversityCarousel() {
   cssEase: "linear",
 
   // 👉 Default for small screens
-  slidesToShow: 2.5,       // ← your 2.5 on mobile
+  slidesToShow: 5,       // ← your 2.5 on mobile
   slidesToScroll: 1,
   swipeToSlide: true,
   pauseOnHover: true,
@@ -115,31 +115,7 @@ export default function DynamicUniversityCarousel() {
             ))}
           </Slider>
         </div>
-        {/* Banner */}
-        <figure className="hidden lg:block mt-5 sm:mt-6 lg:mt-8">
-          <img
-            src={online_education_banner}
-            alt="Learn online from top universities across India"
-            loading="lazy"
-            className="w-full h-auto rounded-lg sm:rounded-xl shadow-md object-cover"
-          />
-          <figcaption className="mt-1 text-[11px] sm:text-xs text-gray-500 text-center">
-            Explore flexible, career-ready programs designed for working
-            professionals.
-          </figcaption>
-        </figure>
-        <figure className="lg:hidden mt-5 sm:mt-6 lg:mt-8">
-          <img
-            src={online_education_banner_mobile}
-            alt="Learn online from top universities across India"
-            loading="lazy"
-            className="w-full h-auto rounded-lg sm:rounded-xl shadow-md object-cover"
-          />
-          <figcaption className="mt-1 text-[11px] sm:text-xs text-gray-500 text-center">
-            Explore flexible, career-ready programs designed for working
-            professionals.
-          </figcaption>
-        </figure>
+     
       </div>
     </section>
   );

@@ -4,6 +4,7 @@ import education from "../assets/education.png";
 import school from "../assets/school.png";
 import handshake from "../assets/handshake.png";
 import free from "../assets/free.png";
+import { NavLink } from "react-router-dom";
 
 const AboutInfo = () => {
   const infoCards = [
@@ -34,8 +35,8 @@ const AboutInfo = () => {
   ];
 
   return (
-    <section className="bg-[#EDEEEB] py-12 px-6 text-center">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-[#EDEEEB] px-6 text-center">
+      <div className="max-w-7xl mx-auto">
         {/* Top Heading */}
         <h2 className="text-lg sm:text-xl text-gray-800 mb-4 font-medium">
           Explore top online universities and find the perfect fit for your
@@ -44,9 +45,13 @@ const AboutInfo = () => {
 
         {/* Button */}
         <div className="mb-10">
-          <button className="bg-[#0056D2] text-white px-6 py-2 font-medium rounded hover:bg-blue-700 transition">
+          <NavLink
+            to="/services/online-education"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="bg-[#0056D2] text-white px-6 py-2 font-medium rounded hover:bg-blue-700 transition"
+          >
             All Universities
-          </button>
+          </NavLink>
         </div>
 
         {/* Grid Section */}

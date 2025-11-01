@@ -1,7 +1,10 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
+// ================================
+// Design tokens (brand palette)
+// ================================
 const COLORS = {
   brand: "#3E96F4",
   text: "#31393C",
@@ -9,18 +12,19 @@ const COLORS = {
   white: "#FFFFFF",
 };
 
+// Centralized NAAC badges (extend when you add more)
 const NAAC_BADGES = {
   "A+": "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760872144/A_plus_mdt6x3.webp",
-  "A++":
-    "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760872145/A_plus_plus_krg1rs.webp",
-  // Optional placeholders (plug real URLs when you have them)
+  "A++": "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760872145/A_plus_plus_krg1rs.webp",
   A: "",
   "B++": "",
 };
 
+// -----------------------------
+// Utilities
+// -----------------------------
 const formatINR = (n) => {
-  if (n === 0 || n === null || n === undefined || Number.isNaN(Number(n)))
-    return "—";
+  if (n === 0 || n === null || n === undefined || Number.isNaN(Number(n))) return "—";
   if (typeof n === "number") {
     return new Intl.NumberFormat("en-IN", {
       style: "currency",
@@ -31,30 +35,115 @@ const formatINR = (n) => {
   return n || "—";
 };
 
+const firstNonEmpty = (...vals) => vals.find((v) => Boolean(v && String(v).trim())) ?? "—";
+
+const getNaacGradeFromText = (text = "") => {
+  const m = String(text).match(/(A\+\+|A\+|A|B\+\+)/i);
+  return m?.[1]?.toUpperCase();
+};
+
+const Badge = ({ children }) => (
+  <span
+    className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ring-1"
+    style={{ background: COLORS.chipBg, color: COLORS.text, borderColor: "#dcdcdc" }}
+  >
+    {children}
+  </span>
+);
+
+const Section = ({ title, right, children }) => (
+  <section className="rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-6">
+    <header className="mb-3 sm:mb-4 flex items-center justify-between gap-3">
+      <h2 className="text-lg sm:text-xl font-semibold text-gray-900">{title}</h2>
+      {right}
+    </header>
+    {children}
+  </section>
+);
+
+const TableHeaderCell = ({ children }) => (
+  <th className="px-3 sm:px-4 py-3 font-semibold align-middle text-gray-700">{children}</th>
+);
+
+const TableCell = ({ children, bold }) => (
+  <td className={`px-3 sm:px-4 py-3 align-top ${bold ? "text-gray-900 font-medium" : "text-gray-700"}`}>{children}</td>
+);
+
+// ================================
+// Component
+// ================================
 export default function DistanceUniversityDetails() {
   const API = import.meta.env.VITE_BACKEND_API;
   const { slug } = useParams();
+
   const [university, setUniversity] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // -----------------------------
+  // Data fetch (with AbortController)
+  // -----------------------------
   const fetchData = useCallback(async () => {
+    if (!API || !slug) return;
+    const controller = new AbortController();
     try {
       setLoading(true);
       setError(null);
-      const { data } = await axios.get(`${API}/distanceUniversity/${slug}`);
+      const { data } = await axios.get(`${API}/distanceUniversity/${slug}`, { signal: controller.signal });
       setUniversity(data?.data ?? null);
     } catch (e) {
+      if (axios.isCancel?.(e)) return; // ignore cancellation
       setError(e?.response?.data?.message || e.message || "Failed to fetch");
     } finally {
       setLoading(false);
     }
+    return () => controller.abort();
   }, [API, slug]);
 
   useEffect(() => {
-    if (slug) fetchData();
-  }, [fetchData, slug]);
+    const cancel = fetchData();
+    return () => {
+      if (typeof cancel === "function") cancel();
+    };
+  }, [fetchData]);
 
+  // -----------------------------
+  // Derived fields (safe fallbacks)
+  // -----------------------------
+  const {
+    universityName,
+    name,
+    location,
+    establish,
+    description,
+    shortDescription,
+    accreditation = [],
+    awards = [],
+    website,
+    images = [],
+    onlineEducation = [], // distance-education points
+    courses = [],
+    rankings,
+  } = university ?? {};
+
+  const title = useMemo(() => firstNonEmpty(universityName, name, slug), [universityName, name, slug]);
+
+  const universityRanking = useMemo(() => (Array.isArray(rankings) ? rankings : awards), [rankings, awards]);
+
+  const naacLine = useMemo(
+    () =>
+      (accreditation.find((i) => /NAAC|NBA/i.test(i)) ??
+        universityRanking?.find?.((i) => /NAAC|NBA/i.test(i)) ??
+        ""),
+    [accreditation, universityRanking]
+  );
+
+  const naacGrade = useMemo(() => getNaacGradeFromText(naacLine), [naacLine]);
+  const naacBadgeUrl = naacGrade ? NAAC_BADGES[naacGrade] : "";
+
+  // -----------------------------
+  // States
+  // -----------------------------
   if (loading) {
     return (
       <div className="min-h-screen bg-[#EDEEEB]">
@@ -88,7 +177,7 @@ export default function DistanceUniversityDetails() {
                 Retry
               </button>
               <Link
-                to="/services/online-education"
+                to="/services/distance-education"
                 className="inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium ring-1 ring-gray-300 text-[#31393C]"
               >
                 Back to list
@@ -102,109 +191,85 @@ export default function DistanceUniversityDetails() {
 
   if (!university) return null;
 
-  const {
-    universityName,
-    name,
-    location,
-    establish,
-    description,
-    shortDescription,
-    accreditation = [],
-    awards = [],
-    website,
-    images = [],
-    onlineEducation = [],
-    courses = [],
-    rankings, // if backend provides
-  } = university;
-
-  const title = universityName || name || slug;
-  const universityRanking = Array.isArray(rankings) ? rankings : awards; // fallback
-  const naacLine =
-    accreditation.find((item) => /NAAC|NBA/i.test(item)) ||
-    universityRanking?.find?.((item) => /NAAC|NBA/i.test(item)) ||
-    "";
-
-  // detect grade for badge
-  const gradeMatch = (naacLine || "").match(/(A\+\+|A\+|A|B\+\+)/i);
-  const naacGrade = gradeMatch?.[1]?.toUpperCase();
-  const badgeUrl = naacGrade ? NAAC_BADGES[naacGrade] : "";
-
   return (
-    <div className="min-h-screen bg-[#EDEEEB] text-[#31393C]">
+    <div className="text-[#31393C]">
+      {/* ====== Header / Breadcrumb ====== */}
       <header className="bg-[#3E96F4] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
           <nav className="flex items-center gap-2 text-sm opacity-95">
-            <Link to="/services/distance-education" className="hover:underline">
-              Distance Education
-            </Link>
+            <Link to="/services/distance-education" className="hover:underline">Distance Education</Link>
             <span>/</span>
-            <span className="truncate">{slug}</span>
+            <span className="truncate" title={slug}>{slug}</span>
           </nav>
           <h1 className="mt-2 text-2xl sm:text-3xl font-bold">{title}</h1>
         </div>
       </header>
 
-      <main className="mx-auto  px-4 sm:px-6 lg:px-8">
+      {/* ====== Main ====== */}
+      <main className="mx-auto max-w-7xl px-2 lg:px-0">
         <div className="py-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8">
-          {/* University Header (MATCHES YOUR LAYOUT) */}
+          {/* Hero Card */}
           <div className="rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-6">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-              {images?.[0] && (
-                <div className="relative shrink-0">
+            <div className="flex flex-col lg:flex-row sm:items-center gap-4 sm:gap-6">
+              {images?.[0] ? (
+                <div className="relative shrink-0 w-full max-w-lg">
                   <img
                     src={images[0]}
                     alt={title}
-                    className="w-full lg:p-1 object-cover rounded-lg ring-1 ring-gray-200 shadow"
+                    className="w-full object-contain rounded-lg ring-1 ring-gray-200 shadow"
                     loading="lazy"
                   />
                 </div>
-              )}
-              <div className="min-w-0">
-                <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-gray-900">
-                  {title}
-                </h1>
+              ) : null}
+
+              <div className="min-w-0 flex-1">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-gray-900">{title}</h2>
                 <p className="mt-1 text-sm sm:text-base text-gray-600">
-                  {location || "—"} <span className="mx-2">•</span> Established:{" "}
-                  {establish || "—"}
+                  {firstNonEmpty(location)} <span className="mx-2">•</span> Established: {firstNonEmpty(establish)}
                 </p>
-                {( description) && (
-                  <p className="mt-3 text-sm sm:text-base leading-relaxed text-gray-700">
-                    {description}
-                  </p>
+
+                {/* Chips */}
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                  {naacGrade && <Badge>NAAC Grade: {naacGrade}</Badge>}
+                  {website && (
+                    <a
+                      href={website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center rounded-full bg-[#3E96F4] text-white text-xs sm:text-sm px-3 py-1.5 shadow hover:opacity-95"
+                    >
+                      Visit Website
+                    </a>
+                  )}
+                </div>
+
+                {description && (
+                  <p className="mt-3 text-sm sm:text-base leading-relaxed text-gray-700">{description}</p>
                 )}
               </div>
+
+              {/* NAAC Badge image (if present) */}
+              {naacBadgeUrl ? (
+                <div className="sm:self-start">
+                  <img src={naacBadgeUrl} alt="NAAC Accreditation Badge" className="h-12 sm:h-16 object-contain" loading="lazy" />
+                </div>
+              ) : null}
             </div>
           </div>
 
-          {/* About + Accreditation + Awards + Website (MATCHES YOUR LAYOUT) */}
-          {(accreditation.length > 0 ||
-            awards.length > 0 ||
-            shortDescription ||
-            website) && (
-            <section className="rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-6">
-              <header className="mb-3 sm:mb-4">
-                <h2 className="text-lg sm:text-xl font-semibold text-gray-900">
-                  About the University
-                </h2>
-              </header>
-
+          {/* About + Accreditation + Awards + Website */}
+          {(shortDescription || description || accreditation.length > 0 || awards.length > 0 || website) && (
+            <Section title="About the University">
               {(shortDescription || description) && (
-                <p className="text-sm sm:text-base text-gray-700">
-                  {shortDescription || description}
-                </p>
+                <p className="text-sm sm:text-base text-gray-700">{shortDescription || description}</p>
               )}
 
               {!!accreditation.length && (
                 <div className="mt-4">
-                  <h3 className="my-3 text-lg sm:text-xl font-semibold text-gray-800">
-                    Accreditation
-                  </h3>
+                  <h3 className="my-3 text-lg sm:text-xl font-semibold text-gray-800">Accreditation</h3>
                   <ul className="list-disc list-inside space-y-2 text-sm sm:text-base text-gray-700">
                     {accreditation.map((item, i) => (
-                      <li key={i} className="leading-relaxed">
-                        {item}
-                      </li>
+                      <li key={i} className="leading-relaxed">{item}</li>
                     ))}
                   </ul>
                 </div>
@@ -212,14 +277,10 @@ export default function DistanceUniversityDetails() {
 
               {!!awards.length && (
                 <div className="mt-4">
-                  <h3 className="my-3 text-lg sm:text-xl font-semibold text-gray-800">
-                    Awards
-                  </h3>
+                  <h3 className="my-3 text-lg sm:text-xl font-semibold text-gray-800">Awards</h3>
                   <ul className="list-disc list-inside space-y-2 text-sm sm:text-base text-gray-700">
                     {awards.map((item, i) => (
-                      <li key={i} className="leading-relaxed">
-                        {item}
-                      </li>
+                      <li key={i} className="leading-relaxed">{item}</li>
                     ))}
                   </ul>
                 </div>
@@ -228,172 +289,108 @@ export default function DistanceUniversityDetails() {
               {website && (
                 <div className="mt-4">
                   <h3 className="my-3 text-lg sm:text-xl font-semibold text-gray-800">
-                    Website:{" "}
-                    <a
-                      href={website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-indigo-600 hover:underline text-sm sm:text-base break-all"
-                    >
+                    Website: {" "}
+                    <a href={website} target="_blank" rel="noopener noreferrer" className="text-[#3E96F4] hover:underline break-all">
                       {website}
                     </a>
                   </h3>
                 </div>
               )}
-            </section>
+            </Section>
           )}
 
-          {/* Online Education (MATCHES YOUR LAYOUT) */}
+          {/* Distance Education points */}
           {!!onlineEducation.length && (
-            <section className="rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-6">
-              <header className="mb-3 sm:mb-4">
-                <h2 className="text-lg sm:text-xl font-semibold text-gray-900">
-                  Distance Education
-                </h2>
-              </header>
+            <Section title="Distance Education" right={<Badge>{onlineEducation.length} items</Badge>}>
               <ul className="list-disc list-inside space-y-2 text-sm sm:text-base text-gray-700">
-                {onlineEducation.map((item, index) => (
-                  <li key={index} className="leading-relaxed">
-                    {item}
-                  </li>
+                {onlineEducation.map((item, idx) => (
+                  <li key={idx} className="leading-relaxed">{item}</li>
                 ))}
               </ul>
-            </section>
+            </Section>
           )}
 
-          {/* Courses Table (MATCHES YOUR LAYOUT) */}
+          {/* Courses */}
           {Array.isArray(courses) && courses.length > 0 && (
-            <section className="rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-6">
-              <header className="mb-3 sm:mb-4 flex items-center gap-3">
-                <h2 className="text-lg sm:text-xl font-semibold text-gray-900">
-                  Programs
-                </h2>
-                <span className="inline-flex items-center rounded-full bg-indigo-50 text-indigo-700 text-xs sm:text-sm px-2.5 py-1 ring-1 ring-indigo-100">
-                  {courses.length} listed
-                </span>
-              </header>
-
+            <Section title="Programs" right={<Badge>{courses.length} listed</Badge>}>
               <div className="w-full overflow-x-auto rounded-lg ring-1 ring-gray-200">
                 <table className="min-w-full text-left text-sm sm:text-base">
                   <thead className="bg-gray-50 sticky top-0">
-                    <tr className="text-gray-700">
-                      <th className="px-3 sm:px-4 py-3 font-semibold">
-                        Program
-                      </th>
-                      <th className="px-3 sm:px-4 py-3 font-semibold">
-                        Specialization
-                      </th>
-                      <th className="px-3 sm:px-4 py-3 font-semibold">
-                        Duration
-                      </th>
-                      <th className="px-3 sm:px-4 py-3 font-semibold">
-                        Eligibility
-                      </th>
-                      <th className="px-3 sm:px-4 py-3 font-semibold">Mode</th>
-                      <th className="px-3 sm:px-4 py-3 font-semibold">Fees</th>
+                    <tr>
+                      <TableHeaderCell>Program</TableHeaderCell>
+                      <TableHeaderCell>Specialization</TableHeaderCell>
+                      <TableHeaderCell>Duration</TableHeaderCell>
+                      <TableHeaderCell>Eligibility</TableHeaderCell>
+                      <TableHeaderCell>Mode</TableHeaderCell>
+                      <TableHeaderCell>Fees</TableHeaderCell>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200">
                     {[...courses]
                       .sort(
                         (a, b) =>
-                          (a.courseName || "").localeCompare(
-                            b.courseName || ""
-                          ) ||
-                          (a.specialization || "").localeCompare(
-                            b.specialization || ""
-                          )
+                          (a?.courseName || "").localeCompare(b?.courseName || "") ||
+                          (a?.specialization || "").localeCompare(b?.specialization || "")
                       )
                       .map((c, idx) => {
-                        const fees =
-                          typeof c.fees === "number"
-                            ? c.fees === 0
-                              ? "—"
-                              : formatINR(c.fees)
-                            : c.fees ?? "—";
+                        const fees = typeof c?.fees === "number" ? (c.fees === 0 ? "—" : formatINR(c.fees)) : c?.fees ?? "—";
                         return (
-                          <tr
-                            key={`${c.courseName}-${c.specialization}-${idx}`}
-                            className="odd:bg-white even:bg-gray-50 hover:bg-indigo-50/50"
-                          >
-                            <td className="px-3 sm:px-4 py-3 text-gray-800">
-                              {c.courseName || "—"}
-                            </td>
-                            <td className="px-3 sm:px-4 py-3 text-gray-700">
-                              {c.specialization || "—"}
-                            </td>
-                            <td className="px-3 sm:px-4 py-3 text-gray-700">
-                              {c.duration || "—"}
-                            </td>
-                            <td className="px-3 sm:px-4 py-3 text-gray-700">
-                              {c.eligibility || "—"}
-                            </td>
-                            <td className="px-3 sm:px-4 py-3 text-gray-700">
-                              {c.mode || "—"}
-                            </td>
-                            <td className="px-3 sm:px-4 py-3 text-gray-900 font-medium">
-                              {fees}
-                            </td>
+                          <tr key={`${c?.courseName}-${c?.specialization}-${idx}`} className="odd:bg-white even:bg-gray-50 hover:bg-[#3E96F4]/5">
+                            <TableCell bold>{firstNonEmpty(c?.courseName)}</TableCell>
+                            <TableCell>{firstNonEmpty(c?.specialization)}</TableCell>
+                            <TableCell>{firstNonEmpty(c?.duration)}</TableCell>
+                            <TableCell>{firstNonEmpty(c?.eligibility)}</TableCell>
+                            <TableCell>{firstNonEmpty(c?.mode)}</TableCell>
+                            <TableCell bold>{fees}</TableCell>
                           </tr>
                         );
                       })}
                   </tbody>
                 </table>
               </div>
-            </section>
+            </Section>
           )}
 
-          {/* Accreditation Card(s) with Badge + Rankings list (MATCHES YOUR LAYOUT) */}
-          {!!universityRanking?.length && (
+          {/* Accreditation cards + Rankings */}
+          {!!(universityRanking?.length) && (
             <>
-              <section>
-                {universityRanking
-                  .filter((item) => /NAAC|NBA/i.test(item))
-                  .map((item, index) => {
-                    const grade = (item.match(/A\+\+|A\+|A|B\+\+/i) ||
-                      [])[0]?.toUpperCase();
-                    const img = grade ? NAAC_BADGES[grade] : "";
-                    return (
-                      <div
-                        key={index}
-                        className="rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-6 mb-6 items-start sm:items-center justify-between gap-4"
-                      >
-                        <div>
-                          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
-                            Accreditation Details
-                          </h3>
-                          <p className="text-sm sm:text-base text-gray-700">
-                            {item}
-                          </p>
-                        </div>
-                        {img && (
-                          <img
-                            src={img}
-                            alt="NAAC Accreditation Badge"
-                            className="h-12 sm:h-16 object-contain mt-2"
-                            loading="lazy"
-                          />
-                        )}
+              {universityRanking
+                .filter((item) => /NAAC|NBA/i.test(item))
+                .map((item, index) => {
+                  const g = getNaacGradeFromText(item);
+                  const img = g ? NAAC_BADGES[g] : "";
+                  return (
+                    <div key={index} className="rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+                      <div>
+                        <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Accreditation Details</h3>
+                        <p className="text-sm sm:text-base text-gray-700">{item}</p>
                       </div>
-                    );
-                  })}
-              </section>
+                      {img ? (
+                        <img src={img} alt="NAAC Accreditation Badge" className="h-12 sm:h-16 object-contain" loading="lazy" />
+                      ) : null}
+                    </div>
+                  );
+                })}
 
-              <section className="rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-6">
-                <header className="mb-3 sm:mb-4">
-                  <h2 className="text-lg sm:text-xl font-semibold text-gray-900">
-                    University Rankings
-                  </h2>
-                </header>
+              <Section title="University Rankings">
                 <ol className="list-disc list-inside space-y-2 text-sm sm:text-base text-gray-700">
-                  {universityRanking.map((rank, index) => (
-                    <li key={index} className="leading-relaxed">
-                      {rank}
-                    </li>
+                  {universityRanking.map((rank, idx) => (
+                    <li key={idx} className="leading-relaxed">{rank}</li>
                   ))}
                 </ol>
-              </section>
+              </Section>
             </>
+          )}
+
+          {/* Gallery (if multiple images) */}
+          {images?.length > 1 && (
+            <Section title="Gallery" right={<Badge>{images.length}</Badge>}>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                {images.slice(0, 12).map((src, i) => (
+                  <img key={i} src={src} alt={`${title} ${i + 1}`} className="w-full h-28 md:h-36 object-cover rounded-lg ring-1 ring-gray-200" loading="lazy" />
+                ))}
+              </div>
+            </Section>
           )}
         </div>
       </main>

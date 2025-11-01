@@ -8,7 +8,7 @@ const MbbsInIndia = () => {
     "The MBBS program emphasizes in-depth theoretical learning and extensive clinical training, preparing students for real-world medical practice. Throughout the course, learners gain hands-on experience through hospital rotations, lab work, and patient care under expert supervision. Graduates can pursue specializations, postgraduate studies, or medical licensing exams in India or abroad, opening pathways to careers in clinical practice, research, or healthcare administration.";
   const title = "MBBS In india";
   return (
-    <div>
+    <div className="">
       <CollegeAdmissionHome title={title} para1={para1} para2={para2} />
       <MBBSIndia02 />
     </div>

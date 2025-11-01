@@ -27,7 +27,7 @@ const Navbar = () => {
     "Upgrad",
     "MBBS In India",
     "MBBS In Abroad",
-    "BE-BTech Admission",
+    "Engineering",
     "Management",
     "Pharmacy",
     "LAW",

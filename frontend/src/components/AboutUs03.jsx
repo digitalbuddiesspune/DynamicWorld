@@ -2,8 +2,8 @@ import React from "react";
 
 const AboutUs03 = () => {
   return (
-    <section className="w-full  bg-gray-50 flex flex-col justify-center items-center px-8 pt-5">
-      <div className="max-w-6xl text-center">
+    <section className="max-w-7xl mx-auto bg-gray-50 flex flex-col justify-center items-center px-8 pt-5">
+      <div className=" text-center">
         <h1 className="text-2xl md:text-3xl font-bold mb-4">
           Beginning of a Transformative Era.
         </h1>
