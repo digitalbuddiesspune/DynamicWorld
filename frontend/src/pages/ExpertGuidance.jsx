@@ -20,7 +20,7 @@ const fallbackExperts = [
     name: "Priyesh",
     experience: "15+ Years Experience",
     phone: "7738846286",
-    specialty: "Admissions Strategy",
+    specialty: "Overseas Expert",
     rating: 4.9,
     image:
       "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761895819/Priyesh_hi7f0i.jpg",
@@ -28,7 +28,7 @@ const fallbackExperts = [
   {
     name: "Amit",
     experience: "10+ Years Experience",
-    phone: "7887881060",
+    phone: "7208275245",
     specialty: "UGC Online & Distance",
     rating: 4.8,
     image:
@@ -37,7 +37,7 @@ const fallbackExperts = [
   {
     name: "Supriya",
     experience: "11+ Years Experience",
-    phone: "976965807",
+    phone: "9920611771",
     specialty: "Career Counselling",
     rating: 4.7,
     image:
@@ -51,6 +51,15 @@ const fallbackExperts = [
     rating: 4.8,
     image:
       "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761895819/Neha_dhm34g.jpg",
+  },
+  {
+    name: "Sameep",
+    experience: "5+ Years Experience",
+    phone: "7697736826",
+    specialty: "Career Counselling",
+    rating: 4.5,
+    image:
+      "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761895819/sameep_isglfq.jpg",
   },
 ];
 
@@ -105,8 +114,7 @@ function Avatar({ name = "E", src }) {
             className="h-full w-full object-cover"
             onError={(e) => {
               e.currentTarget.style.display = "none";
-              e.currentTarget.parentElement.innerHTML =
-                `<span class="text-xl font-semibold" style="color:${BRAND.text}">${initial}</span>`;
+              e.currentTarget.parentElement.innerHTML = `<span class="text-xl font-semibold" style="color:${BRAND.text}">${initial}</span>`;
             }}
           />
         ) : (
@@ -143,12 +151,14 @@ export default function ExpertGuidance({
       {/* Background: soft gradient + subtle dots */}
       <div className="absolute inset-0 -z-10">
         <div className="h-full w-full bg-gradient-to-b from-[#F7FAFF] via-white to-white" />
-        <div className="pointer-events-none h-full w-full opacity-[0.35]"
-             style={{
-               backgroundImage:
-                 "radial-gradient(rgba(62,150,244,0.12) 1px, transparent 1px)",
-               backgroundSize: "14px 14px",
-             }} />
+        <div
+          className="pointer-events-none h-full w-full opacity-[0.35]"
+          style={{
+            backgroundImage:
+              "radial-gradient(rgba(62,150,244,0.12) 1px, transparent 1px)",
+            backgroundSize: "14px 14px",
+          }}
+        />
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-10 md:py-14">
@@ -185,7 +195,7 @@ export default function ExpertGuidance({
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
           {safeExperts.map((expert, idx) => {
             const tel = expert.phoneNorm
               ? `tel:+91${expert.phoneNorm}`
@@ -230,7 +240,11 @@ export default function ExpertGuidance({
                       href={tel ?? "#"}
                       aria-label={`Call ${expert.name}`}
                       className={`inline-flex items-center justify-center gap-2 rounded-xl px-3.5 py-2 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[color:var(--brand)]
-                        ${tel ? "bg-[color:var(--brand)] hover:brightness-110" : "bg-gray-300 cursor-not-allowed"}`}
+                        ${
+                          tel
+                            ? "bg-[color:var(--brand)] hover:brightness-110"
+                            : "bg-gray-300 cursor-not-allowed"
+                        }`}
                       onClick={(e) => !tel && e.preventDefault()}
                     >
                       <Phone className="h-4 w-4" />
@@ -242,7 +256,11 @@ export default function ExpertGuidance({
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`inline-flex items-center justify-center gap-2 rounded-xl px-3.5 py-2 text-sm font-medium ring-1 ring-black/10 bg-white
-                        ${wa ? "hover:bg-gray-50" : "bg-gray-100 cursor-not-allowed"}`}
+                        ${
+                          wa
+                            ? "hover:bg-gray-50"
+                            : "bg-gray-100 cursor-not-allowed"
+                        }`}
                       onClick={(e) => !wa && e.preventDefault()}
                     >
                       <MessageCircle className="h-4 w-4" />
@@ -263,7 +281,6 @@ export default function ExpertGuidance({
         </div>
 
         {/* CTA */}
-       
       </div>
     </section>
   );

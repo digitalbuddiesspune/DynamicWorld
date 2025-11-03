@@ -93,7 +93,7 @@ const MainContent = ({
     );
   }
 
-  if (selected.type === "Study Abroad") {
+  if (selected.type === "Attestation") {
     console.log(selected.item);
     const key = normalizeKey(selected.item);
     console.log(key);

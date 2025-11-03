@@ -123,10 +123,7 @@ const DynamicWorldPortal = () => {
   );
   const boards = useMemo(() => ["Boards"], []);
 
-  const studyAbroad = useMemo(
-    () => ["Attestation & Apostile"],
-    []
-  );
+  const studyAbroad = useMemo(() => ["Attestation & Apostile"], []);
   const bussinessOp = useMemo(() => ["Bussiness opportunity"]);
 
   const sidebarData = useMemo(
@@ -174,12 +171,12 @@ const DynamicWorldPortal = () => {
         items: collegeAdmission,
       },
       {
-        title: "Study Abroad",
-        type: "Study Abroad",
-        url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1760779899/studyAbroad_cbkald.png",
+        title: "Attestation",
+        type: "Attestation",
+        url: "https://res.cloudinary.com/dtaitsw4r/image/upload/v1762177440/approval-granted_mvxbyj.png",
         items: studyAbroad,
       },
-      
+
       {
         title: "Bussiness Opportunity",
         type: "Bussiness Opportunity",

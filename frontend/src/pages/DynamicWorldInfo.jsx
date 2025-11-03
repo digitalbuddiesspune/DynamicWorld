@@ -77,8 +77,6 @@ export const dynamicWorldData = [
       {
         city: "Surat",
         state: "Gujarat",
-        address:
-          "231, Second Floor, Green Elina Complex, Anand Mahal Road, Adajan, Surat, Gujarat 395009",
       },
     ],
     authorizedCounselors:
@@ -291,7 +289,7 @@ const DynamicWorldInfo = () => {
               <li key={i} className="leading-relaxed">
                 <span className="font-medium text-gray-900">{office.city}</span>
                 {office.state ? <span>, {office.state}</span> : null}
-                {/* {office.address ? <span> — {office.address}</span> : null} */}
+                {office.address ? <span> — {office.address}</span> : null}
               </li>
             ))}
           </ul>

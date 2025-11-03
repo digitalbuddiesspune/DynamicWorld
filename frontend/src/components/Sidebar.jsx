@@ -128,28 +128,15 @@ const Sidebar = ({
                   </li>
                 );
               })}
-              <li>
+              <li className="">
                 <a
                   href="https://dynamic-world-study-abroad.onrender.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600 text-white font-medium transition-all duration-300 hover:bg-blue-700 hover:shadow-md"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-blue-600 text-white font-medium transition-all duration-300 hover:bg-blue-700 hover:shadow-md w-full"
                 >
                   Study Abroad
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="2"
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M13.5 4.5L21 12l-7.5 7.5M3 12h18"
-                    />
-                  </svg>
+                  <img src="https://res.cloudinary.com/dtaitsw4r/image/upload/v1760779899/studyAbroad_cbkald.png" alt="" className="h-8 w-10" />
                 </a>
               </li>
             </ul>
