@@ -59,6 +59,8 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // mark all as touched so errors show
     setTouched({
       firstName: true,
       lastName: true,
@@ -67,31 +69,52 @@ const ContactForm = () => {
       course: true,
       consent: true,
     });
+
+    // honeypot short-circuit + validation
+    if (formData.company.trim() !== "") return; // bot
     if (!isValid) return;
 
     try {
       setSubmitting(true);
+      setSubmitted(false);
       setErrorMsg("");
 
-      const payload = {
-        firstName: formData.firstName.trim(),
-        lastName: formData.lastName.trim(),
-        phone: normalizePhone(formData.phone),
-        email: formData.email.trim(),
-        course: formData.course.trim(),
-        consent: formData.consent,
-        submittedAt: new Date().toISOString(),
-        source: "contact-form",
-      };
+      // Build payload
+      const normalizedPhone = normalizePhone(formData.phone);
+      const fd = new FormData(e.target); // ← from the form element
+      // Required by Web3Forms
+      fd.append("access_key", "1c19ebc6-5189-43f5-b343-0b0198218b75");
 
-      // TODO: replace with your API call
-      // await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
-      await new Promise((r) => setTimeout(r, 600)); // simulate network
+      // Ensure our exact values override any browser autofill noise
+      fd.set("firstName", formData.firstName.trim());
+      fd.set("lastName", formData.lastName.trim());
+      fd.set("phone", normalizedPhone);
+      fd.set("email", formData.email.trim());
+      fd.set("course", formData.course.trim());
+      fd.set("consent", formData.consent ? "true" : "false");
 
-      console.log("Form submitted:", payload);
-      setSubmitted(true);
-      setFormData(initialForm);
-      setTouched({});
+      // Optional metadata
+      fd.append("submittedAt", new Date().toISOString());
+      fd.append("source", "contact-form");
+      // Honeypot stays included as "company" (empty for humans)
+      // Web3Forms will ignore unknown fields, that’s fine.
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: fd,
+      });
+
+      const data = await response.json();
+
+      if (data?.success) {
+        setSubmitted(true);
+        setFormData(initialForm);
+        setTouched({});
+      } else {
+        setErrorMsg(
+          data?.message || "Submission failed. Please try again in a moment."
+        );
+      }
     } catch (err) {
       console.error(err);
       setErrorMsg("Something went wrong while submitting. Please try again.");
@@ -101,7 +124,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-slate-200 via-slate-50 to-slate-100 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+    <section className="bg-gradient-to-b from-slate-50 to-slate-100 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl">
         {/* Hero Card */}
         <div className="relative overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
@@ -165,7 +188,7 @@ const ContactForm = () => {
                     value={formData.firstName}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    placeholder="John"
+                    placeholder="First Name"
                     autoComplete="given-name"
                     className={`w-full rounded-lg border bg-white/80 p-2.5 sm:p-3 text-sm shadow-sm outline-none ring-1 transition
                       ${
@@ -197,7 +220,7 @@ const ContactForm = () => {
                     value={formData.lastName}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    placeholder="Doe"
+                    placeholder="Last Name"
                     autoComplete="family-name"
                     className={`w-full rounded-lg border bg-white/80 p-2.5 sm:p-3 text-sm shadow-sm outline-none ring-1 transition
                       ${
@@ -231,7 +254,7 @@ const ContactForm = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 7887881060"
                     autoComplete="tel-national"
                     inputMode="tel"
                     className={`w-full rounded-lg border bg-white/80 p-2.5 sm:p-3 text-sm shadow-sm outline-none ring-1 transition

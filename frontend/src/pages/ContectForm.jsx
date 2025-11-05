@@ -15,7 +15,8 @@ const initialForm = {
 const nameOk = (v) => /^[a-zA-Z][a-zA-Z\s'.-]{1,39}$/.test(v.trim());
 const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(v.trim());
 const normalizePhone = (v) =>
-  v.replace(/[^\d]/g, "")
+  v
+    .replace(/[^\d]/g, "")
     .replace(/^91(?=\d{10}$)/, "")
     .replace(/^0(?=\d{10}$)/, "");
 const phoneOk = (v) => /^[6-9]\d{9}$/.test(normalizePhone(v));
@@ -29,11 +30,15 @@ const ContactForm = () => {
 
   const errors = useMemo(() => {
     const e = {};
-    if (!nameOk(formData.firstName)) e.firstName = "Enter a valid first name (letters, 2–40 chars).";
-    if (!nameOk(formData.lastName)) e.lastName = "Enter a valid last name (letters, 2–40 chars).";
-    if (!phoneOk(formData.phone)) e.phone = "Enter a valid Indian mobile (10 digits, starts 6–9).";
+    if (!nameOk(formData.firstName))
+      e.firstName = "Enter a valid first name (letters, 2–40 chars).";
+    if (!nameOk(formData.lastName))
+      e.lastName = "Enter a valid last name (letters, 2–40 chars).";
+    if (!phoneOk(formData.phone))
+      e.phone = "Enter a valid Indian mobile (10 digits, starts 6–9).";
     if (!emailOk(formData.email)) e.email = "Enter a valid email address.";
-    if (!formData.course.trim()) e.course = "Please specify the course you're looking for.";
+    if (!formData.course.trim())
+      e.course = "Please specify the course you're looking for.";
     if (!formData.consent) e.consent = "You must agree to be contacted.";
     if (formData.company.trim() !== "") e.company = "Spam detected.";
     return e;
@@ -43,39 +48,73 @@ const ContactForm = () => {
 
   const handleChange = (e) => {
     const { name, type, value, checked } = e.target;
-    setFormData((p) => ({ ...p, [name]: type === "checkbox" ? checked : value }));
+    setFormData((p) => ({
+      ...p,
+      [name]: type === "checkbox" ? checked : value,
+    }));
   };
 
-  const handleBlur = (e) => setTouched((t) => ({ ...t, [e.target.name]: true }));
+  const handleBlur = (e) =>
+    setTouched((t) => ({ ...t, [e.target.name]: true }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setTouched({ firstName: true, lastName: true, phone: true, email: true, course: true, consent: true });
+
+    // mark all as touched so errors show
+    setTouched({
+      firstName: true,
+      lastName: true,
+      phone: true,
+      email: true,
+      course: true,
+      consent: true,
+    });
+
+    // honeypot short-circuit + validation
+    if (formData.company.trim() !== "") return; // bot
     if (!isValid) return;
 
     try {
       setSubmitting(true);
+      setSubmitted(false);
       setErrorMsg("");
 
-      const payload = {
-        firstName: formData.firstName.trim(),
-        lastName: formData.lastName.trim(),
-        phone: normalizePhone(formData.phone),
-        email: formData.email.trim(),
-        course: formData.course.trim(),
-        consent: formData.consent,
-        submittedAt: new Date().toISOString(),
-        source: "contact-form",
-      };
+      // Build payload
+      const normalizedPhone = normalizePhone(formData.phone);
+      const fd = new FormData(e.target); // ← from the form element
+      // Required by Web3Forms
+      fd.append("access_key", "1c19ebc6-5189-43f5-b343-0b0198218b75");
 
-      // TODO: replace with your API call
-      // await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
-      await new Promise((r) => setTimeout(r, 600)); // simulate network
+      // Ensure our exact values override any browser autofill noise
+      fd.set("firstName", formData.firstName.trim());
+      fd.set("lastName", formData.lastName.trim());
+      fd.set("phone", normalizedPhone);
+      fd.set("email", formData.email.trim());
+      fd.set("course", formData.course.trim());
+      fd.set("consent", formData.consent ? "true" : "false");
 
-      console.log("Form submitted:", payload);
-      setSubmitted(true);
-      setFormData(initialForm);
-      setTouched({});
+      // Optional metadata
+      fd.append("submittedAt", new Date().toISOString());
+      fd.append("source", "contact-form");
+      // Honeypot stays included as "company" (empty for humans)
+      // Web3Forms will ignore unknown fields, that’s fine.
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: fd,
+      });
+
+      const data = await response.json();
+
+      if (data?.success) {
+        setSubmitted(true);
+        setFormData(initialForm);
+        setTouched({});
+      } else {
+        setErrorMsg(
+          data?.message || "Submission failed. Please try again in a moment."
+        );
+      }
     } catch (err) {
       console.error(err);
       setErrorMsg("Something went wrong while submitting. Please try again.");
@@ -96,8 +135,9 @@ const ContactForm = () => {
                 We’d Love to Hear From You
               </h2>
               <p className="mt-2 text-sm sm:text-base text-slate-600">
-                Please ensure all fields are completed accurately to help us assist you effectively.
-                Your details are protected by our privacy policy.
+                Please ensure all fields are completed accurately to help us
+                assist you effectively. Your details are protected by our
+                privacy policy.
               </p>
             </header>
 
@@ -105,7 +145,8 @@ const ContactForm = () => {
             <div aria-live="polite" className="space-y-3 mb-4">
               {submitted && (
                 <div className="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-green-800 text-sm">
-                  ✅ Thanks! Your message has been received. We’ll reach out soon.
+                  ✅ Thanks! Your message has been received. We’ll reach out
+                  soon.
                 </div>
               )}
               {errorMsg && (
@@ -134,7 +175,10 @@ const ContactForm = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* First Name */}
                 <div>
-                  <label htmlFor="firstName" className="block text-xs font-medium text-slate-600 mb-1.5">
+                  <label
+                    htmlFor="firstName"
+                    className="block text-xs font-medium text-slate-600 mb-1.5"
+                  >
                     First Name
                   </label>
                   <input
@@ -144,22 +188,29 @@ const ContactForm = () => {
                     value={formData.firstName}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    placeholder="John"
+                    placeholder="First Name"
                     autoComplete="given-name"
                     className={`w-full rounded-lg border bg-white/80 p-2.5 sm:p-3 text-sm shadow-sm outline-none ring-1 transition
-                      ${touched.firstName && errors.firstName
-                        ? "border-red-300 ring-red-200 focus:ring-red-300"
-                        : "border-slate-300 ring-slate-200 focus:ring-blue-300"}`}
+                      ${
+                        touched.firstName && errors.firstName
+                          ? "border-red-300 ring-red-200 focus:ring-red-300"
+                          : "border-slate-300 ring-slate-200 focus:ring-blue-300"
+                      }`}
                     required
                   />
                   {touched.firstName && errors.firstName && (
-                    <p className="mt-1 text-xs text-red-600">{errors.firstName}</p>
+                    <p className="mt-1 text-xs text-red-600">
+                      {errors.firstName}
+                    </p>
                   )}
                 </div>
 
                 {/* Last Name */}
                 <div>
-                  <label htmlFor="lastName" className="block text-xs font-medium text-slate-600 mb-1.5">
+                  <label
+                    htmlFor="lastName"
+                    className="block text-xs font-medium text-slate-600 mb-1.5"
+                  >
                     Last Name
                   </label>
                   <input
@@ -169,16 +220,20 @@ const ContactForm = () => {
                     value={formData.lastName}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    placeholder="Doe"
+                    placeholder="Last Name"
                     autoComplete="family-name"
                     className={`w-full rounded-lg border bg-white/80 p-2.5 sm:p-3 text-sm shadow-sm outline-none ring-1 transition
-                      ${touched.lastName && errors.lastName
-                        ? "border-red-300 ring-red-200 focus:ring-red-300"
-                        : "border-slate-300 ring-slate-200 focus:ring-blue-300"}`}
+                      ${
+                        touched.lastName && errors.lastName
+                          ? "border-red-300 ring-red-200 focus:ring-red-300"
+                          : "border-slate-300 ring-slate-200 focus:ring-blue-300"
+                      }`}
                     required
                   />
                   {touched.lastName && errors.lastName && (
-                    <p className="mt-1 text-xs text-red-600">{errors.lastName}</p>
+                    <p className="mt-1 text-xs text-red-600">
+                      {errors.lastName}
+                    </p>
                   )}
                 </div>
               </div>
@@ -186,7 +241,10 @@ const ContactForm = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Phone */}
                 <div>
-                  <label htmlFor="phone" className="block text-xs font-medium text-slate-600 mb-1.5">
+                  <label
+                    htmlFor="phone"
+                    className="block text-xs font-medium text-slate-600 mb-1.5"
+                  >
                     Phone Number (India)
                   </label>
                   <input
@@ -196,13 +254,15 @@ const ContactForm = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 7887881060"
                     autoComplete="tel-national"
                     inputMode="tel"
                     className={`w-full rounded-lg border bg-white/80 p-2.5 sm:p-3 text-sm shadow-sm outline-none ring-1 transition
-                      ${touched.phone && errors.phone
-                        ? "border-red-300 ring-red-200 focus:ring-red-300"
-                        : "border-slate-300 ring-slate-200 focus:ring-blue-300"}`}
+                      ${
+                        touched.phone && errors.phone
+                          ? "border-red-300 ring-red-200 focus:ring-red-300"
+                          : "border-slate-300 ring-slate-200 focus:ring-blue-300"
+                      }`}
                     required
                   />
                   {touched.phone && errors.phone && (
@@ -212,7 +272,10 @@ const ContactForm = () => {
 
                 {/* Email */}
                 <div>
-                  <label htmlFor="email" className="block text-xs font-medium text-slate-600 mb-1.5">
+                  <label
+                    htmlFor="email"
+                    className="block text-xs font-medium text-slate-600 mb-1.5"
+                  >
                     Email Address
                   </label>
                   <input
@@ -225,9 +288,11 @@ const ContactForm = () => {
                     placeholder="john.doe@example.com"
                     autoComplete="email"
                     className={`w-full rounded-lg border bg-white/80 p-2.5 sm:p-3 text-sm shadow-sm outline-none ring-1 transition
-                      ${touched.email && errors.email
-                        ? "border-red-300 ring-red-200 focus:ring-red-300"
-                        : "border-slate-300 ring-slate-200 focus:ring-blue-300"}`}
+                      ${
+                        touched.email && errors.email
+                          ? "border-red-300 ring-red-200 focus:ring-red-300"
+                          : "border-slate-300 ring-slate-200 focus:ring-blue-300"
+                      }`}
                     required
                   />
                   {touched.email && errors.email && (
@@ -238,7 +303,10 @@ const ContactForm = () => {
 
               {/* Course */}
               <div>
-                <label htmlFor="course" className="block text-xs font-medium text-slate-600 mb-1.5">
+                <label
+                  htmlFor="course"
+                  className="block text-xs font-medium text-slate-600 mb-1.5"
+                >
                   Course Looking For?
                 </label>
                 <input
@@ -250,9 +318,11 @@ const ContactForm = () => {
                   onBlur={handleBlur}
                   placeholder="e.g. MBA in Marketing"
                   className={`w-full rounded-lg border bg-white/80 p-2.5 sm:p-3 text-sm shadow-sm outline-none ring-1 transition
-                    ${touched.course && errors.course
-                      ? "border-red-300 ring-red-200 focus:ring-red-300"
-                      : "border-slate-300 ring-slate-200 focus:ring-blue-300"}`}
+                    ${
+                      touched.course && errors.course
+                        ? "border-red-300 ring-red-200 focus:ring-red-300"
+                        : "border-slate-300 ring-slate-200 focus:ring-blue-300"
+                    }`}
                   required
                 />
                 {touched.course && errors.course && (
@@ -270,15 +340,25 @@ const ContactForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={`mt-1 h-4 w-4 rounded border
-                    ${touched.consent && errors.consent ? "border-red-400" : "border-slate-300"}`}
+                    ${
+                      touched.consent && errors.consent
+                        ? "border-red-400"
+                        : "border-slate-300"
+                    }`}
                   required
                 />
-                <label htmlFor="consent" className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  By submitting, you agree to be contacted via phone or email regarding your inquiry.
+                <label
+                  htmlFor="consent"
+                  className="text-xs sm:text-sm text-slate-600 leading-relaxed"
+                >
+                  By submitting, you agree to be contacted via phone or email
+                  regarding your inquiry.
                 </label>
               </div>
               {touched.consent && errors.consent && (
-                <p className="mt-1 -mb-2 text-xs text-red-600">{errors.consent}</p>
+                <p className="mt-1 -mb-2 text-xs text-red-600">
+                  {errors.consent}
+                </p>
               )}
 
               {/* Actions */}
@@ -287,22 +367,40 @@ const ContactForm = () => {
                   type="submit"
                   disabled={!isValid || submitting}
                   className={`w-full inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-white transition
-                    ${!isValid || submitting
-                      ? "bg-indigo-300 cursor-not-allowed"
-                      : "bg-indigo-600 hover:bg-indigo-700"}
+                    ${
+                      !isValid || submitting
+                        ? "bg-indigo-300 cursor-not-allowed"
+                        : "bg-indigo-600 hover:bg-indigo-700"
+                    }
                     focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-400`}
                 >
                   {submitting && (
-                    <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                    <svg
+                      className="h-4 w-4 animate-spin"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      />
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                      />
                     </svg>
                   )}
                   {submitting ? "Submitting..." : "Submit"}
                 </button>
 
                 <p className="mt-3 text-center text-[11px] sm:text-xs text-slate-500">
-                  We respect your privacy. Your information will only be used to process your inquiry.
+                  We respect your privacy. Your information will only be used to
+                  process your inquiry.
                 </p>
               </div>
             </form>

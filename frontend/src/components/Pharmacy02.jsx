@@ -98,7 +98,7 @@ const Pharmacy02 = () => {
 
   return (
     <div className="mx-auto max-w-7xl">
-      <div className=" py-5 px-5 lg:px-8 rounded-2xl">
+      <div className=" py-5 px-2 lg:px-4 rounded-2xl">
         <section className="mb-5">
           <p className="text-gray-700 text-sm">
             To pursue a Pharmacy course, students need to have completed Class

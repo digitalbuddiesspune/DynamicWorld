@@ -135,7 +135,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full overflow-hidden h-[60vh] lg:h-[70vh]"
+      className="relative w-full overflow-hidden h-[55vh] lg:h-[70vh]"
       onMouseEnter={() => {
         setIsHovering(true);
         clearTimer();

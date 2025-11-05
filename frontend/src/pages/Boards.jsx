@@ -8,12 +8,20 @@ const Boards = () => {
         </h1>
       </header>
 
-      <div className="max-w-6xl mx-auto px-5 lg:px-10 py-10 space-y-10">
+      <div className="max-w-7xl mx-auto px-5 lg:px-10 py-10 space-y-10">
         {/* 1. Maharashtra Board */}
         <div className="bg-white shadow-lg rounded-2xl p-6">
-          <h2 className="text-2xl font-semibold mb-3">
-            1. Maharashtra State Board (MSBSHSE)
-          </h2>
+          <div className="flex items-center justify-between py-2">
+            <h2 className="text-2xl font-semibold mb-3">
+              1. Maharashtra State Board (MSBSHSE)
+            </h2>
+            <img
+              src="https://res.cloudinary.com/dtaitsw4r/image/upload/v1762331437/Maharashtra_10th_12th_Board_Exam_2026_Datesheet_Releases_Soon-2390-logo_udqnxm.png"
+              alt="mh-logo"
+              className="h-20 w-20"
+            />
+          </div>
+
           <p>
             The Maharashtra State Board of Secondary and Higher Secondary
             Education (MSBSHSE) is an autonomous body established under the
@@ -57,9 +65,16 @@ const Boards = () => {
 
         {/* 2. NIOS */}
         <div className="bg-white shadow-lg rounded-2xl p-6">
-          <h2 className="text-2xl font-semibold mb-3">
-            2. NIOS (National Institute of Open Schooling)
-          </h2>
+          <div className="flex justify-between items-center py-2">
+            <h2 className="text-2xl font-semibold mb-3">
+              2. NIOS (National Institute of Open Schooling)
+            </h2>
+            <img
+              src="https://res.cloudinary.com/dtaitsw4r/image/upload/v1762331435/NIOS-National-Institute-of-Open-Schooling-Logo_wfvnhw.png"
+              alt="NIOS LOGO"
+              className="h-20"
+            />
+          </div>
           <p>
             The National Institute of Open Schooling (NIOS) is an autonomous
             organization under the Ministry of Education, Government of India.
@@ -113,9 +128,17 @@ const Boards = () => {
 
         {/* 3. BOSSE */}
         <div className="bg-white shadow-lg rounded-2xl p-6">
-          <h2 className="text-2xl font-semibold mb-3">
-            3. BOSSE (Board of Open Schooling and Skill Education, Sikkim)
-          </h2>
+          <div className="flex justify-between items-center">
+            <h2 className="text-2xl font-semibold mb-3">
+              3. BOSSE (Board of Open Schooling and Skill Education, Sikkim)
+            </h2>
+            <img
+              src="https://res.cloudinary.com/dtaitsw4r/image/upload/v1762331435/logo_byljnb.png"
+              alt="BOSSE LOGO"
+              className="h-20 "
+            />
+          </div>
+
           <p>
             BOSSE is a state open schooling board established by the Government
             of Sikkim, recognized for secondary and senior secondary education
@@ -151,9 +174,16 @@ const Boards = () => {
 
         {/* 4. Jamia Urdu Aligarh */}
         <div className="bg-white shadow-lg rounded-2xl p-6">
-          <h2 className="text-2xl font-semibold mb-3">
-            4. Jamia Urdu Aligarh (JUA)
-          </h2>
+          <div className="flex justify-between items-center">
+            <h2 className="text-2xl font-semibold mb-3">
+              4. Jamia Urdu Aligarh (JUA)
+            </h2>
+            <img
+              src="https://res.cloudinary.com/dtaitsw4r/image/upload/v1762331435/images_dhoviz.jpg"
+              alt="Jamia Urdu Aligarh"
+              className="h-20"
+            />
+          </div>
           <p>
             Jamia Urdu Aligarh, established in 1939, promotes Urdu education and
             offers recognized secondary (Adeeb) and senior secondary
@@ -204,9 +234,14 @@ const Boards = () => {
 
         {/* 5. NWAC */}
         <div className="bg-white shadow-lg rounded-2xl p-6">
-          <h2 className="text-2xl font-semibold mb-3">
-            5. Northwest Accreditation Commission (NWAC), USA
-          </h2>
+          <div className="flex justify-between items-center ">
+            <h2 className="text-2xl font-semibold mb-3">
+              5. Northwest Accreditation Commission (NWAC), USA
+            </h2>
+            <img src="https://res.cloudinary.com/dtaitsw4r/image/upload/v1762331435/Northwest_Accreditation_Commission__NWAC__Logo_gb58yf.jpg" alt="NWAC" 
+            className="h-20"/>
+          </div>
+
           <p>
             NWAC is a U.S.-based accreditation body that offers an American High
             School Diploma recognized in India as equivalent to Grade 12.

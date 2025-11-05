@@ -85,7 +85,7 @@ const Management02 = () => {
 
   return (
     <div className="max-w-7xl mx-auto ">
-      <div className="px-2 lg:px-8  ">
+      <div className="px-2 lg:px-4  ">
         <p className="text-sm my-2">
           Business Management courses focus on developing essential skills to
           manage and run a business effectively. They cover a wide range of

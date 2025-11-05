@@ -56,7 +56,7 @@ const MBBSIndia02 = () => {
     handleApi();
   }, []);
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto px-2 lg:px-4">
   
       <MBBBTable
         heading={"TOP MBBS Colleges in India"}
