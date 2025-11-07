@@ -9,7 +9,7 @@ const vocationalLarge =
 const careerLarge =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1762338767/Blue_Professional_Business_Visa_Service_Promotion_Web_Banner_1920_x_600_px_1_fqizwb.svg";
 const universitiesLarge =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1762339073/Blue_Simple_Education_Coaching_Banner_Landscape_1920_x_600_px_1_gnefjv.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1762509887/Blue_Simple_Education_Coaching_Banner_Landscape_1920_x_600_px_1_gnefjv.svg";
 const appostileLarge =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1762175348/Purple_and_Yellow_Shapes_Middle_School_Back_to_School_Banner_1920_x_600_px_i3l3c2.png";
 

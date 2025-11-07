@@ -150,7 +150,7 @@ const MainContent = ({
     website = "",
   } = data;
   return (
-    <div className="p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8">
+    <div className="p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8 ">
       {/* University Header */}
       <div className="rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-6">
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">

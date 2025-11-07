@@ -1,7 +1,7 @@
 // DynamicCountries.jsx
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import axios from "axios";
-import Sidebar from "./Sidebar";
+import CountrySidebar from "./CountrySidebar";
 import MainContent from "./MainData";
 import RegularAdmissionSkeleton from "../components/RegularAdmissionSkeleton";
 
@@ -30,7 +30,10 @@ const MainSkeleton = () => (
     <div className="h-4 w-1/3 rounded-md bg-gray-200 animate-pulse mb-6" />
     <div className="space-y-4">
       {Array.from({ length: 8 }).map((_, i) => (
-        <div key={i} className="h-4 w-full rounded-md bg-gray-200 animate-pulse" />
+        <div
+          key={i}
+          className="h-4 w-full rounded-md bg-gray-200 animate-pulse"
+        />
       ))}
     </div>
   </section>
@@ -53,9 +56,11 @@ const DynamicCountries = () => {
 
   const mainSectionRef = useRef(null);
   const lastFetchedRef = useRef(null); // prevents duplicate fetches for same name
+  const userInitiatedScrollRef = useRef(false); // track if selection was user-initiated
 
   const scrollToMain = useCallback(() => {
-    const target = mainSectionRef.current || document.getElementById("main-section");
+    const target =
+      mainSectionRef.current || document.getElementById("main-section");
     if (!target) return;
     const HEADER_OFFSET = 72;
     requestAnimationFrame(() => {
@@ -85,18 +90,25 @@ const DynamicCountries = () => {
       let list = [];
       try {
         const { data } = await axios.get(`${API}/countries`);
-        list = Array.isArray(data?.data) ? data.data : Array.isArray(data) ? data : [];
+        list = Array.isArray(data?.data)
+          ? data.data
+          : Array.isArray(data)
+          ? data
+          : [];
       } catch {
         const { data } = await axios.get(`${API}/country`);
-        list = Array.isArray(data?.data) ? data.data : Array.isArray(data) ? data : [];
+        list = Array.isArray(data?.data)
+          ? data.data
+          : Array.isArray(data)
+          ? data
+          : [];
       }
 
       setRawCountries(list);
       const displayList = list.map(getDisplayName).filter(Boolean).sort();
       setCountries(displayList);
 
-      // pick default only once
-      setSelectedName((prev) => (prev ?? (displayList[0] || null)));
+      // wait for explicit user selection before loading details
     } catch (err) {
       setError(err?.message || "Failed to load countries.");
       setCountries([]);
@@ -142,12 +154,15 @@ const DynamicCountries = () => {
         // 3) Final fallback from the currently loaded list snapshot
         if (!detail && rawCountries?.length) {
           detail = rawCountries.find(
-            (c) => getDisplayName(c).toLowerCase() === selectedName.toLowerCase()
+            (c) =>
+              getDisplayName(c).toLowerCase() === selectedName.toLowerCase()
           );
         }
 
         if (!cancelled) {
-          setSelectedCountry(detail || { countryName: selectedName, description: "" });
+          setSelectedCountry(
+            detail || { countryName: selectedName, description: "" }
+          );
         }
       } catch (err) {
         if (!cancelled) {
@@ -171,16 +186,24 @@ const DynamicCountries = () => {
 
   // Smooth scroll once detail is ready
   useEffect(() => {
-    if (!isDetailLoading && selectedCountry) {
+    if (!isDetailLoading && selectedCountry && userInitiatedScrollRef.current) {
       scrollToMain();
+      // reset so initial/default load won't trigger scroll
+      userInitiatedScrollRef.current = false;
     }
   }, [isDetailLoading, selectedCountry, scrollToMain]);
 
-  const handleSelect = (name) => setSelectedName(name);
+  const handleSelect = (name) => {
+    userInitiatedScrollRef.current = true;
+    setSelectedName(name);
+  };
 
   return (
     <div style={{ backgroundColor: COLORS.bg, color: COLORS.text }}>
-      <header className="sticky top-0 z-20" style={{ backgroundColor: COLORS.brand }}>
+      <header
+        className="sticky top-0 z-20"
+        style={{ backgroundColor: COLORS.brand }}
+      >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 mb-2">
           <h1 className="text-white text-xl md:text-2xl font-semibold tracking-wide">
             Study Abroad • Countries
@@ -201,7 +224,7 @@ const DynamicCountries = () => {
           {isListLoading ? (
             <SidebarSkeleton />
           ) : (
-            <Sidebar
+            <CountrySidebar
               isLoading={isListLoading}
               countries={countries}
               selected={selectedName}
@@ -212,10 +235,29 @@ const DynamicCountries = () => {
 
           {/* Right: Main or skeleton */}
           <div id="main-section" ref={mainSectionRef} className="flex-1">
-            {isDetailLoading || !selectedCountry ? (
+            {isDetailLoading ? (
               <RegularAdmissionSkeleton />
-            ) : (
+            ) : selectedCountry ? (
               <MainContent selectedCountry={selectedCountry} />
+            ) : (
+              <div className="flex h-full min-h-[240px] flex-col items-center justify-center rounded-2xl border border-dashed border-gray-200 bg-white p-8 text-center text-sm text-gray-600">
+              <h2 className="mb-3 text-lg font-semibold text-gray-700">
+                Dreaming about studying abroad?
+              </h2>
+              <p className="max-w-2xl leading-relaxed">
+                Discover a world of opportunities through our comprehensive country guides —
+                each designed to make your international education journey simpler and smarter.
+                Learn about top-ranked universities, program offerings, tuition fees, living costs,
+                scholarship options, and visa procedures in your dream destination.
+              </p>
+              <p className="max-w-2xl mt-4 leading-relaxed">
+                Whether you're aiming for research excellence in Germany, career-focused
+                programs in Canada, or global exposure in the UK or Australia — our expert-curated
+                resources help you compare, plan, and prepare with confidence. Begin exploring
+                your study abroad path today and take the first step toward a global career!
+              </p>
+            </div>
+            
             )}
           </div>
         </div>

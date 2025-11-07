@@ -1,11 +1,5 @@
-// Sidebar.jsx
-import React, {
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  useCallback,
-} from "react";
+// CountrySidebar.jsx
+import React, { useEffect, useMemo, useRef, useState, useCallback } from "react";
 
 const COLORS = {
   brand: "#3E96F4",
@@ -20,7 +14,7 @@ const SkeletonItem = () => (
   </div>
 );
 
-const Sidebar = ({
+const CountrySidebar = ({
   isLoading = false,
   countries = [], // array of strings
   selected = null, // string
@@ -38,16 +32,13 @@ const Sidebar = ({
     return countries.filter((c) => c?.toLowerCase().includes(q));
   }, [countries, query]);
 
-  // Parent controls default selection; do not auto-select here to avoid unintended scroll
+  // Parent controls default selection; do not auto-select here
 
   // Keyboard navigation
   const handleKeyDown = useCallback(
     (e) => {
       if (!filtered.length) return;
-      const idx = Math.max(
-        0,
-        filtered.findIndex((c) => c === selected)
-      );
+      const idx = Math.max(0, filtered.findIndex((c) => c === selected));
       if (e.key === "ArrowDown") {
         const next = filtered[(idx + 1) % filtered.length];
         onSelect(next);
@@ -63,7 +54,7 @@ const Sidebar = ({
     [filtered, selected, onSelect]
   );
 
-  // Scroll selected into view
+  // Scroll selected into view (within the list only)
   useEffect(() => {
     if (!listRef.current) return;
     const el = listRef.current.querySelector('[data-selected="true"]');
@@ -85,22 +76,12 @@ const Sidebar = ({
       >
         <div className="flex items-center gap-2">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M12 2a10 10 0 100 20 10 10 0 000-20Z"
-              stroke="currentColor"
-              strokeWidth="1.5"
-            />
-            <path
-              d="M2 12h20M12 2c-3 4-3 16 0 20M12 2c3 4 3 16 0 20"
-              stroke="currentColor"
-              strokeWidth="1.5"
-            />
+            <path d="M12 2a10 10 0 100 20 10 10 0 000-20Z" stroke="currentColor" strokeWidth="1.5" />
+            <path d="M2 12h20M12 2c-3 4-3 16 0 20M12 2c3 4 3 16 0 20" stroke="currentColor" strokeWidth="1.5" />
           </svg>
           <span>{title}</span>
         </div>
-        <span className="text-xs opacity-90">
-          {isLoading ? "…" : filtered.length}
-        </span>
+        <span className="text-xs opacity-90">{isLoading ? "…" : filtered.length}</span>
       </div>
 
       {/* Search */}
@@ -134,18 +115,8 @@ const Sidebar = ({
               fill="none"
               aria-hidden="true"
             >
-              <circle
-                cx="11"
-                cy="11"
-                r="7"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              />
-              <path
-                d="M20 20l-3.2-3.2"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              />
+              <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M20 20l-3.2-3.2" stroke="currentColor" strokeWidth="1.5" />
             </svg>
           )}
         </div>
@@ -212,4 +183,6 @@ const Sidebar = ({
   );
 };
 
-export default Sidebar;
+export default CountrySidebar;
+
+
