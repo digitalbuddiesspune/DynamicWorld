@@ -194,7 +194,7 @@ const DynamicWorldInfo = () => {
               </div>
             </div>
             <div className="flex flex-wrap gap-2">
-              <LinkButton href={`tel:${data.headOffice.phone}`} variant="soft">
+              <LinkButton href="tel:+917887881060" variant="soft">
                 📞 Call
               </LinkButton>
               {data?.headOffice?.email && (

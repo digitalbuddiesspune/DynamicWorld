@@ -9,17 +9,18 @@ const ContactUs1 = () => {
 
   const buttonBase =
     "inline-flex items-center justify-center rounded-lg font-medium transition-all hover:-translate-y-0.5";
-  const blueBtn = "bg-[#3E96F4] text-white hover:bg-[#2f79c4]";
-  const charcoalBtn =
-    "bg-[#31393C] text-white hover:bg-[#1f2426]";
+  const primaryBtn =
+    "bg-[#1d4ed8] text-white hover:bg-[#1a46c6] shadow-sm";
+  const secondaryBtn =
+    "border border-[#cbd5f5] bg-white text-[#1e293b] hover:bg-[#f8fafc] shadow-sm";
 
   return (
-    <section className="w-full bg-gradient-to-b from-[#FFFFFF] via-[#EDEEEB] to-[#CCC7BF]/35 text-[#31393C]">
+    <section className="w-full bg-gradient-to-b from-white via-[#f6f8fc] to-white text-[#0f172a]">
       {/* Top Header */}
       <header className="bg-[#3E96F4] text-white">
         <div className="mx-auto max-w-7xl py-10">
           <div className="flex flex-col items-center text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/15 text-xs font-medium px-3 py-1">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/15 text-xs font-semibold tracking-[0.35em] px-3 py-1 uppercase">
               We’re here to help
             </span>
             <h1 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
@@ -35,11 +36,11 @@ const ContactUs1 = () => {
       {/* Cards Section */}
       <main className="py-20 flex justify-center items-center">
         <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 px-4 lg:px-0">
+          <div className="grid grid-cols-1 gap-6 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0">
             {/* Helpline */}
-            <div className="group rounded-2xl bg-white shadow-sm ring-1 ring-[#DDD9CF] p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5">
+            <div className="group rounded-2xl bg-white shadow-sm ring-1 ring-[#dbeafe] p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5">
               <div className="flex items-start gap-4">
-                <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#3E96F4] ring-1 ring-blue-100">
+                <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#eff6ff] text-[#1d4ed8] ring-1 ring-[#dbeafe]">
                   {/* Phone icon */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -51,21 +52,21 @@ const ContactUs1 = () => {
                   </svg>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-xs uppercase tracking-wide text-[#31393C]/60">
+                  <p className="text-xs uppercase tracking-wide text-[#475569]">
                     Helpline
                   </p>
-                  <h3 className="mt-1 text-lg font-semibold text-[#31393C]">
-                    (+91) 9820401375
+                  <h3 className="mt-1 text-lg font-semibold text-[#0f172a]">
+                    (+91) 7887881060
                   </h3>
-                  <p className="mt-1 text-sm text-[#31393C]/70">
-                    Talk to our counsellor for quick assistance. We are close to your goals and ready to guide you forward.
+                  <p className="mt-1 text-sm text-[#475569]">
+                    Talk to our counsellor for quick assistance. We’re close to your goals and ready to guide you forward.
                   </p>
 
                   {/* Aligned Buttons */}
                   <div className="mt-4 flex gap-3">
                     <a
                       href="tel:+919820401375"
-                      className={`${buttonBase} ${blueBtn} px-5 py-2.5 text-sm`}
+                      className={`${buttonBase} ${primaryBtn} px-5 py-2.5 text-sm`}
                     >
                       Call Now
                     </a>
@@ -73,7 +74,7 @@ const ContactUs1 = () => {
                       href="https://wa.me/919820401375"
                       target="_blank"
                       rel="noreferrer"
-                      className={`${buttonBase} ${charcoalBtn} px-5 py-2.5 text-sm`}
+                      className={`${buttonBase} ${secondaryBtn} px-5 py-2.5 text-sm`}
                     >
                       WhatsApp
                     </a>
@@ -83,9 +84,9 @@ const ContactUs1 = () => {
             </div>
 
             {/* Head Office */}
-            <div className="group rounded-2xl bg-white shadow-sm ring-1 ring-[#DDD9CF] p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5">
+            <div className="group rounded-2xl bg-white shadow-sm ring-1 ring-[#dbeafe] p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5">
               <div className="flex items-start gap-4">
-                <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-rose-50 text-rose-600 ring-1 ring-rose-100">
+                <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#fef2f2] text-[#f97316] ring-1 ring-[#fee2e2]">
                   {/* Building icon */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -97,13 +98,13 @@ const ContactUs1 = () => {
                   </svg>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-xs uppercase tracking-wide text-[#31393C]/60">
+                  <p className="text-xs uppercase tracking-wide text-[#475569]">
                     Head Office
                   </p>
-                  <h3 className="mt-1 text-lg font-semibold text-[#31393C]">
+                  <h3 className="mt-1 text-lg font-semibold text-[#0f172a]">
                     Pune, India
                   </h3>
-                  <p className="mt-2 text-sm text-[#31393C]/75 leading-snug">
+                  <p className="mt-2 text-sm text-[#475569] leading-snug">
                     Office No. 506, 5th Floor, Sterling Center
                     <br />
                     Opposite Arora Tower, MG Road, Camp
@@ -116,7 +117,7 @@ const ContactUs1 = () => {
                       href={mapsHref}
                       target="_blank"
                       rel="noreferrer"
-                      className={`${buttonBase} ${blueBtn} px-5 py-2.5 text-sm`}
+                      className={`${buttonBase} ${primaryBtn} px-5 py-2.5 text-sm`}
                     >
                       Open in Maps
                     </a>
@@ -124,7 +125,7 @@ const ContactUs1 = () => {
                       href="https://maps.google.com/?q=Dynamic%20World%20Pune"
                       target="_blank"
                       rel="noreferrer"
-                      className={`${buttonBase} ${charcoalBtn} px-5 py-2.5 text-sm`}
+                      className={`${buttonBase} ${secondaryBtn} px-5 py-2.5 text-sm`}
                     >
                       Get Directions
                     </a>
@@ -134,9 +135,9 @@ const ContactUs1 = () => {
             </div>
 
             {/* Support Mail */}
-            <div className="group rounded-2xl bg-white shadow-sm ring-1 ring-[#DDD9CF] p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5">
+            <div className="group rounded-2xl bg-white shadow-sm ring-1 ring-[#dbeafe] p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5">
               <div className="flex items-start gap-4">
-                <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 ring-1 ring-emerald-100">
+                <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#ecfdf5] text-[#0f766e] ring-1 ring-[#d1fae5]">
                   {/* Mail icon */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -148,27 +149,28 @@ const ContactUs1 = () => {
                   </svg>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-xs uppercase tracking-wide text-[#31393C]/60">
+                  <p className="text-xs uppercase tracking-wide text-[#475569]">
                     Support Mail
                   </p>
-                  <h3 className="mt-1 text-lg font-semibold text-[#31393C]">
+                  <h3 className="mt-1 text-lg font-semibold text-[#0f172a]">
                     Dynamicworld.edu@gmail.com
                   </h3>
-                  <p className="mt-1 text-sm text-[#31393C]/70">
-                    Drop us a line and we’ll get back to you.
-                    Write an email to our counsellor for quick assistance.
+                  <p className="mt-1 text-sm text-[#475569]">
+                    Drop us a line and we’ll get back to you. Write to our counsellor for quick assistance.
                   </p>
 
                   <div className="mt-4 flex gap-3">
                     <a
                       href="https://mail.google.com/mail/u/0/?fs=1&to=Dynamicworld.edu@gmail.com&tf=cm"
-                      className={`${buttonBase} ${blueBtn} px-5 py-2.5 text-sm`}
+                      className={`${buttonBase} ${primaryBtn} px-5 py-2.5 text-sm`}
                     >
                       Email Us
                     </a>
                     <a
-                      href="mailto:support@dynamicworld.in?subject=Inquiry%20via%20Website&body=Hi%20Dynamic%20World%20Team,%0A%0A"
-                      className={`${buttonBase} ${charcoalBtn} px-5 py-2.5 text-sm`}
+                      href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=support@dynamicworld.in&su=Inquiry%20via%20Website&body=Hi%20Dynamic%20World%20Team%2C%0A%0A"
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`${buttonBase} ${secondaryBtn} px-5 py-2.5 text-sm`}
                     >
                       Quick Template
                     </a>
