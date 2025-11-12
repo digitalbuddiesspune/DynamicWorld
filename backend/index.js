@@ -33,6 +33,6 @@ server.use('/api/v1/', dvoc_mvoc_bvoc_Router);
 server.use('/api/v1/' , mbbsInAbroadRouter)
 server.use('/api/v1/', mbaInIndiaRouter)
 
-server.listen(PORT, () => {
+server.listen(PORT,'0.0.0.0',() => {
   console.log("Setup Successful!")
 });
