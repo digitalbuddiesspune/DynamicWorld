@@ -158,7 +158,7 @@ const UpdatedMeta = ({ createdAt, updatedAt }) => {
 const CTAs = () => (
   <div className="flex flex-wrap items-center gap-3">
     <a
-      href="tel:+919820401375"
+      href="tel:+917887881060"
       className="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:shadow"
       style={{ backgroundColor: COLORS.brand }}
     >

@@ -42,7 +42,7 @@ const DynamicUniversity = ({ university }) => {
                       {uni?.universityName || uni?.name || "University"}
                     </h1>
 
-                    {uni?.website && (
+                    {/* {uni?.website && (
                       <a
                         href={uni.website}
                         target="_blank"
@@ -51,7 +51,7 @@ const DynamicUniversity = ({ university }) => {
                       >
                         Visit Website
                       </a>
-                    )}
+                    )} */}
                   </div>
 
                   <p className="text-sm sm:text-[15px] opacity-95 mt-2">

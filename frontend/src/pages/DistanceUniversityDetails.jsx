@@ -231,7 +231,7 @@ export default function DistanceUniversityDetails() {
                 {/* Chips */}
                 <div className="mt-3 flex flex-wrap items-center gap-2">
                   {naacGrade && <Badge>NAAC Grade: {naacGrade}</Badge>}
-                  {website && (
+                  {/* {website && (
                     <a
                       href={website}
                       target="_blank"
@@ -240,7 +240,7 @@ export default function DistanceUniversityDetails() {
                     >
                       Visit Website
                     </a>
-                  )}
+                  )} */}
                 </div>
 
                 {description && (

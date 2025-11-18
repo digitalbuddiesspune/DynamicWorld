@@ -224,14 +224,14 @@ const RegularEducationUniversities = ({ university }) => {
                 )}
               </div>
 
-              <div className="rounded-xl bg-gray-50 ring-1 ring-gray-200 p-4 mt-4">
+              {/* <div className="rounded-xl bg-gray-50 ring-1 ring-gray-200 p-4 mt-4">
                 <div className="text-sm font-semibold text-gray-900 mb-2">
                   Website
                 </div>
                 <div className="text-sm">
                   <SafeLink href={website}>{website || "—"}</SafeLink>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="rounded-xl bg-gray-50 ring-1 ring-gray-200 p-4">

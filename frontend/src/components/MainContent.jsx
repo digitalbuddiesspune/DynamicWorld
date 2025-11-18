@@ -217,7 +217,7 @@ const MainContent = ({
               ))}
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h2 className="my-3  text-lg sm:text-xl font-semibold text-gray-800">
               Website:{" "}
               <a
@@ -229,7 +229,7 @@ const MainContent = ({
                 {website}
               </a>
             </h2>
-          </div>
+          </div> */}
         </section>
       )}
 
