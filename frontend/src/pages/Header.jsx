@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header>
       <div className="block">
-        <PromotionStrip/>
+        <PromotionStrip />
       </div>
       <Navbar />
     </header>
