@@ -286,7 +286,7 @@ export default function DistanceUniversityDetails() {
                 </div>
               )}
 
-              {website && (
+              {/* {website && (
                 <div className="mt-4">
                   <h3 className="my-3 text-lg sm:text-xl font-semibold text-gray-800">
                     Website: {" "}
@@ -295,7 +295,7 @@ export default function DistanceUniversityDetails() {
                     </a>
                   </h3>
                 </div>
-              )}
+              )} */}
             </Section>
           )}
 

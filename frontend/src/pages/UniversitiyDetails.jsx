@@ -235,7 +235,7 @@ export default function UniversityDetails() {
                     NAAC Grade: {naacGrade}
                   </Badge>
                 )}
-                {website && (
+                {/* {website && (
                   <a
                     href={website}
                     target="_blank"
@@ -244,7 +244,7 @@ export default function UniversityDetails() {
                   >
                     Visit Website
                   </a>
-                )}
+                )} */}
               </div>
 
               {description && (
@@ -290,7 +290,7 @@ export default function UniversityDetails() {
               </div>
             )}
 
-            {website && (
+            {/* {website && (
               <div className="mt-4">
                 <h3 className="my-3 text-lg sm:text-xl font-semibold text-gray-800">
                   Website: {" "}
@@ -299,7 +299,7 @@ export default function UniversityDetails() {
                   </a>
                 </h3>
               </div>
-            )}
+            )} */}
           </Section>
         )}
 
