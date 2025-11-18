@@ -130,7 +130,7 @@ const Sidebar = ({
               })}
               <li className="">
                 <a
-                  href="https://dynamic-world-study-abroad.onrender.com/"
+                  href="https://studyabroad.dynamicworld.in/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-blue-600 text-white font-medium transition-all duration-300 hover:bg-blue-700 hover:shadow-md w-full"
