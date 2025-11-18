@@ -27,7 +27,7 @@ const H2 = ({ children }) => (
 );
 
 const Section = ({ children }) => (
-  <section className="rounded-2xl bg-white shadow-sm ring-1 ring-gray-200 p-5 md:p-6">
+  <section className="rounded-2xl bg-white shadow-sm ring-1 ring-gray-200 px-2 py-4 md:px-6 md:py-6">
     {children}
   </section>
 );
@@ -170,7 +170,7 @@ const RegularEducationUniversities = ({ university }) => {
 
   return (
     <div
-      className="min-h-screen font-sans p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8"
+      className="min-h-screen font-sans p-2 sm:p-6 lg:p-8 space-y-6 sm:space-y-8"
       style={{ color: COLORS.text }}
     >
       <header className="rounded-xl bg-white shadow-sm ring-1 ring-gray-200 p-4 sm:p-6">
