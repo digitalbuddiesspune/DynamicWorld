@@ -14,7 +14,7 @@ const SkillCourse03 = () => {
   return (
     <section className="min-h-screen w-full bg-white text-[#31393C]">
       {/* Hero */}
-      <div className="bg-[#3E96F4] text-white">
+      <div className="bg-[#FFC067] text-[#2B2B2B]">
         <div className="mx-auto max-w-6xl px-5 lg:px-8 py-8 lg:py-10">
           <div className="flex items-center gap-3">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1 text-[11px] font-semibold text-[#31393C] shadow-sm">

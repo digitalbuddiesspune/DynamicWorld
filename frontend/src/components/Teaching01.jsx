@@ -5,7 +5,7 @@ import CalendyButton from "./CalendyButton";
 const Teaching01 = () => {
   return (
     <div className="">
-      <header className="bg-[#3E96F4] px-5 lg:px-8 py-5">
+      <header className="bg-[#FFC067] px-5 lg:px-8 py-5">
         <div className="my-2">
           <h1 className=" text-white text-xl lg:text-4xl font-bold">
             Teaching (B.ED | BP.ED | M.ED)

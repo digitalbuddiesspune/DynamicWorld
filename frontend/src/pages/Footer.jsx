@@ -340,7 +340,7 @@ const Footer = () => {
                 href="https://wa.me/917887881060"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#3e96f4] hover:to-purple-500 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105 text-sm"
+                className="inline-flex items-center gap-2 bg-[#FFC067] hover:to-purple-500 text-[#2B2B2B] font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105 text-sm"
               >
                 Get Free Counseling
               </a>

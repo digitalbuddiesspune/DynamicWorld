@@ -76,19 +76,19 @@ const AboutUs02 = () => {
   const handleNext = () => scrollToIndex((active + 1) % slides.length);
 
   return (
-    <section id="about-us-mission" className="w-full bg-white text-[#1f2937]">
+    <section id="about-us-mission" className="w-full bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 text-[#1f2937]">
       <div className="max-w-6xl mx-auto px-6 py-14">
         {/* Heading (optional minimal) */}
         <div className="mb-6 sm:mb-8 flex items-end justify-between">
-          <h2 className="text-xl font-semibold text-[#1d4ed8] tracking-[0.18em] uppercase">
+          <h2 className="text-xl font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent tracking-[0.18em] uppercase">
             What drives us
           </h2>
           {/* Controls visible on sm- only (mobile). Hidden on md+ where grid is shown. */}
           <div className="flex items-center gap-2 sm:hidden">
-            <button aria-label="Previous" onClick={handlePrev} className="h-9 w-9 rounded-full border border-[#d1d5db] text-[#1f2937] hover:bg-[#f1f5f9]">
+            <button aria-label="Previous" onClick={handlePrev} className="h-9 w-9 rounded-full border-2 border-purple-300 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 hover:from-purple-200 hover:to-pink-200 shadow-md">
               ‹
             </button>
-            <button aria-label="Next" onClick={handleNext} className="h-9 w-9 rounded-full border border-[#d1d5db] text-[#1f2937] hover:bg-[#f1f5f9]">
+            <button aria-label="Next" onClick={handleNext} className="h-9 w-9 rounded-full border-2 border-purple-300 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 hover:from-purple-200 hover:to-pink-200 shadow-md">
               ›
             </button>
           </div>
@@ -131,7 +131,7 @@ const AboutUs02 = () => {
                 key={i}
                 aria-label={`Go to slide ${i + 1}`}
                 onClick={() => scrollToIndex(i)}
-                className={`h-2.5 w-2.5 rounded-full ${i === active ? "bg-[#1d4ed8]" : "bg-[#dbeafe]"}`}
+                className={`h-2.5 w-2.5 rounded-full transition-all ${i === active ? "bg-gradient-to-r from-purple-600 to-pink-600 w-8" : "bg-purple-200"}`}
               />
             ))}
           </div>

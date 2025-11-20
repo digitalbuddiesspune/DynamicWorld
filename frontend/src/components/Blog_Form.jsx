@@ -321,7 +321,7 @@ const Blog_Form = ({ title, formRef }) => {
                     ${
                       !isValid || submitting
                         ? "bg-blue-300 cursor-not-allowed"
-                        : "bg-blue-600 hover:bg-blue-700"
+                        : "bg-[#FFC067] hover:bg-blue-700"
                     }
                     focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400`}
                 >

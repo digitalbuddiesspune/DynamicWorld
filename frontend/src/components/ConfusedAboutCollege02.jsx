@@ -215,28 +215,28 @@ const ConfusedAboutCollege02 = () => {
   }, []);
 
   return (
-    <div className=" bg-gray-50 w-full">
+    <div className="bg-gradient-to-br from-gray-200 via-gray-300 to-gray-200 w-full">
       {/* Main Section */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-100  py-4 sm:py-6 lg:py-8">
+      <div className="bg-gradient-to-br from-gray-200 via-gray-300 to-gray-200 py-4 sm:py-6 lg:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Confused About College Card */}
-          <div className="bg-blue-600 rounded-xl p-4 sm:p-6 mb-6 sm:mb-8 w-full shadow-2xl border border-blue-500/20">
+          <div className="bg-[#FFC067] rounded-xl p-4 sm:p-6 mb-6 sm:mb-8 w-full shadow-2xl border border-gray-300">
             <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6">
               {/* Left Side - Text Content */}
               <div className="flex-1 space-y-3 sm:space-y-4 text-left w-full lg:w-auto">
                 {/* Main Heading */}
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight drop-shadow-lg">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2B2B2B] leading-tight drop-shadow-lg">
                   Confused About College?
                 </h1>
 
                 {/* Subheading */}
-                <p className="text-sm sm:text-base text-blue-100 leading-relaxed">
+                <p className="text-sm sm:text-base text-[#2B2B2B] font-semibold leading-relaxed">
                   Schedule a 30-minute admission counseling video call for
                   personalized guidance based on your skills and interests!
                 </p>
 
                 {/* Video Counselling Button */}
-                <button className="bg-white hover:bg-gray-100 hover:-translate-y-1 text-blue-600 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium text-sm sm:text-base flex items-center gap-2 transition-all duration-300 w-full sm:w-auto justify-center sm:justify-start shadow-lg">
+                <button className="bg-white hover:bg-gray-100 hover:-translate-y-1 text-[#2B2B2B] px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium text-sm sm:text-base flex items-center gap-2 transition-all duration-300 w-full sm:w-auto justify-center sm:justify-start shadow-lg">
                   <svg
                     className="w-4 h-4 sm:w-5 sm:h-5"
                     fill="currentColor"
@@ -249,21 +249,21 @@ const ConfusedAboutCollege02 = () => {
 
                 {/* Separator */}
                 <div className="flex items-center">
-                  <div className="flex-1 h-px bg-white/30"></div>
-                  <span className="px-3 sm:px-4 text-white/80 text-xs sm:text-sm">
+                  <div className="flex-1 h-px bg-[#2B2B2B]/30"></div>
+                  <span className="px-3 sm:px-4 text-[#2B2B2B]/80 text-xs sm:text-sm">
                     or
                   </span>
-                  <div className="flex-1 h-px bg-white/30"></div>
+                  <div className="flex-1 h-px bg-[#2B2B2B]/30"></div>
                 </div>
 
                 {/* Toll-Free Number */}
-                <div className="text-white text-center sm:text-left">
-                  <span className="text-sm sm:text-base">
+                <div className="text-[#2B2B2B] text-center sm:text-left">
+                  <span className="text-sm sm:text-base font-semibold">
                     Call us on our Toll-Free Number:{" "}
                   </span>
                   <a
                     href="tel:917887881060"
-                    className="text-yellow-300 underline text-sm sm:text-base font-medium hover:text-yellow-200 transition-colors duration-200 cursor-pointer"
+                    className="text-[#2B2B2B] underline text-sm sm:text-base font-medium hover:text-[#2B2B2B]/80 transition-colors duration-200 cursor-pointer"
                   >
                     7887881060
                   </a>

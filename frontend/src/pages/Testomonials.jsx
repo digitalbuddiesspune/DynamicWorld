@@ -76,13 +76,13 @@ const AllTestimonials = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-blue-50 flex flex-col items-center justify-center py-10 px-4 md:px-8 lg:px-16 xl:px-24">
+    <div className="min-h-screen bg-[#D4D4D4] flex flex-col items-center justify-center py-10 px-4 md:px-8 lg:px-16 xl:px-24">
       {/* Header */}
       <div className="text-center mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+        <h2 className="text-2xl md:text-3xl font-bold text-[#2B2B2B]">
           Video Testimonials
         </h2>
-        <p className="text-gray-600 mt-2">
+        <p className="text-[#2B2B2B] mt-2">
           Watch what our students have to say about their experience
         </p>
       </div>
@@ -109,10 +109,10 @@ const AllTestimonials = () => {
                 ></iframe>
               </div>
               <div className="text-center mt-4">
-                <h3 className="text-lg font-semibold text-gray-800">
+                <h3 className="text-lg font-semibold text-[#2B2B2B]">
                   {item.name}
                 </h3>
-                <p className="text-sm text-gray-500">{item.role}</p>
+                <p className="text-sm text-[#2B2B2B]">{item.role}</p>
               </div>
             </div>
           ))}
@@ -124,7 +124,7 @@ const AllTestimonials = () => {
         {/* Left Arrow */}
         <button
           onClick={scrollPrev}
-          className="p-2 rounded-full transition-all duration-300 bg-blue-600 hover:bg-blue-700 text-white hover:scale-110"
+          className="p-2 rounded-full transition-all duration-300 bg-[#FFC067] hover:bg-blue-700 text-[#2B2B2B] hover:scale-110"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -148,7 +148,7 @@ const AllTestimonials = () => {
               onClick={() => scrollToVideo(index)}
               className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                 activeDot === index
-                  ? "bg-blue-600 scale-125"
+                  ? "bg-[#FFC067] scale-125"
                   : "bg-gray-400 opacity-70 hover:opacity-100"
               }`}
             ></button>
@@ -158,7 +158,7 @@ const AllTestimonials = () => {
         {/* Right Arrow */}
         <button
           onClick={scrollNext}
-          className="p-2 rounded-full transition-all duration-300 bg-blue-600 hover:bg-blue-700 text-white hover:scale-110"
+          className="p-2 rounded-full transition-all duration-300 bg-[#FFC067] hover:bg-blue-700 text-[#2B2B2B] hover:scale-110"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

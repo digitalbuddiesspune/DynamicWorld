@@ -10,23 +10,23 @@ const ContactUs1 = () => {
   const buttonBase =
     "inline-flex items-center justify-center rounded-lg font-medium transition-all hover:-translate-y-0.5";
   const primaryBtn =
-    "bg-[#1d4ed8] text-white hover:bg-[#1a46c6] shadow-sm";
+    "bg-[#FFC067] text-[#2B2B2B] hover:bg-[#e6ac3a] shadow-sm";
   const secondaryBtn =
     "border border-[#cbd5f5] bg-white text-[#1e293b] hover:bg-[#f8fafc] shadow-sm";
 
   return (
     <section className="w-full bg-gradient-to-b from-white via-[#f6f8fc] to-white text-[#0f172a]">
       {/* Top Header */}
-      <header className="bg-[#3E96F4] text-white">
+      <header className="bg-[#FFC067] text-[#2B2B2B]">
         <div className="mx-auto max-w-7xl py-10">
           <div className="flex flex-col items-center text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/15 text-xs font-semibold tracking-[0.35em] px-3 py-1 uppercase">
-              We’re here to help
+              We're here to help
             </span>
             <h1 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
               Contact Dynamic World
             </h1>
-            <p className="mt-2 max-w-2xl text-white/85">
+            <p className="mt-2 max-w-2xl text-[#2B2B2B] text-sm sm:text-base">
               Reach out to our team via phone, email, or visit our head office.
             </p>
           </div>

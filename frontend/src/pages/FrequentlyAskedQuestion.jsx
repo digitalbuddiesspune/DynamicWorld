@@ -37,9 +37,9 @@ const FAQAccordion = () => {
   };
 
   return (
-    <section className="bg-slate-50 py-8 sm:py-10 lg:py-12 px-3 sm:px-6 lg:px-8">
+    <section className="bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200 py-8 sm:py-10 lg:py-12 px-3 sm:px-6 lg:px-8">
       <div className="mx-auto w-full max-w-3xl">
-        <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-slate-800 text-center mb-6 sm:mb-8">
+        <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-[#2B2B2B] text-center mb-6 sm:mb-8">
           Frequently Asked Questions
         </h2>
 
@@ -52,7 +52,7 @@ const FAQAccordion = () => {
             return (
               <div
                 key={index}
-                className="border rounded-lg shadow-sm overflow-hidden bg-white border-gray-200"
+                className="border rounded-lg shadow-sm overflow-hidden bg-gray-100 border-gray-300"
               >
                 <button
                   id={buttonId}
@@ -61,8 +61,8 @@ const FAQAccordion = () => {
                   className={`w-full flex items-center justify-between gap-3 text-left font-medium focus:outline-none transition-colors duration-300
                     ${
                       isActive
-                        ? "bg-[#3E96F4] text-white"
-                        : "bg-white text-slate-800"
+                        ? "bg-[#FFC607] text-[#2B2B2B]"
+                        : "bg-gray-200 text-[#2B2B2B]"
                     }
                   `}
                   onClick={() => toggleAccordion(index)}
@@ -72,9 +72,9 @@ const FAQAccordion = () => {
                   </span>
                   <span className="pr-3 sm:pr-4">
                     {isActive ? (
-                      <ChevronUp className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
+                      <ChevronUp className="h-4 w-4 sm:h-5 sm:w-5 text-[#2B2B2B]" />
                     ) : (
-                      <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 text-[#3E96F4]" />
+                      <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 text-[#2B2B2B]" />
                     )}
                   </span>
                 </button>
@@ -84,7 +84,7 @@ const FAQAccordion = () => {
                     id={contentId}
                     role="region"
                     aria-labelledby={buttonId}
-                    className="px-3 sm:px-4 py-3 sm:py-4 border-t border-gray-200 text-slate-600 text-[13px] sm:text-sm lg:text-base leading-relaxed"
+                    className="px-3 sm:px-4 py-3 sm:py-4 border-t border-gray-300 text-[#2B2B2B] bg-gray-50 text-[13px] sm:text-sm lg:text-base leading-relaxed"
                   >
                     {faq.answer}
                   </div>

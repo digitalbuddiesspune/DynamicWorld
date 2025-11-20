@@ -5,7 +5,7 @@ import DynamicForm from "../pages/DynamicForm";
 const AIUniversity01 = () => {
   return (
     <div>
-      <div className="text-white bg-[#3e96f4] p-5 ">
+      <div className="text-[#2B2B2B] bg-[#FFC067] p-5 ">
         <div className="flex items-start gap-5">
           <div className="rounded-xl">
             <img

@@ -111,7 +111,7 @@ export default function AffordableCountries({ showCTA = true }) {
 
   return (
     <div className="min-h-screen w-full bg-white text-[#31393C]">
-      <div className="bg-[#3E96F4] text-white">
+      <div className="bg-[#FFC067] text-[#2B2B2B]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-6">
           <div className="flex items-center gap-3">
             <Globe2 className="h-6 w-6" aria-hidden />
@@ -238,7 +238,7 @@ export default function AffordableCountries({ showCTA = true }) {
                 <div className="mt-4 flex flex-col gap-2">
                   <a
                     href="tel:+917887881060"
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[#3E96F4] text-white px-4 py-2 font-semibold shadow-sm hover:bg-[#3187e2]"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[#FFC067] text-[#2B2B2B] px-4 py-2 font-semibold shadow-sm hover:bg-[#3187e2]"
                   >
                     Call Now
                   </a>

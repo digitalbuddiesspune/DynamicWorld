@@ -53,7 +53,7 @@ const AboutInfo = () => {
           <NavLink
             to="/services/online-education"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="bg-blue-600 text-white px-8 py-3 font-medium rounded-full shadow hover:shadow-lg hover:bg-blue-700 transition-all duration-300"
+            className="bg-[#FFC067] text-[#2B2B2B] px-8 py-3 font-medium rounded-full shadow hover:shadow-lg hover:bg-[#FFB84D] transition-all duration-300"
           >
             All Universities
           </NavLink>
@@ -64,17 +64,17 @@ const AboutInfo = () => {
           {infoCards.map((card) => (
             <div
               key={card.id}
-              className="bg-blue-600 text-white rounded-2xl p-6 flex flex-col items-center justify-center shadow-md hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
+              className="bg-[#FFC067] text-[#2B2B2B] rounded-2xl p-6 flex flex-col items-center justify-center shadow-md hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
             >
-              <div className="flex justify-center items-center w-16 h-16 mb-4 bg-white/20 rounded-full">
+              <div className="flex justify-center items-center w-16 h-16 mb-4 bg-white/40 rounded-full">
                 <img
                   src={card.icon}
                   alt={card.title}
-                  className="w-10 h-10 filter invert"
+                  className="w-10 h-10"
                 />
               </div>
               <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
-              <p className="text-sm text-white/90 leading-snug">{card.text}</p>
+              <p className="text-sm text-[#2B2B2B]/90 leading-snug">{card.text}</p>
             </div>
           ))}
         </div>

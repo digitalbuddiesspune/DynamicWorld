@@ -52,7 +52,7 @@ export const MBBSInGeorgia = () => {
     <div className="font-sans text-[#31393C]">
       {/* ===== Hero ===== */}
       <header className="mx-auto max-w-7xl">
-        <div className="bg-[#3E96F4] text-white">
+        <div className="bg-[#FFC067] text-[#2B2B2B]">
           <div className="p-6 sm:p-8 lg:p-10">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
               <div>
@@ -131,7 +131,7 @@ export const MBBSInGeorgia = () => {
 
                   {/* node */}
                   <div
-                    className="relative w-5 h-5 bg-[#3E96F4] rounded-full ring-4 ring-white shadow"
+                    className="relative w-5 h-5 bg-[#FFC067] rounded-full ring-4 ring-white shadow"
                     aria-hidden
                   />
                 </div>
@@ -166,7 +166,7 @@ export const MBBSInGeorgia = () => {
                 className="group bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3E96F4] text-white font-bold text-lg ring-1 ring-black/5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FFC067] text-[#2B2B2B] font-bold text-lg ring-1 ring-black/5">
                     {uni.no}
                   </div>
                   <div className="min-w-0 flex-1">
@@ -233,7 +233,7 @@ const MBBSInBangladesh = () => {
     <div className="font-sans text-[#31393C]">
       {/* ===== Hero ===== */}
       <header className="mx-auto max-w-7xl">
-        <div className="bg-[#3E96F4] text-white ring-1 ring-black/5">
+        <div className="bg-[#FFC067] text-[#2B2B2B] ring-1 ring-black/5">
           <div className="p-6 sm:p-8 lg:p-10">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
               MBBS in Bangladesh
@@ -302,7 +302,7 @@ const MBBSInBangladesh = () => {
 
                   {/* node */}
                   <div
-                    className="relative w-5 h-5 bg-[#3E96F4] rounded-full ring-4 ring-white shadow"
+                    className="relative w-5 h-5 bg-[#FFC067] rounded-full ring-4 ring-white shadow"
                     aria-hidden
                   />
                 </div>
@@ -337,7 +337,7 @@ const MBBSInBangladesh = () => {
                 className="group bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3E96F4] text-white font-bold text-lg ring-1 ring-black/5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FFC067] text-[#2B2B2B] font-bold text-lg ring-1 ring-black/5">
                     {uni.no}
                   </div>
                   <div className="min-w-0 flex-1">
@@ -411,7 +411,7 @@ export const MBBSInKazakhstanKyrgyzstan = () => {
     <div className=" text-[#31393C]">
       {/* ===== Hero ===== */}
       <header className="mx-auto max-w-7xl">
-        <div className="bg-[#3E96F4] text-white ">
+        <div className="bg-[#FFC067] text-[#2B2B2B] ">
           <div className="p-6 sm:p-8 lg:p-10">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
               <div>
@@ -492,7 +492,7 @@ export const MBBSInKazakhstanKyrgyzstan = () => {
 
                   {/* node */}
                   <div
-                    className="relative w-5 h-5 bg-[#3E96F4] rounded-full ring-4 ring-white shadow"
+                    className="relative w-5 h-5 bg-[#FFC067] rounded-full ring-4 ring-white shadow"
                     aria-hidden
                   />
                 </div>
@@ -526,7 +526,7 @@ export const MBBSInKazakhstanKyrgyzstan = () => {
                 className="group bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3E96F4] text-white font-bold text-lg ring-1 ring-black/5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FFC067] text-[#2B2B2B] font-bold text-lg ring-1 ring-black/5">
                     {uni.no}
                   </div>
                   <div className="min-w-0 flex-1">
@@ -566,7 +566,7 @@ export const MBBSInKazakhstanKyrgyzstan = () => {
                     className="group bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3E96F4] text-white font-bold text-lg ring-1 ring-black/5">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FFC067] text-[#2B2B2B] font-bold text-lg ring-1 ring-black/5">
                         {uni.no}
                       </div>
                       <div className="min-w-0 flex-1">
@@ -650,7 +650,7 @@ export const MBBSInUzbekistanPhilippines = () => {
     <div className="font-sans text-[#31393C]">
       {/* ===== Hero ===== */}
       <header className="mx-auto max-w-7xl">
-        <div className="bg-[#3E96F4] text-white">
+        <div className="bg-[#FFC067] text-[#2B2B2B]">
           <div className="p-6 sm:p-8 lg:p-10">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
               <div>
@@ -731,7 +731,7 @@ export const MBBSInUzbekistanPhilippines = () => {
 
                   {/* node */}
                   <div
-                    className="relative w-5 h-5 bg-[#3E96F4] rounded-full ring-4 ring-white shadow"
+                    className="relative w-5 h-5 bg-[#FFC067] rounded-full ring-4 ring-white shadow"
                     aria-hidden
                   />
                 </div>
@@ -766,7 +766,7 @@ export const MBBSInUzbekistanPhilippines = () => {
                 className="group bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3E96F4] text-white font-bold text-lg ring-1 ring-black/5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FFC067] text-[#2B2B2B] font-bold text-lg ring-1 ring-black/5">
                     {uni.no}
                   </div>
                   <div className="min-w-0 flex-1">
@@ -855,7 +855,7 @@ export const MBBSInRussia = () => {
     <div className="font-sans text-[#31393C]">
       {/* ===== Hero ===== */}
       <header className="mx-auto max-w-7xl">
-        <div className="bg-[#3E96F4] text-white ">
+        <div className="bg-[#FFC067] text-[#2B2B2B] ">
           <div className="p-6 sm:p-8 lg:p-10">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
               <div>
@@ -935,7 +935,7 @@ export const MBBSInRussia = () => {
 
                   {/* node */}
                   <div
-                    className="relative w-5 h-5 bg-[#3E96F4] rounded-full ring-4 ring-white shadow"
+                    className="relative w-5 h-5 bg-[#FFC067] rounded-full ring-4 ring-white shadow"
                     aria-hidden
                   />
                 </div>
@@ -970,7 +970,7 @@ export const MBBSInRussia = () => {
                 className="group bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3E96F4] text-white font-bold text-lg ring-1 ring-black/5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FFC067] text-[#2B2B2B] font-bold text-lg ring-1 ring-black/5">
                     {uni.no}
                   </div>
                   <div className="min-w-0 flex-1">
@@ -1088,7 +1088,7 @@ export const AdmissionCulturalBenefits = () => {
         {/* Admission Benefits */}
         <section className="mb-10">
           <h2 className="text-3xl font-bold text-[#31393C] mb-6 flex items-center justify-center">
-            <span className="inline-flex items-center justify-center bg-[#3E96F4] text-white rounded-md p-2 mr-3">
+            <span className="inline-flex items-center justify-center bg-[#FFC067] text-[#2B2B2B] rounded-md p-2 mr-3">
               <IconInfo className="w-6 h-6" />
             </span>
             Admission Benefits
@@ -1113,7 +1113,7 @@ export const AdmissionCulturalBenefits = () => {
         </section>
 
         {/* Cultural Benefits */}
-        <section className=" rounded-2xl shadow-md ring-1 ring-blue-200/60 bg-[#3E96F4] text-white p-6">
+        <section className=" rounded-2xl shadow-md ring-1 ring-blue-200/60 bg-[#FFC067] text-[#2B2B2B] p-6">
           <h2 className="text-2xl font-bold mb-5 flex items-center">
             Cultural Benefits
           </h2>
@@ -1263,7 +1263,7 @@ export const UltraLightweightLandingPage = () => {
           </p>
           <a
             href="https://wa.me/917887881060"
-            className="inline-flex items-center justify-center bg-[#3E96F4] text-white font-semibold text-lg py-3 px-8 rounded-full shadow-md transition hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#3E96F4] focus-visible:ring-offset-white"
+            className="inline-flex items-center justify-center bg-[#FFC067] text-[#2B2B2B] font-semibold text-lg py-3 px-8 rounded-full shadow-md transition hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#3E96F4] focus-visible:ring-offset-white"
             aria-label="Get Your Free Consultation"
           >
             Get Your Free Consultation

@@ -16,7 +16,7 @@ const ExecutiveMBAOneYear = () => {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           {/* Replace with your banner image/background if needed */}
-          <div className="absolute inset-0 bg-[#3E96F4]/80 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-[#FFC067]/80 backdrop-blur-[1px]" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 py-16 sm:py-20 md:py-24">

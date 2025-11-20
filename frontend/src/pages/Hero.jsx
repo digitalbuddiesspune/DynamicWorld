@@ -9,7 +9,7 @@ const vocationalLarge =
 const careerLarge =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1762338767/Blue_Professional_Business_Visa_Service_Promotion_Web_Banner_1920_x_600_px_1_fqizwb.svg";
 const universitiesLarge =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1762509887/Blue_Simple_Education_Coaching_Banner_Landscape_1920_x_600_px_1_gnefjv.svg";
+ "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763642898/OnlineEduMob_bkltzr.svg"
 const appostileLarge =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1762175348/Purple_and_Yellow_Shapes_Middle_School_Back_to_School_Banner_1920_x_600_px_i3l3c2.png";
 
@@ -149,7 +149,7 @@ export default function Hero() {
       onTouchEnd={onTouchEnd}
     >
       {/* Slides */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 border-b border-b-gray-100">
         {banners.map((src, i) => (
           <img
             key={src}

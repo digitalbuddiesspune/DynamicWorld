@@ -94,12 +94,12 @@ const Card = ({ city, phone, tel, address }) => (
           </span>
         </div>
 
-        <p className="mt-2 text-sm text-[#475569] line-clamp-3">{address}</p>
+        <p className="mt-2 text-sm text-[#2B2B2B] line-clamp-3">{address}</p>
 
         <div className="mt-4 flex flex-wrap gap-3">
           <a
             href={`tel:${tel}`}
-            className="inline-flex items-center justify-center rounded-lg bg-[#1d4ed8] px-4 py-2 text-xs lg:text-sm font-medium text-white transition-all hover:bg-[#1a46c6] hover:-translate-y-0.5 shadow-sm"
+            className="inline-flex items-center justify-center rounded-lg bg-[#FFC067] px-4 py-2 text-xs lg:text-sm font-medium text-[#2B2B2B] transition-all hover:bg-[#FFC607] hover:-translate-y-0.5 shadow-sm"
           >
             Call Now
           </a>
@@ -139,7 +139,7 @@ const ContactUs2 = () => {
   return (
     <section className="w-full bg-gradient-to-b from-white via-[#f6f8fc] to-white">
       {/* Top banner */}
-      <div className="bg-[#3E96F4] text-white">
+      <div className="bg-[#FFC067] text-[#2B2B2B]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold tracking-[0.3em] uppercase">
@@ -148,7 +148,7 @@ const ContactUs2 = () => {
             <h1 className="mt-2 text-2xl sm:text-3xl font-bold tracking-tight">
               Visit or Call a Dynamic World Office
             </h1>
-            <p className="mt-2 text-white/85">
+            <p className="mt-2 text-[#2B2B2B] text-sm sm:text-base max-w-2xl mx-auto">
               Indian offices listed first for your convenience.
             </p>
           </div>
@@ -197,7 +197,7 @@ const ContactUs2 = () => {
             <div className="flex flex-wrap gap-3">
               <a
                 href="tel:+917887881060"
-                className="inline-flex items-center justify-center rounded-lg bg-[#1d4ed8] px-4 py-2.5 text-xs lg:text-sm font-medium text-white transition-all hover:bg-[#1a46c6] hover:-translate-y-0.5 shadow-sm"
+                className="inline-flex items-center justify-center rounded-lg bg-[#FFC067] px-4 py-2.5 text-xs lg:text-sm font-medium text-[#2B2B2B] transition-all hover:bg-[#FFC607] hover:-translate-y-0.5 shadow-sm"
               >
                 Quick Call
               </a>

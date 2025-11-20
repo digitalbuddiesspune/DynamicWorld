@@ -7,7 +7,7 @@ import BranchesWorld from "./BranchesAcrossWorld";
 
 const AboutUs = () => {
   return (
-    <div>
+    <div className="bg-gradient-to-br from-blue-50 via-indigo-50  to-pink-50">
       <AboutUs01 />
       <AboutUs02 />
       <AboutUs03 />

@@ -6,9 +6,9 @@ const VocationCoursesHome = ({ short, title, para1, para2 }) => {
   return (
     <div className="bg-white text-[#31393C]">
       {/* Header */}
-      <header className="bg-[#3E96F4] text-white">
+      <header className="bg-[#FFC067] text-[#2B2B2B]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-[#31393C]">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold text-[#31393C]">
             {short} • India
           </span>
 
@@ -16,7 +16,7 @@ const VocationCoursesHome = ({ short, title, para1, para2 }) => {
             {title}
           </h1>
 
-          <h3 className="mt-2 text-base sm:text-lg text-blue-50 capitalize">
+          <h3 className="mt-2 text-base sm:text-lg text-black/90 capitalize">
             Find top {title} across India and get admission done.
           </h3>
         </div>

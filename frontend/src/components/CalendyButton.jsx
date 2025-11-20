@@ -16,8 +16,8 @@ const CalendyButton = () => {
       {/* Quick Call */}
       <button
         onClick={handleQuickCall}
-        className="inline-flex items-center gap-2 rounded-2xl bg-[#3E96F4] text-white px-4 py-2 text-sm sm:text-base font-semibold shadow-md ring-1 ring-[#3E96F4]/30 
-        hover:bg-[#2f7dd0] hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 
+        className="inline-flex items-center gap-2 rounded-2xl bg-[#FFC067] text-[#2B2B2B] px-4 py-2 text-sm sm:text-base font-semibold shadow-md ring-1 ring-[#3E96F4]/30 
+        hover:bg-[#ffb84d] hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 
         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#3E96F4]"
       >
         <PhoneCall className="h-5 w-5" aria-hidden /> Quick Call
@@ -26,8 +26,8 @@ const CalendyButton = () => {
       {/* Video Counselling */}
       <button
         onClick={handleVideoCounselling}
-        className="inline-flex items-center gap-2 rounded-2xl bg-[#3E96F4] text-white px-4 py-2 text-sm sm:text-base font-semibold shadow-md ring-1 ring-[#3E96F4]/30 
-        hover:bg-[#2f7dd0] hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 
+        className="inline-flex items-center gap-2 rounded-2xl bg-[#FFC067] text-[#2B2B2B] px-4 py-2 text-sm sm:text-base font-semibold shadow-md ring-1 ring-[#3E96F4]/30 
+        hover:bg-[#ffb84d] hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 
         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#3E96F4]"
       >
         <Video className="h-5 w-5" aria-hidden /> Video Counselling

@@ -2,12 +2,12 @@ import { useState } from "react";
 
 export const CareerHero = () => {
   return (
-    <section className="w-full bg-[#3E96F4] text-white">
+    <section className="w-full bg-[#FFC067] text-[#2B2B2B]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
           HIGHWAY TO A BRIGHTER CAREER
         </h1>
-        <p className="mt-4 text-white/90 text-sm leading-relaxed">
+        <p className="mt-4 text-[#2B2B2B] lg:font-medium text-sm leading-relaxed">
           Studying made easy through suggestions and support always delivers
           satisfying results. Career needs focus, planning and advice. We
           balance all aspects of your career in a better way. Our experts are
@@ -19,7 +19,7 @@ export const CareerHero = () => {
           partnering with Dynamic World and plan, implement and achieve your
           success.
         </p>
-        <p className="mt-3 text-white/90 text-sm leading-relaxed">
+        <p className="mt-3 text-[#2B2B2B] lg:font-medium text-sm leading-relaxed">
           MEDICAL, ENGINEERING, ARCHITECTURE, AGRICULTURE, PHARMACY, MBA, BBA
           whichever stream you opt for career planning is essential through
           expert career counselling. Factors like self-efficiency, satisfaction,
@@ -56,7 +56,7 @@ const TreeNode = ({ label, children = [] }) => {
             </span>
           </button>
         ) : (
-          <span className="mt-2 h-2 w-2 rounded-full bg-[#3E96F4] ring-2 ring-[#EDEEEB]" />
+          <span className="mt-2 h-2 w-2 rounded-full bg-[#FFC067] ring-2 ring-[#EDEEEB]" />
         )}
         <div className="rounded-lg bg-white px-3 py-2 text-sm leading-5 text-[#31393C] ring-1 ring-gray-200 shadow-sm">
           {label}
@@ -131,12 +131,12 @@ export const WhatWeProvide = () => {
     <section className="bg-[#F8FAFC]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8">
         <div className="rounded-2xl ring-1 ring-gray-200 shadow-sm overflow-hidden">
-          <div className="bg-[#3E96F4] px-6 py-4">
-            <h2 className="text-lg font-semibold text-white">
+          <div className="bg-[#FFC067] px-6 py-4">
+            <h2 className="text-lg font-semibold text-[#2B2B2B] ">
               WHAT ARE WE PROVIDING?
             </h2>
           </div>
-          <div className="bg-white p-6 space-y-6">
+          <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-6 space-y-6">
             <div>
               <h3 className="text-base font-semibold text-[#31393C]">
                 GUIDANCE FOR ENTRANCE PREPARATION AND ADMISSION PROCEDURE
@@ -203,9 +203,9 @@ export const EntranceDetails = () => {
     <section className="bg-[#F8FAFC]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* NEET */}
-        <div className="rounded-2xl bg-white p-6 ring-1 ring-gray-200 shadow-sm">
-          <h3 className="text-base font-semibold text-[#31393C]">NEET</h3>
-          <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+        <div className="rounded-2xl bg-gradient-to-br from-[#FF6B9D] to-[#C44569] p-6 ring-1 ring-pink-300 shadow-lg">
+          <h3 className="text-base font-semibold text-white">NEET</h3>
+          <p className="mt-2 text-sm text-white/95 leading-relaxed">
             National Testing Agency (NTA) will conduct the NEET Exam for UG
             Medical Education : Students of 12th level must have Physics,
             Chemistry and Biology/Biotechnology with English as a mandatory
@@ -227,9 +227,9 @@ export const EntranceDetails = () => {
           </p>
         </div>
         {/* JEE */}
-        <div className="rounded-2xl bg-white p-6 ring-1 ring-gray-200 shadow-sm">
-          <h3 className="text-base font-semibold text-[#31393C]">JEE</h3>
-          <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+        <div className="rounded-2xl bg-gradient-to-br from-[#667EEA] to-[#764BA2] p-6 ring-1 ring-purple-300 shadow-lg">
+          <h3 className="text-base font-semibold text-white">JEE</h3>
+          <p className="mt-2 text-sm text-white/95 leading-relaxed">
             Age Limit / Qualifying exam - For appearing in the JEE (main)
             examination there is no age limit for the candidates. The candidates
             should also satisfy themselves about their fulfilling the age limit
@@ -254,11 +254,11 @@ export const EntranceDetails = () => {
           </p>
         </div>
         {/* NATA */}
-        <div className="rounded-2xl bg-white p-6 ring-1 ring-gray-200 shadow-sm">
-          <h3 className="text-base font-semibold text-[#31393C]">
+        <div className="rounded-2xl bg-gradient-to-br from-[#F093FB] to-[#F5576C] p-6 ring-1 ring-pink-300 shadow-lg">
+          <h3 className="text-base font-semibold text-white">
             NATA (NATIONAL APTITUDE TEST IN ARCHITECTURE)
           </h3>
-          <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+          <p className="mt-2 text-sm text-white/95 leading-relaxed">
             Eligibility Criteria: Candidate should have passed an 10+2
             examination with at least 50 percent aggregate marks in Physics,
             Chemistry, and Mathematics or passed 10+3 Diploma Examination with
@@ -282,9 +282,9 @@ export const EntranceDetails = () => {
           </p>
         </div>
         {/* MHT-CET */}
-        <div className="rounded-2xl bg-white p-6 ring-1 ring-gray-200 shadow-sm">
-          <h3 className="text-base font-semibold text-[#31393C]">MHT-CET</h3>
-          <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+        <div className="rounded-2xl bg-gradient-to-br from-[#FFC067] to-[#FF8C42] p-6 ring-1 ring-orange-300 shadow-lg">
+          <h3 className="text-base font-semibold text-[#2B2B2B]">MHT-CET</h3>
+          <p className="mt-2 text-sm text-[#2B2B2B] leading-relaxed">
             MHT CET (or Maharashtra Common Entrance Test) is a common state
             level entrance exam conducted by the State Common Entrance Test
             Cell, Government of Maharashtra every year for admission to
@@ -319,11 +319,11 @@ export const MBBSAbroad = () => {
   return (
     <section className="bg-[#F8FAFC]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8 space-y-8">
-        <div className="rounded-2xl bg-white p-6 ring-1 ring-gray-200 shadow-sm">
-          <h2 className="text-lg font-semibold text-[#31393C]">
+        <div className="rounded-2xl bg-gradient-to-br from-[#4ECDC4] to-[#44A08D] p-6 ring-1 ring-teal-300 shadow-lg">
+          <h2 className="text-lg font-semibold text-white">
             Overseas MBBS – Career Guidance
           </h2>
-          <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+          <p className="mt-2 text-sm text-white/95 leading-relaxed">
             Over the past few years, studying MBBS abroad has undergone a
             significant transformation. As per recent trends, more and more
             students are choosing to pursue MBBS abroad. At Dynamic world
@@ -334,7 +334,7 @@ export const MBBSAbroad = () => {
             recognized top medical universities around the world, enabling them
             to practice medicine in foreign countries and India.
           </p>
-          <ul className="mt-3 list-disc list-inside text-sm text-gray-700 space-y-1">
+          <ul className="mt-3 list-disc list-inside text-sm text-white/95 space-y-1">
             <li>
               Foreign medical universities have a good number of MBBS seats for
               international students.
@@ -352,11 +352,11 @@ export const MBBSAbroad = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="rounded-2xl bg-white p-6 ring-1 ring-gray-200 shadow-sm">
-            <h3 className="text-base font-semibold text-[#31393C]">
+          <div className="rounded-2xl bg-gradient-to-br from-[#667EEA] to-[#764BA2] p-6 ring-1 ring-purple-300 shadow-lg">
+            <h3 className="text-base font-semibold text-white">
               WHY CHOOSE DYNAMIC WORLD EDUCATION?
             </h3>
-            <ul className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-700">
+            <ul className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-white/95">
               <li>FREE COUNSELLING</li>
               <li>ADMISSION PROCESS ASSISTANCE</li>
               <li>COUNTRY AND UNIVERSITY SELECTION</li>
@@ -369,7 +369,7 @@ export const MBBSAbroad = () => {
               <li>24*7 SOS SUPPORT</li>
               <li>AIRPORT PICKUP AND DROP</li>
             </ul>
-            <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-3 text-sm text-white/95 leading-relaxed">
               Unlike other education consultants, we travel across the
               universities and nations to deeply study the education and student
               facilities available at the campus and ensure that our students
@@ -383,11 +383,11 @@ export const MBBSAbroad = () => {
             </p>
           </div>
 
-          <div className="rounded-2xl bg-white p-6 ring-1 ring-gray-200 shadow-sm">
-            <h3 className="text-base font-semibold text-[#31393C]">
+          <div className="rounded-2xl bg-gradient-to-br from-[#F093FB] to-[#F5576C] p-6 ring-1 ring-pink-300 shadow-lg">
+            <h3 className="text-base font-semibold text-white">
               Country Snapshots (Highlights)
             </h3>
-            <ul className="mt-3 list-disc list-inside text-sm text-gray-700 space-y-1">
+            <ul className="mt-3 list-disc list-inside text-sm text-white/95 space-y-1">
               <li>
                 <span className="font-medium">Georgia:</span> Recognised by NMC
                 & WHO, no IELTS/TOEFL, affordable fees, English medium, safe,

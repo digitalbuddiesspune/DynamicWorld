@@ -64,7 +64,7 @@ const BVOCInfo = () => {
         {/* ----- Table Section ----- */}
         <div className="overflow-x-auto">
           <table className="min-w-full border border-gray-300 text-sm md:text-base rounded-lg overflow-hidden">
-            <thead className="bg-[#3E96F4]/10">
+            <thead className="bg-[#FFC067]/10">
               <tr>
                 <th className="text-left px-4 py-3 border border-gray-300 font-semibold text-[#3E96F4]">
                   Aspect

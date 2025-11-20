@@ -24,20 +24,20 @@ const ContactUs3 = () => {
           <h2 className="text-2xl lg:text-3xl font-bold mb-4">
             Dynamic World – Head Office (Pune)
           </h2>
-          <p className="text-base text-[#475569] leading-relaxed mb-3">
+          <p className="text-base text-[#2B2B2B] leading-relaxed mb-3">
             Office No. 506, 5th Floor, Sterling Centre,
             Opposite Aurora Towers, MG Road, Camp, Pune 411001.
           </p>
-          <p className="text-sm text-[#475569] leading-relaxed mb-2">
+          <p className="text-sm text-[#2B2B2B] leading-relaxed mb-2">
             <strong>Phone:</strong> +91 9820401375
           </p>
-          <p className="text-sm text-[#475569] leading-relaxed mb-2">
+          <p className="text-sm text-[#2B2B2B] leading-relaxed mb-2">
             <strong>Email:</strong> Dynamicworld.edu@gmail.com
           </p>
-          <p className="text-sm text-[#475569] leading-relaxed mb-2">
+          <p className="text-sm text-[#2B2B2B] leading-relaxed mb-2">
             <strong>Office Hours:</strong> Mon – Sun, 10:00 AM – 7:00 PM
           </p>
-          <p className="text-sm text-[#475569] leading-relaxed mt-4">
+          <p className="text-sm text-[#2B2B2B] leading-relaxed mt-4">
             Our Pune head office is located in the heart of the city at MG Road,
             providing career counselling, university guidance, and study abroad
             services. Visit us for expert consultation and step-by-step admission

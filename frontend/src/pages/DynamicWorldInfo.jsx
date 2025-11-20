@@ -4,7 +4,7 @@ export const dynamicWorldData = [
   {
     companyName: "Dynamic World",
     website: "https://dynamicworld.in/",
-    tagline: "Education Experts Since 2005",
+    tagline: "",
     description:
       "Dynamic World is an educational consultancy platform offering access to 50+ online universities with 24/7 counseling, free career guidance, and 100% placement support. They specialize in distance and online education and are recognized for helping students enroll in UGC-approved programs across India.",
     achievements: {
@@ -112,35 +112,60 @@ export const dynamicWorldData = [
           "Rated positively for counseling quality and support. Listed as an Education Consultant in Pune.",
       },
     ],
-    // reviewPlatforms: {
-    //   justDial: {
-    //     url: "https://www.justdial.com/Pune/Dynamic-World-Oppoto-Arora-Tower-Camp/020PXX20-XX20-210804145556-K7R4_BZDET",
-    //     summary:
-    //       "Rated positively for counseling quality and support. Listed as an Education Consultant in Pune.",
-    //   },
-    // },
     foundedYear: 2005,
     industry: "Education and Career Counseling",
   },
 ];
 
-const Chip = ({ children, tone = "indigo" }) => (
-  <span
-    className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium ring-1 bg-${tone}-50 text-${tone}-700 ring-${tone}-100`}
-  >
-    {children}
-  </span>
-);
+// ---------- Styling constants (only styles changed — content untouched) ----------
+const COLORS = {
+  headerAccent: "#FFC067", // user requested
+  headerAccentMid: "#FFB84D",
+  headerGlow: "#FFD9A6",
+  primary: "#3E96F4",
+  text: "#2B2B2B",
+  muted: "#6B7280",
+  cardBg: "rgba(255, 255, 255, 0.9)",
+};
+
+const Chip = ({ children, tone = "indigo" }) => {
+  // simple tone mapping to premium shades
+  const toneMap = {
+    indigo: { bg: "#EEF2FF", color: "#3730A3" },
+    violet: { bg: "#F5EEFF", color: "#6D28D9" },
+    gold: { bg: "#FFF6EB", color: "#A16207" },
+  };
+  const t = toneMap[tone] || toneMap.indigo;
+  return (
+    <span
+      style={{ backgroundColor: t.bg, color: t.color }}
+      className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium ring-1`}
+    >
+      {children}
+    </span>
+  );
+};
 
 const SectionCard = ({ title, subtitle, children, badge }) => (
-  <section className="rounded-2xl bg-white shadow-sm ring-1 ring-gray-200 overflow-hidden">
+  <section
+    className="rounded-2xl bg-white shadow-sm ring-1 ring-gray-200 overflow-hidden"
+    style={{ backgroundColor: COLORS.cardBg }}
+  >
     <div className="px-4 sm:px-6 py-4 border-b border-gray-100 flex items-center justify-between">
       <div>
-        <h2 className="text-base sm:text-lg font-semibold text-gray-900">
+        <h2
+          className="text-base sm:text-lg font-semibold"
+          style={{ color: COLORS["text"] }}
+        >
           {title}
         </h2>
         {subtitle && (
-          <p className="text-xs sm:text-sm text-gray-500 mt-0.5">{subtitle}</p>
+          <p
+            className="text-xs sm:text-sm mt-0.5"
+            style={{ color: COLORS.muted }}
+          >
+            {subtitle}
+          </p>
         )}
       </div>
       {/* {badge} */}
@@ -152,19 +177,34 @@ const SectionCard = ({ title, subtitle, children, badge }) => (
 const LinkButton = ({ href, children, variant = "primary" }) => {
   const base =
     "inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
-  const variants = {
-    primary:
-      "bg-indigo-600 text-white hover:bg-indigo-700 focus-visible:ring-indigo-400",
-    soft: "bg-indigo-50 text-indigo-700 hover:bg-indigo-100 ring-1 ring-indigo-100 focus-visible:ring-indigo-300",
-    outline:
-      "ring-1 ring-gray-300 text-gray-700 hover:bg-gray-50 focus-visible:ring-indigo-300",
+
+  const styles = {
+    primary: {
+      backgroundColor: COLORS.primary,
+      color: "#FFFFFF",
+      boxShadow: "0 6px 18px rgba(62,150,244,0.18)",
+    },
+    soft: {
+      backgroundColor: "rgba(255,192,103,0.12)",
+      color: "#7A4A06",
+      border: `1px solid rgba(255,192,103,0.18)`,
+    },
+    outline: {
+      backgroundColor: "transparent",
+      color: COLORS.text,
+      border: "1px solid rgba(44,44,44,0.08)",
+    },
   };
+
+  const style = styles[variant] || styles.primary;
+
   return (
     <a
       href={href}
       target="_blank"
       rel="noreferrer"
-      className={`${base} ${variants[variant]}`}
+      className={base}
+      style={style}
     >
       {children}
     </a>
@@ -175,62 +215,121 @@ const DynamicWorldInfo = () => {
   const data = dynamicWorldData[0];
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-5 space-y-6  sm:space-y-8 pb-5">
+    <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-5 space-y-6  sm:space-y-8 pb-5 ">
       {/* HERO */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-indigo-500 to-violet-600 text-white shadow-lg my-2">
-        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top_left,white,transparent_50%),radial-gradient(ellipse_at_bottom_right,white,transparent_50%)]" />
+      <div className="relative overflow-hidden rounded-3xl shadow-lg my-2 bg-[#FFC067]">
+        <div className="absolute inset-0 opacity-12" />
         <div className="relative px-5 sm:px-8 py-7 sm:py-10">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
             <div className="min-w-0">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
-                {data.companyName}
+              <h1
+                className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight"
+                style={{ color: COLORS.text }}
+              >
+                {data.companyName}{" "}
+                <span className="text-lg sm:text-xl lg:text-2xl text-[#2B2B2B]">
+                  {" "}
+                  - Education Experts Since 2005
+                </span>
               </h1>
-              <p className="mt-1.5 text-sm sm:text-base text-indigo-50/90">
+              <p
+                className="mt-1.5 text-sm sm:text-base"
+                style={{ color: "rgba(43,43,43,0.85)" }}
+              >
                 {data.tagline}
               </p>
               <div className="mt-3 flex flex-wrap items-center gap-2">
-                <Chip>{data.industry}</Chip>
-                <Chip tone="violet">Founded {data.foundedYear}</Chip>
+                <Chip> {data.industry} </Chip>
+                <Chip tone="gold"> Founded {data.foundedYear} </Chip>
               </div>
             </div>
             <div className="flex flex-wrap gap-2">
-              <LinkButton href="tel:+917887881060" variant="soft">
+              {/* <LinkButton href="tel:+917887881060" variant="soft">
                 📞 Call
-              </LinkButton>
-              {data?.headOffice?.email && (
-                <LinkButton
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=Dynamicworld.edu@gmail.com"
-                  variant="outline"
-                >
-                  ✉️ Email
-                </LinkButton>
-              )}
+              </LinkButton> */}
+              <a
+                href={`tel:${data.headOffice.phone}`}
+                className="bg-transparent hover:bg-black/80 text-sm font-medium rounded-lg px-4 py-2 shadow-md text-[#2B2B2B] border border-black/80 transition-colors inline-flex items-center justify-center hover:text-white"
+                style={{
+                  boxShadow: "0 6px 18px rgba(62,150,244,0.18)",
+                }}
+              >
+                Call 📞
+              </a>
+
+              <a
+                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+                  data.headOffice.email
+                )}`}
+                className="bg-transparent hover:bg-black/80 text-sm font-medium rounded-lg px-4 py-2 shadow-md text-[#2B2B2B] border border-black/80 transition-colors inline-flex items-center justify-center hover:text-white"
+                style={{
+                  boxShadow: "0 6px 18px rgba(62,150,244,0.18)",
+                }}
+              >
+                ✉️ Email
+              </a>
             </div>
           </div>
 
           {/* Stats */}
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-            <div className="rounded-2xl bg-white/10 backdrop-blur ring-1 ring-white/20 p-4">
-              <div className="text-xs uppercase tracking-wide text-indigo-100">
+            <div
+              className="rounded-2xl p-4"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.88))",
+                boxShadow:
+                  "inset 0 1px 0 rgba(255,255,255,0.6), 0 6px 18px rgba(0,0,0,0.06)",
+                border: "1px solid rgba(62,150,244,0.06)",
+              }}
+            >
+              <div className="text-xs uppercase tracking-wide text-[#2B2B2B] font-semibold">
                 Admissions
               </div>
-              <div className="mt-1 text-lg font-semibold">
+              <div
+                className="mt-1 text-lg font-semibold"
+                style={{ color: COLORS["text"] }}
+              >
                 {data.achievements.admissions}
               </div>
             </div>
-            <div className="rounded-2xl bg-white/10 backdrop-blur ring-1 ring-white/20 p-4">
-              <div className="text-xs uppercase tracking-wide text-indigo-100">
+            <div
+              className="rounded-2xl p-4"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.88))",
+                boxShadow:
+                  "inset 0 1px 0 rgba(255,255,255,0.6), 0 6px 18px rgba(0,0,0,0.06)",
+                border: "1px solid rgba(62,150,244,0.06)",
+              }}
+            >
+              <div className="text-xs uppercase tracking-wide text-[#2B2B2B] font-semibold">
                 Counseled
               </div>
-              <div className="mt-1 text-lg font-semibold">
+              <div
+                className="mt-1 text-lg font-semibold"
+                style={{ color: COLORS["text"] }}
+              >
                 {data.achievements.counseling}
               </div>
             </div>
-            <div className="rounded-2xl bg-white/10 backdrop-blur ring-1 ring-white/20 p-4">
-              <div className="text-xs uppercase tracking-wide text-indigo-100">
+            <div
+              className="rounded-2xl p-4"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.88))",
+                boxShadow:
+                  "inset 0 1px 0 rgba(255,255,255,0.6), 0 6px 18px rgba(0,0,0,0.06)",
+                border: "1px solid rgba(62,150,244,0.06)",
+              }}
+            >
+              <div className="text-xs uppercase tracking-wide text-[#2B2B2B] font-semibold">
                 Universities
               </div>
-              <div className="mt-1 text-lg font-semibold">
+              <div
+                className="mt-1 text-lg font-semibold"
+                style={{ color: COLORS["text"] }}
+              >
                 {data.achievements.universities}
               </div>
             </div>
@@ -240,7 +339,10 @@ const DynamicWorldInfo = () => {
 
       {/* DESCRIPTION */}
       <SectionCard title="About Dynamic World">
-        <p className="text-sm sm:text-base leading-relaxed text-gray-700">
+        <p
+          className="text-sm sm:text-base leading-relaxed"
+          style={{ color: COLORS.text }}
+        >
           {data.description}
         </p>
       </SectionCard>
@@ -255,12 +357,25 @@ const DynamicWorldInfo = () => {
           {data.services.map((service, i) => (
             <li
               key={i}
-              className="group rounded-xl border border-gray-200 hover:border-indigo-200 hover:bg-indigo-50/40 transition-colors p-4"
+              className="group rounded-xl transition-colors p-4"
+              style={{
+                border: "1px solid rgba(43,43,43,0.06)",
+                background:
+                  "linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,249,240,0.95))",
+              }}
             >
-              <div className="font-semibold text-gray-900 group-hover:text-indigo-800">
+              <div
+                className="font-semibold group-hover:text-opacity-95"
+                style={{ color: COLORS.text }}
+              >
                 {service.name}
               </div>
-              <p className="mt-1 text-sm text-gray-600">{service.details}</p>
+              <p
+                className="mt-1 text-sm"
+                style={{ color: "rgba(43,43,43,0.8)" }}
+              >
+                {service.details}
+              </p>
             </li>
           ))}
         </ul>
@@ -271,10 +386,16 @@ const DynamicWorldInfo = () => {
         {/* Head Office */}
         <SectionCard title="Head Office" subtitle={data.headOffice.city}>
           <div className="space-y-2 text-sm sm:text-base">
-            <p className="text-gray-800">{data.headOffice.address}</p>
-            <p className="text-gray-700">📍 {data.headOffice.city}</p>
-            <p className="text-gray-700">📞 {data.headOffice.phone}</p>
-            <p className="text-gray-700">✉️ {data.headOffice.email}</p>
+            <p style={{ color: COLORS.text }}>{data.headOffice.address}</p>
+            <p style={{ color: "rgba(43,43,43,0.85)" }}>
+              📍 {data.headOffice.city}
+            </p>
+            <p style={{ color: "rgba(43,43,43,0.85)" }}>
+              📞 {data.headOffice.phone}
+            </p>
+            <p style={{ color: "rgba(43,43,43,0.85)" }}>
+              ✉️ {data.headOffice.email}
+            </p>
           </div>
         </SectionCard>
 
@@ -284,10 +405,14 @@ const DynamicWorldInfo = () => {
           subtitle="Across India"
           badge={<Chip>{data.branchOffices.length} locations</Chip>}
         >
-          <ul className="space-y-2 text-sm sm:text-base text-gray-700">
+          <ul className="space-y-2 text-sm sm:text-base">
             {data.branchOffices.map((office, i) => (
-              <li key={i} className="leading-relaxed">
-                <span className="font-medium text-gray-900">{office.city}</span>
+              <li
+                key={i}
+                className="leading-relaxed"
+                style={{ color: COLORS.text }}
+              >
+                <span className="font-medium">{office.city}</span>
                 {office.state ? <span>, {office.state}</span> : null}
                 {office.address ? <span> — {office.address}</span> : null}
               </li>
@@ -297,12 +422,13 @@ const DynamicWorldInfo = () => {
 
         {/* Counselors & Social */}
         <SectionCard title="Authorized Counselors" subtitle="Availability">
-          <p className="text-sm sm:text-base text-gray-700">
-            {data.authorizedCounselors}
-          </p>
+          <p style={{ color: COLORS.text }}>{data.authorizedCounselors}</p>
 
           <div className="mt-4">
-            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+            <div
+              className="text-xs font-semibold uppercase tracking-wide mb-2"
+              style={{ color: COLORS.muted }}
+            >
               Social Links
             </div>
             <div className="flex flex-wrap gap-2">
@@ -336,19 +462,37 @@ const DynamicWorldInfo = () => {
       {/* META */}
       <SectionCard title="Additional Info">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-          <div className="rounded-xl border border-gray-200 p-4">
-            <div className="text-xs uppercase tracking-wide text-gray-500">
+          <div
+            className="rounded-xl p-4"
+            style={{
+              border: "1px solid rgba(43,43,43,0.06)",
+              background: "rgba(255,255,255,0.96)",
+            }}
+          >
+            <div
+              className="text-xs uppercase tracking-wide"
+              style={{ color: COLORS.muted }}
+            >
               Industry
             </div>
-            <div className="mt-1 font-semibold text-gray-900">
+            <div className="mt-1 font-semibold" style={{ color: COLORS.text }}>
               {data.industry}
             </div>
           </div>
-          <div className="rounded-xl border border-gray-200 p-4">
-            <div className="text-xs uppercase tracking-wide text-gray-500">
+          <div
+            className="rounded-xl p-4"
+            style={{
+              border: "1px solid rgba(43,43,43,0.06)",
+              background: "rgba(255,255,255,0.96)",
+            }}
+          >
+            <div
+              className="text-xs uppercase tracking-wide"
+              style={{ color: COLORS.muted }}
+            >
               Founded
             </div>
-            <div className="mt-1 font-semibold text-gray-900">
+            <div className="mt-1 font-semibold" style={{ color: COLORS.text }}>
               {data.foundedYear}
             </div>
           </div>

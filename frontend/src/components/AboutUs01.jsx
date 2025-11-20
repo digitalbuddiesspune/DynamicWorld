@@ -53,37 +53,41 @@ const AboutUs01 = () => {
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#F6F8FC] to-white">
+    <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-12 left-8 h-48 w-48 rounded-full bg-[#bfdbfe]/45 blur-3xl md:h-56 md:w-56" />
-        <div className="absolute bottom-0 right-10 h-52 w-52 rounded-full bg-[#bae6fd]/40 blur-3xl md:h-64 md:w-64" />
-        <div className="absolute top-1/2 right-1/3 h-24 w-56 rotate-12 rounded-full bg-[#e2e8f0]/60 blur-2xl" />
+        <div className="absolute -top-12 left-8 h-48 w-48 rounded-full bg-[#FFC067]/30 blur-3xl md:h-56 md:w-56" />
+        <div className="absolute bottom-0 right-10 h-52 w-52 rounded-full bg-[#3E96F4]/30 blur-3xl md:h-64 md:w-64" />
+        <div className="absolute top-1/2 right-1/3 h-24 w-56 rotate-12 rounded-full bg-purple-300/40 blur-2xl" />
       </div>
 
       <div className="mx-auto max-w-5xl px-6 py-20">
         <div className="flex flex-col items-center text-center">
-          <span className="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-[#1d4ed8]/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-[#1d4ed8]">
+          <span className="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-gradient-to-r from-[#FFC067] to-[#FFB84D] px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-[#2B2B2B] shadow-md">
             About Dynamic World
           </span>
-          <h1 className="text-3xl font-bold text-[#0f172a] sm:text-4xl lg:text-[2.9rem]">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent sm:text-4xl lg:text-[2.9rem]">
             Empowering learners with modern, thoughtful learning journeys.
           </h1>
-          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-[#334155] sm:text-base">
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-[#2B2B2B] sm:text-base font-medium">
             We help ambitious students experience flexible, globally relevant education.
             Our mentors and product teams choreograph every touchpoint with empathy, design thinking,
             and data-backed outcomes from discovery to graduation.
           </p>
 
           <dl className="mt-10 grid w-full gap-5 sm:grid-cols-2">
-            {featureHighlights.map((item) => (
+            {featureHighlights.map((item, idx) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-[#dbeafe] bg-white p-5 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                className={`rounded-2xl border-2 p-5 text-left shadow-lg transition hover:-translate-y-1 hover:shadow-xl ${
+                  idx === 0 
+                    ? "bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 border-blue-300" 
+                    : "bg-gradient-to-br from-pink-100 via-purple-100 to-indigo-100 border-pink-300"
+                }`}
               >
-                <dt className="text-sm font-semibold text-[#1d4ed8]">
+                <dt className={`text-sm font-semibold ${idx === 0 ? "text-blue-700" : "text-purple-700"}`}>
                   {item.title}
                 </dt>
-                <dd className="mt-2 text-sm text-[#475569]">{item.description}</dd>
+                <dd className="mt-2 text-sm text-[#2B2B2B] font-medium">{item.description}</dd>
               </div>
             ))}
           </dl>
@@ -98,7 +102,7 @@ const AboutUs01 = () => {
                   window.location.href = "/about-us#mission";
                 }
               }}
-              className="inline-flex items-center justify-center rounded-full bg-[#1d4ed8] px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-1 hover:bg-[#1a46c6]"
+              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl hover:from-blue-700 hover:to-indigo-700"
             >
               Explore our mission
             </button>
@@ -106,7 +110,7 @@ const AboutUs01 = () => {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#cbd5f5] bg-white px-6 py-3 text-sm font-semibold text-[#1e293b] shadow-sm transition hover:-translate-y-1 hover:bg-[#f8fafc]"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#25D366]  px-6 py-3 text-sm font-semibold text-[#2B2B2B] shadow-lg transition hover:-translate-y-1 hover:shadow-xl hover:from-[#22c55e] hover:to-[#1da851]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -125,26 +129,39 @@ const AboutUs01 = () => {
       </div>
       <div className="mx-auto max-w-6xl px-6 pb-20">
         <div className="mb-6 text-center sm:text-left">
-          <h2 className="text-lg font-semibold text-[#1d4ed8] uppercase tracking-[0.25em]">
+          <h2 className="text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent uppercase tracking-[0.25em]">
             What we provide
           </h2>
-          <p className="mt-2 text-base text-[#475569]">
+          <p className="mt-2 text-base text-[#2B2B2B] font-medium">
             End-to-end support designed for every learner, whether they pursue online,
             distance, medical, or vocational pathways.
           </p>
         </div>
         <ul className="grid gap-4 sm:grid-cols-2">
-          {serviceHighlights.map((item) => (
-            <li
-              key={item.title}
-              className="rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-5 py-4 shadow-sm hover:shadow-md transition"
-            >
-              <p className="text-sm font-semibold text-[#1d4ed8]">
-                {item.title}
-              </p>
-              <p className="mt-1 text-sm text-[#475569]">{item.description}</p>
-            </li>
-          ))}
+          {serviceHighlights.map((item, idx) => {
+            const colors = [
+              "from-blue-100 to-indigo-100 border-blue-300",
+              "from-purple-100 to-pink-100 border-purple-300",
+              "from-pink-100 to-orange-100 border-pink-300",
+              "from-indigo-100 to-blue-100 border-indigo-300",
+              "from-yellow-100 to-orange-100 border-yellow-300",
+              "from-green-100 to-teal-100 border-green-300",
+              "from-cyan-100 to-blue-100 border-cyan-300",
+              "from-violet-100 to-purple-100 border-violet-300",
+            ];
+            const colorClass = colors[idx % colors.length];
+            return (
+              <li
+                key={item.title}
+                className={`rounded-xl border-2 bg-gradient-to-br ${colorClass} px-5 py-4 shadow-md hover:shadow-xl transition hover:-translate-y-0.5`}
+              >
+                <p className="text-sm font-semibold text-[#2B2B2B]">
+                  {item.title}
+                </p>
+                <p className="mt-1 text-sm text-[#2B2B2B]/80 font-medium">{item.description}</p>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>

@@ -65,7 +65,7 @@ export default function DistanceEducationTips({
   return (
     <div className="min-h-screen w-full bg-white text-[#31393C]">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#3E96F4] text-white">
+      <section className="relative overflow-hidden bg-[#FFC067] text-[#2B2B2B]">
         <div
           className="absolute inset-0 opacity-10 pointer-events-none"
           aria-hidden

@@ -5,7 +5,7 @@ import { MapPin } from "lucide-react";
 const TransStadiaInstitute01 = () => {
   return (
     <div className="min-h-screen w-full bg-white ">
-      <div className="bg-[#3E96F4] text-white">
+      <div className="bg-[#FFC067] text-[#2B2B2B]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-4 sm:py-6">
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6">
             {/* Logo */}

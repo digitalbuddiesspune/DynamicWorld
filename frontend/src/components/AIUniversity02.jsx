@@ -113,7 +113,7 @@ const AIUniversity02 = () => {
           </table>
         </div>
 
-        <div className="bg-[#3E96F4] mt-5 rounded-2xl p-5 w-full">
+        <div className="bg-[#FFC067] mt-5 rounded-2xl p-5 w-full">
           <h3 className="lg:text-2xl font-semibold text-white text-center mb-3">
             Need more info about Chhatrapati Shivaji Maharaj University?
           </h3>

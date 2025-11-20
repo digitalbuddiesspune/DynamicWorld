@@ -92,11 +92,11 @@ export default function DynamicUniversityCarousel() {
         <header className="text-center mb-4 sm:mb-6">
           <h1
             id="uni-carousel-title"
-            className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-indigo-800"
+            className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-[#2B2B2B]"
           >
             Top Online Universities
           </h1>
-          <p className="mt-1 text-xs sm:text-sm text-indigo-900/70">
+          <p className="mt-1 text-xs sm:text-sm text-[#2B2B2B]">
             Trusted institutions offering UGC-approved online programs
           </p>
         </header>

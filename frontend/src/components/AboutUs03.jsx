@@ -2,16 +2,16 @@ import React from "react";
 
 const AboutUs03 = () => {
   return (
-    <section className="relative isolate overflow-hidden bg-white">
-      <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-[#eff6ff] to-transparent" />
-      <div className="absolute inset-y-0 right-0 w-1/3 translate-x-1/3 bg-gradient-to-l from-[#c7d2fe]/40 to-transparent blur-3xl" />
+    <section className="relative isolate overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-[#FFC067]/20 via-purple-200/30 to-transparent" />
+      <div className="absolute inset-y-0 right-0 w-1/3 translate-x-1/3 bg-gradient-to-l from-pink-300/40 to-transparent blur-3xl" />
 
       <div className="relative max-w-6xl mx-auto flex flex-col justify-center items-center px-6 sm:px-8 md:px-10 pt-12 pb-16">
         <div className="text-center">
-          <h1 className="text-2xl md:text-3xl font-bold mb-4 text-[#0f172a]">
+          <h1 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
           Beginning of a Transformative Era.
         </h1>
-          <p className="text-[#475569] leading-relaxed mb-8 text-left text-sm sm:text-base">
+          <p className="text-[#2B2B2B] leading-relaxed mb-8 text-left text-sm sm:text-base font-medium bg-gradient-to-r from-blue-50/80 via-purple-50/80 to-pink-50/80 p-4 rounded-xl">
             Established in 2005, our core activity lies in assisting students to make the right choice with regard to
             pursuing Distance Education, Online Education, Regular Education & Overseas Education. We assist and provide
             support services to the students right from the beginning, from form filling to getting the degree certificate.
@@ -20,7 +20,7 @@ const AboutUs03 = () => {
           </p>
 
           {/* Career Options */}
-          <h2 className="text-xl font-semibold text-[#1d4ed8] mb-4">
+          <h2 className="text-xl font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
             Career Options
           </h2>
 

@@ -9,9 +9,9 @@ const Sidebar = ({
 }) => {
   return (
     <aside className="w-full lg:w-72 h-full">
-      <div className="bg-white   ring-1 ring-gray-200 overflow-hidden min-h-screen">
+      <div className="bg-white ring-1 ring-gray-200 overflow-hidden min-h-screen">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+        <div className="bg-[#FFC067] text-[#2B2B2B]">
           <div className="px-4 py-3 sm:px-5 sm:py-4">
             <h2 className="text-sm sm:text-base font-bold tracking-wide text-center">
               About DYNAMIC WORLD
@@ -21,9 +21,9 @@ const Sidebar = ({
         </div>
 
         {/* Body */}
-        <div className="p-2 sm:p-3">
+        <div className="p-2 sm:p-3 ">
           {isLoading ? (
-            <div className="p-4">
+            <div className="p-4 h-full">
               <div className="flex flex-col gap-3 animate-pulse">
                 <div className="h-3.5 w-2/3 rounded bg-gray-200" />
                 <div className="space-y-2">
@@ -60,7 +60,7 @@ const Sidebar = ({
                         ${isOpen ? "bg-gray-50" : "hover:bg-gray-50"}
                         focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400`}
                     >
-                      <span className="text-gray-800 text-sm sm:text-[15px] font-medium truncate">
+                      <span className="text-[#2B2B2B] text-sm sm:text-[15px] font-medium truncate">
                         {section.title}
                       </span>
 
@@ -77,9 +77,9 @@ const Sidebar = ({
                           />
                         )}
                         {isOpen ? (
-                          <ChevronDown className="w-4 h-4 text-gray-500 transition-transform" />
+                          <ChevronDown className="w-4 h-4 text-[#2B2B2B] transition-transform" />
                         ) : (
-                          <ChevronRight className="w-4 h-4 text-gray-500 transition-transform group-hover:translate-x-0.5" />
+                          <ChevronRight className="w-4 h-4 text-[#2B2B2B] transition-transform group-hover:translate-x-0.5" />
                         )}
                       </span>
                     </button>
@@ -133,7 +133,7 @@ const Sidebar = ({
                   href="https://studyabroad.dynamicworld.in/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-blue-600 text-white font-medium transition-all duration-300 hover:bg-blue-700 hover:shadow-md w-full"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#FFC067] text-[#2B2B2B] font-medium transition-all duration-300 hover:bg-[#E6B04A] hover:shadow-md w-full"
                 >
                   Study Abroad
                   <img src="https://res.cloudinary.com/dtaitsw4r/image/upload/v1760779899/studyAbroad_cbkald.png" alt="" className="h-8 w-10" />

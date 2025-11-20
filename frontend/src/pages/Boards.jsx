@@ -74,7 +74,7 @@ const Boards = () => {
   return (
     <section id="top" className="min-h-screen w-full text-[#31393C]">
       {/* Header */}
-      <header className="relative overflow-hidden bg-[#3E96F4] text-white">
+      <header className="relative overflow-hidden bg-[#FFC067] text-[#2B2B2B]">
         {/* Gradient + pattern */}
         <div className="absolute inset-0 opacity-20 [background:radial-gradient(circle_at_20%_20%,white_0,transparent_40%),radial-gradient(circle_at_80%_30%,white_0,transparent_35%)]" />
         <div className="relative mx-auto max-w-7xl px-4 md:px-6 lg:px-10 py-6 md:py-8">
@@ -378,7 +378,7 @@ const Boards = () => {
                         href={`#${s.id}`}
                         className="flex items-center gap-2 rounded-lg px-2 py-1.5 text-[#31393C] hover:bg-[#EDEEEB] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3E96F4]"
                       >
-                        <span className="inline-flex h-5 w-5 md:h-6 md:w-6 items-center justify-center rounded-md bg-[#3E96F4]/10 text-[#3E96F4] text-xs md:text-sm font-semibold">
+                        <span className="inline-flex h-5 w-5 md:h-6 md:w-6 items-center justify-center rounded-md bg-[#FFC067]/10 text-[#2B2B2B] text-xs md:text-sm font-semibold">
                           {s.no}
                         </span>
                         <span className="leading-snug">{s.title}</span>
@@ -391,7 +391,7 @@ const Boards = () => {
               <div className="mt-3 md:mt-4 border-t pt-3 md:pt-4">
                 <a
                   href="#top"
-                  className="inline-flex items-center justify-center rounded-md bg-[#3E96F4] px-3 py-1.5 text-xs md:text-xs font-medium text-white shadow hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+                  className="inline-flex items-center justify-center rounded-md bg-[#FFC067] px-3 py-1.5 text-xs md:text-xs font-medium text-[#2B2B2B] shadow hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
                 >
                   Back to Top
                 </a>
@@ -399,7 +399,7 @@ const Boards = () => {
             </div>
 
             {/* Info box */}
-            <div className="mt-3 md:mt-4 rounded-xl border border-[#3E96F4]/20 bg-[#3E96F4]/5 p-3 md:p-4">
+            <div className="mt-3 md:mt-4 rounded-xl border border-[#3E96F4]/20 bg-[#FFC067]/5 p-3 md:p-4">
               <p className="text-[11px] md:text-xs text-[#31393C]">
                 Tip: Use these boards’ certificates on DigiLocker wherever
                 available for fast, verified submissions.

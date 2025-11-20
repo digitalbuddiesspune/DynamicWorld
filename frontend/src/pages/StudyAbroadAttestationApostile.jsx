@@ -264,7 +264,7 @@ const Section = ({ title, children }) => (
     id={title?.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
   >
     <div className="mb-4 flex items-center gap-3">
-      <div className="h-6 w-1 rounded-full bg-[#3E96F4]" />
+      <div className="h-6 w-1 rounded-full bg-[#FFC067]" />
       <h2 className="text-xl md:text-2xl font-semibold text-[#31393C]">
         {title}
       </h2>
@@ -276,27 +276,27 @@ const Section = ({ title, children }) => (
 );
 
 const Chip = ({ children }) => (
-  <span className="inline-flex items-center rounded-full bg-[#EDEEEB] px-3 py-1 text-xs font-medium text-[#31393C]">
+  <span className="inline-flex items-center rounded-full bg-gradient-to-r from-[#FFC067]/80 via-[#FFB84D]/80 to-[#FFD9A6]/80 px-3 py-1 text-xs font-medium text-[#2B2B2B] shadow-sm hover:shadow-md hover:scale-105 transition-all">
     {children}
   </span>
 );
 
 const KeyPoint = ({ heading, points }) => (
-  <div>
-    <h3 className="text-lg font-medium text-[#31393C]">{heading}</h3>
-    <ul className="mt-2 list-disc pl-5 text-sm leading-6 text-[#31393C]">
+  <div className="bg-gradient-to-br from-white via-blue-50/50 to-indigo-50/50 p-4 rounded-xl ring-1 ring-blue-200/50">
+    <h3 className="text-lg font-medium text-[#31393C] mb-2">{heading}</h3>
+    <ul className="list-disc pl-5 text-sm leading-6 text-[#31393C] space-y-1">
       {points.map((p, idx) => (
-        <li key={idx}>{p}</li>
+        <li key={idx} className="bg-white/60 p-1.5 rounded">{p}</li>
       ))}
     </ul>
   </div>
 );
 
 const ProcessRow = ({ name, normal, express }) => (
-  <tr className="border-b last:border-none">
-    <td className="px-4 py-2 text-sm md:text-base text-[#31393C]">{name}</td>
-    <td className="px-4 py-2 text-sm md:text-base">{normal}</td>
-    <td className="px-4 py-2 text-sm md:text-base">{express}</td>
+  <tr className="border-b border-blue-200/50 last:border-none hover:bg-gradient-to-r hover:from-blue-50/60 hover:to-indigo-50/60 transition-colors">
+    <td className="px-4 py-2.5 text-sm md:text-base text-[#31393C] font-medium">{name}</td>
+    <td className="px-4 py-2.5 text-sm md:text-base text-blue-700 font-medium">{normal}</td>
+    <td className="px-4 py-2.5 text-sm md:text-base text-purple-700 font-semibold">{express}</td>
   </tr>
 );
 
@@ -304,7 +304,7 @@ const StudyAbroadAttestationApostile = () => {
   return (
     <div className="min-h-screen bg-[#F7F7F6] text-[#31393C]">
       {/* Top Header */}
-      <header className="bg-[#3E96F4] text-white">
+      <header className="bg-[#FFC067] text-[#2B2B2B]">
         <div className="mx-auto max-w-7xl px-4 py-6 md:py-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div>
@@ -333,17 +333,17 @@ const StudyAbroadAttestationApostile = () => {
         <div className="lg:col-span-8 space-y-6">
           <Section title="Company Profile">
             <div className="prose max-w-none prose-p:my-1">
-              <p>
+              <p className="bg-gradient-to-r from-blue-100 via-indigo-100 to-purple-100 p-4 rounded-xl text-[#31393C] font-medium">
                 Dynamic World provides reliable, prompt attestation and
                 legalization services for educational, non‑educational, and
                 commercial documents. Services include Attestation & Apostille,
                 PRO service, Embassy errands, and global document handling with
                 efficient collection, timely completion, and prompt delivery.
               </p>
-              <ul className="list-disc pl-5 mt-3">
-                <li>ISO‑certified processes</li>
-                <li>50+ employees across the globe</li>
-                <li>Customer‑centric, fast, and transparent operations</li>
+              <ul className="list-disc pl-5 mt-3 space-y-2">
+                <li className="bg-gradient-to-r from-[#FFC067]/30 to-[#FFB84D]/30 p-2 rounded-lg">ISO‑certified processes</li>
+                <li className="bg-gradient-to-r from-blue-50 to-indigo-50 p-2 rounded-lg">50+ employees across the globe</li>
+                <li className="bg-gradient-to-r from-purple-50 to-pink-50 p-2 rounded-lg">Customer‑centric, fast, and transparent operations</li>
               </ul>
             </div>
           </Section>
@@ -406,10 +406,10 @@ const StudyAbroadAttestationApostile = () => {
             <div className="overflow-x-auto">
               <table className="min-w-full text-left text-sm md:text-base">
                 <thead>
-                  <tr className="border-b">
-                    <th className="px-4 py-2 font-semibold">Process</th>
-                    <th className="px-4 py-2 font-semibold">Normal</th>
-                    <th className="px-4 py-2 font-semibold">Express</th>
+                  <tr className="border-b-2 border-[#FFC067] bg-gradient-to-r from-[#FFC067]/30 via-blue-100/40 to-indigo-100/40">
+                    <th className="px-4 py-3 font-semibold text-[#31393C]">Process</th>
+                    <th className="px-4 py-3 font-semibold text-blue-700">Normal</th>
+                    <th className="px-4 py-3 font-semibold text-purple-700">Express</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -427,10 +427,13 @@ const StudyAbroadAttestationApostile = () => {
           </Section>
 
           <Section title="Available Translation Languages (Normal: 4–5 working days)">
-            <div className="flex flex-wrap gap-2">
-              {translationLanguages.map((lang) => (
-                <Chip key={lang}>{lang}</Chip>
-              ))}
+            <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 p-4 rounded-xl">
+              <p className="text-sm text-[#31393C] mb-3 font-medium">Translation services available in the following languages:</p>
+              <div className="flex flex-wrap gap-2">
+                {translationLanguages.map((lang) => (
+                  <Chip key={lang}>{lang}</Chip>
+                ))}
+              </div>
             </div>
           </Section>
         </div>
@@ -447,13 +450,13 @@ const StudyAbroadAttestationApostile = () => {
               <div className="mt-4 grid grid-cols-2 gap-3">
                 <a
                   href="tel:+919820401375"
-                  className="rounded-xl px-4 py-2 text-center bg-[#3E96F4] text-white font-medium hover:opacity-90"
+                  className="rounded-xl px-4 py-2 text-center bg-[#FFC067] text-[#2B2B2B] font-medium hover:opacity-90"
                 >
                   Call 9820401375
                 </a>
                 <a
                   href="tel:+917738846286"
-                  className="rounded-xl px-4 py-2 text-center bg-[#3E96F4] text-white font-medium hover:opacity-90"
+                  className="rounded-xl px-4 py-2 text-center bg-[#FFC067] text-[#2B2B2B] font-medium hover:opacity-90"
                 >
                   Call 7738846286
                 </a>
