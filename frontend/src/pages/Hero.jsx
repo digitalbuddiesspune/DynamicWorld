@@ -9,7 +9,7 @@ const vocationalLarge =
 const careerLarge =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1762338767/Blue_Professional_Business_Visa_Service_Promotion_Web_Banner_1920_x_600_px_1_fqizwb.svg";
 const universitiesLarge =
- "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763642898/OnlineEduMob_bkltzr.svg"
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763642898/OnlineEduMob_bkltzr.svg";
 const appostileLarge =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1762175348/Purple_and_Yellow_Shapes_Middle_School_Back_to_School_Banner_1920_x_600_px_i3l3c2.png";
 
@@ -23,8 +23,11 @@ const career =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761898214/Blue_And_White_Creative_Study_Abroad_In_Korea_Instagram_Post_1920_x_600_px_1080_x_1080_px_2_azrwlc.png";
 const vocationalMobile =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1762339554/Complete_Your_Education_cujkqi.svg";
+const firstBanner =
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763706194/Artboard_1_4x-100_kzi4pt.jpg";
 
 const MobileScreenBanners = [
+  firstBanner,
   vocationalMobile,
   studyAbroadMobile,
   career,
@@ -45,7 +48,8 @@ export default function Hero() {
   const [isHovering, setIsHovering] = useState(false);
   const timeoutRef = useRef(null);
   const [isLarge, setIsLarge] = useState(
-    typeof window !== "undefined" && window.matchMedia("(min-width: 1024px)").matches
+    typeof window !== "undefined" &&
+      window.matchMedia("(min-width: 1024px)").matches
   );
 
   const touchActive = useRef(false);
@@ -193,4 +197,3 @@ export default function Hero() {
     </section>
   );
 }
-

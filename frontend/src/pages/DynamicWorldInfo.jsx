@@ -176,21 +176,21 @@ const SectionCard = ({ title, subtitle, children, badge }) => (
 
 const LinkButton = ({ href, children, variant = "primary" }) => {
   const base =
-    "inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
+    "inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ";
 
   const styles = {
     primary: {
-      backgroundColor: COLORS.primary,
+      // backgroundColor: COLORS.primary,
       color: "#FFFFFF",
       boxShadow: "0 6px 18px rgba(62,150,244,0.18)",
     },
     soft: {
-      backgroundColor: "rgba(255,192,103,0.12)",
+      // backgroundColor: "rgba(255,192,103,0.12)",
       color: "#7A4A06",
       border: `1px solid rgba(255,192,103,0.18)`,
     },
     outline: {
-      backgroundColor: "transparent",
+      // backgroundColor: "transparent",
       color: COLORS.text,
       border: "1px solid rgba(44,44,44,0.08)",
     },
