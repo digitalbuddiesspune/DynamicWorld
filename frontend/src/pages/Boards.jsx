@@ -74,7 +74,7 @@ const Boards = () => {
   return (
     <section id="top" className="min-h-screen w-full text-[#2B2B2B]">
       {/* Header */}
-      <header className="relative overflow-hidden bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347] text-[#1A1A1A]">
+      <header className="relative overflow-hidden bg-[#008080] text-white">
         {/* Gradient + pattern */}
         <div className="absolute inset-0 opacity-20 [background:radial-gradient(circle_at_20%_20%,white_0,transparent_40%),radial-gradient(circle_at_80%_30%,white_0,transparent_35%)]" />
         <div className="relative mx-auto max-w-7xl px-4 md:px-6 lg:px-10 py-6 md:py-8">

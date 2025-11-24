@@ -312,7 +312,7 @@ const StudyAbroadAttestationApostile = () => {
   return (
     <div className="min-h-screen bg-[#F8F3ED] text-[#2B2B2B]">
       {/* Top Header */}
-      <header className="text-[#2B2B2B]   bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347]">
+      <header className="bg-[#008080] text-white">
         <div className="mx-auto max-w-7xl px-4 py-6 md:py-8">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div>

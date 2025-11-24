@@ -4,7 +4,7 @@ const COLORS = { red: "#DC2626" };
 
 export const CareerHero = () => {
   return (
-    <section className="w-full  bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347]" >
+    <section className="w-full bg-[#008080] text-white" >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8">
         <h1 className="text-2xl text-[#1A1A1A] sm:text-4xl font-bold tracking-tight" >
           HIGHWAY TO A BRIGHTER CAREER

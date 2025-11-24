@@ -10,10 +10,13 @@ const careerLarge =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1762338767/Blue_Professional_Business_Visa_Service_Promotion_Web_Banner_1920_x_600_px_1_fqizwb.svg";
 const universitiesLarge =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763642898/OnlineEduMob_bkltzr.svg";
-  const secondBannerLarge = "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763968234/OnlineEduFinal_juripw.svg"
-  const attestationApostileLarge ="https://res.cloudinary.com/dtaitsw4r/image/upload/v1763968422/Attestation_bxdi2k.svg"
-const appostileLarge =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1762175348/Purple_and_Yellow_Shapes_Middle_School_Back_to_School_Banner_1920_x_600_px_i3l3c2.png";
+const secondBannerLarge =
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763968234/OnlineEduFinal_juripw.svg";
+const attestationApostileLarge =
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763968422/Attestation_bxdi2k.svg";
+
+const firstBannerLarge =
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763991196/20Yr_rwxgr0.png";
 
 const studyAbroadMobile =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761897001/Black_Professional_School_Admission_Banner_1920_x_600_px_1080_x_1080_px_sj7q9g.svg";
@@ -29,8 +32,10 @@ const firstBanner =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763706945/First_Banner_kaoqwc.jpg";
 const secondBanner =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763967905/Education_p3i0ru.svg";
+  const newFirst = "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764012447/Gemini_Generated_Image_f3wp8bf3wp8bf3wp_trikfk.png";
 
 const MobileScreenBanners = [
+  newFirst,
   firstBanner,
   secondBanner,
   studyAbroadMobile,
@@ -40,13 +45,12 @@ const MobileScreenBanners = [
 ];
 
 const LargeScreenBanners = [
- 
+  // firstBannerLarge,
   secondBannerLarge,
   vocationalLarge,
   studyAbroadLarge01,
   careerLarge,
   attestationApostileLarge,
-  appostileLarge,
 ];
 
 export default function Hero() {

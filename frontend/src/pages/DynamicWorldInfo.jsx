@@ -1,3 +1,4 @@
+import { Mail, Map, MapPin, Phone, Pin } from "lucide-react";
 import React from "react";
 
 // New theme (no blue)
@@ -157,23 +158,17 @@ const SectionCard = ({ title, subtitle, children, badge }) => (
   <section className="rounded-2xl shadow-sm overflow-hidden bg-white">
     <div className="px-4 sm:px-6 py-4 flex items-center justify-between border-b bg-[#0F8F8F] border-gray-200 ">
       <div className="">
-        <h2 className="text-base sm:text-lg font-semibold text-white ">{title}</h2>
+        <h2 className="text-base sm:text-lg font-semibold text-white ">
+          {title}
+        </h2>
         {subtitle && (
-          <p
-            className="text-xs sm:text-sm mt-0.5 text-white"
-           
-          >
-            {subtitle}
-          </p>
+          <p className="text-xs sm:text-sm mt-0.5 text-white">{subtitle}</p>
         )}
       </div>
-   
     </div>
     <div className="px-4 sm:px-6 py-5">{children}</div>
   </section>
 );
-
-
 
 const DynamicWorldInfo = () => {
   const data = dynamicWorldData[0];
@@ -214,7 +209,7 @@ const DynamicWorldInfo = () => {
       hover:-translate-y-0.5
     "
               >
-                📞 Call
+                <Phone size={16} /> <span className="pl-1">Call</span>
               </a>
 
               <a
@@ -230,7 +225,8 @@ const DynamicWorldInfo = () => {
       hover:-translate-y-0.5
     "
               >
-                ✉️ Email
+                {/* <Email size={18} /> Email */}
+                <Mail size={16} /> <span className="pl-1">Email</span>
               </a>
             </div>
           </div>
@@ -336,9 +332,23 @@ const DynamicWorldInfo = () => {
         <SectionCard title="Head Office" subtitle={data.headOffice.city}>
           <div className="space-y-2 text-sm sm:text-base">
             <p style={{ color: C.slate }}>{data.headOffice.address}</p>
-            <p style={{ color: C.textMuted }}>📍 {data.headOffice.city}</p>
-            <p style={{ color: C.textMuted }}>📞 {data.headOffice.phone}</p>
-            <p style={{ color: C.textMuted }}>✉️ {data.headOffice.email}</p>
+            <p style={{ color: C.textMuted }} className="flex justify-start items-center space-x-2">
+              <MapPin size={16} /> <span className="pl-1">{data.headOffice.city}</span>
+            </p>
+            <p
+              style={{ color: C.textMuted }}
+              className="flex justify-start  items-center space-x-2"
+            >
+              {" "}
+              <Phone size={16} /> <span className="pl-1">{data.headOffice.phone}</span>
+            </p>
+            <p
+              style={{ color: C.textMuted }}
+              className="flex justify-start  items-center space-x-2"
+            >
+              {" "}
+              <Mail size={16} /> <span className="pl-1">{data.headOffice.email}</span>
+            </p>
           </div>
         </SectionCard>
 

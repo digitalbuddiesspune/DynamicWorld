@@ -114,7 +114,7 @@ export default function AffordableCountries({ showCTA = true }) {
 
   return (
     <div className="min-h-screen w-full bg-[#F8F3ED] text-[#1A1A1A]">
-      <div className="bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347]">
+      <div className="bg-[#008080] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-6">
           <div className="flex items-center gap-3">
             <Globe2 className="h-6 w-6" aria-hidden />

@@ -31,7 +31,7 @@ const AboutInfo = () => {
     {
       id: 4,
       icon: free,
-      title: "*FREE Career Counselling",
+      title: "FREE Career Counselling",
       text: "We ensure 100% placement support for students.",
     },
   ];

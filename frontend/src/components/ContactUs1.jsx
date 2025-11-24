@@ -17,7 +17,7 @@ const ContactUs1 = () => {
   return (
     <section className="w-full bg-[#F8F3ED]">
       {/* Top Header */}
-      <header className=" bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347] text-[#2b2b2b]">
+      <header className="bg-[#008080] text-white">
         <div className="mx-auto max-w-7xl py-10">
           <div className="flex flex-col items-center text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/15 text-xs font-semibold tracking-[0.35em] px-3 py-1 uppercase ">

@@ -360,7 +360,7 @@ export default function ExamToolkit90Day({
       style={{ color: "#2b2b2b" }}
     >
       {/* Header */}
-      <div className="bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347]">
+      <div className="bg-[#008080] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-6">
           <div className="flex items-center gap-3">
             <BookOpen className="h-6 w-6 text-[#2b2b2b]" aria-hidden />

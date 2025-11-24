@@ -139,7 +139,7 @@ const ContactUs2 = () => {
   return (
     <section className="w-full bg-[#F8F3ED] border-b border-gray-200">
       {/* Top banner */}
-      <div className=" bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347] text-[#2b2b2b]">
+      <div className="bg-[#008080] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold tracking-[0.3em] uppercase">

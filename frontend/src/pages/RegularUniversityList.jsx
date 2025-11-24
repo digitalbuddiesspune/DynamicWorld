@@ -88,7 +88,7 @@ export default function RegularUniversityList() {
   return (
     <div className="min-h-screen bg-[#F8F3ED] text-[#2B2B2B]">
       {/* Header */}
-      <header className="bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347] text-[#1A1A1A] py-6">
+      <header className="bg-[#008080] text-white py-6">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
           <h1 className="text-2xl md:text-3xl font-bold">Top Universities</h1>
           <p className="text-[#2B2B2B] mt-1">
@@ -96,13 +96,27 @@ export default function RegularUniversityList() {
           </p>
 
           {/* Search */}
-          <div className="mt-4">
+          <div className="mt-4 relative w-full md:w-96">
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Search by name or location..."
-              className="w-full md:w-96 rounded-xl bg-white/95 text-[#2B2B2B] px-4 py-2 outline-none ring-1 ring-white/40 focus:ring-2 focus:ring-white"
+              className="w-full md:w-96 rounded-xl bg-white/30 text-[#2B2B2B] px-4 py-2 outline-none ring-1 ring-white/40 focus:ring-2 focus:ring-white"
             />
+              <svg
+                className="absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400 pointer-events-none"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
           </div>
         </div>
       </header>

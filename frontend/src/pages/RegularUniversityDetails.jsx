@@ -179,7 +179,7 @@ export default function RegularUniversityDetails() {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#F8F3ED]">
-        <header className="bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347] text-[#2B2B2B]">
+        <header className="bg-[#008080] text-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
             <div className="h-7 w-64 bg-white/30 rounded animate-pulse" />
             <div className="mt-2 h-4 w-72 bg-white/20 rounded animate-pulse" />
@@ -225,7 +225,7 @@ export default function RegularUniversityDetails() {
 
   return (
     <div className="text-[#2B2B2B] bg-[#F8F3ED]">
-      <header className="bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347]">
+      <header className="bg-[#008080] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
           <nav className="flex items-center gap-2 text-sm opacity-95">
             <Link to="/services/regular-full-time-education" className="hover:underline">

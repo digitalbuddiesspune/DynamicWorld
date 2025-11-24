@@ -80,7 +80,7 @@ const PromotionStrip = () => {
     first?.newsTitle ?? "Latest updates and admission support — check now.";
 
   return (
-    <header className="w-full bg-[#2B2B2B] text-white px-4 sm:px-6 py-2 sm:py-3 shadow-md">
+    <header className="w-full bg-[#0A1A2F] text-white px-4 sm:px-6 py-2 sm:py-3 shadow-md">
       <div className="max-w-7xl mx-auto flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         {/* Left: Logo + Brand */}
         <div className="flex items-center gap-3">

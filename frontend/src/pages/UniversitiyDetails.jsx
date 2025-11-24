@@ -145,7 +145,7 @@ export default function UniversityDetails() {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#D4D4D4]">
-        <header className="bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347] text-white">
+        <header className="bg-[#008080] text-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
             <div className="h-7 w-64 bg-white/30 rounded animate-pulse" />
             <div className="mt-2 h-4 w-72 bg-white/20 rounded animate-pulse" />
@@ -192,7 +192,7 @@ export default function UniversityDetails() {
   return (
     <div className=" text-[#2B2B2B] bg-[#F8F3ED]">
       {/* ====== Header / Breadcrumb ====== */}
-      <header className="bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347]">
+      <header className="bg-[#008080] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
           <nav className="flex items-center gap-2 text-sm opacity-95">
             <Link to="/services/online-education" className="hover:underline">Online Education</Link>

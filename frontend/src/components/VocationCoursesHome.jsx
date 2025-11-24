@@ -6,9 +6,9 @@ const VocationCoursesHome = ({ short, title, para1, para2 }) => {
   return (
     <div className="bg-[#F8F3ED] text-[#31393C]">
       {/* Header */}
-      <header className="bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347] text-[#1A1A1A]">
+      <header className="bg-[#008080] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white px-3 py-1 text-xs font-semibold text-[#1A1A1A] bg-white/90 ">
+          <span className="inline-flex items-center gap-2 rounded-full  px-3 py-1 text-xs font-semibold text-[#1A1A1A] bg-black/50 ">
             {short} • India
           </span>
 
