@@ -23,12 +23,12 @@ const BranchLocations = () => {
   ];
 
   return (
-    <div className="bg-[#EDEEEB] py-12 px-6">
+    <div className="bg-[#D4D4D4] py-12 px-6">
       <div className="text-center mb-10">
-        <h2 className="text-2xl md:text-3xl font-semibold text-[#31393c]">
+        <h2 className="text-2xl md:text-3xl font-semibold text-[#2B2B2B]">
           Our Branch Offices
         </h2>
-        <p className="text-[#31393c] mt-2 text-base md:text-lg">
+        <p className="text-[#2B2B2B] mt-2 text-base md:text-lg">
           Visit or connect with our regional offices for expert guidance.
         </p>
       </div>
@@ -58,19 +58,19 @@ const BranchLocations = () => {
               </svg>
             </div>
 
-            <h3 className="text-xl font-semibold text-[#31393c] mb-1">
+            <h3 className="text-xl font-semibold text-[#2B2B2B] mb-1">
               {branch.city}
             </h3>
-            <p className="text-[#31393c] text-sm mb-2">(+91) {branch.phone}</p>
+            <p className="text-[#2B2B2B] text-sm mb-2">(+91) {branch.phone}</p>
 
             <a
               href={`tel:+91${branch.phone}`}
-              className="inline-block bg-[#FFC067] text-[#2B2B2B] px-5 py-2 rounded-lg hover:bg-[#31393c] transition mb-3"
+              className="inline-block bg-[#313639] text-white px-5 py-2 rounded-lg hover:bg-[#31393c] transition mb-3"
             >
               Call Now
             </a>
 
-            <p className="text-[#31393c] text-sm leading-relaxed">
+            <p className="text-[#2B2B2B] text-sm leading-relaxed">
               {branch.address}
             </p>
           </div>

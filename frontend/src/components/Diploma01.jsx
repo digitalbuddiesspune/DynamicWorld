@@ -7,7 +7,7 @@ const Diploma01 = () => {
   return (
     <div className="w-full bg-white">
       {/* Top ribbon (same shell as DVOC) */}
-      <div className="bg-[#FFC067] text-[#2B2B2B]">
+      <div className="bg-[#313639] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-6">
           {/* Chip */}
           <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-medium text-[#31393C]">

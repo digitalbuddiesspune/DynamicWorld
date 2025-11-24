@@ -99,7 +99,7 @@ const Card = ({ city, phone, tel, address }) => (
         <div className="mt-4 flex flex-wrap gap-3">
           <a
             href={`tel:${tel}`}
-            className="inline-flex items-center justify-center rounded-lg bg-[#FFC067] px-4 py-2 text-xs lg:text-sm font-medium text-[#2B2B2B] transition-all hover:bg-[#FFC607] hover:-translate-y-0.5 shadow-sm"
+            className="inline-flex items-center justify-center rounded-lg bg-[#313639] px-2 text-xs lg:text-sm font-medium text-white transition-all hover:bg-[#313639] hover:text-white hover:-translate-y-0.5 shadow-sm"
           >
             Call Now
           </a>
@@ -107,7 +107,7 @@ const Card = ({ city, phone, tel, address }) => (
             href={mapLink(address)}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-lg border border-[#cbd5f5] bg-white px-4 py-2 text-xs lg:text-sm font-medium text-[#1e293b] transition-all hover:bg-[#f8fafc] hover:-translate-y-0.5 shadow-sm"
+            className="inline-flex items-center justify-center rounded-lg border border-[#cbd5f5] bg-white px-4 py-2 text-xs lg:text-sm font-medium text-[#1e293b] transition-all hover:-translate-y-0.5 shadow-sm"
           >
             Open in Maps
           </a>
@@ -137,9 +137,9 @@ const ContactUs2 = () => {
     .sort((a, b) => a.city.localeCompare(b.city));
 
   return (
-    <section className="w-full bg-gradient-to-b from-white via-[#f6f8fc] to-white">
+    <section className="w-full bg-[#F8F3ED] border-b border-gray-200">
       {/* Top banner */}
-      <div className="bg-[#FFC067] text-[#2B2B2B]">
+      <div className=" bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347] text-[#2b2b2b]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold tracking-[0.3em] uppercase">
@@ -185,25 +185,25 @@ const ContactUs2 = () => {
 
         {/* Bottom CTA */}
         <div className="mt-6 sm:mt-8">
-          <div className="rounded-2xl bg-white shadow-sm ring-1 ring-[#dbeafe] p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="rounded-2xl bg-[#008080] shadow-sm ring-1 text-white ring-[#dbeafe] p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-center md:text-left">
-              <p className="text-sm text-[#475569]">
+              <p className="text-sm ">
                 Need help choosing a course?
               </p>
-              <h4 className="text-base sm:text-lg font-semibold text-[#0f172a]">
+              <h4 className="text-base sm:text-lg font-semibold ">
                 Book a quick counselling call.
               </h4>
             </div>
             <div className="flex flex-wrap gap-3">
               <a
                 href="tel:+917887881060"
-                className="inline-flex items-center justify-center rounded-lg bg-[#FFC067] px-4 py-2.5 text-xs lg:text-sm font-medium text-[#2B2B2B] transition-all hover:bg-[#FFC607] hover:-translate-y-0.5 shadow-sm"
+                className="inline-flex items-center justify-center rounded-lg bg-[#313639] px-2.5 text-xs lg:text-sm font-medium text-white transition-all hover:bg-[#313639] hover:text-white hover:-translate-y-0.5 shadow-sm"
               >
                 Quick Call
               </a>
               <a
                 href="#video-counselling"
-                className="inline-flex items-center justify-center rounded-lg border border-[#cbd5f5] bg-white px-4 py-2.5 text-xs lg:text-sm font-medium text-[#1e293b] transition-all hover:bg-[#f8fafc] hover:-translate-y-0.5 shadow-sm"
+                className="inline-flex items-center justify-center rounded-lg border border-white bg-transparent px-4 py-2 text-xs lg:text-sm font-medium text-white transition-all hover:-translate-y-0.5 shadow-sm"
               >
                 Video Counselling
               </a>

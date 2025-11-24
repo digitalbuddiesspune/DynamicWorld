@@ -12,7 +12,7 @@ const OnlineEducation = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-slate-50">
+    <div className="min-h-screen bg-[#F8F3ED]">
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -20,7 +20,7 @@ const OnlineEducation = () => {
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 py-16 sm:py-20 md:py-24">
           <div className="max-w-3xl text-center text-white mx-auto">
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight">
               What is Online Education?
             </h1>
             <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-white/90">
@@ -32,8 +32,8 @@ const OnlineEducation = () => {
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
               <button
                 onClick={scrollToForm}
-                className="inline-flex items-center justify-center rounded-xl bg-white/90 px-5 py-3 text-sm sm:text-base font-semibold text-slate-900
-                           shadow-md hover:bg-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+                className="inline-flex items-center justify-center rounded-xl bg-[#2b2b2b] px-5 py-3 text-sm sm:text-base font-semibold text-slate-900
+                           shadow-md hover:translate-y-[-2px] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
               >
                 Get Free Counseling
               </button>
@@ -41,7 +41,7 @@ const OnlineEducation = () => {
                 to={"/contact-us"}
                 href="mailto:hello@dynamicworld.in?subject=Inquiry about Online Education"
                 className="inline-flex items-center justify-center rounded-xl border-2 border-white px-5 py-3 text-sm sm:text-base font-semibold text-white
-                           hover:bg-white/10 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+                           hover:bg-white/10 transition hover:translate-y-[-2px]  focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
               >
                 Contact Us
               </NavLink>
@@ -86,7 +86,7 @@ const OnlineEducation = () => {
               {["Online BBA", "Online Education", "Online MBA"].map((t) => (
                 <span
                   key={t}
-                  className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 ring-1 ring-blue-100"
+                  className="inline-flex items-center rounded-full bg-[#D4D4D4] px-3 py-1 text-xs font-semibold text-[#2B2B2B] ring-1 ring-[#B3B3B3]"
                 >
                   {t}
                 </span>

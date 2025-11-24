@@ -4,7 +4,7 @@ const RegularAdmissionSkeleton = () => {
   return (
     <div className="min-h-screen w-full bg-white text-[#31393C] animate-pulse">
       {/* Header Section */}
-      <div className="bg-[#FFC067] text-[#2B2B2B]">
+      <div className="bg-gray-100 text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-6">
           <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
             {/* Text Placeholder */}
@@ -17,11 +17,11 @@ const RegularAdmissionSkeleton = () => {
       </div>
 
       {/* Body */}
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto ">
         <div className=" space-y-6 items-start">
           <div className="px-8 py-5 space-y-4">
-            <div className="h-32 w-full bg-[#FFC067]/20 rounded-md mt-6"></div>
-            <div className="h-32 w-full bg-[#FFC067]/20 rounded-md mt-6"></div>
+            <div className="h-32 w-full bg-gray-100 text-white/20 rounded-md mt-6"></div>
+            <div className="h-32 w-full bg-gray-100 text-white/20 rounded-md mt-6"></div>
 
           </div>
         </div>

@@ -20,7 +20,7 @@ const AboutUs06 = () => {
     <section className="w-full bg-gray-50 py-10 px-4 sm:px-6">
       
       {/* Heading: Smaller text size (2xl on mobile, 3xl on desktop) and reduced margin */}
-      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-gray-800">
+      <h2 className="text-2xl sm:text-3xl font-medium text-center mb-8 text-gray-800">
         Our Branches Across the World
       </h2>
 
@@ -50,7 +50,7 @@ const AboutUs06 = () => {
             </svg>
             <div>
               {/* City Name: Smaller font size (base on mobile, lg on desktop) */}
-              <h3 className="text-base sm:text-lg font-semibold text-gray-900">{branch.city}</h3>
+              <h3 className="text-base sm:text-lg font-medium text-gray-900">{branch.city}</h3>
               {/* Address: Smallest font size (sm on mobile, base on desktop) */}
               <p className="text-sm sm:text-base text-gray-600 leading-snug">{branch.address}</p>
             </div>

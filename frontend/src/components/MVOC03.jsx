@@ -1,9 +1,6 @@
-const COLORS = {
-  brand: "#3E96F4", // primary blue
-  text: "#31393C", // charcoal
-  chipBg: "#EDEEEB", // off‑white chip/bg
-  white: "#FFFFFF",
-};
+import { TRUSTWORTHY_GLOBAL } from "../constants/colors";
+
+const COLORS = TRUSTWORTHY_GLOBAL;
 
 export const MVocCourseInfo = [
   {
@@ -43,7 +40,7 @@ export const MVocCourseInfo = [
 const Section = ({ title, children }) => (
   <section className="space-y-3">
     {title ? (
-      <h2 className="text-xl font-bold mb-2" style={{ color: COLORS.brand }}>
+      <h2 className="text-xl font-bold mb-2" style={{ color: COLORS.primary }}>
         {title}
       </h2>
     ) : null}
@@ -70,7 +67,10 @@ const InfoTable = ({ rows = [] }) => (
             key={idx}
             className={`${
               idx % 2 === 0 ? "bg-white" : "bg-gray-50"
-            } hover:bg-blue-50 transition`}
+            } transition`}
+            style={{ "--hover-bg": COLORS.secondaryAccent }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.secondaryAccent}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = idx % 2 === 0 ? "#FFFFFF" : "#F9FAFB"}
           >
             <td className="align-top px-6 py-3 text-sm lg:text-base text-gray-900">
               {row.name}
@@ -91,7 +91,7 @@ const MVOC03 = () => {
       <Section>
         <div
           className="space-y-4 text-gray-700 rounded-2xl p-5 ring-1 ring-gray-200 shadow-sm"
-          style={{ backgroundColor: COLORS.chipBg }}
+          style={{ backgroundColor: COLORS.neutral }}
         >
           <p>
             A{" "}

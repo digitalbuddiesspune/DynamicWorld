@@ -320,7 +320,14 @@ const DynamicWorldPortal = () => {
   );
 
   const toggleExpand = useCallback((index) => {
-    setExpandedItems((prev) => ({ ...prev, [index]: !prev[index] }));
+    setExpandedItems((prev) => {
+      // If the clicked section is already open, close it (allow closing)
+      if (prev[index]) {
+        return {};
+      }
+      // Otherwise, close all sections and open only the clicked one
+      return { [index]: true };
+    });
   }, []);
 
   const scrollToMain = useCallback(() => {

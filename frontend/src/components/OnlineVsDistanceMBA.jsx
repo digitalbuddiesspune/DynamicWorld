@@ -11,6 +11,9 @@ import {
   Briefcase,
   ShieldCheck,
 } from "lucide-react";
+import { TRUSTWORTHY_GLOBAL } from "../constants/colors";
+
+const COLORS = TRUSTWORTHY_GLOBAL;
 
 export default function OnlineVsDistanceMBA({ showCTA = true }) {
   const pillars = [
@@ -130,15 +133,18 @@ export default function OnlineVsDistanceMBA({ showCTA = true }) {
   ];
 
   const headerChip = (text) => (
-    <span className="inline-flex items-center gap-2 rounded-full bg-[#EDEEEB] px-3 py-1 text-xs font-medium text-[#31393C]">
+    <span className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium">
       {text}
     </span>
   );
 
   return (
-    <div className="min-h-screen w-full bg-white text-[#31393C]">
+    <div
+      className="min-h-screen w-full bg-[#F8F3ED] text-[#1A1A1A]"
+   
+    >
       {/* Header */}
-      <div className="bg-[#FFC067] text-[#2B2B2B]">
+      <div className="bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-6">
           <div className="flex items-center gap-3">
             <GraduationCap className="h-6 w-6" aria-hidden />
@@ -166,10 +172,22 @@ export default function OnlineVsDistanceMBA({ showCTA = true }) {
                 </h2>
               </div>
               <div className="flex items-center gap-2 text-xs sm:text-sm">
-                <div className="inline-flex items-center gap-1 rounded-full bg-[#EDEEEB] px-3 py-1 text-[#31393C]">
+                <div
+                  className="inline-flex items-center gap-1 rounded-full px-3 py-1"
+                  style={{
+                    backgroundColor: COLORS.secondaryAccent,
+                    color: COLORS.secondary,
+                  }}
+                >
                   <CheckCircle2 className="h-4 w-4" /> Online MBA
                 </div>
-                <div className="inline-flex items-center gap-1 rounded-full bg-[#EDEEEB] px-3 py-1 text-[#31393C]">
+                <div
+                  className="inline-flex items-center gap-1 rounded-full px-3 py-1"
+                  style={{
+                    backgroundColor: COLORS.secondaryAccent,
+                    color: COLORS.secondary,
+                  }}
+                >
                   <XCircle className="h-4 w-4" /> Distance MBA
                 </div>
               </div>
@@ -182,7 +200,10 @@ export default function OnlineVsDistanceMBA({ showCTA = true }) {
                   className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 sm:p-6"
                 >
                   <div className="md:col-span-1">
-                    <div className="flex items-center gap-2 text-[#31393C]">
+                    <div
+                      className="flex items-center gap-2"
+                      style={{ color: COLORS.text }}
+                    >
                       {p.icon}
                       <h3 className="font-semibold">{p.label}</h3>
                     </div>
@@ -224,7 +245,10 @@ export default function OnlineVsDistanceMBA({ showCTA = true }) {
                   {b.goodFor.join(" • ")}
                 </div>
                 <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                  <div className="rounded-xl bg-[#EDEEEB] p-3">
+                  <div
+                    className="rounded-xl p-3"
+                    style={{ backgroundColor: COLORS.neutral }}
+                  >
                     <div className="font-semibold mb-1">Pros</div>
                     <ul className="list-disc list-inside space-y-1">
                       {b.pros.map((pr) => (
@@ -232,7 +256,10 @@ export default function OnlineVsDistanceMBA({ showCTA = true }) {
                       ))}
                     </ul>
                   </div>
-                  <div className="rounded-xl bg-[#EDEEEB] p-3">
+                  <div
+                    className="rounded-xl p-3"
+                    style={{ backgroundColor: COLORS.neutral }}
+                  >
                     <div className="font-semibold mb-1">Cons</div>
                     <ul className="list-disc list-inside space-y-1">
                       {b.cons.map((cr) => (
@@ -246,9 +273,15 @@ export default function OnlineVsDistanceMBA({ showCTA = true }) {
           </div>
 
           {/* Quick tips */}
-          <div className="rounded-2xl bg-[#EDEEEB] p-4 text-sm">
+          <div
+            className="rounded-2xl p-4 text-sm"
+            style={{ backgroundColor: COLORS.neutral }}
+          >
             <p className="font-semibold">Tip</p>
-            <ul className="mt-1 list-disc list-inside space-y-1 text-[#31393C]">
+            <ul
+              className="mt-1 list-disc list-inside space-y-1"
+              style={{ color: COLORS.text }}
+            >
               <li>
                 Shortlist UGC-entitled universities first; then compare brand
                 strength, pedagogy, and career services.
@@ -279,7 +312,8 @@ export default function OnlineVsDistanceMBA({ showCTA = true }) {
                 <div className="mt-4 flex flex-col gap-2">
                   <a
                     href="tel:+917887881060"
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[#FFC067] text-[#2B2B2B] px-4 py-2 font-semibold shadow-sm hover:bg-[#3187e2]"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-2xl text-white bg-[#008080] hover:bg-[#006666] hover:-translate-y-0.5 px-4 py-2 font-semibold shadow-sm transition"
+                   
                   >
                     <span>Quick Call</span>
                   </a>
@@ -287,7 +321,8 @@ export default function OnlineVsDistanceMBA({ showCTA = true }) {
                     href="https://wa.me/+917887881060"
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-white text-[#31393C] px-4 py-2 font-semibold shadow-sm ring-1 ring-gray-200 hover:bg-gray-50"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-4 py-2 font-semibold shadow-sm ring-1 ring-gray-200 transition"
+                    
                   >
                     <span>WhatsApp Counselling</span>
                   </a>
@@ -296,7 +331,10 @@ export default function OnlineVsDistanceMBA({ showCTA = true }) {
 
               <div className="rounded-2xl bg-white shadow-sm ring-1 ring-gray-200 p-5">
                 <h4 className="font-semibold">Fee Benchmarks (Indicative)</h4>
-                <ul className="mt-2 text-sm list-disc list-inside text-[#31393C]">
+                <ul
+                  className="mt-2 text-sm list-disc list-inside"
+                  style={{ color: COLORS.text }}
+                >
                   <li>Online MBA: ₹1.5L–₹4.5L (premium brands higher)</li>
                   <li>Distance MBA: ₹40k–₹1.8L</li>
                 </ul>

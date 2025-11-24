@@ -12,9 +12,12 @@ import {
   Target,
   Timer,
   TrendingUp,
-  Video
+  Video,
 } from "lucide-react";
 import React from "react";
+import { TRUSTWORTHY_GLOBAL } from "../constants/colors";
+
+const COLORS = TRUSTWORTHY_GLOBAL;
 
 /**
  * ExamToolkit90Day (JavaScript version)
@@ -29,12 +32,12 @@ export default function ExamToolkit90Day({
 }) {
   const EXAMS = ["NEET", "JEE", "NATA", "CET"];
 
-  // examColors keyed by exam string values
+  // examColors keyed by exam string values (using Trustworthy & Global scheme)
   const examColors = {
-    NEET: "#3E96F4",
-    JEE: "#06b6d4", // cyan accent for variety
-    NATA: "#6366f1", // indigo accent for design
-    CET: "#10b981", // emerald accent for state CETs
+    NEET: COLORS.primary, // Navy Blue
+    JEE: COLORS.secondary, // Vibrant Teal
+    NATA: COLORS.primaryLight, // Light Navy Blue
+    CET: COLORS.secondaryAlt, // Bright Green
   };
 
   const initialExam = EXAMS.includes(defaultExam) ? defaultExam : "NEET";
@@ -110,7 +113,7 @@ export default function ExamToolkit90Day({
     NEET: [
       {
         phase: "Phase 1: Foundation",
-        color: "bg-blue-50",
+        color: COLORS.primaryAccent,
         goals: [
           "NCERT-first approach (Bio & Chem)",
           "Physics formulas + concept drills",
@@ -120,7 +123,7 @@ export default function ExamToolkit90Day({
       },
       {
         phase: "Phase 2: Practice",
-        color: "bg-blue-50",
+        color: COLORS.primaryAccent,
         goals: [
           "Sectional tests (3/week)",
           "Error logs + targeted revision",
@@ -130,7 +133,7 @@ export default function ExamToolkit90Day({
       },
       {
         phase: "Phase 3: Mock & Revise",
-        color: "bg-blue-50",
+        color: COLORS.primaryAccent,
         goals: [
           "Alt-day full mocks",
           "Weak-topic sprints",
@@ -142,7 +145,7 @@ export default function ExamToolkit90Day({
     JEE: [
       {
         phase: "Phase 1: Core Concepts",
-        color: "bg-cyan-50",
+        color: COLORS.secondaryAccent,
         goals: [
           "Mechanics + Algebra base",
           "Daily mixed problem set (60–90 min)",
@@ -152,7 +155,7 @@ export default function ExamToolkit90Day({
       },
       {
         phase: "Phase 2: Problem Practice",
-        color: "bg-cyan-50",
+        color: COLORS.secondaryAccent,
         goals: [
           "Topic tests (PCM) 4/week",
           "Timed drills (QA sets)",
@@ -162,7 +165,7 @@ export default function ExamToolkit90Day({
       },
       {
         phase: "Phase 3: Mock Cycle",
-        color: "bg-cyan-50",
+        color: COLORS.secondaryAccent,
         goals: [
           "Every 2nd day full mock",
           "Advanced-level boosters",
@@ -174,7 +177,7 @@ export default function ExamToolkit90Day({
     NATA: [
       {
         phase: "Phase 1: Fundamentals",
-        color: "bg-indigo-50",
+        color: COLORS.primaryAccent,
         goals: [
           "Pattern familiarization",
           "Spatial reasoning drills",
@@ -184,7 +187,7 @@ export default function ExamToolkit90Day({
       },
       {
         phase: "Phase 2: Section Practice",
-        color: "bg-indigo-50",
+        color: COLORS.primaryAccent,
         goals: [
           "Cognitive + visual mocks alt-days",
           "Architecture GK capsules",
@@ -194,7 +197,7 @@ export default function ExamToolkit90Day({
       },
       {
         phase: "Phase 3: Full Mocks",
-        color: "bg-indigo-50",
+        color: COLORS.primaryAccent,
         goals: [
           "Full-length mocks 3/week",
           "Heatmap of weak areas",
@@ -206,7 +209,7 @@ export default function ExamToolkit90Day({
     CET: [
       {
         phase: "Phase 1: Syllabus Sweep",
-        color: "bg-emerald-50",
+        color: COLORS.secondaryAccent,
         goals: [
           "State-board theory quick pass",
           "Formulae deck (PCM/Bio)",
@@ -216,7 +219,7 @@ export default function ExamToolkit90Day({
       },
       {
         phase: "Phase 2: Speed Practice",
-        color: "bg-emerald-50",
+        color: COLORS.secondaryAccent,
         goals: [
           "Sectional speed tests 4/week",
           "OMR practice & bubbling",
@@ -226,7 +229,7 @@ export default function ExamToolkit90Day({
       },
       {
         phase: "Phase 3: Full Mocks",
-        color: "bg-emerald-50",
+        color: COLORS.secondaryAccent,
         goals: [
           "Alt-day full mocks",
           "High-weightage sprint",
@@ -340,19 +343,28 @@ export default function ExamToolkit90Day({
   };
 
   const Chip = ({ children }) => (
-    <span className="inline-flex items-center gap-2 rounded-full bg-[#EDEEEB] px-3 py-1 text-xs font-medium text-[#31393C]">
+    <span
+      className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium"
+      style={{
+        backgroundColor: COLORS.secondaryAccent,
+        color: COLORS.secondary,
+      }}
+    >
       {children}
     </span>
   );
 
   return (
-    <div className="min-h-screen w-full bg-white text-[#31393C]">
+    <div
+      className="min-h-screen w-full bg-[#F8F3ED]"
+      style={{ color: "#2b2b2b" }}
+    >
       {/* Header */}
-      <div className="bg-[#FFC067] text-[#2B2B2B]">
+      <div className="bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-6">
           <div className="flex items-center gap-3">
-            <BookOpen className="h-6 w-6" aria-hidden />
-            <h1 className="text-2xl sm:text-3xl font-bold">
+            <BookOpen className="h-6 w-6 text-[#2b2b2b]" aria-hidden />
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#2b2b2b]">
               Exam Toolkit: NEET, JEE, NATA, CET – 90-Day Plan
             </h1>
           </div>
@@ -374,9 +386,13 @@ export default function ExamToolkit90Day({
                   key={e}
                   onClick={() => setExam(e)}
                   className={`px-3 py-1.5 rounded-full text-sm font-medium ring-1 ring-gray-200 ${
-                    exam === e ? "text-white" : "text-[#31393C] bg-white"
+                    exam === e ? "text-white" : "bg-white"
                   }`}
-                  style={exam === e ? { backgroundColor: examColors[e] } : {}}
+                  style={
+                    exam === e
+                      ? { backgroundColor: examColors[e] }
+                      : { color: "#2b2b2b" }
+                  }
                 >
                   {e}
                 </button>
@@ -399,7 +415,10 @@ export default function ExamToolkit90Day({
               </h2>
             </div>
             <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="rounded-xl bg-[#EDEEEB] p-4">
+              <div
+                className="rounded-xl p-4"
+                style={{ backgroundColor: COLORS.neutral }}
+              >
                 <div className="font-semibold mb-1">Core Subjects</div>
                 <ul className="list-disc list-inside text-sm space-y-1">
                   {syllabus[exam].subjects.map((s) => (
@@ -407,7 +426,10 @@ export default function ExamToolkit90Day({
                   ))}
                 </ul>
               </div>
-              <div className="rounded-xl bg-[#EDEEEB] p-4">
+              <div
+                className="rounded-xl p-4"
+                style={{ backgroundColor: COLORS.neutral }}
+              >
                 <div className="font-semibold mb-1">High-ROI Emphasis</div>
                 <ul className="list-disc list-inside text-sm space-y-1">
                   {syllabus[exam].weightage.map((w) => (
@@ -426,7 +448,16 @@ export default function ExamToolkit90Day({
             </header>
             <div className="divide-y divide-gray-100">
               {phasePlan[exam].map((p) => (
-                <div key={p.phase} className="p-4 sm:p-6">
+                <div
+                  key={p.phase}
+                  className="p-4 sm:p-6"
+                  style={{
+                    backgroundColor:
+                      typeof p.color === "string" && p.color.startsWith("bg-")
+                        ? undefined
+                        : p.color || COLORS.primaryAccent,
+                  }}
+                >
                   <div className="flex items-center gap-2">
                     <Chip>{p.phase}</Chip>
                     <span className="text-xs text-gray-600">
@@ -454,7 +485,11 @@ export default function ExamToolkit90Day({
             </div>
             <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4">
               {dailyPlanner[exam].blocks.map((b) => (
-                <div key={b.label} className="rounded-xl bg-[#EDEEEB] p-4">
+                <div
+                  key={b.label}
+                  className="rounded-xl p-4"
+                  style={{ backgroundColor: COLORS.neutral }}
+                >
                   <div className="flex items-center justify-between">
                     <div className="font-semibold">{b.label}</div>
                     <div className="text-xs text-gray-700 inline-flex items-center gap-1">
@@ -483,7 +518,10 @@ export default function ExamToolkit90Day({
                 <li key={m}>{m}</li>
               ))}
             </ul>
-            <div className="mt-3 rounded-xl bg-[#EDEEEB] p-3 text-sm">
+            <div
+              className="mt-3 rounded-xl p-3 text-sm"
+              style={{ backgroundColor: COLORS.neutral }}
+            >
               <div className="font-semibold mb-1 flex items-center gap-2">
                 <TrendingUp className="h-4 w-4" /> Score Growth Routine
               </div>
@@ -561,7 +599,8 @@ export default function ExamToolkit90Day({
                 <div className="mt-4 flex flex-col gap-2">
                   <a
                     href="tel:+917887881060"
-                    className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#FFC067] text-[#2B2B2B] px-4 py-2 font-semibold shadow-sm hover:bg-[#3187e2]"
+                    className="inline-flex items-center justify-center gap-2 rounded-2xl text-white px-4 py-2 font-semibold shadow-sm transition bg-[#008080] hover:bg-[#006666] hover:-translate-y-0.5"
+                   
                   >
                     <PhoneCall className="h-4 w-4" /> Quick Call
                   </a>
@@ -569,7 +608,8 @@ export default function ExamToolkit90Day({
                     href="https://wa.me/+917887881060"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white text-[#31393C] px-4 py-2 font-semibold shadow-sm ring-1 ring-gray-200 hover:bg-gray-50"
+                    className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-4 py-2 font-semibold shadow-sm ring-1 ring-gray-200 transition hover:bg-gray-100 hover:-translate-y-0.5"
+                  
                   >
                     <Video className="h-4 w-4" /> WhatsApp Counselling
                   </a>

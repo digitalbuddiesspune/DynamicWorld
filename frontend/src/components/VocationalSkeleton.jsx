@@ -1,14 +1,14 @@
 import React from "react";
 
 const Skeleton = ({ className = "" }) => (
-  <div className={`animate-pulse bg-slate-100 rounded-md ${className}`} />
+  <div className={`animate-pulse bg-slate-200 rounded-md ${className}`} />
 );
 
 const VocationalSkeleton = () => {
   return (
     <div className="bg-white text-[#31393C]">
       {/* Header Skeleton */}
-      <header className="bg-[#FFC067] text-[#2B2B2B]">
+      <header className="  bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8">
           <Skeleton className="h-9 sm:h-5 w-32 max-w-2xl" />
           <Skeleton className="mt-3 h-10 w-2/3 max-w-md" />

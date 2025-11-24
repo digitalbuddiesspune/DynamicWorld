@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 /********************* Shared UI Primitives ************************/
 const SectionHeader = ({ title, subtitle, chip }) => (
-  <div className="bg-[#FFC067] text-[#2B2B2B]">
+  <div className="bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347] text-[#2B2B2B]">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-6">
       <div className="flex items-center gap-3">
         {/* {chip && (
@@ -41,12 +41,12 @@ const Button = ({
   className = "",
 }) => {
   const base =
-    "inline-flex items-center justify-center rounded-2xl px-4 py-2 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2";
+    "inline-flex items-center justify-center rounded-2xl px-4 py-2 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 hover:translate-y-[-2px] cursor-pointer";
   const styles = {
     primary:
-      "bg-[#FFC067] text-[#2B2B2B] hover:brightness-110 focus:ring-[#3E96F4]",
+      "bg-[#313639] text-white hover:brightness-110 focus:ring-[#3E96F4]",
     outline:
-      "border border-[#3E96F4] text-[#3E96F4] hover:bg-[#FFC067]/10 focus:ring-[#3E96F4]",
+      "border border-[#3E96F4] text-[#3E96F4] hover:bg-[#2B2B2B]/10 focus:ring-[#3E96F4]",
     subtle:
       "bg-[#EDEEEB] text-[#31393C] hover:bg-[#CCC7BF]/60 focus:ring-[#3E96F4]",
   };
@@ -64,7 +64,7 @@ const Button = ({
 /********************* BLOG: Cards & Widgets ************************/
 const BlogCard = ({ post }) => (
   <article className="rounded-2xl bg-white ring-1 ring-gray-200 shadow-sm overflow-hidden hover:shadow-md transition">
-    <div className="aspect-[16/9] w-full overflow-hidden bg-gray-100">
+    <div className="aspect-[16/9] w-full overflow-hidden bg-white">
       {post.image ? (
         <img
           src={post.image}
@@ -84,7 +84,7 @@ const BlogCard = ({ post }) => (
         ))}
       </div>
       <h3 className="text-lg font-semibold text-[#31393C] line-clamp-2">
-        {post.title}
+        {post.title} 
       </h3>
       <p className="mt-2 text-sm text-gray-600 line-clamp-3">{post.excerpt}</p>
       <div className="mt-4 flex items-center justify-between text-xs text-gray-500">
@@ -97,9 +97,9 @@ const BlogCard = ({ post }) => (
         <NavLink
           to={post.href}
           onClick={handleBtn}
-          className="p-2 rounded-2xl bg-blue-400/10 inline-block text-sm font-medium text-blue-700 hover:bg-blue-400/20"
+          className="p-2 rounded-2xl bg-[#2b2b2b] text-white inline-block text-sm font-medium hover:translate-y-[-2px] cursor-pointer transition-transform"
         >
-          Read article
+          Read More
         </NavLink>
       </div>
     </div>
@@ -107,7 +107,7 @@ const BlogCard = ({ post }) => (
 );
 
 const BlogSidebar = () => (
-  <aside className="space-y-6">
+  <aside className="space-y-6 ">
     <div className="rounded-2xl bg-white p-4 ring-1 ring-gray-200 shadow-sm">
       <h4 className="text-sm font-semibold text-[#31393C]">Popular Tags</h4>
       <div className="mt-3 flex flex-wrap gap-2">
@@ -302,7 +302,7 @@ export function BlogPage({ posts = demoPosts }) {
   );
 
   return (
-    <div className="min-h-screen w-full bg-white text-[#31393C]">
+    <div className="min-h-screen w-full  text-[#31393C]">
       <SectionHeader
         chip="Blog"
         title="Dynamic World Blog"
@@ -319,7 +319,7 @@ export function BlogPage({ posts = demoPosts }) {
               className={[
                 "rounded-full px-3 py-1 text-xs font-medium",
                 selectedTag === tag
-                  ? "bg-[#FFC067] text-[#2B2B2B]"
+                  ? "bg-[#313639] text-white"
                   : "bg-[#EDEEEB] text-[#31393C] hover:bg-[#CCC7BF]/70",
               ].join(" ")}
             >
@@ -357,8 +357,14 @@ export function BlogPage({ posts = demoPosts }) {
                     <span>{filtered[0].author}</span>
                     <span>•</span>
                   </div>
-                  <div className="mt-4 p-2 rounded-2xl bg-blue-400/10 inline-block text-sm font-medium text-blue-700 hover:bg-blue-400/20">
-                    <NavLink to={filtered[0].href}>Read article</NavLink>
+                  <div className="mt-4">
+                    <NavLink 
+                      to={filtered[0].href}
+                      onClick={handleBtn}
+                      className="p-2 rounded-2xl bg-[#2b2b2b] text-white inline-block text-sm font-medium hover:translate-y-[-2px] cursor-pointer transition-transform"
+                    >
+                      Read More
+                    </NavLink>
                   </div>
                 </div>
               </div>
@@ -385,7 +391,7 @@ export function BlogPage({ posts = demoPosts }) {
 /********************* RESOURCES PAGE ************************/
 export function ResourcesPage({ data = resourceBlocks }) {
   return (
-    <div className="min-h-screen w-full bg-white text-[#31393C]">
+    <div className="min-h-screen w-full bg-[#F8F3ED] text-[#31393C]">
       <SectionHeader
         chip="Resources"
         title="Resources & Student Tools"
@@ -393,18 +399,6 @@ export function ResourcesPage({ data = resourceBlocks }) {
       />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8 space-y-8">
-        {/* Quick Tiles */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-          {["Guides", "Brochures", "Roadmaps", "Counselling"].map((t) => (
-            <div
-              key={t}
-              className="rounded-2xl bg-[#EDEEEB] text-[#31393C] px-4 py-3 text-center text-sm font-medium hover:bg-[#CCC7BF]/70 transition"
-            >
-              {t}
-            </div>
-          ))}
-        </div>
-
         {/* Guides & E-Books */}
         <section>
           <div className="flex items-center justify-between mb-4">
@@ -444,7 +438,7 @@ export function ResourcesPage({ data = resourceBlocks }) {
         {/* Webinars */}
 
         {/* CTA Strip */}
-        <div className="rounded-2xl bg-[#FFC067] text-[#2B2B2B] p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="rounded-2xl bg-[#008080] text-white p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <h3 className="text-lg sm:text-xl font-bold">
               Confused about which course fits you best?
@@ -457,14 +451,14 @@ export function ResourcesPage({ data = resourceBlocks }) {
             <Button
               variant="subtle"
               href="https://wa.me/917887881060"
-              className="bg-white text-[#31393C] hover:brightness-95"
+              className="bg-black/90 hover:bg-black/80 hover:translate-y-[-2px] cursor-pointer transition-transform"
             >
               Get Free Counselling
             </Button>
             <Button
               variant="outline"
               href="#calendly"
-              className="bg-transparent text-white border-white"
+              className="bg-transparent text-white border-white hover:translate-y-[-2px] cursor-pointer transition-transform"
             >
               Book a Call
             </Button>

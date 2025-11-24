@@ -11,20 +11,15 @@ const ExecutiveMBAOneYear = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-slate-50">
+    <div className="min-h-screen bg-[#F8F3ED]">
       {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          {/* Replace with your banner image/background if needed */}
-          <div className="absolute inset-0 bg-[#FFC067]/80 backdrop-blur-[1px]" />
-        </div>
-
+      <section className="relative overflow-hidden bg-blue-700/70 ">
         <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 py-16 sm:py-20 md:py-24">
           <div className="max-w-3xl text-center text-white mx-auto">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
               Executive Education • India
             </span>
-            <h1 className="mt-3 text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
+            <h1 className="mt-3 text-3xl sm:text-5xl md:text-6xl font-bold leading-tight">
               One-Year Executive MBA (EMBA)
             </h1>
             <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-white/90">
@@ -36,8 +31,8 @@ const ExecutiveMBAOneYear = () => {
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
               <button
                 onClick={scrollToForm}
-                className="inline-flex items-center justify-center rounded-xl bg-white/90 px-5 py-3 text-sm sm:text-base font-semibold text-slate-900
-                           shadow-md hover:bg-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+                className="inline-flex items-center justify-center rounded-xl bg-[#2b2b2b] px-5 py-3 text-sm sm:text-base font-semibold text-slate-900
+                           shadow-md hover:translate-y-[-2px] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
               >
                 Get Free Counseling
               </button>
@@ -77,7 +72,7 @@ const ExecutiveMBAOneYear = () => {
             ].map((t) => (
               <span
                 key={t}
-                className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 ring-1 ring-blue-100"
+                className="inline-flex items-center rounded-full bg-[#D4D4D4] px-3 py-1 text-xs font-semibold text-[#2B2B2B] ring-1 ring-[#B3B3B3]"
               >
                 {t}
               </span>

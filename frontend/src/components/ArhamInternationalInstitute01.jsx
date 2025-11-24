@@ -5,7 +5,7 @@ import DynamicForm from "../pages/DynamicForm";
 const ArhamInternationalInstitute01 = () => {
   return (
     <div className="max-w-7xl text-[#31393C]">
-      <div className="bg-[#FFC067] text-[#2B2B2B] flex items-center">
+      <div className="bg-[#313639] text-white flex items-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-4 sm:py-6">
           <div className="flex justify-center items-start sm:items-start gap-4 sm:gap-6">
             <div>

@@ -1,6 +1,9 @@
 import { User } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { TRUSTWORTHY_GLOBAL } from "../constants/colors";
 import DemoPages from "../components/Test";
+
+const COLORS = TRUSTWORTHY_GLOBAL;
 
 const mockBlogPosts = [
   {
@@ -41,9 +44,9 @@ const mockBlogPosts = [
 
 export default function Blogs() {
   return (
-    <div className="min-h-screen bg-gray-50 font-sans">
+    <div className="min-h-screen font-sans bg-[#F8F3ED]">
       <DemoPages />
-      <section className="mx-auto max-w-7xl px-6 sm:px-10 py-6 sm:py-10">
+      <section className="mx-auto max-w-7xl px-6 sm:px-10 py-6 sm:py-10 bg-[#F8F3ED]">
         <h2 className="text-3xl font-bold text-gray-800 mb-6 mt-2">
           Latest Insights
         </h2>
@@ -64,7 +67,7 @@ export default function Blogs() {
             {/* Content */}
             <div className="flex w-full md:w-3/5 flex-col justify-center p-6">
               <div className="mb-3">
-                <span className="inline-block bg-cyan-100 text-cyan-900 text-xs font-semibold uppercase px-2 py-1 rounded">
+                <span className="inline-block text-xs font-semibold uppercase px-2 py-1 rounded" style={{ backgroundColor: COLORS.secondaryAccent, color: COLORS.secondary }}>
                   {mockBlogPosts[0].category}
                 </span>
               </div>
@@ -92,8 +95,14 @@ export default function Blogs() {
               <NavLink
                 to="/blogs/online-education"
                 onClick={() => window.scrollTo(0, 0)} // use arrow function + scrollTo
-                className="inline-flex items-center justify-center rounded-md bg-[#FFC067] px-3 py-2 text-sm font-semibold text-[#2B2B2B]
-             w-[130px] transition hover:bg-[#FFC607]  focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="inline-flex items-center justify-center rounded-md px-2 text-sm font-semibold text-white
+             w-[130px] transition focus:outline-none focus-visible:ring-2"
+                style={{ 
+                  backgroundColor: COLORS.primary,
+                  "--focus-ring": COLORS.primaryLight
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.primaryDark}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = COLORS.primary}
               >
                 Read More <span className="ml-1 text-base">&rarr;</span>
               </NavLink>
@@ -114,7 +123,7 @@ export default function Blogs() {
             {/* Content */}
             <div className="flex w-full md:w-3/5 flex-col justify-center p-6">
               <div className="mb-3">
-                <span className="inline-block bg-cyan-100 text-cyan-900 text-xs font-semibold uppercase px-2 py-1 rounded">
+                <span className="inline-block text-xs font-semibold uppercase px-2 py-1 rounded" style={{ backgroundColor: COLORS.secondaryAccent, color: COLORS.secondary }}>
                   {mockBlogPosts[1].category}
                 </span>
               </div>
@@ -142,8 +151,14 @@ export default function Blogs() {
               <NavLink
                 to="/blogs/one-year-executive-mba"
                 onClick={() => window.scrollTo(0, 0)} // use arrow function + scrollTo
-                className="inline-flex items-center justify-center rounded-md bg-[#FFC067] px-3 py-2 text-sm font-semibold text-[#2B2B2B]
-             w-[130px] transition hover:bg-[#FFC607]  focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="inline-flex items-center justify-center rounded-md px-2 text-sm font-semibold text-white
+             w-[130px] transition focus:outline-none focus-visible:ring-2"
+                style={{ 
+                  backgroundColor: COLORS.primary,
+                  "--focus-ring": COLORS.primaryLight
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.primaryDark}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = COLORS.primary}
               >
                 Read More <span className="ml-1 text-base">&rarr;</span>
               </NavLink>
@@ -164,7 +179,7 @@ export default function Blogs() {
             {/* Content */}
             <div className="flex w-full md:w-3/5 flex-col justify-center p-6">
               <div className="mb-3">
-                <span className="inline-block bg-cyan-100 text-cyan-900 text-xs font-semibold uppercase px-2 py-1 rounded">
+                <span className="inline-block text-xs font-semibold uppercase px-2 py-1 rounded" style={{ backgroundColor: COLORS.secondaryAccent, color: COLORS.secondary }}>
                   {mockBlogPosts[2].category}
                 </span>
               </div>
@@ -192,8 +207,14 @@ export default function Blogs() {
               <NavLink
                 to="distance-learning"
                 onClick={() => window.scrollTo(0, 0)} // use arrow function + scrollTo
-                className="inline-flex items-center justify-center rounded-md bg-[#FFC067] px-3 py-2 text-sm font-semibold text-[#2B2B2B]
-             w-[130px] transition hover:bg-[#FFC607] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="inline-flex items-center justify-center rounded-md px-2 text-sm font-semibold text-white
+             w-[130px] transition focus:outline-none focus-visible:ring-2"
+                style={{ 
+                  backgroundColor: COLORS.primary,
+                  "--focus-ring": COLORS.primaryLight
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.primaryDark}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = COLORS.primary}
               >
                 Read More <span className="ml-1 text-base">&rarr;</span>
               </NavLink>

@@ -104,7 +104,7 @@ const Teaching02 = () => {
     <div className="mx-auto max-w-7xl">
       <div className="px-2 py-5 lg:px-8 rounded-2xl">
         <section>
-          <div className="bg-[#FFC067] text-[#2B2B2B] text-center py-3 rounded-2xl">
+          <div className="bg-[#008080] text-white text-center py-3 rounded-2xl">
             <h3 className="text-base lg:text-xl font-semibold">
               Teaching Courses and Eligibility
             </h3>
@@ -119,7 +119,7 @@ const Teaching02 = () => {
               you can further your expertise with a Master in Education (M.Ed.).
             </p>
           </div>
-          <div className="bg-[#FFC067] text-[#2B2B2B] text-center py-3 rounded-2xl">
+          <div className="bg-[#008080] text-white text-center py-3 rounded-2xl">
             <h3 className="text-base lg:text-xl font-semibold">
               B.Ed. Eligibility Criteria:
             </h3>
@@ -147,7 +147,7 @@ const Teaching02 = () => {
           </div>
           <div className="overflow-x-auto rounded-2xl shadow border border-[#EDEEEB] bg-white">
             <table className="min-w-full border-collapse">
-              <thead className="bg-[#FFC067] text-[#2B2B2B]">
+              <thead className="bg-[#008080] text-white">
                 <tr>
                   <th className="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wide">
                     College Name
@@ -182,7 +182,7 @@ const Teaching02 = () => {
           </div>
           <div className="overflow-x-auto rounded-2xl shadow-md border border-[#EDEEEB] bg-white">
             <table className="min-w-full border-collapse">
-              <thead className="bg-[#FFC067] text-[#2B2B2B]">
+              <thead className="bg-[#008080] text-white">
                 <tr>
                   <th className="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wide">
                     College Name

@@ -7,7 +7,7 @@ const UniversityStrip = () => {
   };
 
   return (
-    <div className="bg-[#FFC067] text-[#2B2B2B]">
+    <div className="bg-[#008080] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
         {/* centered heading with thin dividers */}
         <div className="w-full md:w-auto flex items-center justify-center md:justify-start gap-3">

@@ -35,7 +35,7 @@ const BVOC2 = () => {
       ) : (
         <DynamicUniversity university={BVOC} />
       )}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 space-y-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6">
         <UniversityCard
           name="GLOCAL UNIVERSITY"
           logo={globalUniversity}
@@ -186,7 +186,7 @@ const UniversityCard = ({ name, logo, desc, programs }) => {
   return (
     <section className="bg-white rounded-xl border border-gray-200 shadow-sm p-5 sm:p-6">
       {/* Header */}
-      <div className="lg:flex items-center">
+      <div className="lg:flex items-center ">
         <div className="">
           <img
             src={logo}

@@ -10,6 +10,8 @@ const careerLarge =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1762338767/Blue_Professional_Business_Visa_Service_Promotion_Web_Banner_1920_x_600_px_1_fqizwb.svg";
 const universitiesLarge =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763642898/OnlineEduMob_bkltzr.svg";
+  const secondBannerLarge = "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763968234/OnlineEduFinal_juripw.svg"
+  const attestationApostileLarge ="https://res.cloudinary.com/dtaitsw4r/image/upload/v1763968422/Attestation_bxdi2k.svg"
 const appostileLarge =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1762175348/Purple_and_Yellow_Shapes_Middle_School_Back_to_School_Banner_1920_x_600_px_i3l3c2.png";
 
@@ -24,11 +26,13 @@ const career =
 const vocationalMobile =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1762339554/Complete_Your_Education_cujkqi.svg";
 const firstBanner =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763706194/Artboard_1_4x-100_kzi4pt.jpg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763706945/First_Banner_kaoqwc.jpg";
+const secondBanner =
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763967905/Education_p3i0ru.svg";
 
 const MobileScreenBanners = [
   firstBanner,
-  vocationalMobile,
+  secondBanner,
   studyAbroadMobile,
   career,
   careerMobile,
@@ -36,10 +40,12 @@ const MobileScreenBanners = [
 ];
 
 const LargeScreenBanners = [
-  universitiesLarge,
+ 
+  secondBannerLarge,
   vocationalLarge,
   studyAbroadLarge01,
   careerLarge,
+  attestationApostileLarge,
   appostileLarge,
 ];
 
@@ -153,7 +159,7 @@ export default function Hero() {
       onTouchEnd={onTouchEnd}
     >
       {/* Slides */}
-      <div className="absolute inset-0 border-b border-b-gray-100">
+      <div className="absolute inset-0 border-b border-b-[#D4D4D4]">
         {banners.map((src, i) => (
           <img
             key={src}
@@ -170,14 +176,14 @@ export default function Hero() {
       <button
         onClick={prevBanner}
         aria-label="Previous"
-        className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-black/30 hover:bg-black/50 text-white items-center justify-center"
+        className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-[#2B2B2B]/30 hover:bg-[#2B2B2B]/50 text-white items-center justify-center"
       >
         ❮
       </button>
       <button
         onClick={nextBanner}
         aria-label="Next"
-        className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-black/30 hover:bg-black/50 text-white items-center justify-center"
+        className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-[#2B2B2B]/30 hover:bg-[#2B2B2B]/50 text-white items-center justify-center"
       >
         ❯
       </button>

@@ -2,15 +2,12 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
+import { TRUSTWORTHY_GLOBAL } from "../constants/colors";
+
 // ================================
-// Design tokens (brand palette)
+// Design tokens (Trustworthy & Global)
 // ================================
-const COLORS = {
-  brand: "#3E96F4",
-  text: "#31393C",
-  chipBg: "#EDEEEB",
-  white: "#FFFFFF",
-};
+const COLORS = TRUSTWORTHY_GLOBAL;
 
 // Centralized NAAC badges (extend when you add more)
 const NAAC_BADGES = {
@@ -45,7 +42,7 @@ const getNaacGradeFromText = (text = "") => {
 const Badge = ({ children }) => (
   <span
     className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ring-1"
-    style={{ background: COLORS.chipBg, color: COLORS.text, borderColor: "#dcdcdc" }}
+    style={{ background: COLORS.secondaryAccent, color: COLORS.secondary, borderColor: COLORS.border }}
   >
     {children}
   </span>
@@ -146,8 +143,8 @@ export default function DistanceUniversityDetails() {
   // -----------------------------
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#EDEEEB]">
-        <header className="bg-[#FFC067] text-[#2B2B2B]">
+      <div className="min-h-screen bg-[#F8F3ED] ">
+        <header className="bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347] text-[#2B2B2B]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
             <div className="h-7 w-64 bg-white/30 rounded animate-pulse" />
             <div className="mt-2 h-4 w-72 bg-white/20 rounded animate-pulse" />
@@ -164,7 +161,7 @@ export default function DistanceUniversityDetails() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-[#EDEEEB] flex items-center">
+      <div className="min-h-screen flex items-center ">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
           <div className="bg-white ring-1 ring-red-200 text-red-700 rounded-xl p-6">
             <h2 className="text-lg font-semibold">Something went wrong</h2>
@@ -172,13 +169,14 @@ export default function DistanceUniversityDetails() {
             <div className="mt-4 flex gap-2">
               <button
                 onClick={fetchData}
-                className="inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium bg-[#FFC067] text-[#2B2B2B]"
+                className="inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium text-white"
+                style={{ backgroundColor: COLORS.primary }}
               >
                 Retry
               </button>
               <Link
                 to="/services/distance-education"
-                className="inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium ring-1 ring-gray-300 text-[#31393C]"
+                className="inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium ring-1 ring-gray-300 text-[#2B2B2B]"
               >
                 Back to list
               </Link>
@@ -192,9 +190,9 @@ export default function DistanceUniversityDetails() {
   if (!university) return null;
 
   return (
-    <div className="text-[#31393C]">
+    <div className="text-[#2B2B2B] bg-[#F8F3ED]">
       {/* ====== Header / Breadcrumb ====== */}
-      <header className="bg-[#FFC067] text-[#2B2B2B]">
+      <header className="bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
           <nav className="flex items-center gap-2 text-sm opacity-95">
             <Link to="/services/distance-education" className="hover:underline">Distance Education</Link>
@@ -236,7 +234,7 @@ export default function DistanceUniversityDetails() {
                       href={website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center rounded-full bg-[#FFC067] text-[#2B2B2B] text-xs sm:text-sm px-3 py-1.5 shadow hover:opacity-95"
+                      className="inline-flex items-center rounded-full bg-[#313639] text-white text-xs sm:text-sm px-3 py-1.5 shadow hover:opacity-95"
                     >
                       Visit Website
                     </a>
@@ -335,7 +333,13 @@ export default function DistanceUniversityDetails() {
                       .map((c, idx) => {
                         const fees = typeof c?.fees === "number" ? (c.fees === 0 ? "—" : formatINR(c.fees)) : c?.fees ?? "—";
                         return (
-                          <tr key={`${c?.courseName}-${c?.specialization}-${idx}`} className="odd:bg-white even:bg-gray-50 hover:bg-[#FFC067]/5">
+                          <tr 
+                            key={`${c?.courseName}-${c?.specialization}-${idx}`} 
+                            className="odd:bg-white even:bg-gray-50 transition"
+                            style={{ "--hover-bg": COLORS.secondaryAccent }}
+                            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.secondaryAccent}
+                            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = ""}
+                          >
                             <TableCell bold>{firstNonEmpty(c?.courseName)}</TableCell>
                             <TableCell>{firstNonEmpty(c?.specialization)}</TableCell>
                             <TableCell>{firstNonEmpty(c?.duration)}</TableCell>

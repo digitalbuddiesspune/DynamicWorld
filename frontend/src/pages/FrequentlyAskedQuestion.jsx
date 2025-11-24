@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
+const COLORS = { red: "#DC2626" };
+
 const faqs = [
   {
     question: "What services does Dynamic World offer?",
@@ -37,9 +39,9 @@ const FAQAccordion = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200 py-8 sm:py-10 lg:py-12 px-3 sm:px-6 lg:px-8">
+    <section className="bg-[#F8F3ED] border-t border-gray-300 min-h-screen flex flex-col justify-center items-center py-8 sm:py-10 lg:py-12 px-3 sm:px-6 lg:px-8">
       <div className="mx-auto w-full max-w-3xl">
-        <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-[#2B2B2B] text-center mb-6 sm:mb-8">
+        <h2    className="text-lg sm:text-xl lg:text-4xl mb-6 text-center  font-medium capitalize">
           Frequently Asked Questions
         </h2>
 
@@ -61,7 +63,7 @@ const FAQAccordion = () => {
                   className={`w-full flex items-center justify-between gap-3 text-left font-medium focus:outline-none transition-colors duration-300
                     ${
                       isActive
-                        ? "bg-[#FFC607] text-[#2B2B2B]"
+                        ? "bg-[#008080] text-white"
                         : "bg-gray-200 text-[#2B2B2B]"
                     }
                   `}

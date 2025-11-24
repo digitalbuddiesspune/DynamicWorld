@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 
+const COLORS = { red: "#DC2626" };
+
 const testimonials = [
   {
     id: 1,
@@ -76,10 +78,10 @@ const AllTestimonials = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#D4D4D4] flex flex-col items-center justify-center py-10 px-4 md:px-8 lg:px-16 xl:px-24">
+    <div className="min-h-screen bg-[#F5F5F5] border-t border-gray-300 flex flex-col items-center justify-center py-10 px-4 md:px-8 lg:px-16 xl:px-24">
       {/* Header */}
       <div className="text-center mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#2B2B2B]">
+        <h2    className="text-lg sm:text-xl lg:text-4xl   font-medium capitalize">
           Video Testimonials
         </h2>
         <p className="text-[#2B2B2B] mt-2">
@@ -124,7 +126,7 @@ const AllTestimonials = () => {
         {/* Left Arrow */}
         <button
           onClick={scrollPrev}
-          className="p-2 rounded-full transition-all duration-300 bg-[#FFC067] hover:bg-blue-700 text-[#2B2B2B] hover:scale-110"
+          className="p-2 rounded-full transition-all duration-300 bg-[#2B2B2B] hover:bg-blue-700 text-white hover:scale-110"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -148,7 +150,7 @@ const AllTestimonials = () => {
               onClick={() => scrollToVideo(index)}
               className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                 activeDot === index
-                  ? "bg-[#FFC067] scale-125"
+                  ? "bg-[#2B2B2B] scale-125"
                   : "bg-gray-400 opacity-70 hover:opacity-100"
               }`}
             ></button>
@@ -158,7 +160,7 @@ const AllTestimonials = () => {
         {/* Right Arrow */}
         <button
           onClick={scrollNext}
-          className="p-2 rounded-full transition-all duration-300 bg-[#FFC067] hover:bg-blue-700 text-[#2B2B2B] hover:scale-110"
+          className="p-2 rounded-full transition-all duration-300 bg-[#2B2B2B] hover:bg-blue-700 text-white hover:scale-110"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

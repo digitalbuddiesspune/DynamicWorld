@@ -1,5 +1,4 @@
 import BVOC2 from "../components/BVOC2";
-import BVOC3 from "../components/BVOC3";
 import VocationCoursesHome from "../components/VocationCoursesHome";
 
 const BVOC = () => {
@@ -18,7 +17,7 @@ const BVOC = () => {
         para2={para2}
       />
       <BVOC2 />
-      <BVOC3 />
+      {/* <BVOC3 /> */}
     </div>
   );
 };

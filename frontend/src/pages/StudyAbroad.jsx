@@ -7,7 +7,7 @@ import MBBSInBangladesh, {
 
 const StudyAbroad = () => {
   return (
-    <div className="overflow-hidden text-xs">
+    <div className="overflow-hidden text-xs  bg-[#F8F3ED] ">
       <MBBSInGeorgia />
       <MBBSInRussia />
       <MBBSInKazakhstanKyrgyzstan />

@@ -86,12 +86,12 @@ export default function OnlineUniverSity() {
   }, [universities, q]);
 
   return (
-    <div className="min-h-screen bg-[#EDEEEB] text-[#31393C]">
+    <div className="min-h-screen bg-[#F8F3ED] ">
       {/* Header */}
-      <header className="bg-[#FFC067] text-[#2B2B2B] py-6">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+      <header className="w-full  bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347] py-6">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 text-[#1A1A1A]">
           <h1 className="text-2xl md:text-3xl font-bold">Top Universities</h1>
-          <p className="text-black/90 mt-1">
+          <p className=" mt-1">
             Browse all universities and open details in one click.
           </p>
 
@@ -101,7 +101,7 @@ export default function OnlineUniverSity() {
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Search by name or location..."
-              className="w-full md:w-96 rounded-xl bg-white/95 text-[#31393C] px-4 py-2 outline-none ring-1 ring-white/40 focus:ring-2 focus:ring-white"
+                 className="w-full md:w-96 rounded-xl bg-white/95 text-[#2B2B2B] px-4 py-2 outline-none ring-1 ring-white/40 focus:ring-2 focus:ring-white"
             />
           </div>
         </div>

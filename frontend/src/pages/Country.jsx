@@ -33,7 +33,7 @@ export default function EducationCountries({ countryData }) {
         <div className="space-y-8">
           <div className=" overflow-hidden">
             {/* Header */}
-            <div className="bg-[#FFC067] text-[#2B2B2B] lg:px-8  px-2 py-6">
+            <div className="bg-[#313639] text-white lg:px-8  px-2 py-6">
               <div className="flex items-center gap-3 mb-2">
                 <img src={imageUrl} alt="" className="h-10 w-20" />
                 <h2 className="text-3xl font-bold">{countryName}</h2>
@@ -122,7 +122,7 @@ export default function EducationCountries({ countryData }) {
                         Tuition &amp; Costs
                       </h3>
                     </div>
-                    <div className="bg-blue-50 rounded-lg p-6 space-y-3">
+                    <div className="bg-[#D4D4D4] rounded-lg p-6 space-y-3">
                       {toArr(tuitionFeesAndStudyCost).map((item, i) => (
                         <p
                           key={i}

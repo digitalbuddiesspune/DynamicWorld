@@ -10,8 +10,11 @@ import {
   Target,
   Video,
 } from "lucide-react";
+import { TRUSTWORTHY_GLOBAL } from "../constants/colors";
 import CalendyButton from "./CalendyButton";
 import CurrentYear from "./CurrentYear";
+
+const COLORS = TRUSTWORTHY_GLOBAL;
 
 export default function BVOCvsMVOC({}) {
   const snapshot = [
@@ -129,9 +132,9 @@ export default function BVOCvsMVOC({}) {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-white text-[#31393C]">
+    <div className="min-h-screen w-full">
       {/* HERO */}
-      <section className="relative overflow-hidden bg-[#FFC067] text-[#2B2B2B]">
+      <section className="relative overflow-hidden  bg-blue-700/70 text-white" >
         <div
           className="absolute inset-0 opacity-10 pointer-events-none"
           aria-hidden
@@ -164,7 +167,7 @@ export default function BVOCvsMVOC({}) {
               postgraduate MVOC—eligibility, learning style, careers, and more.
             </p>
           </div>
-          <CalendyButton />
+        
         </div>
       </section>
 
@@ -180,7 +183,7 @@ export default function BVOCvsMVOC({}) {
                 className={`rounded-2xl ${card.color} ring-1 ring-gray-200 shadow-sm p-5 sm:p-6`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="rounded-xl bg-[#EDEEEB] p-2 ring-1 ring-gray-200">
+                  <div className="rounded-xl p-2 ring-1 ring-gray-200" style={{ backgroundColor: COLORS.neutral }}>
                     {card.icon}
                   </div>
                   <h3 className="text-lg font-semibold">{card.key}</h3>
@@ -188,7 +191,7 @@ export default function BVOCvsMVOC({}) {
                 <dl className="mt-3 space-y-2 text-sm sm:text-[15px]">
                   {card.points.map((p, i) => (
                     <div key={i} className="flex gap-2">
-                      <dt className="w-28 shrink-0 text-[#31393C]/70">
+                      <dt className="w-28 shrink-0" style={{ color: COLORS.textMuted }}>
                         {p.label}
                       </dt>
                       <dd className="flex-1">{p.value}</dd>
@@ -203,13 +206,13 @@ export default function BVOCvsMVOC({}) {
           <div className="rounded-2xl bg-white ring-1 ring-gray-200 shadow-sm overflow-hidden">
             <div className="border-b border-gray-200 px-5 sm:px-6 py-4">
               <h3 className="text-lg font-semibold">Head‑to‑Head Comparison</h3>
-              <p className="text-sm text-[#31393C]/70">
+              <p className="text-sm" style={{ color: COLORS.textMuted }}>
                 Key differences that matter in 2025
               </p>
             </div>
             <div className="overflow-x-auto">
               <table className="min-w-full text-sm">
-                <thead className="bg-[#EDEEEB] text-left">
+                <thead className="text-left" style={{ backgroundColor: COLORS.neutral }}>
                   <tr>
                     <th className="px-4 py-3 font-semibold">Attribute</th>
                     <th className="px-4 py-3 font-semibold">BVOC</th>
@@ -288,7 +291,7 @@ export default function BVOCvsMVOC({}) {
               </h4>
             </div>
             <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm sm:text-[15px]">
-              <div className="rounded-xl bg-[#EDEEEB] p-4 ring-1 ring-gray-200">
+              <div className="rounded-xl p-4 ring-1 ring-gray-200" style={{ backgroundColor: COLORS.neutral }}>
                 <h5 className="font-semibold">After BVOC</h5>
                 <ul className="mt-1 list-disc list-inside space-y-1">
                   <li>
@@ -298,7 +301,7 @@ export default function BVOCvsMVOC({}) {
                   <li>Grow via internships, projects, and skill stacks.</li>
                 </ul>
               </div>
-              <div className="rounded-xl bg-[#EDEEEB] p-4 ring-1 ring-gray-200">
+              <div className="rounded-xl p-4 ring-1 ring-gray-200" style={{ backgroundColor: COLORS.neutral }}>
                 <h5 className="font-semibold">After MVOC</h5>
                 <ul className="mt-1 list-disc list-inside space-y-1">
                   <li>
@@ -327,7 +330,7 @@ export default function BVOCvsMVOC({}) {
               </h4>
             </div>
             <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-3">
-              <ul className="rounded-xl bg-[#EDEEEB] p-4 ring-1 ring-gray-200 space-y-2 text-sm sm:text-[15px]">
+              <ul className="rounded-xl p-4 ring-1 ring-gray-200 space-y-2 text-sm sm:text-[15px]" style={{ backgroundColor: COLORS.neutral }}>
                 {choose
                   .filter((c) => c.for === "BVOC")
                   .map((c, i) => (
@@ -336,7 +339,7 @@ export default function BVOCvsMVOC({}) {
                     </li>
                   ))}
               </ul>
-              <ul className="rounded-xl bg-[#EDEEEB] p-4 ring-1 ring-gray-200 space-y-2 text-sm sm:text-[15px]">
+              <ul className="rounded-xl p-4 ring-1 ring-gray-200 space-y-2 text-sm sm:text-[15px]" style={{ backgroundColor: COLORS.neutral }}>
                 {choose
                   .filter((c) => c.for === "MVOC")
                   .map((c, i) => (
@@ -349,7 +352,8 @@ export default function BVOCvsMVOC({}) {
             <div className="mt-4 flex flex-wrap gap-3">
               <a
                 href="#form"
-                className="inline-flex items-center gap-2 text-[#3E96F4] font-semibold hover:underline"
+                className="inline-flex items-center gap-2 font-semibold hover:underline"
+                style={{ color: COLORS.primary }}
               >
                 Get personalized guidance <ArrowRight className="h-4 w-4" />
               </a>
@@ -363,7 +367,7 @@ export default function BVOCvsMVOC({}) {
               {faqs.map((f, i) => (
                 <div key={i} className="py-3">
                   <p className="font-medium">{f.q}</p>
-                  <p className="mt-1 text-sm sm:text-[15px] text-[#31393C]/90">
+                  <p className="mt-1 text-sm sm:text-[15px]" style={{ color: COLORS.text }}>
                     {f.a}
                   </p>
                 </div>
@@ -379,7 +383,7 @@ export default function BVOCvsMVOC({}) {
               <h4 className="text-base sm:text-lg font-semibold">
                 Talk to a Counselor
               </h4>
-              <p className="mt-1 text-sm text-[#31393C]/80">
+              <p className="mt-1 text-sm" style={{ color: COLORS.textMuted }}>
                 Unsure between BVOC and MVOC? Get a 1‑on‑1 profile review.
               </p>
 

@@ -6,6 +6,8 @@ import "slick-carousel/slick/slick-theme.css";
 import online_education_banner from "../assets/online_education_banner.png";
 import online_education_banner_mobile from "../assets/online_education_banner_mobile.png";
 
+const COLORS = { red: "#DC2626" };
+
 // Tailwind-friendly custom arrows (shown on md+)
 const ArrowBase = ({ onClick, dir }) => (
   <button
@@ -82,7 +84,7 @@ export default function DynamicUniversityCarousel() {
 
   return (
     <section
-      className="w-full bg-gradient-to-b from-[#EEF1F4] to-[#EDEEEB] py-4 sm:py-6 lg:py-8" // ↓ reduced vertical padding
+      className="h-[50%] flex flex-col items-center justify-center w-full bg-[#F8F3ED] border-b border-gray-300 py-8 sm:py-12 lg:py-16"
       aria-labelledby="uni-carousel-title"
     >
       <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 lg:px-6">
@@ -92,11 +94,12 @@ export default function DynamicUniversityCarousel() {
         <header className="text-center mb-4 sm:mb-6">
           <h1
             id="uni-carousel-title"
-            className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-[#2B2B2B]"
+         className="text-lg sm:text-xl lg:text-4xl mb-6  font-medium capitalize"
+           
           >
             Top Online Universities
           </h1>
-          <p className="mt-1 text-xs sm:text-sm text-[#2B2B2B]">
+          <p className="mt-1 text-xs sm:text-sm text-center text-[#2B2B2B]">
             Trusted institutions offering UGC-approved online programs
           </p>
         </header>
@@ -104,12 +107,12 @@ export default function DynamicUniversityCarousel() {
         <div className="">
           <Slider {...settings}>
             {UniversityLogos.map((logo, idx) => (
-              <div className="flex" key={idx}>
+              <div className="flex items-center justify-center h-full" key={idx}>
                 <img
                   loading="lazy"
                   src={logo.image}
                   alt={logo.name}
-                  className="px-2"
+                  className="px-2 h-16 sm:h-20 lg:h-24 object-contain"
                 />
               </div>
             ))}

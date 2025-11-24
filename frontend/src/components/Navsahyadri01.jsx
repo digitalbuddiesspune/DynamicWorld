@@ -5,7 +5,7 @@ import DynamicForm from "../pages/DynamicForm";
 const NavSahyadri01 = () => {
   return (
     <div className="">
-      <div className="text-[#2B2B2B] bg-[#FFC067] p-5">
+      <div className="text-[#2B2B2B] bg-[#313639] text-white p-5">
         <div className="flex items-start gap-5">
           <div className="h-20 w-20 lg:w-50">
             <img src="https://res.cloudinary.com/dtaitsw4r/image/upload/v1759919767/Navsahyadri_Group_of_Institute-Regular_Admission_mqpkyh.svg"></img>

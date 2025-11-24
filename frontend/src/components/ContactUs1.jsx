@@ -10,23 +10,23 @@ const ContactUs1 = () => {
   const buttonBase =
     "inline-flex items-center justify-center rounded-lg font-medium transition-all hover:-translate-y-0.5";
   const primaryBtn =
-    "bg-[#FFC067] text-[#2B2B2B] hover:bg-[#e6ac3a] shadow-sm";
+    "bg-[#313639] text-white shadow-sm";
   const secondaryBtn =
-    "border border-[#cbd5f5] bg-white text-[#1e293b] hover:bg-[#f8fafc] shadow-sm";
+    "border border-[#2B2B2B] bg-transparent text-[#2B2B2B] hover:bg-[#D4D4D4] hover:text-[#2B2B2B] shadow-sm";
 
   return (
-    <section className="w-full bg-gradient-to-b from-white via-[#f6f8fc] to-white text-[#0f172a]">
+    <section className="w-full bg-[#F8F3ED]">
       {/* Top Header */}
-      <header className="bg-[#FFC067] text-[#2B2B2B]">
+      <header className=" bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347] text-[#2b2b2b]">
         <div className="mx-auto max-w-7xl py-10">
           <div className="flex flex-col items-center text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/15 text-xs font-semibold tracking-[0.35em] px-3 py-1 uppercase">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/15 text-xs font-semibold tracking-[0.35em] px-3 py-1 uppercase ">
               We're here to help
             </span>
-            <h1 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
+            <h1 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight ">
               Contact Dynamic World
             </h1>
-            <p className="mt-2 max-w-2xl text-[#2B2B2B] text-sm sm:text-base">
+            <p className="mt-2 max-w-2xl  text-sm sm:text-base">
               Reach out to our team via phone, email, or visit our head office.
             </p>
           </div>
@@ -38,9 +38,9 @@ const ContactUs1 = () => {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-6 px-4 lg:grid-cols-3 lg:gap-8 lg:px-0">
             {/* Helpline */}
-            <div className="group rounded-2xl bg-white shadow-sm ring-1 ring-[#dbeafe] p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5">
+            <div className="group rounded-2xl bg-white shadow-sm ring-1 ring-[#D4D4D4] p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5">
               <div className="flex items-start gap-4">
-                <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#eff6ff] text-[#1d4ed8] ring-1 ring-[#dbeafe]">
+                <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#D4D4D4]/20 text-[#2B2B2B] ring-1 ring-[#D4D4D4]">
                   {/* Phone icon */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -52,13 +52,13 @@ const ContactUs1 = () => {
                   </svg>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-xs uppercase tracking-wide text-[#475569]">
+                  <p className="text-xs uppercase tracking-wide text-[#B3B3B3]">
                     Helpline
                   </p>
-                  <h3 className="mt-1 text-lg font-semibold text-[#0f172a]">
+                  <h3 className="mt-1 text-lg font-semibold text-[#2B2B2B]">
                     (+91) 7887881060
                   </h3>
-                  <p className="mt-1 text-sm text-[#475569]">
+                  <p className="mt-1 text-sm text-[#2B2B2B]">
                     Talk to our counsellor for quick assistance. We’re close to your goals and ready to guide you forward.
                   </p>
 
@@ -86,7 +86,7 @@ const ContactUs1 = () => {
             {/* Head Office */}
             <div className="group rounded-2xl bg-white shadow-sm ring-1 ring-[#dbeafe] p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5">
               <div className="flex items-start gap-4">
-                <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#fef2f2] text-[#f97316] ring-1 ring-[#fee2e2]">
+                <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#D4D4D4]/20 text-[#2B2B2B] ring-1 ring-[#D4D4D4]">
                   {/* Building icon */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -98,10 +98,10 @@ const ContactUs1 = () => {
                   </svg>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-xs uppercase tracking-wide text-[#475569]">
+                  <p className="text-xs uppercase tracking-wide text-[#B3B3B3]">
                     Head Office
                   </p>
-                  <h3 className="mt-1 text-lg font-semibold text-[#0f172a]">
+                  <h3 className="mt-1 text-lg font-semibold text-[#2B2B2B]">
                     Pune, India
                   </h3>
                   <p className="mt-2 text-sm text-[#475569] leading-snug">
@@ -137,7 +137,7 @@ const ContactUs1 = () => {
             {/* Support Mail */}
             <div className="group rounded-2xl bg-white shadow-sm ring-1 ring-[#dbeafe] p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5">
               <div className="flex items-start gap-4">
-                <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#ecfdf5] text-[#0f766e] ring-1 ring-[#d1fae5]">
+                <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#D4D4D4]/20 text-[#2B2B2B] ring-1 ring-[#D4D4D4]">
                   {/* Mail icon */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -149,13 +149,13 @@ const ContactUs1 = () => {
                   </svg>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-xs uppercase tracking-wide text-[#475569]">
+                  <p className="text-xs uppercase tracking-wide text-[#B3B3B3]">
                     Support Mail
                   </p>
-                  <h3 className="mt-1 text-lg font-semibold text-[#0f172a]">
+                  <h3 className="mt-1 text-lg font-semibold text-[#2B2B2B]">
                     Dynamicworld.edu@gmail.com
                   </h3>
-                  <p className="mt-1 text-sm text-[#475569]">
+                  <p className="mt-1 text-sm text-[#2B2B2B]">
                     Drop us a line and we’ll get back to you. Write to our counsellor for quick assistance.
                   </p>
 

@@ -80,15 +80,15 @@ const PromotionStrip = () => {
     first?.newsTitle ?? "Latest updates and admission support — check now.";
 
   return (
-    <header className="w-full bg-[#FFc067] px-4 sm:px-6 py-2 sm:py-3 shadow-md">
+    <header className="w-full bg-[#2B2B2B] text-white px-4 sm:px-6 py-2 sm:py-3 shadow-md">
       <div className="max-w-7xl mx-auto flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         {/* Left: Logo + Brand */}
         <div className="flex items-center gap-3">
           <div className="flex flex-col">
-            <h1 className="text-[#2B2B2B] text-sm sm:text-base font-semibold leading-tight">
+            <h1 className=" text-sm sm:text-base font-semibold leading-tight">
               Dynamic World – Career Guidance Experts
             </h1>
-            <p className="text-[10px] sm:text-xs text-[#2B2B2B] font-medium">
+            <p className="text-[10px] sm:text-xs  font-medium">
               1:1 Counselling • Results Updates • Admission Support
             </p>
           </div>
@@ -102,9 +102,9 @@ const PromotionStrip = () => {
           className="lg:ml-3 text-[10px] font-medium rounded-full lg:px-3 py-[3px] transition"
         >
           <div className="flex-1 sm:px-4">
-            <div className="flex items-center gap-2 bg-white/10 border border-gray-800 rounded-2xl px-3 py-2 backdrop-blur-sm">
+            <div className="flex items-center gap-2 bg-white/10 border border-[#2b2b2b] rounded-2xl px-3 py-2 backdrop-blur-sm">
               {/* LIVE / LABEL */}
-              <span className="inline-flex items-center gap-1 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wide text-white bg-red-500 rounded-full px-2 py-[2px]">
+              <span className="inline-flex items-center gap-1 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wide  bg-red-500 rounded-full px-2 py-[2px]">
                 <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                 Live
               </span>
@@ -115,7 +115,7 @@ const PromotionStrip = () => {
               </span> */}
 
               {/* Message */}
-              <p className="text-[10px] sm:text-xs text-[#2B2B2B] line-clamp-2">
+              <p className="text-[10px] sm:text-xs line-clamp-2">
                 {loading
                   ? "Loading latest updates..."
                   : error
@@ -140,12 +140,9 @@ const PromotionStrip = () => {
           </a>
 
           {/* Call */}
-          <a
-            href="tel:+917887881060"
-            className="border border-black/80 text-[#2B2B2B] text-xs sm:text-sm hover:bg-black/70 hover:text-white px-4 py-2 rounded-xl flex items-center justify-center gap-2 transition duration-200 hover:-translate-y-0.5 w-full sm:w-auto"
-          >
-            <span>Call Now</span>
-          </a>
+        <a href="tel:-917887881060" className="text-white bg-blue-600 hover:bg-blue-700 text-xs sm:text-sm px-4 py-2 rounded-xl flex items-center justify-center gap-2 transition duration-200 hover:-translate-y-0.5 shadow-sm w-full sm:w-auto">
+          Call Now
+        </a>
         </div>
       </div>
     </header>

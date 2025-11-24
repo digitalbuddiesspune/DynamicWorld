@@ -1,5 +1,8 @@
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { TRUSTWORTHY_GLOBAL } from "../constants/colors";
+
+const COLORS = TRUSTWORTHY_GLOBAL;
 const Sidebar = ({
   sidebarData,
   expandedItems,
@@ -9,19 +12,19 @@ const Sidebar = ({
 }) => {
   return (
     <aside className="w-full lg:w-72 h-full">
-      <div className="bg-white ring-1 ring-gray-200 overflow-hidden min-h-screen">
+      <div className=" ring-1 ring-[#E5E7EB] overflow-hidden min-h-screen" >
         {/* Header */}
-        <div className="bg-[#FFC067] text-[#2B2B2B]">
+        <div className="bg-[#F8F3ED]">
           <div className="px-4 py-3 sm:px-5 sm:py-4">
-            <h2 className="text-sm sm:text-base font-bold tracking-wide text-center">
+            <h2 className="text-sm sm:text-base font-bold tracking-wide text-center " >
               About DYNAMIC WORLD
             </h2>
           </div>
-          <div className="h-1 w-full bg-gradient-to-r from-blue-400/50 via-blue-300/50 to-cyan-300/50" />
+          <div className="h-1 w-full" style={{ background: `linear-gradient(to right, ${COLORS.secondary}80, ${COLORS.primaryLight}80, ${COLORS.secondary}80)` }} />
         </div>
 
         {/* Body */}
-        <div className="p-2 sm:p-3 ">
+        <div className="p-2 sm:p-3 bg-[#F8F3ED]" >
           {isLoading ? (
             <div className="p-4 h-full">
               <div className="flex flex-col gap-3 animate-pulse">
@@ -49,27 +52,39 @@ const Sidebar = ({
                 return (
                   <li
                     key={`${section.title}-${index}`}
-                    className="rounded-lg border border-transparent hover:border-gray-200 transition"
+                    className="rounded-lg border border-transparent transition"
+                    style={{ 
+                      borderColor: "transparent",
+                      "--hover-border": COLORS.secondary
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.borderColor = COLORS.secondary}
+                    onMouseLeave={(e) => e.currentTarget.style.borderColor = "transparent"}
                   >
                     <button
                       id={buttonId}
                       onClick={() => toggleExpand(index)}
                       aria-expanded={isOpen}
                       aria-controls={panelId}
-                      className={`group w-full flex items-center justify-between gap-2 px-3 py-2.5 sm:px-3.5 sm:py-3 rounded-lg text-left transition-colors
-                        ${isOpen ? "bg-gray-50" : "hover:bg-gray-50"}
-                        focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400`}
+                      className="group w-full flex items-center justify-between gap-2 px-3 py-2.5 sm:px-3.5 sm:py-3 rounded-lg text-left transition-colors focus:outline-none focus-visible:ring-2"
+                      style={{
+                        backgroundColor: isOpen ? COLORS.primaryAccent : "transparent",
+                        "--hover-bg": COLORS.secondaryAccent,
+                        color: COLORS.text,
+                        "--focus-ring": COLORS.primary
+                      }}
+                      onMouseEnter={(e) => {
+                        if (!isOpen) e.currentTarget.style.backgroundColor = COLORS.secondaryAccent;
+                      }}
+                      onMouseLeave={(e) => {
+                        if (!isOpen) e.currentTarget.style.backgroundColor = "transparent";
+                      }}
                     >
-                      <span className="text-[#2B2B2B] text-sm sm:text-[15px] font-medium truncate">
+                      <span className="text-sm sm:text-[15px] font-medium truncate" style={{ color: COLORS.text }}>
                         {section.title}
                       </span>
 
                       <span className="flex items-center gap-2 shrink-0">
                         {items.length > 0 && (
-                          // <span className="hidden sm:inline-flex items-center justify-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-blue-50 text-blue-700 ring-1 ring-blue-100">
-                          //   {items.length} k
-                          // </span>
-
                           <img
                             src={section.url}
                             alt={section.url}
@@ -77,9 +92,9 @@ const Sidebar = ({
                           />
                         )}
                         {isOpen ? (
-                          <ChevronDown className="w-4 h-4 text-[#2B2B2B] transition-transform" />
+                          <ChevronDown className="w-4 h-4 transition-transform" style={{ color: COLORS.primary }} />
                         ) : (
-                          <ChevronRight className="w-4 h-4 text-[#2B2B2B] transition-transform group-hover:translate-x-0.5" />
+                          <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" style={{ color: COLORS.text }} />
                         )}
                       </span>
                     </button>
@@ -89,10 +104,11 @@ const Sidebar = ({
                         id={panelId}
                         role="region"
                         aria-labelledby={buttonId}
-                        className="ml-2.5 pl-2.5 sm:ml-3 sm:pl-3 border-l border-gray-200 pb-2"
+                        className="ml-2.5 pl-2.5 sm:ml-3 sm:pl-3 border-l pb-2"
+                        style={{ borderColor: COLORS.secondary }}
                       >
                         {items.length === 0 ? (
-                          <div className="px-2.5 py-2 text-xs text-gray-500">
+                          <div className="px-2.5 py-2 text-xs" style={{ color: COLORS.textMuted }}>
                             No items
                           </div>
                         ) : (
@@ -104,17 +120,29 @@ const Sidebar = ({
                                 : undefined;
 
                             return (
-                              <div>
+                              <div key={`${section.title}::${item}`}>
                                 <button
-                                  key={`${section.title}::${item}`}
                                   onClick={onClick}
                                   disabled={!canClick}
-                                  className={`w-full text-left px-2.5 py-2 rounded-md text-[13px] sm:text-sm transition-colors truncate
-                                  ${
-                                    canClick
-                                      ? "text-gray-700 hover:bg-blue-50 hover:text-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
-                                      : "text-gray-400 cursor-not-allowed"
-                                  }`}
+                                  className="w-full text-left px-2.5 py-2 rounded-md text-[13px] sm:text-sm transition-colors truncate focus:outline-none focus-visible:ring-2"
+                                  style={{
+                                    color: canClick ? COLORS.text : COLORS.textMuted,
+                                    cursor: canClick ? "pointer" : "not-allowed",
+                                    "--hover-bg": COLORS.secondaryAccent,
+                                    "--focus-ring": COLORS.primary
+                                  }}
+                                  onMouseEnter={(e) => {
+                                    if (canClick) {
+                                      e.currentTarget.style.backgroundColor = COLORS.secondaryAccent;
+                                      e.currentTarget.style.color = COLORS.primary;
+                                    }
+                                  }}
+                                  onMouseLeave={(e) => {
+                                    if (canClick) {
+                                      e.currentTarget.style.backgroundColor = "transparent";
+                                      e.currentTarget.style.color = COLORS.text;
+                                    }
+                                  }}
                                   title={item}
                                 >
                                   {item}
@@ -133,15 +161,17 @@ const Sidebar = ({
                   href="https://studyabroad.dynamicworld.in/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#FFC067] text-[#2B2B2B] font-medium transition-all duration-300 hover:bg-[#E6B04A] hover:shadow-md w-full"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-300 hover:shadow-md w-full bg-[#008080] hover:-translate-y-0.5 text-white"
+                 
+              
                 >
                   Study Abroad
-                  <img src="https://res.cloudinary.com/dtaitsw4r/image/upload/v1760779899/studyAbroad_cbkald.png" alt="" className="h-8 w-10" />
+                
                 </a>
               </li>
             </ul>
           ) : (
-            <div className="p-4 text-center text-gray-500">
+            <div className="p-4 text-center" style={{ color: COLORS.textMuted }}>
               <p className="text-sm">No data available</p>
             </div>
           )}

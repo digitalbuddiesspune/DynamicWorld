@@ -13,6 +13,7 @@ const BRAND = {
   chip: "#EDEEEB",
   card: "#FFFFFF",
   accent: "#CCC7BF",
+  red: "#DC2626",
 };
 
 const fallbackExperts = [
@@ -96,7 +97,9 @@ function Stars({ value = 4.8 }) {
           </div>
         );
       })}
-      <span className="ml-0.5 text-xs text-[#2B2B2B]/80">{value.toFixed(1)}</span>
+      <span className="ml-0.5 text-xs text-[#2B2B2B]/80">
+        {value.toFixed(1)}
+      </span>
     </div>
   );
 }
@@ -141,28 +144,21 @@ export default function ExpertGuidance({
   );
 
   return (
-    <section
-      className="w-full text-[color:var(--text)] relative"
-      style={{
-        "--brand": BRAND.blue,
-        "--text": BRAND.text,
-      }}
-    >
-      {/* Background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="h-full w-full bg-gray-200" />
-      </div>
-
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-10 md:py-14">
+    <section className="w-full bg-[#F8F3ED] border-t border-gray-300">
+      <div className="h-full w-full" />
+      <div className="mx-auto  max-w-7xl px-4 sm:px-6 md:px-8 py-10 md:py-14">
         {showHeader && (
           <div className="text-center mb-8 md:mb-10">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur px-3 py-1 shadow-sm ring-1 ring-black/10">
-              <ShieldCheck className="h-4 w-4 text-[#2B2B2B]" />
-              <span className="text-xs font-medium text-[#2B2B2B]">
+              <ShieldCheck className="h-4 w-4" style={{ color: BRAND.red }} />
+              <span
+                className="text-xs font-medium"
+                style={{ color: BRAND.red }}
+              >
                 Verified Counsellors
               </span>
             </div>
-            <h2 className="mt-3 text-2xl md:text-3xl font-bold text-[#2B2B2B] leading-tight">
+            <h2 className="text-lg sm:text-xl lg:text-4xl  font-medium capitalize">
               {title}
             </h2>
             {subtitle && (
@@ -202,7 +198,6 @@ export default function ExpertGuidance({
                 className="group relative rounded-2xl p-5 md:p-6 shadow-md ring-1 ring-black/10 bg-white/80 transition
                            hover:shadow-lg hover:-translate-y-0.5"
               >
-
                 <div className="flex flex-col items-center text-center">
                   <Avatar name={expert.name} src={expert.image} />
 

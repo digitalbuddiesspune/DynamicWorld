@@ -7,7 +7,10 @@ import {
   Building2,
   Briefcase,
 } from "lucide-react";
+import { TRUSTWORTHY_GLOBAL } from "../constants/colors";
 import CurrentYear from "./CurrentYear";
+
+const COLORS = TRUSTWORTHY_GLOBAL;
 
 export default function AffordableCountries({ showCTA = true }) {
   const countries = [
@@ -110,13 +113,13 @@ export default function AffordableCountries({ showCTA = true }) {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-white text-[#31393C]">
-      <div className="bg-[#FFC067] text-[#2B2B2B]">
+    <div className="min-h-screen w-full bg-[#F8F3ED] text-[#1A1A1A]">
+      <div className="bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-6">
           <div className="flex items-center gap-3">
             <Globe2 className="h-6 w-6" aria-hidden />
             <h1 className="text-2xl sm:text-3xl font-bold">
-              Top 5 Affordable Countries for MBBS Abroad <CurrentYear/>
+              Top 5 Affordable Countries for MBBS Abroad <CurrentYear />
             </h1>
           </div>
           <p className="mt-1 text-white/90 text-sm sm:text-base">
@@ -148,7 +151,10 @@ export default function AffordableCountries({ showCTA = true }) {
               </header>
 
               <div className="p-4 sm:p-6 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                <div className="rounded-xl bg-[#EDEEEB] p-4">
+                <div
+                  className="rounded-xl p-4"
+                  style={{ backgroundColor: COLORS.neutral }}
+                >
                   <div className="flex items-center gap-2">
                     <IndianRupee className="h-5 w-5" />
                     <h3 className="font-semibold">Costs</h3>
@@ -165,7 +171,10 @@ export default function AffordableCountries({ showCTA = true }) {
                   </ul>
                 </div>
 
-                <div className="rounded-xl bg-[#EDEEEB] p-4">
+                <div
+                  className="rounded-xl p-4"
+                  style={{ backgroundColor: COLORS.neutral }}
+                >
                   <div className="flex items-center gap-2">
                     <Building2 className="h-5 w-5" />
                     <h3 className="font-semibold">Living & Stay</h3>
@@ -185,7 +194,10 @@ export default function AffordableCountries({ showCTA = true }) {
                   </ul>
                 </div>
 
-                <div className="rounded-xl bg-[#EDEEEB] p-4">
+                <div
+                  className="rounded-xl p-4"
+                  style={{ backgroundColor: COLORS.neutral }}
+                >
                   <div className="flex items-center gap-2">
                     <Users className="h-5 w-5" />
                     <h3 className="font-semibold">Indian Community</h3>
@@ -193,7 +205,10 @@ export default function AffordableCountries({ showCTA = true }) {
                   <p className="mt-2 text-sm leading-6">{c.indianCommunity}</p>
                 </div>
 
-                <div className="rounded-xl bg-[#EDEEEB] p-4">
+                <div
+                  className="rounded-xl p-4"
+                  style={{ backgroundColor: COLORS.neutral }}
+                >
                   <div className="flex items-center gap-2">
                     <Briefcase className="h-5 w-5" />
                     <h3 className="font-semibold">Career Pathways</h3>
@@ -207,10 +222,22 @@ export default function AffordableCountries({ showCTA = true }) {
               </div>
 
               <footer className="border-t border-gray-100 p-4 sm:p-6 flex flex-wrap items-center gap-3">
-                <div className="inline-flex items-center gap-2 rounded-full bg-[#EDEEEB] px-3 py-1 text-xs font-medium text-[#31393C]">
+                <div
+                  className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium"
+                  style={{
+                    backgroundColor: COLORS.secondaryAccent,
+                    color: COLORS.secondary,
+                  }}
+                >
                   <GraduationCap className="h-4 w-4" /> 6-year MBBS-equivalent*
                 </div>
-                <div className="inline-flex items-center gap-2 rounded-full bg-[#EDEEEB] px-3 py-1 text-xs font-medium text-[#31393C]">
+                <div
+                  className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium"
+                  style={{
+                    backgroundColor: COLORS.secondaryAccent,
+                    color: COLORS.secondary,
+                  }}
+                >
                   <MapPin className="h-4 w-4" /> {c.cities[0]} & more
                 </div>
               </footer>
@@ -238,7 +265,7 @@ export default function AffordableCountries({ showCTA = true }) {
                 <div className="mt-4 flex flex-col gap-2">
                   <a
                     href="tel:+917887881060"
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[#FFC067] text-[#2B2B2B] px-4 py-2 font-semibold shadow-sm hover:bg-[#3187e2]"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-2xl text-white px-4 py-2 font-semibold shadow-sm transition bg-[#008080] hover:bg-[#006666] hover:-translate-y-0.5"
                   >
                     Call Now
                   </a>
@@ -246,14 +273,18 @@ export default function AffordableCountries({ showCTA = true }) {
                     href="https://wa.me/+917887881060"
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-white text-[#31393C] px-4 py-2 font-semibold shadow-sm ring-1 ring-gray-200 hover:bg-gray-50"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-4 py-2 font-semibold shadow-sm ring-1 ring-gray-200 transition hover:bg-gray-100
+                    hover:-translate-y-0.5"
                   >
                     WhatsApp Counselling
                   </a>
                 </div>
               </div>
 
-              <div className="rounded-2xl bg-[#EDEEEB] p-4 text-sm text-[#31393C]">
+              <div
+                className="rounded-2xl p-4 text-sm bg-white shadow-sm ring-1 ring-gray-200"
+              
+              >
                 <p className="font-semibold">Heads-up</p>
                 <ul className="mt-1 list-disc list-inside space-y-1">
                   <li>

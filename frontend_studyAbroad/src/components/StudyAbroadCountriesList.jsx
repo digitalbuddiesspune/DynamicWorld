@@ -1154,7 +1154,7 @@ const IconCheck = ({
 
 export const UltraLightweightLandingPage = () => {
   return (
-    <div className="min-h-screen  text-[#31393C] antialiased">
+    <div className="min-h-screen  text-[#31393C] antialiased bg-[#F8F3ED]">
       {/* Main Content */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#3E96F4] via-[#3E96F4]/90 to-[#EDEEEB] text-white py-16 lg:py-20">
         <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dtaitsw4r/image/upload/v1761197698/vecteezy_world-map-with-glowing-lines-and-dots-on-blue-background_33692696_ww3tvd.jpg')] bg-cover bg-center opacity-10"></div>
@@ -1192,7 +1192,7 @@ export const UltraLightweightLandingPage = () => {
           <div className="mt-10">
             <a
               href="tel:+91 7887881060"
-              className="inline-flex items-center justify-center gap-2 bg-white text-[#3E96F4] font-semibold text-lg py-3 px-8 rounded-full shadow-md hover:bg-[#FFD43B] hover:text-black transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 text-[#3E96F4] font-semibold text-lg py-3 px-8 rounded-full shadow-md hover:bg-[#FFD43B] hover:text-black transition-all duration-200"
             >
               Get Free Counselling
               <svg
@@ -1214,9 +1214,9 @@ export const UltraLightweightLandingPage = () => {
         </div>
       </section>
 
-      <main className="max-w-5xl mx-auto py-10 px-6 md:px-8 lg:px-12">
+      <main className="max-w-5xl mx-auto py-10 px-6 md:px-8 lg:px-12 bg-[#F8F3ED]">
         {/* Overview */}
-        <section className="mb-10 p-6 rounded-2xl bg-white shadow-sm ring-1 ring-blue-100">
+        <section className="mb-10 p-6 rounded-2xl bg-[#F8F3ED] shadow-sm ring-1 ring-blue-100">
           <h2 className="text-2xl font-bold text-[#3E96F4] mb-3">
             Your Global Medical Journey
           </h2>

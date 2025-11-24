@@ -138,7 +138,7 @@ const Law02 = () => {
 
             <div className="overflow-x-auto border border-gray-200 rounded-lg">
               <table className="min-w-full table-auto text-left rounded-2xl">
-                <thead className="bg-[#FFC067] text-[#2B2B2B]">
+                <thead className="bg-[#008080] text-white">
                   <tr>
                     <th
                       scope="col"
@@ -181,7 +181,7 @@ const Law02 = () => {
 
             <div className="overflow-x-auto border border-gray-200 rounded-lg">
               <table className="min-w-full table-auto text-left">
-                <thead className="bg-[#FFC067] text-[#2B2B2B]">
+                <thead className="bg-[#008080] text-white">
                   <tr>
                     <th
                       scope="col"

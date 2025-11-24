@@ -4,15 +4,15 @@ import CalendyButton from "./CalendyButton";
 
 const VocationCoursesHome = ({ short, title, para1, para2 }) => {
   return (
-    <div className="bg-white text-[#31393C]">
+    <div className="bg-[#F8F3ED] text-[#31393C]">
       {/* Header */}
-      <header className="bg-[#FFC067] text-[#2B2B2B]">
+      <header className="bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347] text-[#1A1A1A]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold text-[#31393C]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white px-3 py-1 text-xs font-semibold text-[#1A1A1A] bg-white/90 ">
             {short} • India
           </span>
 
-          <h1 className="mt-4 text-3xl sm:text-4xl capitalize font-extrabold leading-tight tracking-tight">
+          <h1 className="mt-4 text-3xl sm:text-4xl capitalize font-bold leading-tight tracking-tight">
             {title}
           </h1>
 

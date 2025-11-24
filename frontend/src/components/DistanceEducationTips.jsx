@@ -63,9 +63,9 @@ export default function DistanceEducationTips({
   ];
 
   return (
-    <div className="min-h-screen w-full bg-white text-[#31393C]">
+    <div className="min-h-screen w-full">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#FFC067] text-[#2B2B2B]">
+      <section className="relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-10 pointer-events-none"
           aria-hidden
@@ -106,13 +106,14 @@ export default function DistanceEducationTips({
           <div className="mt-6 flex flex-wrap gap-3">
             <a
               href="tel:+917887881060"
-              className="inline-flex items-center gap-2 rounded-2xl bg-white text-[#31393C] px-4 py-2 text-sm sm:text-base font-semibold shadow-sm ring-1 ring-white/40 hover:bg-white/95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#3E96F4]"
+              className="inline-flex items-center gap-2 rounded-2xl bg-white px-4 py-2 text-sm sm:text-base font-semibold shadow-sm ring-1 ring-white/40 hover:bg-white/95 focus:outline-none focus:ring-2 focus:ring-offset-2 transition"
             >
               <PhoneCall className="h-5 w-5" aria-hidden /> Quick Call
             </a>
             <a
               href="https://wa.me/917887881060"
-              className="inline-flex items-center gap-2 rounded-2xl bg-white/10 text-white px-4 py-2 text-sm sm:text-base font-semibold shadow-sm ring-1 ring-white/30 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#3E96F4]"
+              className="inline-flex items-center gap-2 rounded-2xl bg-white/10 text-white px-4 py-2 text-sm sm:text-base font-semibold shadow-sm ring-1 ring-white/30 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-offset-2 transition"
+             
             >
               <Video className="h-5 w-5" aria-hidden /> Video Counselling
             </a>
@@ -126,7 +127,8 @@ export default function DistanceEducationTips({
           {tips.map((tip, idx) => (
             <article
               key={idx}
-              className="group rounded-2xl bg-[#EDEEEB] p-5 sm:p-6 ring-1 ring-gray-200 shadow-sm hover:shadow-md transition-shadow"
+              className="group rounded-2xl p-5 sm:p-6 ring-1 ring-gray-200 shadow-sm hover:shadow-md transition-shadow"
+              
             >
               <div className="flex items-start gap-3">
                 <div className="shrink-0 rounded-xl bg-white ring-1 ring-gray-200 p-2">
@@ -136,14 +138,20 @@ export default function DistanceEducationTips({
                   <h3 className="text-base sm:text-lg font-semibold tracking-tight">
                     {tip.title}
                   </h3>
-                  <ul className="mt-2 list-disc list-inside text-sm sm:text-[15px] leading-relaxed space-y-1 text-[#31393C]/90">
+                  <ul
+                    className="mt-2 list-disc list-inside text-sm sm:text-[15px] leading-relaxed space-y-1"
+                  
+                  >
                     {tip.points.map((p, i) => (
                       <li key={i}>{p}</li>
                     ))}
                   </ul>
                 </div>
               </div>
-              <div className="mt-4 flex items-center gap-2 text-xs sm:text-sm text-[#31393C]/70">
+              <div
+                className="mt-4 flex items-center gap-2 text-xs sm:text-sm"
+               
+              >
                 <span className="inline-block rounded-full bg-white px-2 py-1 ring-1 ring-gray-200">
                   {tip.meta}
                 </span>
@@ -155,7 +163,10 @@ export default function DistanceEducationTips({
         {/* Footer CTA / Note */}
         <div className="mt-8 md:mt-12 rounded-2xl border border-dashed border-gray-300 p-5 sm:p-6">
           <h4 className="text-base sm:text-lg font-semibold">Pro workflow:</h4>
-          <ol className="mt-2 list-decimal list-inside text-sm sm:text-[15px] space-y-1 text-[#31393C]/90">
+          <ol
+            className="mt-2 list-decimal list-inside text-sm sm:text-[15px] space-y-1"
+           
+          >
             <li>Pick your study slots for the week and add reminders.</li>
             <li>Set up your study zone and open only the required tabs.</li>
             <li>During class, ask 1 question and write a 5‑bullet recap.</li>

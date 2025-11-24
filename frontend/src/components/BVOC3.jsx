@@ -15,8 +15,8 @@ const BVOCInfo = () => {
           </p>
         </div>
 
-        {/* ----- Introduction Section ----- */}
-        <div className="bg-[#EDEEEB]/60 rounded-xl shadow-sm p-6 md:p-8 mb-8 space-y-4 text-sm md:text-base leading-relaxed">
+        ----- Introduction Section -----
+        {/* <div className="bg-[#EDEEEB]/60 rounded-xl shadow-sm p-6 md:p-8 mb-8 space-y-4 text-sm md:text-base leading-relaxed">
           <p>
             The <strong>Bachelor of Vocational Education (B.Voc)</strong> is a
             three-year undergraduate program designed to equip students with
@@ -59,12 +59,12 @@ const BVOCInfo = () => {
             <strong> abundant job opportunities</strong> and stable pay across
             multiple industries.
           </p>
-        </div>
+        </div> */}
 
         {/* ----- Table Section ----- */}
-        <div className="overflow-x-auto">
-          <table className="min-w-full border border-gray-300 text-sm md:text-base rounded-lg overflow-hidden">
-            <thead className="bg-[#FFC067]/10">
+        {/* <div className="overflow-x-auto">
+          <table className="min-w-full border border-gray-300 text-sm md:text-base rounded-lg overflow-hidden border">
+            <thead className="bg-[#008080] text-white border">
               <tr>
                 <th className="text-left px-4 py-3 border border-gray-300 font-semibold text-[#3E96F4]">
                   Aspect
@@ -118,7 +118,7 @@ const BVOCInfo = () => {
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> */}
 
         {/* Note */}
         <p className="mt-4 text-xs text-gray-500 text-center">

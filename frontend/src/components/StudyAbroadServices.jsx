@@ -75,7 +75,7 @@ const StudyAbroadServices = () => {
          
         </div>
 
-        <div className="mt-3 h-1 w-28 rounded-full bg-[#FFC067]" />
+        <div className="mt-3 h-1 w-28 rounded-full bg-[#313639] text-white" />
       </header>
 
       {/* grid */}

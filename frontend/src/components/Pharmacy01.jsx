@@ -5,7 +5,7 @@ import CalendyButton from "./CalendyButton";
 const Pharmacy01 = () => {
   return (
     <div className="">
-      <header className="bg-[#FFC067] px-5 lg:px-8 py-5">
+      <header className="bg-[#313639] text-white px-5 lg:px-8 py-5">
         <div className="my-2">
           <h1 className=" text-white text-xl lg:text-4xl font-bold text-left">
             Pharmacy (D.Pharm | B.Pharm | M.Pharm)

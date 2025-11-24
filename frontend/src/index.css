@@ -1,1 +1,68 @@
 @import "tailwindcss";
+
+/* Premium Educational Color Schemes - Tailwind v4 Theme Configuration */
+@theme {
+  /* Legacy colors (backward compatibility) */
+  --color-white: #FFFFFF;
+  --color-light-grey: #D4D4D4;
+  --color-medium-grey: #B3B3B3;
+  --color-dark-grey: #2B2B2B;
+  
+  /* Semantic color mappings (default to Trustworthy & Global) */
+  --color-text: #2B2B2B;
+  --color-text-muted: #6B7280;
+  --color-background: #FFFFFF;
+  --color-border: #E5E7EB;
+  --color-border-dark: #D1D5DB;
+  
+  /* Trustworthy & Global (Blue & Green) - Primary Scheme */
+  --color-trustworthy-primary: #0047AB;
+  --color-trustworthy-primary-dark: #192A56;
+  --color-trustworthy-primary-light: #1E40AF;
+  --color-trustworthy-secondary: #009688;
+  --color-trustworthy-secondary-alt: #2ecc71;
+  --color-trustworthy-cta: #FF8C00;
+  --color-trustworthy-cta-alt: #FFD700;
+  --color-trustworthy-neutral: #F4F4F4;
+  --color-trustworthy-neutral-alt: #ecf0f1;
+  
+  /* Academic & Sophisticated (Maroon & Gold) - Premium Scheme */
+  --color-academic-primary: #800000;
+  --color-academic-primary-dark: #900C3F;
+  --color-academic-secondary: #FFD700;
+  --color-academic-secondary-alt: #FFA500;
+  --color-academic-cta: #4169E1;
+  --color-academic-neutral: #FAF0E6;
+  --color-academic-neutral-alt: #F5F5DC;
+  
+  /* Modern & Accessible (Purple & Cyan) - Future Use */
+  --color-modern-primary: #6A5ACD;
+  --color-modern-primary-dark: #4B0082;
+  --color-modern-secondary: #00CED1;
+  --color-modern-secondary-alt: #3498db;
+  --color-modern-cta: #32CD32;
+  --color-modern-neutral: #FFFFFF;
+}
+
+/* Set default text color to dark grey */
+body {
+  color: #2B2B2B;
+}
+
+/* Ensure all text elements use the dark grey color */
+p, h1, h2, h3, h4, h5, h6, span, div, a, li, td, th, label, button {
+  color: #2B2B2B;
+}
+
+/* Override for specific cases where white text is needed */
+.text-white,
+.text-white * {
+  color: #FFFFFF !important;
+}
+
+/* Override for dark backgrounds where white text is needed */
+.bg-gray-800 *,
+.bg-gray-900 *,
+.bg-black * {
+  color: #FFFFFF;
+}

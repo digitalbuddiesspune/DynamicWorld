@@ -1,15 +1,17 @@
 import React, { useMemo, useRef, useState } from "react";
 
+const COLORS = { red: "#DC2626" };
+
 const AboutUs02 = () => {
   const slides = useMemo(
     () => [
       {
         title: "Mission",
-        accent: "#FF6B6B",
+        accent: "#2B2B2B",
         iconColor: "#FFFFFF",
-        panelBg: "#FFE3E3",
-        headingClass: "text-[#1A1F3B]",
-        bodyClass: "text-[#414866]",
+        panelBg: "#D4D4D4",
+        headingClass: "text-[#2B2B2B]",
+        bodyClass: "text-[#2B2B2B]",
         icon: (
           <img
             src="https://res.cloudinary.com/dtaitsw4r/image/upload/v1762766002/target_nfb7jb.png"
@@ -18,16 +20,15 @@ const AboutUs02 = () => {
             loading="lazy"
           />
         ),
-        text:
-          "Empower learners of all ages to unlock their full potential through accessible, high-quality educational courses.",
+        text: "Empower learners of all ages to unlock their full potential through accessible, high-quality educational courses.",
       },
       {
         title: "Vision",
-        accent: "#4C6EF5",
+        accent: "#2B2B2B",
         iconColor: "#FFFFFF",
-        panelBg: "#E0E7FF",
-        headingClass: "text-[#1A1F3B]",
-        bodyClass: "text-[#414866]",
+        panelBg: "#D4D4D4",
+        headingClass: "text-[#2B2B2B]",
+        bodyClass: "text-[#2B2B2B]",
         icon: (
           <img
             src="https://res.cloudinary.com/dtaitsw4r/image/upload/v1762766002/vision_jfwwme.png"
@@ -36,16 +37,15 @@ const AboutUs02 = () => {
             loading="lazy"
           />
         ),
-        text:
-          "We aspire to be the go-to destination for learners seeking knowledge, skills, and inspiration.",
+        text: "We aspire to be the go-to destination for learners seeking knowledge, skills, and inspiration.",
       },
       {
         title: "Values",
-        accent: "#2EC4B6",
-        iconColor: "#0B0D17",
-        panelBg: "#CCF5EE",
-        headingClass: "text-[#0B0D17]",
-        bodyClass: "text-[#225E59]",
+        accent: "#2B2B2B",
+        iconColor: "#FFFFFF",
+        panelBg: "#D4D4D4",
+        headingClass: "text-[#2B2B2B]",
+        bodyClass: "text-[#2B2B2B]",
         icon: (
           <img
             src="https://res.cloudinary.com/dtaitsw4r/image/upload/v1762766002/authenticity_llobou.png"
@@ -54,8 +54,7 @@ const AboutUs02 = () => {
             loading="lazy"
           />
         ),
-        text:
-          "Providing access to education for all, breaking down barriers, and ensuring inclusive learning for diverse communities.",
+        text: "Providing access to education for all, breaking down barriers, and ensuring inclusive learning for diverse communities.",
       },
     ],
     []
@@ -72,23 +71,35 @@ const AboutUs02 = () => {
     setActive(index);
   };
 
-  const handlePrev = () => scrollToIndex((active - 1 + slides.length) % slides.length);
+  const handlePrev = () =>
+    scrollToIndex((active - 1 + slides.length) % slides.length);
   const handleNext = () => scrollToIndex((active + 1) % slides.length);
 
   return (
-    <section id="about-us-mission" className="w-full bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 text-[#1f2937]">
+    <section
+      id="about-us-mission"
+      className="w-full bg-[#F8F3ED] border-b border-[#D4D4D4] text-[#2B2B2B]"
+    >
       <div className="max-w-6xl mx-auto px-6 py-14">
         {/* Heading (optional minimal) */}
         <div className="mb-6 sm:mb-8 flex items-end justify-between">
-          <h2 className="text-xl font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent tracking-[0.18em] uppercase">
+          <h2 className="text-xl font-semibold text-white px-4 py-2 rounded-lg tracking-[0.18em] uppercase bg-[#3e3e42]">
             What drives us
           </h2>
           {/* Controls visible on sm- only (mobile). Hidden on md+ where grid is shown. */}
           <div className="flex items-center gap-2 sm:hidden">
-            <button aria-label="Previous" onClick={handlePrev} className="h-9 w-9 rounded-full border-2 border-purple-300 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 hover:from-purple-200 hover:to-pink-200 shadow-md">
+            <button
+              aria-label="Previous"
+              onClick={handlePrev}
+              className="h-9 w-9 rounded-full border-2 border-[#D4D4D4] bg-[#D4D4D4] text-[#2B2B2B] hover:bg-[#B3B3B3] shadow-md"
+            >
               ‹
             </button>
-            <button aria-label="Next" onClick={handleNext} className="h-9 w-9 rounded-full border-2 border-purple-300 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 hover:from-purple-200 hover:to-pink-200 shadow-md">
+            <button
+              aria-label="Next"
+              onClick={handleNext}
+              className="h-9 w-9 rounded-full border-2 border-[#D4D4D4] bg-[#D4D4D4] text-[#2B2B2B] hover:bg-[#B3B3B3] shadow-md"
+            >
               ›
             </button>
           </div>
@@ -107,18 +118,18 @@ const AboutUs02 = () => {
           >
             {slides.map((slide) => (
               <div key={slide.title} className="min-w-full snap-start px-1">
-                <div
-                  className="mx-1 rounded-2xl p-6 shadow-lg"
-                  style={{ backgroundColor: slide.panelBg }}
-                >
-                  <div
-                    className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl"
-                    style={{ backgroundColor: slide.accent, color: slide.iconColor }}
-                  >
+                <div className="mx-1 rounded-2xl p-6 shadow-lg bg-[#D4D4D4]">
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl">
                     {slide.icon}
                   </div>
-                  <h3 className={`text-lg font-semibold ${slide.headingClass}`}>{slide.title}</h3>
-                  <p className={`mt-2 text-sm leading-relaxed ${slide.bodyClass}`}>{slide.text}</p>
+                  <h3 className={`text-lg font-semibold ${slide.headingClass}`}>
+                    {slide.title}
+                  </h3>
+                  <p
+                    className={`mt-2 text-sm leading-relaxed ${slide.bodyClass}`}
+                  >
+                    {slide.text}
+                  </p>
                 </div>
               </div>
             ))}
@@ -131,7 +142,9 @@ const AboutUs02 = () => {
                 key={i}
                 aria-label={`Go to slide ${i + 1}`}
                 onClick={() => scrollToIndex(i)}
-                className={`h-2.5 w-2.5 rounded-full transition-all ${i === active ? "bg-gradient-to-r from-purple-600 to-pink-600 w-8" : "bg-purple-200"}`}
+                className={`h-2.5 w-2.5 rounded-full transition-all ${
+                  i === active ? "bg-[#2B2B2B] w-8" : "bg-[#D4D4D4]"
+                }`}
               />
             ))}
           </div>
@@ -142,17 +155,17 @@ const AboutUs02 = () => {
           {slides.map((s) => (
             <div
               key={s.title}
-              className="rounded-2xl p-8 shadow-xl"
-              style={{ backgroundColor: s.panelBg }}
+              className="rounded-2xl p-8 shadow-xl bg-[#D4D4D4]"
             >
-              <div
-                className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl"
-                style={{ backgroundColor: s.accent, color: s.iconColor }}
-              >
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#1e1e1e]">
                 {s.icon}
               </div>
-              <h3 className={`text-lg font-semibold ${s.headingClass}`}>{s.title}</h3>
-              <p className={`mt-2 text-sm leading-relaxed ${s.bodyClass}`}>{s.text}</p>
+              <h3 className={`text-lg font-semibold ${s.headingClass}`}>
+                {s.title}
+              </h3>
+              <p className={`mt-2 text-sm leading-relaxed ${s.bodyClass}`}>
+                {s.text}
+              </p>
             </div>
           ))}
         </div>

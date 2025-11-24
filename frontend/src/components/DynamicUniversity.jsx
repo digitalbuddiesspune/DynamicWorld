@@ -15,10 +15,10 @@ const DynamicUniversity = ({ university }) => {
   return (
     <>
       {university.map((uni, index) => (
-        <section key={index} className="p-4 sm:p-6 max-w-7xl mx-auto space-y-6">
+        <section key={index} className="p-4 sm:p-6 max-w-7xl mx-auto space-y-6 text-[#31393C]">
           {/* Header Card */}
           <div className="bg-white rounded-2xl shadow-sm ring-1 ring-gray-200 overflow-hidden">
-            <div className="bg-[#FFC067] text-[#2B2B2B] p-4 sm:p-6">
+            <div className="bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347] text-[#1A1A1A] p-4 sm:p-6">
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 {/* Logo (with safe fallback) */}
                 <div className="shrink-0">
@@ -104,7 +104,7 @@ const DynamicUniversity = ({ university }) => {
 
           {/* Courses */}
           <div className="bg-white rounded-2xl shadow-sm ring-1 ring-gray-200 overflow-hidden">
-            <div className="px-4 sm:px-6 py-4 bg-[#FFC067]">
+            <div className="px-4 sm:px-6 py-4 bg-[#008080] text-white">
               <h2 className="text-lg sm:text-xl font-semibold text-white/80 text-center">
                 Courses Offered
               </h2>

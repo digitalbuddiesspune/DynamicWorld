@@ -53,16 +53,16 @@ const Navbar = () => {
   const linkClass = ({ isActive }) =>
     `relative text-[15px] font-medium transition-colors duration-200
      after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:-bottom-1
-     after:bg-[#FFC067] after:transition-all after:duration-300 hover:after:w-full
-     focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:rounded
+     after:bg-[#2B2B2B] after:transition-all after:duration-300 hover:after:w-full
+     focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2B2B2B] focus-visible:rounded
      ${
        isActive
-         ? "text-blue-700 after:w-full"
-         : "text-slate-800 hover:text-blue-700"
+         ? "text-[#2B2B2B] after:w-full"
+         : "text-[#2B2B2B] hover:text-[#2B2B2B]"
      }`;
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b border-slate-200">
+    <nav className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b border-[#D4D4D4]">
       <div className="w-full">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -99,10 +99,10 @@ const Navbar = () => {
                   className={`inline-flex items-center gap-1.5 text-[15px] font-medium transition-colors 
                     ${
                       servicesOpenDesktop
-                        ? "text-blue-700"
-                        : "text-slate-800 hover:text-blue-700"
+                        ? "text-[#2B2B2B]"
+                        : "text-[#2B2B2B] hover:text-[#2B2B2B]"
                     }
-                    focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded`}
+                    focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2B2B2B] rounded`}
                 >
                   <span>Services</span>
                   <svg
@@ -120,9 +120,9 @@ const Navbar = () => {
                 {servicesOpenDesktop && (
                   <div
                     role="menu"
-                    className="absolute left-0 mt-2 w-[22rem] bg-white border border-slate-200 rounded-xl shadow-lg z-50 ring-1 ring-black/5"
+                    className="absolute left-0 mt-2 w-[22rem] bg-white border border-[#D4D4D4] rounded-xl shadow-lg z-50 ring-1 ring-[#2B2B2B]/5"
                   >
-                    <div className="px-3 py-2 border-b border-slate-100 text-xs text-slate-500">
+                    <div className="px-3 py-2 border-b border-[#D4D4D4] text-sm text-[#B3B3B3]">
                       Explore our offerings
                     </div>
                     <ul className="p-2 grid grid-cols-1 sm:grid-cols-2 gap-1 max-h-[70vh] overflow-auto">
@@ -132,7 +132,8 @@ const Navbar = () => {
                             to={`/services/${s
                               .toLowerCase()
                               .replace(/\s+/g, "-")}`}
-                            className="block px-3 py-2 text-[13px] rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                            className="block px-3 py-2 text-[13px] hover:text-white rounded-lg text-[#2B2B2B]   hover:bg-[#008080]/50  focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2B2B2B]"
+                            style={{}}
                             role="menuitem"
                             onClick={() => setServicesOpenDesktop(false)}
                           >
@@ -159,7 +160,7 @@ const Navbar = () => {
                 <button
                   aria-label="Open menu"
                   onClick={() => setMobileOpen(true)}
-                  className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:text-blue-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                  className="inline-flex items-center justify-center rounded-md p-2 text-[#2B2B2B] hover:text-[#2B2B2B] hover:bg-[#D4D4D4] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2B2B2B]"
                 >
                   <svg
                     width="24"
@@ -207,14 +208,14 @@ const Navbar = () => {
       {/* Mobile Sheet */}
       {mobileOpen && (
         <div className="fixed inset-0 z-50 bg-white">
-          <div className="py-3 px-4 border-b border-slate-200 flex items-center justify-between">
+          <div className="py-3 px-4 border-b border-[#D4D4D4] flex items-center justify-between">
             <div className="flex items-center gap-2">
               <img src={Logo} alt="Dynamic World Logo" className="h-8 w-auto" />
             </div>
             <button
               aria-label="Close menu"
               onClick={() => setMobileOpen(false)}
-              className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:text-blue-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+              className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:text-[#2B2B2B] hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
             >
               <svg
                 width="24"

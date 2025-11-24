@@ -1,16 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { TRUSTWORTHY_GLOBAL } from "../constants/colors";
 import education from "../assets/education.png";
 import school from "../assets/school.png";
 import handshake from "../assets/handshake.png";
 import free from "../assets/free.png";
 
-const COLORS = {
-  brand: "#3E96F4",
-  text: "#31393C",
-  bg: "#EDEEEB",
-  white: "#FFFFFF",
-};
+const COLORS = TRUSTWORTHY_GLOBAL;
 
 const AboutInfo = () => {
   const infoCards = [
@@ -41,42 +37,42 @@ const AboutInfo = () => {
   ];
 
   return (
-    <section className="bg-[#EDEEEB] px-6 lg:px-10 pb-20 text-center text-[#31393C]">
+    <section className="h-screen bg-[#F5F5F5] px-6 lg:px-10 pb-20 text-center flex flex-col justify-center items-center">
       <div className="max-w-7xl mx-auto">
         {/* Top Heading */}
-        <h2 className="text-lg sm:text-xl lg:text-2xl text-gray-800 mb-6 font-medium">
-          Explore top online universities and find the perfect fit for your education needs!
+        <h2
+          className="text-lg sm:text-xl lg:text-4xl mb-6 lg:mb-10 font-medium capitalize"
+          style={{ color: COLORS.text }}
+        >
+          Explore top online universities and find the perfect fit for your
+          education needs!
         </h2>
 
         {/* Button */}
-        <div className="mb-12">
-          <NavLink
-            to="/services/online-education"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="bg-[#FFC067] text-[#2B2B2B] px-8 py-3 font-medium rounded-full shadow hover:shadow-lg hover:bg-[#FFB84D] transition-all duration-300"
-          >
-            All Universities
-          </NavLink>
-        </div>
 
         {/* Grid Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {infoCards.map((card) => (
             <div
               key={card.id}
-              className="bg-[#FFC067] text-[#2B2B2B] rounded-2xl p-6 flex flex-col items-center justify-center shadow-md hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
+              className="text-white rounded-2xl p-6 flex flex-col items-center justify-center shadow-md hover:-translate-y-1 hover:shadow-xl transition-all duration-300 bg-[#008080]"
             >
-              <div className="flex justify-center items-center w-16 h-16 mb-4 bg-white/40 rounded-full">
-                <img
-                  src={card.icon}
-                  alt={card.title}
-                  className="w-10 h-10"
-                />
+              <div className="flex justify-center items-center w-16 h-16 mb-4 bg-gray-200 rounded-full">
+                <img src={card.icon} alt={card.title} className="w-10 h-10" />
               </div>
               <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
-              <p className="text-sm text-[#2B2B2B]/90 leading-snug">{card.text}</p>
+              <p className="text-sm text-white/90 leading-snug">{card.text}</p>
             </div>
           ))}
+        </div>
+        <div className="mt-12">
+          <NavLink
+            to="/services/online-education"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="px-8 py-3 font-medium rounded-full shadow hover:shadow-lg transition-all duration-300 bg-[#008080] text-white hover:-translate-y-0.5 hover:bg-[#006666]"
+          >
+            All Universities
+          </NavLink>
         </div>
       </div>
     </section>

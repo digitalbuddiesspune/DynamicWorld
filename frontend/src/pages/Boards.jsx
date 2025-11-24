@@ -17,7 +17,7 @@ const SECTIONS = [
 ];
 
 const Chip = ({ children }) => (
-  <span className="inline-flex items-center rounded-full bg-[#EDEEEB] px-2 py-0.5 text-[10px] md:text-xs font-medium text-[#31393C]">
+  <span className="inline-flex items-center rounded-full bg-[#D4D4D4] px-2 py-0.5 text-[10px] md:text-xs font-medium text-[#2B2B2B]">
     {children}
   </span>
 );
@@ -34,7 +34,7 @@ const Card = ({ id, header, logo, logoAlt, children }) => (
     />
     <div className="flex flex-col gap-2 md:gap-3">
       <div className="flex items-center justify-between gap-3">
-        <h2 className="text-lg md:text-2xl font-semibold text-[#31393C] leading-snug">
+        <h2 className="text-lg md:text-2xl font-semibold text-[#2B2B2B] leading-snug">
           {header}
         </h2>
         {logo ? (
@@ -52,14 +52,14 @@ const Card = ({ id, header, logo, logoAlt, children }) => (
       </div>
     </div>
 
-    <div className="mt-3 md:mt-4 prose prose-xs md:prose-sm max-w-none text-[#31393C] prose-headings:text-[#31393C] prose-li:marker:text-[#3E96F4]">
+    <div className="mt-3 md:mt-4 prose prose-xs md:prose-sm max-w-none text-[#2B2B2B] prose-headings:text-[#2B2B2B] prose-li:marker:text-[#3E96F4]">
       {children}
     </div>
 
     <div className="mt-4 md:mt-6 flex justify-end">
       <a
         href={`#top`}
-        className="rounded-md border border-gray-200 bg-white px-2.5 py-1 text-xs md:text-sm text-[#31393C] hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3E96F4]"
+        className="rounded-md border border-gray-200 bg-white px-2.5 py-1 text-xs md:text-sm text-[#2B2B2B] hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2B2B2B]"
       >
         Back to top ↑
       </a>
@@ -72,9 +72,9 @@ const Card = ({ id, header, logo, logoAlt, children }) => (
 
 const Boards = () => {
   return (
-    <section id="top" className="min-h-screen w-full text-[#31393C]">
+    <section id="top" className="min-h-screen w-full text-[#2B2B2B]">
       {/* Header */}
-      <header className="relative overflow-hidden bg-[#FFC067] text-[#2B2B2B]">
+      <header className="relative overflow-hidden bg-gradient-to-b from-[#FF8C00] via-[#FF9A1B] to-[#FFB347] text-[#1A1A1A]">
         {/* Gradient + pattern */}
         <div className="absolute inset-0 opacity-20 [background:radial-gradient(circle_at_20%_20%,white_0,transparent_40%),radial-gradient(circle_at_80%_30%,white_0,transparent_35%)]" />
         <div className="relative mx-auto max-w-7xl px-4 md:px-6 lg:px-10 py-6 md:py-8">
@@ -367,7 +367,7 @@ const Boards = () => {
           {/* Sticky sidebar */}
           <aside className="lg:sticky lg:top-6 h-max">
             <div className="rounded-xl border border-gray-200 bg-white p-3 md:p-4 shadow-sm">
-              <h3 className="text-xs md:text-sm font-semibold text-[#31393C]">
+              <h3 className="text-xs md:text-sm font-semibold text-[#2B2B2B]">
                 Quick Links
               </h3>
               <nav className="mt-2 md:mt-3">
@@ -376,9 +376,9 @@ const Boards = () => {
                     <li key={s.id}>
                       <a
                         href={`#${s.id}`}
-                        className="flex items-center gap-2 rounded-lg px-2 py-1.5 text-[#31393C] hover:bg-[#EDEEEB] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3E96F4]"
+                        className="flex items-center gap-2 rounded-lg px-2 py-1.5 text-[#2B2B2B] hover:bg-[#D4D4D4] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2B2B2B]"
                       >
-                        <span className="inline-flex h-5 w-5 md:h-6 md:w-6 items-center justify-center rounded-md bg-[#FFC067]/10 text-[#2B2B2B] text-xs md:text-sm font-semibold">
+                        <span className="inline-flex h-5 w-5 md:h-6 md:w-6 items-center justify-center rounded-md bg-[#2B2B2B]/10 text-[#2B2B2B] text-xs md:text-sm font-semibold">
                           {s.no}
                         </span>
                         <span className="leading-snug">{s.title}</span>
@@ -391,7 +391,7 @@ const Boards = () => {
               <div className="mt-3 md:mt-4 border-t pt-3 md:pt-4">
                 <a
                   href="#top"
-                  className="inline-flex items-center justify-center rounded-md bg-[#FFC067] px-3 py-1.5 text-xs md:text-xs font-medium text-[#2B2B2B] shadow hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+                  className="inline-flex items-center justify-center rounded-md bg-[#2B2B2B] px-3 py-1.5 text-xs md:text-xs font-medium text-white shadow hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
                 >
                   Back to Top
                 </a>
@@ -399,8 +399,8 @@ const Boards = () => {
             </div>
 
             {/* Info box */}
-            <div className="mt-3 md:mt-4 rounded-xl border border-[#3E96F4]/20 bg-[#FFC067]/5 p-3 md:p-4">
-              <p className="text-[11px] md:text-xs text-[#31393C]">
+            <div className="mt-3 md:mt-4 rounded-xl border border-[#3E96F4]/20 bg-[#2B2B2B]/5 p-3 md:p-4">
+              <p className="text-[11px] md:text-xs text-[#2B2B2B]">
                 Tip: Use these boards’ certificates on DigiLocker wherever
                 available for fast, verified submissions.
               </p>

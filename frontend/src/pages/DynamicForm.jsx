@@ -107,14 +107,14 @@ const DynamicForm = ({ title }) => {
     "w-full rounded-xl border bg-white/90 px-3 py-3 text-sm sm:text-base shadow-[0_1px_0_rgba(0,0,0,0.02)] placeholder:text-gray-400 " +
     "focus:outline-none focus:ring-4 transition-all";
   const okRing =
-    "border-gray-300 focus:border-[#3E96F4] focus:ring-[#3E96F4]/20";
+    "border-gray-300 focus:border-[#3E96F4] focus:ring-[#2B2B2B]/20";
   const errRing = "border-red-400 focus:border-red-500 focus:ring-red-300/40";
 
   return (
     <div
       className="border border-[#EDEEEB] bg-white p-4 sm:p-6 md:p-7
         shadow-[0_8px_30px_rgba(49,57,60,0.06)]
-        text-[#31393C]
+        text-[#2B2B2B]
       "
     >
       {/* Title */}
@@ -331,7 +331,7 @@ const DynamicForm = ({ title }) => {
         </div>
 
         {/* Consent */}
-        <div className="flex items-start gap-3 rounded-xl bg-[#EDEEEB]/40 px-3 py-3">
+        <div className="flex items-start gap-3 rounded-xl bg-[#D4D4D4]/40 px-3 py-3">
           <input
             id="consent"
             name="consent"
@@ -350,7 +350,7 @@ const DynamicForm = ({ title }) => {
           />
           <label
             htmlFor="consent"
-            className="text-xs sm:text-sm leading-relaxed text-[#31393C]"
+            className="text-xs sm:text-sm leading-relaxed text-[#2B2B2B]"
           >
             <strong>Note:</strong> By selecting “Submit,” you agree to receive
             communication from Dynamic World via call, email, or WhatsApp.
@@ -374,8 +374,8 @@ const DynamicForm = ({ title }) => {
             rounded-xl px-4 py-3 text-sm sm:text-base font-semibold text-white transition
             ${
               !isValid || submitting
-                ? "bg-[#FFC067]/60 cursor-not-allowed"
-                : "bg-[#FFC067] hover:brightness-95 active:translate-y-[1px]"
+                ? "bg-[#2B2B2B]/60 cursor-not-allowed"
+                : "bg-[#313639] text-white hover:brightness-95 active:translate-y-[1px]"
             }
             shadow-[0_6px_20px_rgba(62,150,244,0.35)]
           `}

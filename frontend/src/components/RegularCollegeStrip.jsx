@@ -2,7 +2,7 @@ import React from 'react'
 
 const RegularCollegeStrip = ({title}) => {
   return (
-      <div className="flex justify-between items-center mb-5 bg-[#FFC067] p-3 px-5">
+      <div className="flex justify-between items-center mb-5 bg-[#313639] text-white p-3 px-5">
         <h3 className="text-2xl sm:text-2xl font-bold text-gray-50">
          {title}
         </h3>

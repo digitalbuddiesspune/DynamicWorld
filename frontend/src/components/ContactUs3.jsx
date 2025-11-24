@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactUs3 = () => {
   return (
-    <section className="bg-gradient-to-b from-white via-[#f6f8fc] to-white">
+    <section className="bg-[#F8F3ED]">
       <div className="max-w-7xl mx-auto px-2 md:px-6 lg:px-8 py-8 lg:py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch h-full">
         {/* ===== Left: Map Section ===== */}

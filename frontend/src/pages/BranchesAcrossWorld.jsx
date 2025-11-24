@@ -62,16 +62,14 @@ const BranchesWorld = () => {
 
   return (
     // Responsive Padding and Background
-    <div className="bg-gradient-to-br from-blue-50 via-indigo-50 via-purple-50 to-pink-50 py-12 sm:py-16 px-4 text-[#0f172a]">
+    <div className="bg-gray-100 py-12 sm:py-16 px-4 text-[#0f172a]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header: Adjusted text and spacing for better mobile flow */}
         <div className="text-center mb-10 sm:mb-12">
-          {/* Icon Box */}
-          <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-[#FFC067] via-[#FFB84D] to-[#FFD9A6] rounded-xl shadow-lg mx-auto mb-3">
-            <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-[#2B2B2B]" />
-          </div>
+          
+        
           {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent mb-2">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent mb-2">
             Branches Across The World
           </h2>
           {/* Subtitle */}
@@ -79,7 +77,7 @@ const BranchesWorld = () => {
             Connecting communities globally with excellence
           </p>
           {/* Helpline/Call to Action */}
-          <div className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-[#FFC067] to-[#FFB84D] px-4 sm:px-6 py-2 rounded-full shadow-lg transition-shadow duration-300 hover:shadow-xl">
+          <div className="inline-flex items-center gap-2 sm:gap-3 bg-gray-50 text-white/90 px-4 sm:px-6 py-2 rounded-full shadow-lg transition-shadow duration-300 hover:shadow-xl">
             <Phone className="w-4 h-4 text-[#2B2B2B]" />
             <span className="text-[#2B2B2B] text-sm font-medium">
               Helpline:
