@@ -136,7 +136,7 @@ export default function DynamicUniversityCarousel() {
   return (
     <>
       <section
-        className="hidden  w-full bg-[#F8F3ED] border-b border-gray-300 py-8 sm:py-12 lg:py-16 lg:flex flex-col items-center justify-center min-h-[60vh] sm:min-h-[70vh] lg:h-screen"
+        className="hidden  w-full bg-[#F8F3ED] border-b border-gray-300 py-8 sm:py-12 lg:py-16 lg:flex flex-col items-center justify-center min-h-[60vh] sm:min-h-[70vh]"
         aria-labelledby="uni-carousel-title"
       >
         <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 lg:px-6">
@@ -175,7 +175,7 @@ export default function DynamicUniversityCarousel() {
         </div>
       </section>
       <section
-        className="lg:hidden w-full bg-[#F8F3ED] border-b border-gray-300 py-8 sm:py-12 lg:py-16 flex flex-col items-center justify-center min-h-[60vh] sm:min-h-[70vh] lg:h-screen"
+        className="lg:hidden w-full bg-[#F8F3ED] border-b border-gray-300 py-8 sm:py-12 lg:py-16 flex flex-col items-center justify-center min-h-[60vh] sm:min-h-[70vh] "
         aria-labelledby="uni-carousel-title"
       >
         <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 lg:px-6">

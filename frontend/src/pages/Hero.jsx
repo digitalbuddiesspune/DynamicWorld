@@ -165,7 +165,7 @@ export default function Hero() {
             key={src}
             src={src}
             alt={`Banner ${i + 1}`}
-            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+            className={`absolute inset-0 h-full w-full object-cover shrink-0 grow-0 basis-full transition-opacity duration-700 ${
               i === current ? "opacity-100" : "opacity-0"
             }`}
           />
