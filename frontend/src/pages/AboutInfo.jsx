@@ -37,7 +37,7 @@ const AboutInfo = () => {
   ];
 
   return (
-    <section className="h-screen bg-[#F5F5F5] px-6 lg:px-10 pb-20 text-center flex flex-col justify-center items-center">
+    <section className="bg-[#F5F5F5] px-6 lg:px-10 py-12 sm:py-16 lg:py-20 text-center flex flex-col justify-center items-center min-h-[60vh] sm:min-h-[70vh] lg:h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Top Heading */}
         <h2

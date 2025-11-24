@@ -1,10 +1,7 @@
-import React from "react";
 import Slider from "react-slick";
-import { UniversityLogos } from "./logos.js";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import online_education_banner from "../assets/online_education_banner.png";
-import online_education_banner_mobile from "../assets/online_education_banner_mobile.png";
+import "slick-carousel/slick/slick.css";
+import { UniversityLogos } from "./logos.js";
 
 const COLORS = { red: "#DC2626" };
 
@@ -27,99 +24,195 @@ const PrevArrow = (props) => <ArrowBase {...props} dir="prev" />;
 const NextArrow = (props) => <ArrowBase {...props} dir="next" />;
 
 export default function DynamicUniversityCarousel() {
- const settings = {
-  // ✅ Mobile-first baseline
-  mobileFirst: true,
-  dots: false,
-  infinite: true,
-  speed: 8000,
-  autoplay: true,
-  autoplaySpeed: 0, // continuous scroll
-  cssEase: "linear",
+  const settings = {
+    // ✅ Mobile-first baseline
+    mobileFirst: true,
+    dots: false,
+    infinite: true,
+    speed: 8000,
+    autoplay: true,
+    autoplaySpeed: 0, // continuous scroll
+    cssEase: "linear",
 
-  // 👉 Default for small screens
-  slidesToShow: 5,       // ← your 2.5 on mobile
-  slidesToScroll: 1,
-  swipeToSlide: true,
-  pauseOnHover: true,
-  pauseOnFocus: true,
-  accessibility: true,
-  arrows: false,           // hide arrows on mobile
+    // 👉 Default for small screens
+    slidesToShow: 5, // ← your 2.5 on mobile
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    pauseOnHover: true,
+    pauseOnFocus: true,
+    accessibility: true,
+    arrows: false, // hide arrows on mobile
 
-  // Custom arrows (we'll enable them at md+)
-  prevArrow: <PrevArrow />,
-  nextArrow: <NextArrow />,
+    // Custom arrows (we'll enable them at md+)
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
 
-  // ✅ Now scale up with MIN-width breakpoints
-  responsive: [
-    {
-      breakpoint: 480,     // ≥480px
-      settings: {
-        slidesToShow: 3,   // small phones in landscape / small tablets
+    // ✅ Now scale up with MIN-width breakpoints
+    responsive: [
+      {
+        breakpoint: 480, // ≥480px
+        settings: {
+          slidesToShow: 3, // small phones in landscape / small tablets
+        },
       },
-    },
-    {
-      breakpoint: 768,     // ≥768px (md)
-      settings: {
-        slidesToShow: 4,
-        arrows: true,      // show arrows from md+
+      {
+        breakpoint: 768, // ≥768px (md)
+        settings: {
+          slidesToShow: 4,
+          arrows: true, // show arrows from md+
+        },
       },
-    },
-    {
-      breakpoint: 1024,    // ≥1024px (lg)
-      settings: {
-        slidesToShow: 5,
-        arrows: true,
+      {
+        breakpoint: 1024, // ≥1024px (lg)
+        settings: {
+          slidesToShow: 5,
+          arrows: true,
+        },
       },
-    },
-    {
-      breakpoint: 1280,    // ≥1280px (xl)
-      settings: {
-        slidesToShow: 6,
-        arrows: true,
+      {
+        breakpoint: 1280, // ≥1280px (xl)
+        settings: {
+          slidesToShow: 6,
+          arrows: true,
+        },
       },
-    },
-  ],
-};
+    ],
+  };
+  const settingsMobile = {
+    // ✅ Mobile-first baseline
+
+    dots: false,
+    infinite: true,
+    speed: 8000,
+    autoplay: true,
+    autoplaySpeed: 0, // continuous scroll
+    cssEase: "linear",
+
+    // 👉 Default for small screens
+    slidesToShow: 2.5, // ← your 2.5 on mobile
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    pauseOnHover: true,
+    pauseOnFocus: true,
+    accessibility: true,
+    arrows: false, // hide arrows on mobile
+
+    // Custom arrows (we'll enable them at md+)
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+
+    // ✅ Now scale up with MIN-width breakpoints
+    responsive: [
+      {
+        breakpoint: 480, // ≥480px
+        settings: {
+          slidesToShow: 3, // small phones in landscape / small tablets
+        },
+      },
+      {
+        breakpoint: 768, // ≥768px (md)
+        settings: {
+          slidesToShow: 4,
+          arrows: true, // show arrows from md+
+        },
+      },
+      {
+        breakpoint: 1024, // ≥1024px (lg)
+        settings: {
+          slidesToShow: 5,
+          arrows: true,
+        },
+      },
+      {
+        breakpoint: 1280, // ≥1280px (xl)
+        settings: {
+          slidesToShow: 6,
+          arrows: true,
+        },
+      },
+    ],
+  };
 
   return (
-    <section
-      className="h-[50%] flex flex-col items-center justify-center w-full bg-[#F8F3ED] border-b border-gray-300 py-8 sm:py-12 lg:py-16"
-      aria-labelledby="uni-carousel-title"
-    >
-      <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 lg:px-6">
-        {" "}
-        {/* ↓ tighter side padding */}
-        {/* Heading */}
-        <header className="text-center mb-4 sm:mb-6">
-          <h1
-            id="uni-carousel-title"
-         className="text-lg sm:text-xl lg:text-4xl mb-6  font-medium capitalize"
-           
-          >
-            Top Online Universities
-          </h1>
-          <p className="mt-1 text-xs sm:text-sm text-center text-[#2B2B2B]">
-            Trusted institutions offering UGC-approved online programs
-          </p>
-        </header>
-        {/* Carousel with edge-fade */}
-        <div className="">
-          <Slider {...settings}>
-            {UniversityLogos.map((logo, idx) => (
-              <div className="flex items-center justify-center h-full" key={idx}>
-                <img
-                  loading="lazy"
-                  src={logo.image}
-                  alt={logo.name}
-                  className="px-2 h-16 sm:h-20 lg:h-24 object-contain"
-                />
-              </div>
-            ))}
-          </Slider>
+    <>
+      <section
+        className="hidden  w-full bg-[#F8F3ED] border-b border-gray-300 py-8 sm:py-12 lg:py-16 lg:flex flex-col items-center justify-center min-h-[60vh] sm:min-h-[70vh] lg:h-screen"
+        aria-labelledby="uni-carousel-title"
+      >
+        <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 lg:px-6">
+          {" "}
+          {/* ↓ tighter side padding */}
+          {/* Heading */}
+          <header className="text-center mb-4 sm:mb-6">
+            <h1
+              id="uni-carousel-title"
+              className="text-lg sm:text-xl lg:text-4xl mb-6  font-medium capitalize"
+            >
+              Top Online Universities
+            </h1>
+            <p className="mt-1 text-xs sm:text-sm text-center text-[#2B2B2B]">
+              Trusted institutions offering UGC-approved online programs
+            </p>
+          </header>
+          {/* Carousel with edge-fade */}
+          <div className="">
+            <Slider {...settings}>
+              {UniversityLogos.map((logo, idx) => (
+                <div
+                  className="flex items-center justify-center h-full"
+                  key={idx}
+                >
+                  <img
+                    loading="lazy"
+                    src={logo.image}
+                    alt={logo.name}
+                    className="px-2 h-16 sm:h-20 lg:h-24 object-contain"
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
-     
-      </div>
-    </section>
+      </section>
+      <section
+        className="lg:hidden w-full bg-[#F8F3ED] border-b border-gray-300 py-8 sm:py-12 lg:py-16 flex flex-col items-center justify-center min-h-[60vh] sm:min-h-[70vh] lg:h-screen"
+        aria-labelledby="uni-carousel-title"
+      >
+        <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 lg:px-6">
+          {" "}
+          {/* ↓ tighter side padding */}
+          {/* Heading */}
+          <header className="text-center mb-4 sm:mb-6">
+            <h1
+              id="uni-carousel-title"
+              className="text-xl sm:text-xl lg:text-4xl mb-6  font-medium capitalize"
+            >
+              Top Online Universities
+            </h1>
+            <p className="mt-1 text-xs sm:text-sm text-center text-[#2B2B2B]">
+              Trusted institutions offering UGC-approved online programs
+            </p>
+          </header>
+          {/* Carousel with edge-fade */}
+          <div className="">
+            <Slider {...settingsMobile}>
+              {UniversityLogos.map((logo, idx) => (
+                <div
+                  className="flex items-center justify-center h-full"
+                  key={idx}
+                >
+                  <img
+                    loading="lazy"
+                    src={logo.image}
+                    alt={logo.name}
+                    className="px-2 h-16 sm:h-20 lg:h-24 object-contain"
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
