@@ -8,7 +8,7 @@ const AboutUs01 = () => {
     // PRIMARY CONTAINER: Adjusted to use min-h-screen for full height, 
     // but not strictly fixed height (removed h-[75svh] for better flow) 
     // Added vertical padding for breathing room on all screens (py-10)
-    <div className="min-h-[75vh] flex items-center justify-center px-6 py-16 bg-gray-50 sm:py-20 md:py-24">
+    <div className="min-h-[75vh] flex items-center justify-center px-6 py-16 bg-[#F8F3ED] sm:py-20 md:py-24">
       <div className="flex flex-col justify-center items-center w-full max-w-4xl">
         
         {/* Heading: Responsive text size (3xl on mobile, 5xl on desktop) and margin */}

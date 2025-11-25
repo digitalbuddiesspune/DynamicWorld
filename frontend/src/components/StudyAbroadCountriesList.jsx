@@ -49,14 +49,14 @@ export const MBBSInGeorgia = () => {
   ];
 
   return (
-    <div className="font-sans text-[#31393C]">
+    <div className="font-sans text-[#2b2b2b]">
       {/* ===== Hero ===== */}
       <header className="mx-auto max-w-7xl">
-        <div className="bg-[#313639] text-white">
+        <div className="bg-[#008080] text-white">
           <div className="p-6 sm:p-8 lg:p-10">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
               <div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
                   MBBS in Georgia
                 </h1>
                 <p className="mt-3 inline-flex items-center bg-white/15 px-3 py-1 rounded-full text-sm">
@@ -131,7 +131,7 @@ export const MBBSInGeorgia = () => {
 
                   {/* node */}
                   <div
-                    className="relative w-5 h-5 bg-[#2B2B2B] rounded-full ring-4 ring-white shadow"
+                    className="relative w-5 h-5 bg-[#008080] rounded-full ring-4 ring-white shadow"
                     aria-hidden
                   />
                 </div>
@@ -166,7 +166,7 @@ export const MBBSInGeorgia = () => {
                 className="group bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#313639] text-white font-bold text-lg ring-1 ring-black/5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#008080] text-white font-bold text-lg ring-1 ring-black/5">
                     {uni.no}
                   </div>
                   <div className="min-w-0 flex-1">
@@ -233,9 +233,9 @@ const MBBSInBangladesh = () => {
     <div className="font-sans text-[#31393C]">
       {/* ===== Hero ===== */}
       <header className="mx-auto max-w-7xl">
-        <div className="bg-[#313639] text-white ring-1 ring-black/5">
+        <div className="bg-[#008080] text-white ring-1 ring-black/5">
           <div className="p-6 sm:p-8 lg:p-10">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
               MBBS in Bangladesh
             </h1>
             <p className="mt-3 inline-flex items-center bg-white/15 px-3 py-1 rounded-full text-sm">
@@ -302,7 +302,7 @@ const MBBSInBangladesh = () => {
 
                   {/* node */}
                   <div
-                    className="relative w-5 h-5 bg-[#2B2B2B] rounded-full ring-4 ring-white shadow"
+                    className="relative w-5 h-5 bg-[#008080] rounded-full ring-4 ring-white shadow"
                     aria-hidden
                   />
                 </div>
@@ -337,7 +337,7 @@ const MBBSInBangladesh = () => {
                 className="group bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#313639] text-white font-bold text-lg ring-1 ring-black/5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#008080] text-white font-bold text-lg ring-1 ring-black/5">
                     {uni.no}
                   </div>
                   <div className="min-w-0 flex-1">
@@ -411,11 +411,11 @@ export const MBBSInKazakhstanKyrgyzstan = () => {
     <div className=" text-[#31393C]">
       {/* ===== Hero ===== */}
       <header className="mx-auto max-w-7xl">
-        <div className="bg-[#313639] text-white ">
+        <div className="bg-[#008080] text-white ">
           <div className="p-6 sm:p-8 lg:p-10">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
               <div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
                   MBBS in Kazakhstan & Kyrgyzstan
                 </h1>
                 <p className="mt-3 inline-flex items-center bg-white/15 px-3 py-1 rounded-full text-sm">
@@ -492,7 +492,7 @@ export const MBBSInKazakhstanKyrgyzstan = () => {
 
                   {/* node */}
                   <div
-                    className="relative w-5 h-5 bg-[#2B2B2B] rounded-full ring-4 ring-white shadow"
+                    className="relative w-5 h-5 bg-[#008080] rounded-full ring-4 ring-white shadow"
                     aria-hidden
                   />
                 </div>
@@ -526,7 +526,7 @@ export const MBBSInKazakhstanKyrgyzstan = () => {
                 className="group bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#313639] text-white font-bold text-lg ring-1 ring-black/5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#008080] text-white font-bold text-lg ring-1 ring-black/5">
                     {uni.no}
                   </div>
                   <div className="min-w-0 flex-1">
@@ -566,7 +566,7 @@ export const MBBSInKazakhstanKyrgyzstan = () => {
                     className="group bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#313639] text-white font-bold text-lg ring-1 ring-black/5">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#008080] text-white font-bold text-lg ring-1 ring-black/5">
                         {uni.no}
                       </div>
                       <div className="min-w-0 flex-1">
@@ -650,11 +650,11 @@ export const MBBSInUzbekistanPhilippines = () => {
     <div className="font-sans text-[#31393C]">
       {/* ===== Hero ===== */}
       <header className="mx-auto max-w-7xl">
-        <div className="bg-[#313639] text-white">
+        <div className="bg-[#008080] text-white">
           <div className="p-6 sm:p-8 lg:p-10">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
               <div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
                   MBBS in Uzbekistan & the Philippines
                 </h1>
                 <p className="mt-3 inline-flex items-center bg-white/15 px-3 py-1 rounded-full text-sm">
@@ -731,7 +731,7 @@ export const MBBSInUzbekistanPhilippines = () => {
 
                   {/* node */}
                   <div
-                    className="relative w-5 h-5 bg-[#2B2B2B] rounded-full ring-4 ring-white shadow"
+                    className="relative w-5 h-5 bg-[#008080] rounded-full ring-4 ring-white shadow"
                     aria-hidden
                   />
                 </div>
@@ -766,7 +766,7 @@ export const MBBSInUzbekistanPhilippines = () => {
                 className="group bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#313639] text-white font-bold text-lg ring-1 ring-black/5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#008080] text-white font-bold text-lg ring-1 ring-black/5">
                     {uni.no}
                   </div>
                   <div className="min-w-0 flex-1">
@@ -855,11 +855,11 @@ export const MBBSInRussia = () => {
     <div className="font-sans text-[#31393C]">
       {/* ===== Hero ===== */}
       <header className="mx-auto max-w-7xl">
-        <div className="bg-[#313639] text-white ">
+        <div className="bg-[#008080] text-white ">
           <div className="p-6 sm:p-8 lg:p-10">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
               <div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
                   MBBS in Russia
                 </h1>
                 <p className="mt-3 inline-flex items-center bg-white/15 px-3 py-1 rounded-full text-sm">
@@ -935,7 +935,7 @@ export const MBBSInRussia = () => {
 
                   {/* node */}
                   <div
-                    className="relative w-5 h-5 bg-[#2B2B2B] rounded-full ring-4 ring-white shadow"
+                    className="relative w-5 h-5 bg-[#008080] rounded-full ring-4 ring-white shadow"
                     aria-hidden
                   />
                 </div>
@@ -970,7 +970,7 @@ export const MBBSInRussia = () => {
                 className="group bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#313639] text-white font-bold text-lg ring-1 ring-black/5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#008080] text-white font-bold text-lg ring-1 ring-black/5">
                     {uni.no}
                   </div>
                   <div className="min-w-0 flex-1">
@@ -1088,7 +1088,7 @@ export const AdmissionCulturalBenefits = () => {
         {/* Admission Benefits */}
         <section className="mb-10">
           <h2 className="text-3xl font-bold text-[#31393C] mb-6 flex items-center justify-center">
-            <span className="inline-flex items-center justify-center bg-[#313639] text-white rounded-md p-2 mr-3">
+            <span className="inline-flex items-center justify-center bg-[#3E96F4] text-white rounded-md p-2 mr-3">
               <IconInfo className="w-6 h-6" />
             </span>
             Admission Benefits
@@ -1113,7 +1113,7 @@ export const AdmissionCulturalBenefits = () => {
         </section>
 
         {/* Cultural Benefits */}
-        <section className=" rounded-2xl shadow-md ring-1 ring-blue-200/60 bg-[#313639] text-white p-6">
+        <section className=" rounded-2xl shadow-md ring-1 ring-blue-200/60 bg-[#3E96F4] text-white p-6">
           <h2 className="text-2xl font-bold mb-5 flex items-center">
             Cultural Benefits
           </h2>
@@ -1154,19 +1154,19 @@ const IconCheck = ({
 
 export const UltraLightweightLandingPage = () => {
   return (
-    <div className="min-h-screen  text-[#31393C] antialiased">
+    <div className="min-h-screen antialiased bg-[#F8F3ED]">
       {/* Main Content */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#3E96F4] via-[#3E96F4]/90 to-[#EDEEEB] text-white py-16 lg:py-20">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#3E96F4] via-[#3E96F4]/90 to-[#EDEEEB] py-16 lg:py-20">
         <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dtaitsw4r/image/upload/v1761197698/vecteezy_world-map-with-glowing-lines-and-dots-on-blue-background_33692696_ww3tvd.jpg')] bg-cover bg-center opacity-10"></div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           {/* Headline */}
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4 drop-shadow-sm">
-            Is <span className="text-[#FFD43B]">MBBS Abroad</span> Worth It?
+          <h1 className="text-4xl md:text-5xl font-extrabold  text-yellow-400 mb-5">
+            Dreaming of Studying MBBS Abroad?
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
             Absolutely. Unlock your global medical career with world-class
             education and unmatched exposure.
           </p>
@@ -1192,7 +1192,7 @@ export const UltraLightweightLandingPage = () => {
           <div className="mt-10">
             <a
               href="tel:+91 7887881060"
-              className="inline-flex items-center justify-center gap-2 bg-white text-[#3E96F4] font-semibold text-lg py-3 px-8 rounded-full shadow-md hover:bg-[#FFD43B] hover:text-black transition-all duration-200"
+              className="inline-flex items-center bg-amber-200 justify-center gap-2 text-[#3E96F4] font-semibold text-lg py-3 px-8 rounded-full shadow-md hover:bg-[#FFD43B] hover:text-black transition-all duration-200"
             >
               Get Free Counselling
               <svg
@@ -1214,13 +1214,13 @@ export const UltraLightweightLandingPage = () => {
         </div>
       </section>
 
-      <main className="max-w-5xl mx-auto py-10 px-6 md:px-8 lg:px-12">
+      <main className="max-w-5xl mx-auto py-10 px-6 md:px-8 lg:px-12 bg-[#F8F3ED]">
         {/* Overview */}
-        <section className="mb-10 p-6 rounded-2xl bg-white shadow-sm ring-1 ring-blue-100">
-          <h2 className="text-2xl font-bold text-[#3E96F4] mb-3">
+        <section className="mb-10 p-6 rounded-2xl bg-[#008080] shadow-sm ring-1 ring-blue-100">
+          <h2 className="text-2xl font-bold text-white mb-3">
             Your Global Medical Journey
           </h2>
-          <p className="text-base leading-relaxed">
+          <p className="text-base leading-relaxed text-white">
             Facing limited seats and high fees in India? MBBS abroad offers a
             proven, transformative path. Dynamic World partners with
             NMC/MCI-recognized global universities, ensuring your degree opens
@@ -1263,7 +1263,7 @@ export const UltraLightweightLandingPage = () => {
           </p>
           <a
             href="https://wa.me/917887881060"
-            className="inline-flex items-center justify-center bg-[#313639] text-white font-semibold text-lg py-3 px-8 rounded-full shadow-md transition hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#3E96F4] focus-visible:ring-offset-white"
+            className="inline-flex items-center justify-center bg-[#3E96F4] text-white font-semibold text-lg py-3 px-8 rounded-full shadow-md transition hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#3E96F4] focus-visible:ring-offset-white"
             aria-label="Get Your Free Consultation"
           >
             Get Your Free Consultation
@@ -1274,5 +1274,4 @@ export const UltraLightweightLandingPage = () => {
     </div>
   );
 };
-
 export default MBBSInBangladesh;

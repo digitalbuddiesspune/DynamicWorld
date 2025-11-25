@@ -80,7 +80,7 @@ const PromotionStrip = () => {
     first?.newsTitle ?? "Latest updates and admission support — check now.";
 
   return (
-    <header className="w-full bg-[#0A1A2F] text-white px-4 sm:px-6 py-2 sm:py-3 shadow-md">
+    <header className="w-full bg-[#008080] text-white px-4 sm:px-6 py-2 sm:py-3 shadow-md">
       <div className="max-w-7xl mx-auto flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         {/* Left: Logo + Brand */}
         <div className="flex items-center gap-3">
@@ -102,7 +102,7 @@ const PromotionStrip = () => {
           className="lg:ml-3 text-[10px] font-medium rounded-full lg:px-3 py-[3px] transition"
         >
           <div className="flex-1 sm:px-4">
-            <div className="flex items-center gap-2 bg-white/10 border border-[#2b2b2b] rounded-2xl px-3 py-2 backdrop-blur-sm">
+            <div className="flex items-center gap-2 bg-white/10 border border-white/10 rounded-xl px-3 py-2 backdrop-blur-sm">
               {/* LIVE / LABEL */}
               <span className="inline-flex items-center gap-1 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wide  bg-red-500 rounded-full px-2 py-[2px]">
                 <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />

@@ -56,11 +56,11 @@ const AboutUs02 = () => {
   const handleNext = () => scrollToIndex((active + 1) % slides.length);
 
   return (
-    <section className="w-full bg-[#FFFFFF]">
-      <div className="max-w-6xl mx-auto px-6 py-10">
+    <section className="w-full bg-gray-50 py-12">
+      <div className="max-w-7xl mx-auto px-6 py-10">
         {/* Heading (optional minimal) */}
         <div className="mb-6 sm:mb-8 flex items-end justify-between">
-          <h2 className="text-xl font-semibold text-[#31393C]">What drives us</h2>
+          <h2 className="text-2xl lg:text-3xl capitalize font-semibold text-[#2b2b2b]">What drives us</h2>
           {/* Controls visible on sm- only (mobile). Hidden on md+ where grid is shown. */}
           <div className="flex items-center gap-2 sm:hidden">
             <button aria-label="Previous" onClick={handlePrev} className="h-9 w-9 rounded-full ring-1 ring-[#EDEEEB] text-[#31393C] hover:bg-[#EDEEEB]">

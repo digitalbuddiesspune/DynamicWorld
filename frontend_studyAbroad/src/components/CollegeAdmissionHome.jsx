@@ -5,14 +5,13 @@ const CollegeAdmissionHome = ({ title, para1, para2 }) => {
   return (
     <div className="bg-white text-[#31393C]">
       {/* Header */}
-      <header className="bg-[#3E96F4] text-white">
+      <header className="bg-[#008080] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8">
-          <h1 className=" text-3xl sm:text-4xl capitalize font-extrabold leading-tight tracking-tight">
+          <h1 className=" text-3xl sm:text-4xl capitalize font-bold leading-tight tracking-tight">
             {title}
           </h1>
         </div>
       </header>
-
       <main>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-10">
           <section className="">

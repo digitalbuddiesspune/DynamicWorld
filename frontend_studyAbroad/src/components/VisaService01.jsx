@@ -6,9 +6,6 @@ import { CheckCircle } from "lucide-react";
 const VicaServices1 = () => {
   // --- COLOR PALETTE from previous component ---
   const vibrantBlue = "bg-[#3E96F4]"; // Used for main background
-  // const darkCharcoal = "bg-[#31393C]"; // Removed, no buttons
-
-  // Data provided by the user for the Work Visa Service details
   const workVisaServices = [
     {
       title: "Expertise",
@@ -53,7 +50,7 @@ const VicaServices1 = () => {
   ];
 
   return (
-    // Outer container: Full width, minimum screen height, vibrant blue background, white text, and responsive padding.
+    
     <div
       className={`${vibrantBlue} w-full min-h-screen text-white p-4 md:p-8 lg:p-12 font-sans flex justify-left `}
     >

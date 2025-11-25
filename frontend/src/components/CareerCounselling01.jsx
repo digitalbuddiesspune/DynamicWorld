@@ -4,36 +4,42 @@ const COLORS = { red: "#DC2626" };
 
 export const CareerHero = () => {
   return (
-    <section className="w-full bg-[#008080] text-white" >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8">
-        <h1 className="text-2xl text-[#1A1A1A] sm:text-4xl font-bold tracking-tight" >
-          HIGHWAY TO A BRIGHTER CAREER
-        </h1>
-        <p className="mt-4 text-[#1A1A1A] lg:font-normal text-sm leading-relaxed">
-          Studying made easy through suggestions and support always delivers
-          satisfying results. Career needs focus, planning and advice. We
-          balance all aspects of your career in a better way. Our experts are
-          your flexible friends who will guide you through your journey to
-          success. Build a foundation and kick start your career with proper
-          focus, planning and advice. We shape your minds into shining stars, so
-          that you can follow your dreams to become a doctor, engineer,
-          architect, pharmacist, or a management expert. Follow your dreams by
-          partnering with Dynamic World and plan, implement and achieve your
-          success.
-        </p>
-        <p className="mt-3  text-[#1A1A1A] lg:font-normal text-sm leading-relaxed">
-          MEDICAL, ENGINEERING, ARCHITECTURE, AGRICULTURE, PHARMACY, MBA, BBA
-          whichever stream you opt for career planning is essential through
-          expert career counselling. Factors like self-efficiency, satisfaction,
-          happiness are co-related to job satisfaction, therefore career
-          counselling becomes more important than any other form of counselling.
-          Career counselling and guidance is required on the part of students
-          due to ignorance of personal abilities and potentials, parental
-          pressure and multiple career options which may create a confusion in
-          their minds.
-        </p>
-      </div>
-    </section>
+    <>
+      <section className="w-full bg-[#008080] text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8">
+          <h1 className="text-2xl text-[#1A1A1A] sm:text-4xl font-bold tracking-tight">
+            HIGHWAY TO A BRIGHTER CAREER
+          </h1>
+        </div>
+      </section>
+      <section className="bg-[#F8F3ED] border-b border-[#D4D4D4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 ">
+          <p className="mt-4 text-[#1A1A1A] lg:font-normal text-sm leading-relaxed">
+            Studying made easy through suggestions and support always delivers
+            satisfying results. Career needs focus, planning and advice. We
+            balance all aspects of your career in a better way. Our experts are
+            your flexible friends who will guide you through your journey to
+            success. Build a foundation and kick start your career with proper
+            focus, planning and advice. We shape your minds into shining stars,
+            so that you can follow your dreams to become a doctor, engineer,
+            architect, pharmacist, or a management expert. Follow your dreams by
+            partnering with Dynamic World and plan, implement and achieve your
+            success.
+          </p>
+          <p className="mt-3  text-[#1A1A1A] lg:font-normal text-sm leading-relaxed">
+            MEDICAL, ENGINEERING, ARCHITECTURE, AGRICULTURE, PHARMACY, MBA, BBA
+            whichever stream you opt for career planning is essential through
+            expert career counselling. Factors like self-efficiency,
+            satisfaction, happiness are co-related to job satisfaction,
+            therefore career counselling becomes more important than any other
+            form of counselling. Career counselling and guidance is required on
+            the part of students due to ignorance of personal abilities and
+            potentials, parental pressure and multiple career options which may
+            create a confusion in their minds.
+          </p>
+        </div>
+      </section>
+    </>
   );
 };
 
@@ -58,7 +64,10 @@ const TreeNode = ({ label, children = [] }) => {
             </span>
           </button>
         ) : (
-          <span className="mt-2 h-2 w-2 rounded-full text-white ring-2 ring-[#EDEEEB]" style={{ backgroundColor: COLORS.red }} />
+          <span
+            className="mt-2 h-2 w-2 rounded-full text-white ring-2 ring-[#EDEEEB]"
+            style={{ backgroundColor: COLORS.red }}
+          />
         )}
         <div className="rounded-lg bg-white px-3 py-2 text-sm leading-5 text-[#31393C] ring-1 ring-gray-200 shadow-sm">
           {label}
@@ -133,10 +142,8 @@ export const WhatWeProvide = () => {
     <section className="bg-[#F8F3ED] border-b border-[#D4D4D4]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8">
         <div className="rounded-2xl ring-1 ring-gray-200 shadow-sm overflow-hidden">
-          <div className="text-white px-6 py-4 bg-[#008080]" >
-            <h2 className="text-lg font-semibold">
-              WHAT ARE WE PROVIDING?
-            </h2>
+          <div className="text-white px-6 py-4 bg-[#008080]">
+            <h2 className="text-lg font-semibold">WHAT ARE WE PROVIDING?</h2>
           </div>
           <div className="bg-[#F5F5F5] p-6 space-y-6">
             <div>
@@ -203,11 +210,15 @@ export const WhatWeProvide = () => {
 export const EntranceDetails = () => {
   return (
     <section className="bg-[#F8F3ED] border-b border-[#D4D4D4]">
-      <h1   className="text-lg sm:text-xl lg:text-4xl   font-medium capitalize py-5 text-center">Focused Preparation for JEE, CET, NATA & NEET</h1>
+      <h1 className="text-lg sm:text-xl lg:text-4xl   font-medium capitalize py-5 text-center">
+        Focused Preparation for JEE, CET, NATA & NEET
+      </h1>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* NEET */}
         <div className="rounded-2xl bg-[#D4D4D4] p-6 ring-1 ring-[#B3B3B3] shadow-lg">
-          <h3 className="text-base font-semibold" style={{ color: COLORS.red }}>NEET</h3>
+          <h3 className="text-base font-semibold" style={{ color: COLORS.red }}>
+            NEET
+          </h3>
           <p className="mt-2 text-sm text-[#2B2B2B] leading-relaxed">
             National Testing Agency (NTA) will conduct the NEET Exam for UG
             Medical Education : Students of 12th level must have Physics,
@@ -231,7 +242,9 @@ export const EntranceDetails = () => {
         </div>
         {/* JEE */}
         <div className="rounded-2xl bg-[#D4D4D4] p-6 ring-1 ring-[#B3B3B3] shadow-lg">
-          <h3 className="text-base font-semibold" style={{ color: COLORS.red }}>JEE</h3>
+          <h3 className="text-base font-semibold" style={{ color: COLORS.red }}>
+            JEE
+          </h3>
           <p className="mt-2 text-sm text-[#2B2B2B] leading-relaxed">
             Age Limit / Qualifying exam - For appearing in the JEE (main)
             examination there is no age limit for the candidates. The candidates
@@ -286,7 +299,9 @@ export const EntranceDetails = () => {
         </div>
         {/* MHT-CET */}
         <div className="rounded-2xl bg-[#D4D4D4] p-6 ring-1 ring-[#B3B3B3] shadow-lg">
-          <h3 className="text-base font-semibold" style={{ color: COLORS.red }}>MHT-CET</h3>
+          <h3 className="text-base font-semibold" style={{ color: COLORS.red }}>
+            MHT-CET
+          </h3>
           <p className="mt-2 text-sm text-[#2B2B2B] leading-relaxed">
             MHT CET (or Maharashtra Common Entrance Test) is a common state
             level entrance exam conducted by the State Common Entrance Test
@@ -322,7 +337,9 @@ export const MBBSAbroad = () => {
   return (
     <section className="bg-[#F8F3ED] border-b border-[#D4D4D4]">
       <div>
-        <h1   className="text-lg sm:text-xl lg:text-4xl   font-medium capitalize py-5 text-center">MBBS Abroad Overview & Why Choose Dynamic World</h1>
+        <h1 className="text-lg sm:text-xl lg:text-4xl   font-medium capitalize py-5 text-center">
+          MBBS Abroad Overview & Why Choose Dynamic World
+        </h1>
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-8 space-y-8">
         <div className="rounded-2xl bg-[#D4D4D4] p-6 ring-1 ring-[#B3B3B3] shadow-lg">
@@ -359,7 +376,10 @@ export const MBBSAbroad = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="rounded-2xl bg-[#D4D4D4] p-6 ring-1 ring-[#B3B3B3] shadow-lg">
-            <h3 className="text-base font-semibold" style={{ color: COLORS.red }}>
+            <h3
+              className="text-base font-semibold"
+              style={{ color: COLORS.red }}
+            >
               WHY CHOOSE DYNAMIC WORLD EDUCATION?
             </h3>
             <ul className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-[#2B2B2B]">
@@ -390,7 +410,10 @@ export const MBBSAbroad = () => {
           </div>
 
           <div className="rounded-2xl bg-[#D4D4D4] p-6 ring-1 ring-[#B3B3B3] shadow-lg">
-            <h3 className="text-base font-semibold" style={{ color: COLORS.red }}>
+            <h3
+              className="text-base font-semibold"
+              style={{ color: COLORS.red }}
+            >
               Country Snapshots (Highlights)
             </h3>
             <ul className="mt-3 list-disc list-inside text-sm text-[#2B2B2B] space-y-1">
@@ -438,9 +461,9 @@ export const MBBSAbroad = () => {
 // ==============================
 const CareerBrochurePage = () => {
   return (
-    <main className="min-h-screen w-full bg-white text-[#31393C]">
+    <main className="min-h-screen w-full  text-[#31393C]">
       <CareerHero />
-      {/* <CareerTree /> */}
+
       <WhatWeProvide />
       <div className="w-full flex flex-col justify-center ">
         <div className="mx-auto">

@@ -36,7 +36,7 @@ const secondBanner =
 
 const MobileScreenBanners = [
   newFirst,
-  firstBanner,
+  
   secondBanner,
   studyAbroadMobile,
   career,

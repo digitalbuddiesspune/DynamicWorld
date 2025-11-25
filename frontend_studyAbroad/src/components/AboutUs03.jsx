@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutUs03 = () => {
   return (
-    <section className="w-full  bg-gray-50 flex flex-col justify-center items-center px-8 pt-5">
+    <section className="w-full lg:h-[50vh]  bg-[#F8F3ED] flex flex-col justify-center items-center px-8 pt-5">
       <div className="max-w-6xl text-center">
         <h1 className="text-2xl md:text-3xl font-bold mb-4">
           Beginning of a Transformative Era.

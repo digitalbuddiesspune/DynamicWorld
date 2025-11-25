@@ -39,7 +39,7 @@ const ContactForm = () => {
     if (!emailOk(formData.email)) e.email = "Enter a valid email address.";
     if (!formData.course.trim())
       e.course = "Please specify the course you're looking for.";
-    if (!formData.consent) e.consent = "You must agree to be contacted.";
+    if (!formData.consent) e.consent = "You must agree before submitting.";
     if (formData.company.trim() !== "") e.company = "Spam detected.";
     return e;
   }, [formData]);
@@ -355,11 +355,7 @@ const ContactForm = () => {
                   regarding your inquiry.
                 </label>
               </div>
-              {touched.consent && errors.consent && (
-                <p className="mt-1 -mb-2 text-xs text-red-600">
-                  {errors.consent}
-                </p>
-              )}
+             
 
               {/* Actions */}
               <div className="pt-2">
@@ -369,8 +365,8 @@ const ContactForm = () => {
                   className={`w-full inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-white transition
                     ${
                       !isValid || submitting
-                        ? "bg-indigo-300 cursor-not-allowed"
-                        : "bg-indigo-600 hover:bg-indigo-700"
+                        ? "bg-[#008080] cursor-not-allowed"
+                        : "bg-indigo-600 hover:bg-indigo-700 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                     }
                     focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-400`}
                 >

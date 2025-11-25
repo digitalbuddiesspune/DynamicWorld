@@ -49,9 +49,9 @@ const COUNTRIES = [
 
 export default function ImmigrationHome() {
   return (
-    <section className="w-full text-[#31393C] bg-[#EDEEEB]">
+    <section className="w-full text-[#31393C] bg-[#F8F3ED] border-b border-gray-200">
       {/* HEADER */}
-      <header className="relative overflow-hidden bg-[#3E96F4] text-white">
+      <header className="relative overflow-hidden bg-[#008080] text-white">
         {/* Decorative gradient & pattern */}
         <div className="absolute inset-0 opacity-80" aria-hidden>
           <div

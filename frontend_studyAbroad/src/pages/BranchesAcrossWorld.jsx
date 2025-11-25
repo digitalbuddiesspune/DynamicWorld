@@ -62,7 +62,7 @@ const BranchesWorld = () => {
 
   return (
     // Responsive Padding and Background
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 py-12 sm:py-16 px-4">
+    <div className="bg-[#F8F3ED] py-12 sm:py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Section Header: Adjusted text and spacing for better mobile flow */}
         <div className="text-center mb-10 sm:mb-12">
