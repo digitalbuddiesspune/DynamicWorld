@@ -12,7 +12,7 @@ const ImmigrationLarge =
 const Complete_Your_Education_Large =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763968234/OnlineEduFinal_juripw.svg";
 const attestationApostileLarge =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763968422/Attestation_bxdi2k.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764095189/attestation_dpynka.svg";
 const LegacyLarge =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764091999/Legacy_u7kppj.svg";
 
@@ -45,7 +45,7 @@ const LargeScreenBanners = [
   schoolCollegeLarge,
   studyAbroadLarge01,
   ImmigrationLarge,
-  // attestationApostileLarge,
+  attestationApostileLarge,
 ];
 
 export default function Hero() {
