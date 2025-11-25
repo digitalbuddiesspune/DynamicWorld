@@ -51,17 +51,17 @@ export default function InquiryDetails({
               <a
                 href={`tel:${phone}`}
                 aria-label="Call counsellor"
-                className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl text-white font-semibold text-base sm:text-base transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 hover:opacity-90 min-w-[140px] sm:min-w-[160px]"
+                className="group inline-flex items-center justify-center gap-2 px-4 sm:px-4 py-2 sm:py-2 rounded-xl  text-white font-semibold text-base sm:text-base shadow-md border border:bg-[#22c55e] hover:shadow-lg hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 transition-all duration-300 min-w-[140px] sm:min-w-[160px]"
                 style={{
                   backgroundColor: COLORS.red,
                   border: `2px solid ${COLORS.red}`,
                   boxShadow: `0 4px 12px rgba(220,38,38,0.3)`,
                 }}
               >
-                <span className="inline-flex items-center justify-center p-1.5 rounded-full">
+                <span className="inline-flex items-center justify-center rounded-full">
                   <Phone
-                    size={20}
-                    className="group-hover:rotate-12 transition-transform duration-200"
+                    size={22}
+                    className="group-hover:rotate-12 transition-transform duration-200 "
                   />
                 </span>
                 Quick Call
@@ -73,12 +73,12 @@ export default function InquiryDetails({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chat on WhatsApp"
-                className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl  text-white font-semibold text-base sm:text-base shadow-md border border:bg-[#22c55e] hover:shadow-lg hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 transition-all duration-300 min-w-[140px] sm:min-w-[160px]"
+                className="group inline-flex items-center justify-center gap-2 px-4 sm:px-4 py-2 sm:py-2 rounded-xl  text-white font-semibold text-base sm:text-base shadow-md border border:bg-[#22c55e] hover:shadow-lg hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 transition-all duration-300 min-w-[140px] sm:min-w-[160px]"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
+                  width="26"
+                  height="26"
                   viewBox="0 0 24 24"
                   fill="none"
                 >
