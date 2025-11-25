@@ -45,7 +45,7 @@ const LargeScreenBanners = [
   schoolCollegeLarge,
   studyAbroadLarge01,
   ImmigrationLarge,
-  attestationApostileLarge,
+  // attestationApostileLarge,
 ];
 
 export default function Hero() {
