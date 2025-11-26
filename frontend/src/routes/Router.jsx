@@ -54,6 +54,7 @@ import RegularUniversityDetails from "../pages/RegularUniversityDetails";
 import RegularUniversityList from "../pages/RegularUniversityList";
 import Teaching from "../pages/Teaching";
 import UniversitiyDetails from "../pages/UniversitiyDetails";
+import HomeTuition from "../pages/HomeTuition";
 const Router_Router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
@@ -124,6 +125,7 @@ const Router_Router = createBrowserRouter(
         path="/services/regular-full-time-education/:slug"
         element={<RegularUniversityDetails />}
       />
+      <Route path="/services/home-&-online-tuition" element={<HomeTuition />} />
       <Route
         path="/services/distance-education/:slug"
         element={<DistanceUniversityDetails />}

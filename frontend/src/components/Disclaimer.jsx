@@ -6,10 +6,9 @@ const Disclaimer = () => {
 
   return (
     // Outer section: Reduced vertical padding from py-10 to py-6
-    <div className=" bg-gradient-to-r from-slate-50 to-gray-100  py-0 sm:py-6 px-0 sm:px-6">
+    <div className=" bg-[#E3E4E0] py-0 sm:py-6 px-0 sm:px-6">
       <div className="max-w-7xl mx-auto ">
-    
-        <div className="bg-white md:rounded-lg shadow-md p-2 md:p-5 sm:p-6 border-l-4 border-amber-500">
+        <div className="bg-gray-100 md:rounded-lg shadow-md p-2 md:p-5 sm:p-6 border-l-4 border-amber-500">
           <div className="flex items-start gap-3 sm:gap-4">
             {/* Icon size remains the same, reduced margin-top */}
             <AlertCircle className="w-5 h-5 sm:w-6 sm:h-6 text-amber-500 flex-shrink-0 mt-0.5" />
@@ -28,9 +27,7 @@ const Disclaimer = () => {
               <p className="text-gray-700 leading-snug text-xs">
                 To ensure you have the most up-to-date information, we strongly
                 encourage you to contact our helpline at{" "}
-                <span className="font-bold text-gray-900">
-                  +91 7887881060
-                </span>{" "}
+                <span className="font-bold text-gray-900">+91 7887881060</span>{" "}
                 before making any educational choices or purchases.
               </p>
             </div>

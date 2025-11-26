@@ -78,7 +78,7 @@ const AllTestimonials = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F5F5F5] border-t border-gray-300 flex flex-col items-center justify-center py-10 px-4 md:px-8 lg:px-16 xl:px-24">
+    <div className=" bg-[#F5F5F5] border-t border-gray-300 flex flex-col items-center justify-center py-10 px-4 md:px-8 lg:px-16 xl:px-24">
       {/* Header */}
       <div className="text-center mb-10">
         <h2    className="text-lg sm:text-xl lg:text-4xl   font-medium capitalize">

@@ -1,8 +1,8 @@
-
 import { NavLink } from "react-router-dom";
 import CurrentYear from "../components/CurrentYear.jsx";
 import FooterDisclaimer from "../components/Disclaimer.jsx";
 import { TRUSTWORTHY_GLOBAL } from "../constants/colors";
+import Logo from "../assets/Dynamic-World-Vector-Logo.svg";
 
 const COLORS = TRUSTWORTHY_GLOBAL;
 const url =
@@ -10,35 +10,38 @@ const url =
 const Footer = () => {
   return (
     <>
-      <footer className="text-white relative overflow-hidden bg-[#2b2b2b]" >
+      <footer className="text-black bg-[#C7C7BB] relative overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
             {/* Brand / About with Social Icons */}
             <div className="sm:col-span-2 lg:col-span-1">
-              <div className="mb-4">
+              <div className="mb-4 inline-block">
                 <img
-                  src={url}
+                  src={Logo}
                   alt="Dynamic World logo"
                   className="h-10 w-auto"
                   loading="lazy"
                 />
               </div>
-              <p className="text-white leading-relaxed mb-6 text-sm">
+              <p
+                className="text-[#2b2b2b] leading-relaxed mb-6 lg:font-medium"
+                style={{ fontSize: "0.875rem" }}
+              >
                 Your trusted partner for career guidance and educational
                 opportunities. We help students achieve their academic and
                 professional goals with expert counseling.
               </p>
               <div className="">
                 <ul className="flex flex-wrap gap-2 md:gap-4 ">
-                  <li className="hover:scale-105 transition duration-500 ease-in-out">
+                  <li className="hover:scale-125 transition duration-500 ease-in-out">
                     <a
-                      className="hover:text-green-400 transition-colors text-sm"
+                      className="hover:text-green-400 transition-colors text-[#D4D4D4]"
                       href="https://wa.me/917887881060"
                       target="_blank"
                       rel="noopener noreferrer"
+                      style={{ fontSize: "0.875rem" }}
                     >
                       <svg
-                        // className={className}
                         viewBox="0 0 24 24"
                         aria-label="WhatsApp"
                         role="img"
@@ -51,10 +54,11 @@ const Footer = () => {
                       </svg>
                     </a>
                   </li>
-                  <li className="hover:scale-105 transition duration-500 ease-in-out">
+                  <li className="hover:scale-125 transition duration-500 ease-in-out">
                     <a
                       href="https://www.facebook.com/dynamicworld.in"
-                      className="hover:text-[#D4D4D4] transition-colors text-sm"
+                      className="hover:text-[#60A5FA] transition-colors text-[#D4D4D4]"
+                      style={{ fontSize: "0.875rem" }}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -69,10 +73,11 @@ const Footer = () => {
                       </svg>
                     </a>
                   </li>
-                  <li className="hover:scale-105 transition duration-500 ease-in-out">
+                  <li className="hover:scale-125 transition duration-500 ease-in-out">
                     <a
                       href="https://www.instagram.com/dynamicworld.in/"
-                      className="hover:text-[#D4D4D4] transition-colors text-sm"
+                      className="hover:text-[#EC4899] transition-colors text-[#D4D4D4]"
+                      style={{ fontSize: "0.875rem" }}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -81,29 +86,27 @@ const Footer = () => {
                         aria-label="instagram"
                         width={20}
                         height={20}
-                        // className={className}
                         fill="currentColor"
                       >
                         <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.25-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
                       </svg>
                     </a>
                   </li>
-                  <li className="hover:scale-105 transition duration-500 ease-in-out">
+                  <li className="hover:scale-125 transition duration-500 ease-in-out">
                     <a
                       href="https://www.youtube.com/channel/UCOZRvMEWHmEKvKemIuF1gdg"
-                      className="hover:text-red-400 transition-colors text-sm"
+                      className="hover:text-red-400 transition-colors text-[#D4D4D4]"
+                      style={{ fontSize: "0.875rem" }}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         role="img"
                         aria-label="youtube"
-                        width={20}
-                        height={20}
-                        // className={className}
+                        width={25}
+                        height={25}
                         fill="currentColor"
                       >
-                        {/* <title>{title}</title> */}
                         <path d="M23.498 6.186a2.974 2.974 0 0 0-2.09-2.103C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.408.583a2.974 2.974 0 0 0-2.09 2.103A31.432 31.432 0 0 0 .5 12a31.432 31.432 0 0 0 .002 5.814 2.974 2.974 0 0 0 2.09 2.103C4.495 20.5 12 20.5 12 20.5s7.505 0 9.408-.583a2.974 2.974 0 0 0 2.09-2.103A31.432 31.432 0 0 0 23.5 12a31.432 31.432 0 0 0-.002-5.814zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" />
                       </svg>
                     </a>
@@ -114,11 +117,14 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-white font-bold mb-4 text-lg flex items-center gap-2">
-                <span className="w-1 h-6 bg-gradient-to-b from-[#B3B3B3] to-[#D4D4D4] rounded-full"></span>
+              <h3
+                className="text-[#2b2b2b] font-bold mb-4 flex items-center gap-2"
+                style={{ fontSize: "1.125rem" }}
+              >
+                <span className="w-1 h-6 bg-[#2b2b2b] rounded-full"></span>
                 Quick Links
               </h3>
-              <ul className="space-y-2.5 text-white">
+              <ul className="space-y-2.5 text-[#2b2b2b] lg:font-medium">
                 {/* Home */}
                 <li className="group">
                   <NavLink
@@ -126,9 +132,10 @@ const Footer = () => {
                     onClick={() =>
                       window.scrollTo({ top: 0, behavior: "smooth" })
                     }
-                    className="hover:text-[#D4D4D4] transition-colors duration-200 flex items-center gap-2 text-sm"
+                    className="hover:text-[#ffffff] transition-colors duration-200 flex items-center gap-2"
+                    style={{ fontSize: "0.875rem" }}
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#D4D4D4] transition-all duration-200"></span>
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#2b2b2b] transition-all duration-200"></span>
                     Home
                   </NavLink>
                 </li>
@@ -140,9 +147,10 @@ const Footer = () => {
                     onClick={() =>
                       window.scrollTo({ top: 0, behavior: "smooth" })
                     }
-                    className="hover:text-[#D4D4D4] transition-colors duration-200 flex items-center gap-2 text-sm"
+                    className="hover:text-[#4ECDC4] transition-colors duration-200 flex items-center gap-2"
+                    style={{ fontSize: "0.875rem" }}
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#D4D4D4] transition-all duration-200"></span>
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#2b2b2b] transition-all duration-200"></span>
                     About Us
                   </NavLink>
                 </li>
@@ -154,9 +162,10 @@ const Footer = () => {
                     onClick={() =>
                       window.scrollTo({ top: 0, behavior: "smooth" })
                     }
-                    className="hover:text-[#D4D4D4] transition-colors duration-200 flex items-center gap-2 text-sm"
+                    className="hover:text-[#4ECDC4] transition-colors duration-200 flex items-center gap-2"
+                    style={{ fontSize: "0.875rem" }}
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#D4D4D4] transition-all duration-200"></span>
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#2b2b2b] transition-all duration-200"></span>
                     Services
                   </NavLink>
                 </li>
@@ -168,9 +177,10 @@ const Footer = () => {
                     onClick={() =>
                       window.scrollTo({ top: 0, behavior: "smooth" })
                     }
-                    className="hover:text-[#D4D4D4] transition-colors duration-200 flex items-center gap-2 text-sm"
+                    className="hover:text-[#4ECDC4] transition-colors duration-200 flex items-center gap-2"
+                    style={{ fontSize: "0.875rem" }}
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#D4D4D4] transition-all duration-200"></span>
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#2b2b2b] transition-all duration-200"></span>
                     Blog
                   </NavLink>
                 </li>
@@ -182,9 +192,10 @@ const Footer = () => {
                     onClick={() =>
                       window.scrollTo({ top: 0, behavior: "smooth" })
                     }
-                    className="hover:text-[#D4D4D4] transition-colors duration-200 flex items-center gap-2 text-sm"
+                    className="hover:text-[#4ECDC4] transition-colors duration-200 flex items-center gap-2"
+                    style={{ fontSize: "0.875rem" }}
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#D4D4D4] transition-all duration-200"></span>
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#2b2b2b] transition-all duration-200"></span>
                     Contact
                   </NavLink>
                 </li>
@@ -193,13 +204,16 @@ const Footer = () => {
 
             {/* Contact Information */}
             <div>
-              <h3 className="text-white font-bold mb-4 text-lg flex items-center gap-2">
-                <span className="w-1 h-6 bg-gradient-to-b from-[#B3B3B3] to-[#D4D4D4] rounded-full"></span>
+              <h3
+                className="text-black font-bold mb-4 flex items-center gap-2"
+                style={{ fontSize: "1.125rem" }}
+              >
+                <span className="w-1 h-6 bg-[#2b2b2b] rounded-full"></span>
                 Contact Us
               </h3>
-              <ul className="space-y-3.5 text-white">
+              <ul className="space-y-3.5 text-[#2b2b2b] lg:font-medium">
                 <li className="flex items-start gap-3 group">
-                  <span className="mt-0.5 text-[#D4D4D4] group-hover:scale-110 transition-transform duration-200">
+                  <span className="mt-0.5 text-[#4ECDC4] group-hover:scale-110 transition-transform duration-200">
                     <svg
                       className="w-5 h-5"
                       fill="currentColor"
@@ -212,13 +226,13 @@ const Footer = () => {
                       />
                     </svg>
                   </span>
-                  <span className="text-sm">
+                  <span style={{ fontSize: "0.875rem" }}>
                     Office No. 506, Sterling Centre, Opp. Aurora Tower, MG Road,
                     Camp, Pune 411001
                   </span>
                 </li>
                 <li className="flex items-start gap-3 group">
-                  <span className="mt-0.5 text-[#D4D4D4] group-hover:scale-110 transition-transform duration-200">
+                  <span className="mt-0.5 text-[#4ECDC4] group-hover:scale-110 transition-transform duration-200">
                     <svg
                       className="w-5 h-5"
                       fill="currentColor"
@@ -228,14 +242,15 @@ const Footer = () => {
                     </svg>
                   </span>
                   <a
-                    className="hover:text-[#D4D4D4] transition-colors text-sm"
+                    className="hover:text-[#4ECDC4] transition-colors"
                     href="tel:+917887881060"
+                    style={{ fontSize: "0.875rem" }}
                   >
                     +91 7887881060
                   </a>
                 </li>
                 <li className="flex items-start gap-3 group">
-                  <span className="mt-0.5 text-[#D4D4D4] group-hover:scale-110 transition-transform duration-200">
+                  <span className="mt-0.5 text-[#4ECDC4] group-hover:scale-110 transition-transform duration-200">
                     <svg
                       className="w-5 h-5"
                       fill="currentColor"
@@ -249,17 +264,18 @@ const Footer = () => {
                     </svg>
                   </span>
                   <a
-                    className="hover:text-[#D4D4D4] transition-colors text-sm"
+                    className="hover:text-[#4ECDC4] transition-colors"
                     href="https://wa.me/917887881060"
                     target="_blank"
                     rel="noopener noreferrer"
+                    style={{ fontSize: "0.875rem" }}
                   >
                     WhatsApp
                   </a>
                 </li>
 
                 <li className="flex items-start gap-3 group">
-                  <span className="mt-0.5 text-[#D4D4D4] group-hover:scale-110 transition-transform duration-200">
+                  <span className="mt-0.5 text-[#4ECDC4] group-hover:scale-110 transition-transform duration-200">
                     <svg
                       className="w-5 h-5"
                       fill="currentColor"
@@ -270,12 +286,13 @@ const Footer = () => {
                     </svg>
                   </span>
                   <a
-                    className="hover:text-blue-400 transition-colors text-sm break-all"
+                    className="hover:text-[#60A5FA] transition-colors break-all"
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=Dynamicworld.edu@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
+                    style={{ fontSize: "0.875rem" }}
                   >
-                     Dynamicworld.edu@gmail.com
+                    Dynamicworld.edu@gmail.com
                   </a>
                 </li>
               </ul>
@@ -283,14 +300,17 @@ const Footer = () => {
 
             {/* Office Hours + CTA */}
             <div>
-              <h3 className="text-white font-bold mb-4 text-lg flex items-center gap-2">
-                <span className="w-1 h-6 bg-gradient-to-b from-[#B3B3B3] to-[#D4D4D4] rounded-full"></span>
+              <h3
+                className="text-black font-bold mb-4 flex items-center gap-2"
+                style={{ fontSize: "1.125rem" }}
+              >
+                <span className="w-1 h-6 bg-[#2b2b2b] rounded-full"></span>
                 Office Hours
               </h3>
-              <ul className="space-y-2.5 text-[#B3B3B3] mb-6">
-                <li className="flex items-center gap-2 text-sm">
+              <ul className="space-y-2.5 text-[#2b2b2b] mb-6">
+                <li className="flex items-center gap-2">
                   <svg
-                    className="w-4 h-4 text-[#D4D4D4]"
+                    className="w-4 h-4 text-[#2b2b2b]"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -300,50 +320,18 @@ const Footer = () => {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span>
-                    <strong className="text-white">Monday-Sunday :</strong>{" "}
-                    10:00 AM - 7:00 PM
+                  <span style={{ fontSize: "0.875rem" }}>
+                    <strong className="text-[#2b2b2b]">Monday-Sunday :</strong>{" "}
+                    <span className="lg:font-medium">10:00 AM - 7:00 PM</span>
                   </span>
                 </li>
-                {/* <li className="flex items-center gap-2 text-sm">
-                  <svg
-                    className="w-4 h-4 text-blue-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>
-                    <strong className="text-[#EDEEEB]">Saturday :</strong> 10:00
-                    AM - 4:00 PM
-                  </span>
-                </li> */}
-                {/* <li className="flex items-center gap-2 text-sm">
-                  <svg
-                    className="w-4 h-4 text-red-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>
-                    <strong className="text-[#EDEEEB]">Sunday:</strong> Closed
-                  </span>
-                </li> */}
               </ul>
               <a
                 href="https://wa.me/917887881060"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#008080] font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105 text-sm"
+                className="inline-flex items-center gap-2 bg-[#009688] hover:bg-[#00796B] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#009688]/50 hover:scale-105"
+                style={{ fontSize: "0.875rem" }}
               >
                 Get Free Counseling
               </a>
@@ -353,46 +341,63 @@ const Footer = () => {
 
         {/* Divider with gradient */}
         <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#B3B3B3]/20 to-transparent h-px"></div>
-          <div className="border-t border-[#B3B3B3]/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#009688]/30 to-transparent h-px"></div>
+          <div className="border-t border-gray-400"></div>
         </div>
 
         {/* Bottom bar */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white">
-            <p className="flex items-center gap-1">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:font-medium">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-[#2b2b2b]">
+            <p
+              className="flex items-center gap-1 font-medium"
+              style={{ fontSize: "0.75rem" }}
+            >
               @<CurrentYear />
-              <span className="">Dynamic World All Rights Reserved.</span>
+              <span className="font-medium">
+                Dynamic World All Rights Reserved.
+              </span>
             </p>
-            <div className="flex items-center gap-2 lg:gap-6 flex-wrap justify-center">
+            <div className="flex items-center gap-2 lg:gap-6 flex-wrap justify-center font-medium">
               <NavLink
                 to={"/privacy-policy"}
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className={"hover:text-[#D4D4D4] transition-colors duration-200"}
+                className={
+                  "hover:text-[#4ECDC4] transition-colors duration-200"
+                }
+                style={{ fontSize: "0.75rem" }}
               >
                 Privacy Policy
               </NavLink>
-              <span className="text-white">•</span>
+              <span className="text-[#9CA3AF]">•</span>
               <NavLink
                 to={"/terms-and-conditions"}
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className={"hover:text-[#D4D4D4] transition-colors duration-200"}
+                className={
+                  "hover:text-[#4ECDC4] transition-colors duration-200"
+                }
+                style={{ fontSize: "0.75rem" }}
               >
                 Terms & Condition
               </NavLink>
-              <span className="text-white">•</span>
+              <span className="text-[#9CA3AF]">•</span>
               <NavLink
                 to={"/return-and-refund"}
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className={"hover:text-[#D4D4D4] transition-colors duration-200"}
+                className={
+                  "hover:text-[#4ECDC4] transition-colors duration-200"
+                }
+                style={{ fontSize: "0.75rem" }}
               >
                 Return & Refund
               </NavLink>
-              <span className="text-white">•</span>
+              <span className="text-[#9CA3AF]">•</span>
               <NavLink
                 to={"/cookie-policy"}
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className={"hover:text-[#D4D4D4] transition-colors duration-200"}
+                className={
+                  "hover:text-[#4ECDC4] transition-colors duration-200"
+                }
+                style={{ fontSize: "0.75rem" }}
               >
                 Cookie Policy
               </NavLink>

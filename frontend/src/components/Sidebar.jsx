@@ -52,13 +52,17 @@ const Sidebar = ({
                 return (
                   <li
                     key={`${section.title}-${index}`}
-                    className="rounded-lg border border-transparent transition"
+                    className="rounded-lg border transition-all duration-200"
                     style={{ 
-                      borderColor: "transparent",
+                      borderColor: isOpen ? COLORS.secondary : "#D1D5DB",
                       "--hover-border": COLORS.secondary
                     }}
-                    onMouseEnter={(e) => e.currentTarget.style.borderColor = COLORS.secondary}
-                    onMouseLeave={(e) => e.currentTarget.style.borderColor = "transparent"}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = COLORS.secondary;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = isOpen ? COLORS.secondary : "#D1D5DB";
+                    }}
                   >
                     <button
                       id={buttonId}

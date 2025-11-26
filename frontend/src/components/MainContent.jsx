@@ -11,6 +11,7 @@ import RegularAdmissionSkeleton from "./RegularAdmissionSkeleton";
 import UniversitySkeleton from "./UniversitySkeleton";
 import VocationalSkeleton from "./VocationalSkeleton";
 import Boards from "../pages/Boards";
+import HomeTuition from "../pages/HomeTuition";
 // import CareerBrochurePage from "./CareerCounselling01";
 const CareerBrochurePage = lazy(() => import("./CareerCounselling01"));
 const normalizeKey = (s = "") => s.trim().toUpperCase();
@@ -49,6 +50,13 @@ const MainContent = ({
     return (
       <Suspense fallback={<VocationalSkeleton />}>
         <CareerBrochurePage />
+      </Suspense>
+    );
+  }
+  if (selected.type === "Home & Online Tuition") {
+    return (
+      <Suspense fallback={<RegularAdmissionSkeleton />}>
+        <HomeTuition />
       </Suspense>
     );
   }
