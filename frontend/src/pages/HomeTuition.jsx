@@ -72,7 +72,7 @@ const HomeTuition = () => {
     },
     {
       category: "TOEFL",
-      details: "Test of English as a Foreign Language",
+      details: "Test of English as A Foreign Language",
     },
     {
       category: "PTE",
