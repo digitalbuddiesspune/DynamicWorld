@@ -17,11 +17,13 @@ const LegacyLarge =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764091999/Legacy_u7kppj.svg";
 
 // --------------------------------------------------------------------------------------------------------------
-const studyAbroadMobile =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761897001/Black_Professional_School_Admission_Banner_1920_x_600_px_1080_x_1080_px_sj7q9g.svg";
-const universitiesMobile =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761897010/Blue_Professional_Business_Visa_Service_Promotion_Web_Banner_1920_x_600_px_1080_x_1080_px_albamu.svg";
-const careerMobile =
+const studyAbroad =
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764256883/studyAbroad_ayku52.png";
+const schoolCollege =
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764256915/School_gvifp9.svg";
+const immigrationAndVisa =
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764256896/Immigration_bciqd9.svg";
+const attestationApostile =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761897003/Purple_and_Yellow_Shapes_Middle_School_Back_to_School_Banner_1920_x_600_px_1080_x_1080_px_puml4q.svg";
 const career =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761898214/Blue_And_White_Creative_Study_Abroad_In_Korea_Instagram_Post_1920_x_600_px_1080_x_1080_px_2_azrwlc.png";
@@ -33,10 +35,10 @@ const newFirst =
 const MobileScreenBanners = [
   newFirst,
   secondBanner,
-  studyAbroadMobile,
-  career,
-  careerMobile,
-  universitiesMobile,
+  schoolCollege,
+  studyAbroad,
+  immigrationAndVisa,
+  // attestationApostile,
 ];
 
 const LargeScreenBanners = [
