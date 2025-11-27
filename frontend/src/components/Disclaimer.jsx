@@ -6,7 +6,7 @@ const Disclaimer = () => {
 
   return (
     // Outer section: Reduced vertical padding from py-10 to py-6
-    <div className=" bg-[#E3E4E0] py-0 sm:py-6 px-0 sm:px-6">
+    <div className=" bg-[#D7E0DD] py-0 sm:py-6 px-0 sm:px-6">
       <div className="max-w-7xl mx-auto ">
         <div className="bg-gray-100 md:rounded-lg shadow-md p-2 md:p-5 sm:p-6 border-l-4 border-amber-500">
           <div className="flex items-start gap-3 sm:gap-4">

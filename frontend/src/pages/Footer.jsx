@@ -10,7 +10,7 @@ const url =
 const Footer = () => {
   return (
     <>
-      <footer className="text-black bg-[#C7C7BB] relative overflow-hidden">
+      <footer className="text-black bg-[#D7E0DD] relative overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
             {/* Brand / About with Social Icons */}

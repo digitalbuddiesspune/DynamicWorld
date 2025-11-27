@@ -99,7 +99,7 @@ export const dynamicWorldData = [
         city: "Indore",
         state: "Madhya Pradesh",
         address:
-          "Office No 617, Gham Plaza, AB Road, Near Industry House, Old Palasia, Indore 452006",
+          "Office No 517, Onam Plaza, AB Road, Near Industry House, Old Palasia, Indore 452015",
       },
 
       {

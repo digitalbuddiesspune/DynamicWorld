@@ -53,7 +53,7 @@ const Navbar = () => {
   // Reusable link class (desktop)
   const linkClass = ({ isActive }) =>
     `relative text-[15px] font-medium transition-colors duration-200
-     after:content-[''] after:absolute after:w-0 after:h-[3px] after:left-0 after:-bottom-1
+     after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:-bottom-1
      after:bg-[#2B2B2B] after:transition-all after:duration-300 hover:after:w-full
      focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2B2B2B] focus-visible:rounded
      ${
