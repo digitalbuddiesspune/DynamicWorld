@@ -12,9 +12,9 @@ const ImmigrationLarge =
 const Complete_Your_Education_Large =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763968234/OnlineEduFinal_juripw.svg";
 const attestationApostileLarge =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764095189/attestation_dpynka.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764317948/NewLegecy_lqname.svg";
 const LegacyLarge =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764091999/Legacy_u7kppj.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764321401/Lagacy_Desktop_ozf3xo.svg";
 
 // --------------------------------------------------------------------------------------------------------------
 const studyAbroad =
@@ -24,21 +24,23 @@ const schoolCollege =
 const immigrationAndVisa =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764256896/Immigration_bciqd9.svg";
 const attestationApostile =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761897003/Purple_and_Yellow_Shapes_Middle_School_Back_to_School_Banner_1920_x_600_px_1080_x_1080_px_puml4q.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764321263/Attastation_Mobile_View_xxxeb0.svg";
 const career =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761898214/Blue_And_White_Creative_Study_Abroad_In_Korea_Instagram_Post_1920_x_600_px_1080_x_1080_px_2_azrwlc.png";
 const secondBanner =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763967905/Education_p3i0ru.svg";
 const newFirst =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764012447/Gemini_Generated_Image_f3wp8bf3wp8bf3wp_trikfk.png";
-
+const first = "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764310937/Legacy_jjwjkc.png";
+const second="https://res.cloudinary.com/dtaitsw4r/image/upload/v1764321121/LagecyMobile_q6uwvi.svg"
 const MobileScreenBanners = [
-  newFirst,
+  first,
+  second,
   secondBanner,
   schoolCollege,
   studyAbroad,
   immigrationAndVisa,
-  // attestationApostile,
+  attestationApostile,
 ];
 
 const LargeScreenBanners = [
@@ -47,7 +49,7 @@ const LargeScreenBanners = [
   schoolCollegeLarge,
   studyAbroadLarge01,
   ImmigrationLarge,
-  // attestationApostileLarge,
+  attestationApostileLarge,
 ];
 
 export default function Hero() {

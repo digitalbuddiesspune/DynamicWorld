@@ -153,6 +153,19 @@ const Navbar = () => {
               <NavLink to="/contact-us" className={linkClass}>
                 Contact Us
               </NavLink>
+             
+                <a
+                  href="https://studyabroad.dynamicworld.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#008080] p-2 rounded-full text-white text-[15px] font-medium hover:bg-[#006666] transition-colors duration-200"
+                 
+              
+                >
+                  Study Abroad
+                
+                </a>
+             
             </div>
 
             {/* Mobile Hamburger */}
