@@ -34,7 +34,7 @@ const newFirst =
 const first = "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764310937/Legacy_jjwjkc.png";
 const second="https://res.cloudinary.com/dtaitsw4r/image/upload/v1764321121/LagecyMobile_q6uwvi.svg"
 const MobileScreenBanners = [
-  first,
+  // first,
   second,
   secondBanner,
   schoolCollege,
