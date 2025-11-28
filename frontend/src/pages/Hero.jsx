@@ -12,9 +12,9 @@ const ImmigrationLarge =
 const Complete_Your_Education_Large =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763968234/OnlineEduFinal_juripw.svg";
 const attestationApostileLarge =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764317948/NewLegecy_lqname.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764337543/Attestation_Final_ldq7gv.svg";
 const LegacyLarge =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764321401/Lagacy_Desktop_ozf3xo.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764337106/legacy8_qmxpof.svg";
 
 // --------------------------------------------------------------------------------------------------------------
 const studyAbroad =
@@ -32,7 +32,7 @@ const secondBanner =
 const newFirst =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764012447/Gemini_Generated_Image_f3wp8bf3wp8bf3wp_trikfk.png";
 const first = "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764310937/Legacy_jjwjkc.png";
-const second="https://res.cloudinary.com/dtaitsw4r/image/upload/v1764321121/LagecyMobile_q6uwvi.svg"
+const second="https://res.cloudinary.com/dtaitsw4r/image/upload/v1764337289/naya_bhai_ab0fzi.svg"
 const MobileScreenBanners = [
   // first,
   second,
