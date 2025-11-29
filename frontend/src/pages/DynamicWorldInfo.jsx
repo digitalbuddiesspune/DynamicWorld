@@ -101,11 +101,6 @@ export const dynamicWorldData = [
         address:
           "Office No 517, Onam Plaza, AB Road, Near Industry House, Old Palasia, Indore 452015",
       },
-
-      {
-        city: "Surat",
-        state: "Gujarat",
-      },
     ],
     authorizedCounselors:
       "Authorized counselors and associates are spread across multiple cities in India and abroad.",
