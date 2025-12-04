@@ -114,4 +114,3 @@ SidebarLink.defaultProps = {
 };
 
 export default Sidebar;
-

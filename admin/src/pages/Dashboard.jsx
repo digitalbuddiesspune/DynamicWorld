@@ -51,7 +51,7 @@ const Dashboard = () => {
           />
           <StatCard
             icon={GraduationCap}
-            title="Learning Tracks"
+            title="No"
             value={
               isLoading
                 ? "…"

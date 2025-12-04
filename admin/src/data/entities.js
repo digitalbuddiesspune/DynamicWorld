@@ -5,6 +5,7 @@ import {
   GraduationCap,
   Layers,
   Microscope,
+  Newspaper,
   ShieldCheck,
   Sparkles,
   Stethoscope,
@@ -300,6 +301,42 @@ export const entityDefinitions = [
       {
         label: "Tuition Fees",
         render: (row) => row.tuitionFee ?? row.fees ?? "—",
+      },
+    ],
+  },
+  {
+    id: "news",
+    name: "News",
+    description:
+      "Manage news items displayed in the promotion strip on the homepage.",
+    endpoint: "/news",
+    path: "/news",
+    icon: Newspaper,
+    searchKeys: ["newsTitle", "link"],
+    columns: [
+      {
+        label: "Title",
+        render: (row) => row.newsTitle ?? "—",
+      },
+      {
+        label: "Link",
+        render: (row) => row.link ?? "—",
+      },
+      {
+        label: "Created",
+        render: (row) =>
+          row.createdAt
+            ? new Date(row.createdAt).toLocaleDateString()
+            : "—",
+        align: "center",
+      },
+      {
+        label: "Updated",
+        render: (row) =>
+          row.updatedAt
+            ? new Date(row.updatedAt).toLocaleDateString()
+            : "—",
+        align: "center",
       },
     ],
   },
