@@ -14,7 +14,7 @@ const Complete_Your_Education_Large =
 const attestationApostileLarge =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764337543/Attestation_Final_ldq7gv.svg";
 const LegacyLarge =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764832137/Cources_Banner_Desktop_uc5vzp.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764842033/LAGECY_whqymj.svg";
 
 // --------------------------------------------------------------------------------------------------------------
 const studyAbroad =
