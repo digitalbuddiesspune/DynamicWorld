@@ -153,15 +153,15 @@ const ContactUs1 = () => {
                     Support Mail
                   </p>
                   <h3 className="mt-1 text-lg font-semibold text-[#2B2B2B]">
-                    Dynamicworld.edu@gmail.com
+                    contact@dynamicworld.in
                   </h3>
                   <p className="mt-1 text-sm text-[#2B2B2B]">
-                    Drop us a line and we’ll get back to you. Write to our counsellor for quick assistance.
+                    Drop us a line and we'll get back to you. Write to our counsellor for quick assistance.
                   </p>
 
                   <div className="mt-4 flex gap-3">
                     <a
-                      href="https://mail.google.com/mail/u/0/?fs=1&to=Dynamicworld.edu@gmail.com&tf=cm"
+                      href="https://mail.google.com/mail/u/0/?fs=1&to=contact@dynamicworld.in&tf=cm"
                       className={`${buttonBase} ${primaryBtn} px-5 py-2.5 text-sm`}
                     >
                       Email Us

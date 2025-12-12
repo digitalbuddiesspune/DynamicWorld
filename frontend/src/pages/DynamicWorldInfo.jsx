@@ -85,7 +85,7 @@ export const dynamicWorldData = [
       address:
         "Building No 506, 5th Floor, Sterling Centre, Opposite Arora Tower, Camp, Pune, Maharashtra",
       phone: "+91 9820401375",
-      email: "Dynamicworld.edu@gmail.com",
+      email: "contact@dynamicworld.in",
     },
     branchOffices: [
       {

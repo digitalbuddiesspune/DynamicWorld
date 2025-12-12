@@ -32,7 +32,7 @@ const ContactUs3 = () => {
             <strong>Phone:</strong> +91 9820401375
           </p>
           <p className="text-sm text-[#2B2B2B] leading-relaxed mb-2">
-            <strong>Email:</strong> Dynamicworld.edu@gmail.com
+            <strong>Email:</strong> contact@dynamicworld.in
           </p>
           <p className="text-sm text-[#2B2B2B] leading-relaxed mb-2">
             <strong>Office Hours:</strong> Mon – Sun, 10:00 AM – 7:00 PM

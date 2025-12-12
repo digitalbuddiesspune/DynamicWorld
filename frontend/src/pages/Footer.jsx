@@ -287,12 +287,12 @@ const Footer = () => {
                   </span>
                   <a
                     className="hover:text-[#60A5FA] transition-colors break-all"
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=Dynamicworld.edu@gmail.com"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@dynamicworld.in"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ fontSize: "0.875rem" }}
                   >
-                    Dynamicworld.edu@gmail.com
+                    contact@dynamicworld.in
                   </a>
                 </li>
               </ul>

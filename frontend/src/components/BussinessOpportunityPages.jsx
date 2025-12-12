@@ -578,7 +578,7 @@ export const BusinessPartner02 = () => {
             />
             <ActionButton
               as="a"
-              href="mailto:Dynamicworld.edu@gmail.com"
+              href="mailto:contact@dynamicworld.in"
               text="Request proposal"
               variant="ghost"
             />
