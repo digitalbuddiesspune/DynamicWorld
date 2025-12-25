@@ -28,7 +28,7 @@ const attestationApostile =
 const career =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761898214/Blue_And_White_Creative_Study_Abroad_In_Korea_Instagram_Post_1920_x_600_px_1080_x_1080_px_2_azrwlc.png";
 const secondBanner =
-  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1763967905/Education_p3i0ru.svg";
+  "https://res.cloudinary.com/dtaitsw4r/image/upload/v1766660460/complete_sdfxoy.svg";
 const newFirst =
   "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764012447/Gemini_Generated_Image_f3wp8bf3wp8bf3wp_trikfk.png";
 const first =

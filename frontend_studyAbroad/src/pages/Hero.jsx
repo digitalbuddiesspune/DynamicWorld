@@ -2,13 +2,13 @@ import React from "react";
 
 const Hero = () => {
   const mobileUrl =
-    "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761898214/Blue_And_White_Creative_Study_Abroad_In_Korea_Instagram_Post_1920_x_600_px_1080_x_1080_px_2_azrwlc.png";
+    "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764256883/studyAbroad_ayku52.png";
 
   const largeScreen =
-    "https://res.cloudinary.com/dtaitsw4r/image/upload/v1761805555/Blue_And_White_Creative_Study_Abroad_In_Korea_Instagram_Post_1920_x_600_px_j3obas.png";
+    "https://res.cloudinary.com/dtaitsw4r/image/upload/v1764092033/StudyAbroad_b7xuen.svg";
 
   return (
-    <div className="w-full">
+    <div className="w-full border-t border-gray-100">
       {/* Mobile Banner */}
       <img
         src={mobileUrl}
