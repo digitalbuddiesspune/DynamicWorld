@@ -58,7 +58,7 @@ import HomeTuition from "../pages/HomeTuition";
 const Router_Router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="/" element={<HomePageLayout />} />
+      <Route index element={<HomePageLayout />} />
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
